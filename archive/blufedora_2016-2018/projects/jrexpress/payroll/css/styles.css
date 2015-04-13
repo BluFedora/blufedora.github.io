@@ -1,0 +1,180 @@
+/* https://material.io/design/color/the-color-system.html#tools-for-picking-colors */
+
+/* Includes */
+@import url("styles-dialog.css");
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500'); /* font-family: 'Roboto', sans-serif; */
+
+* {
+  font-family:      'Roboto', sans-serif;
+}
+
+/* utilities */
+
+*, *:before, *:after {
+  box-sizing:       border-box;
+}
+
+.clear {
+  clear:            both;
+}
+
+body {
+  background-color: #79d9a6;
+  margin:           0px;
+  padding:          0px;
+}
+
+header {
+  position:         relative;
+  box-shadow:       0px 0px 7px #32573f;
+  
+  z-index:          1;
+}
+
+h1 {
+  background-color: #00695C;
+  
+  padding:          5px 10px;
+  margin:           0px;
+  
+  font-family:      'Roboto', sans-serif;
+  font-weight:      300;
+  text-align:       center;
+  color:            #E0F2F1;
+  
+  border-bottom:    2px solid #004D40;
+}
+
+h2 {
+  padding:          5px 10px;
+  margin:           0px;
+  
+  font-weight:      400;
+}
+
+h3 {
+  padding:          5px 0px 20px 0px;
+  margin:           15px auto 0px 0px;
+  
+  font-weight:      500;
+  
+  border-bottom:    2px solid #B2DFDB;
+}
+
+nav ul {
+  background-color: #009688;
+  
+  list-style-type:  none;
+  margin:           0px;
+  padding:          0px;
+  list-style-type:  none;
+}
+
+nav ul li a {
+  display:          block;
+  color:            #000000;
+  padding:          8px 16px;
+  text-decoration:  none;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+  color:            white;
+}
+
+.truck_list {
+  background-color: #4DB6AC;
+  
+  padding:          5px;
+}
+
+.truck_list_item {
+  background-color: #98c3aa;
+  /*
+  background-image: linear-gradient(180deg,
+                                    rgba(255, 255, 0, 0.8),
+                                    rgba(255,   0, 0, 0.2));
+  */
+  width:            calc(100% - 10px);
+  padding:          10px;
+  margin:           5px;
+  
+  border-radius:    3px;
+  border:           1px white solid;
+  
+  text-align:       center;
+  position:         relative;
+}
+
+.truck_list_item_delete {
+  position:         absolute;
+  background-color: #98b989;
+  padding:          10px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  width: 90px;
+}
+
+.truck_list_item:hover {
+  background-image: linear-gradient(90deg,
+                                    rgba(255, 255, 0, 0.8),
+                                    rgba(255,   0, 0, 0.2));
+}
+
+.truck_list_item.expanded {
+  background-color: green;
+  
+  position:         fixed;
+  left:             0px;
+  top:              0px;
+  margin:           0px;
+  
+  width:            100%;
+  height:           100%;
+}
+
+
+
+footer {
+  background-color: #B2DFDB;
+  
+  width :           100%;
+  padding:          10px;
+  
+  text-align:       center;
+}
+
+/* dump_truck.html */
+
+h3 {
+  text-align:       center;
+}
+
+.week_item {
+  width:            100%;
+  min-width:        200px;
+  
+  float:            left;
+}
+
+.week_item_slot {
+  background-color: #b5e5da;
+  width:            95%;
+  padding:          10px;
+  margin:           0px 0px 10px 2.5%;
+  border:           1px solid red;
+  border-radius:    4px;
+}
+
+.week_selector {
+  width:            calc(100% - 4px);
+
+  padding:          5px 15px;
+  margin:           4px 2px;
+
+  border-radius:    3px;
+  border:           2px solid #183c22;
+}

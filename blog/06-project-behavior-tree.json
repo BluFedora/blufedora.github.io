@@ -1,0 +1,150 @@
+{
+  "Title": "Project:<br> Behavior Tree Editor for Unity",
+  "Header": 
+  {
+    "Image": "url(data/post-data/06/cover.png)",
+    "Author": "By: Shareef Raheem",
+    "Date": "December 5th, 2019"
+  },
+  "Content": 
+  [
+    {
+      "Type" : "h3",
+      "Content": "Introduction"
+    },
+    {
+      "Type": "p",
+      "Content": 
+      [
+        "For the student project I worked on Junior year, ",
+        {
+          "Type" : "b",
+          "Content": "Metamorphos"
+        },
+        ", I wanted to work on a tool used by designers and myself for making AI for our <i>Souls Like</i> game.",
+        "We decided on using behavior trees as our AI architecture and along with that a custom tool built into Unity for all of our editing needs."
+      ]
+    },
+    {
+      "Type": "p",
+      "Content": 
+      [
+        "This editor was used by designers and programmers to author all of the AI for our game. ",
+        "Our development process consisted of starting off by quickly prototyping out a single attack / behavior of an Enemy with very little context, ",
+        "then a designer layouts out on paper how an enemy should react to the player. Taking this outline a programmer (or a technical designer) makes a base tree (along with utility sub-trees) ",
+        "with editable parameters using the Blackboard system.", 
+        "Afterwards a designer fine tunes the tree and get the numbers <i>just right</i> using the blackboard, as well as change nodes around and polish the AI based on play-testing data."
+      ]
+    },
+    {
+      "Type" : "p",
+      "Content":
+      [
+        "The main window looked like this:",
+        {
+          "Type":"img",
+          "Source": "data/post-data/06/main-window.png"
+        },
+        {
+          "Type":"hr"
+        },
+        {
+          "Type":"div",
+          "Class": "center-text",
+          "Content":
+          [
+            "(I tried my best to make is look as native <b><i>Unity</i></b> as possible by using their own editor assets)"
+          ]
+        },
+        {
+          "Type":"hr"
+        },
+        "The window on the left is the 'Inspector' / 'Blackboard' and the rest is the 'Canvas' where the nodes live."
+      ]
+    },
+    {
+      "Type": "h3",
+      "Content": "Feature Set"
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        {
+          "Type": "ul",
+          "Content":
+          [
+            {
+              "Type" : "li",
+              "Content" : "Copy and Pasting of nodes (works across documents as well)."
+            },
+            {
+              "Type" : "li",
+              "Content" : "Live debugging of a Tree on a specific GameObject."
+            },
+            {
+              "Type" : "li",
+              "Content" : "Blackboard with a variant datatype for defining variables."
+            },
+            {
+              "Type" : "li",
+              "Content" : "Running of a behavior tree from within another tree."
+            },
+            {
+              "Type" : "li",
+              "Content" : "Calling of C# functions through the 'Event' Node."
+            },
+            {
+              "Type" : "li",
+              "Content" : "Canvas zooming in / out and panning."
+            },
+            {
+              "Type" : "li",
+              "Content" : "Open Behavior Tree Asset with double clicking in the Project View."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Type" : "h3",
+      "Content": "Live Debugging Demo Video"
+    },
+    {
+      "Type":"video",
+      "Source": "data/post-data/06/Project_Behavior_Tree_Live_Debugging_Demo.mp4"
+    },
+    {
+      "Type" : "h3",
+      "Content": "Details"
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        "Here is a demo of making a simple tree in the editor.",
+        "Just drag from the bottom of a node to add a child to it.",
+        "All the tree does is check if the current enemy is aggravated then attack and wait a second otherwise just patrol around.",
+        {
+          "Type":"video",
+          "Source": "data/post-data/06/demo.mp4"
+        },
+        "Creating a new Node type entails inheriting from <b><i>BaseBehaviorTreeNode</i></b> and implementing the interface:",
+        {
+          "Type" : "pre",
+          "Class" : "prettyprint linenums lang-cs",
+          "Content": 
+          [
+            "// Called when the node is created\n",
+            "protected override void Ctor();\n\n",
+            "// Called when the node is evaluated.\n// This is a 'stateless' design so\n// you operate on the BehaviorTreeContext rather your member variables.\n",
+            "protected override BehaviorTreeNodeStatus Evaluate(BehaviorTreeContext context);\n\n",
+            "// Called when the node is inspected in the editor\n// This is so you can custom editor features.\n",
+            "public override void OnInspect()"
+          ]
+        },
+        "Any class inheriting from <b><i>BaseBehaviorTreeNode</i></b> is automatically added to the editor through C#'s reflection utilities."
+      ]
+    }
+  ]
+}

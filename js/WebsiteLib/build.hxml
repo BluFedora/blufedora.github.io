@@ -1,0 +1,21 @@
+-cp src
+--dce full
+-D analyzer-optimize
+
+--each
+
+
+--next
+
+# -D shallow-expose
+--js ..\blufedora.urlvars.js
+--main blufedora.UrlVars
+
+
+# --next
+# --cpp ..\cpp\what.cpp
+# --main blufedora.GenerateCpp
+
+--next
+--js ..\animation-lib.js
+--main blufedora.Main

@@ -1,0 +1,26 @@
+[
+  {
+    "title" : "Image Processing: <br> Final Thoughts",
+    "cover" : "url(images/post_4/post_4_cover.jpg)",
+    "link" : "image-processing-final-thoughts",
+    "blurb" : "Image processing has been an interest of mine and I’m happy I was able to explore it to new depths. I actually didn’t realize before writing these blog posts how much of an impact on society and how we view our selfs and the world. What really surprised me was..."
+  },
+  {
+    "title" : "Image Processing: <br> Inner Workings",
+    "cover" : "url(images/covers/blog_post_3_cover.jpg)",
+    "link" : "image-processing-inner-workings",
+    "blurb" : "This post will be on how image processing is done and what techniques are used to create certain effects, such as a ‘Gaussian Blur'. I have digressed away from talking about image processing from a more technical perspective and want to come back to that..."
+  },
+  {
+    "title": "Image Processing: <br> Journalism and Ethics Within Photography",
+    "cover" : "url(images/covers/blog_cover_2.jpg)",
+    "link" : "image-processing-journalism-ethics",
+    "blurb" : "Image processing technology doesn’t have a debate directly surrounding it but the effects of advancing image technologies do have some important social ramifications. Technically I could discuss arguments for and against what method to use when interpreting certain collected data but that would not be all that interesting..."
+  },
+  {
+    "title": "Image Processing: <br> Introduction and History",
+    "cover" : "url(images/cover_image.jpg)",
+    "link" : "image-processing-intro-to-history",
+    "blurb" : "The expansive field of digital image processing informational technology is the backbone of many modern conveniences. Image processing borrows talents from a variety of fields such as computer science, electrical engineering, mathematics, physiology, biology..."
+  }
+]

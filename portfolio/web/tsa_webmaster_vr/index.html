@@ -1,0 +1,128 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>VR</title>
+		<meta name="description" content="Information on Virtual Reality">
+		<meta name="author" content="Shareef Raheem">
+
+		<link rel="stylesheet" href="css/styles.css">
+
+		<!--[if lt IE 9]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		
+		<nav id="header_nav">
+			<img src="images/vr.png" alt="vr home">
+		</nav>
+		
+		<div id="exit_button" class="material_button" onclick="exit()">
+			<strong>&times;</strong>
+		</div>
+		
+		<h1>Welcome</h1>
+		
+		<div id="enter_button" class="material_button" onclick="enter()">
+			Enter Virtual Reality
+		</div>
+		
+		<iframe id="header_frame" src="vr.html" width="100%" height="500px"></iframe>
+		
+		<script>
+		
+			function enter()
+			{
+				var frame = document.getElementById("header_frame");
+				frame.style.height = "100vh";
+				var nav = document.getElementById("header_nav");
+				nav.style.height = "0px";
+				
+				var articles = document.getElementsByTagName("article");
+				
+				for (var i = 0; i < articles.length; ++i)
+				{
+					var article = articles[i];
+					article.style.display = "none";	
+				}
+				
+				document.getElementById("enter_button").style.display = "none";
+				document.getElementById("footer").style.display = "none";
+				document.getElementById("exit_button").style.display = "block";
+			}
+			
+			function exit()
+			{
+				document.getElementById("exit_button").style.display = "none";
+				document.getElementById("footer").style.display = "block";
+				document.getElementById("enter_button").style.display = "block";
+				
+				var articles = document.getElementsByTagName("article");
+				
+				for (var i = 0; i < articles.length; ++i)
+				{
+					var article = articles[i];
+					
+					article.style.display = "block";	
+				}
+				
+				var nav = document.getElementById("header_nav");
+				nav.style.height = "50px";
+				
+				var frame = document.getElementById("header_frame");
+				frame.style.height = "500px";
+			}
+			
+			var rotDeg = 0;
+			
+			function animate()
+			{
+				var gear = document.getElementById("gear_icon");
+				
+				if (gear) {
+					gear.style.transform       = 'rotate('+rotDeg+'deg)';
+					rotDeg++;
+				}
+				
+				requestAnimationFrame(animate);
+			}
+			
+			animate();
+			
+		</script>
+		
+		<article style="animation-delay:0.0s;">
+			<h2>About: </h2> <hr>
+			<div>
+				<img style="vertical-align:middle; margin-right:80px;" id="gear_icon" src="images/gear.png" alt="gear icon">
+				cxzcxzczxzczczxczxcz
+			</div>
+		</article>
+		
+		<article style="animation-delay:0.1s;">
+			<h2>Uses: </h2> <hr>
+			
+		cxzcxzczxzczczxczxcz
+		</article>
+		
+		<article style="animation-delay:0.2s;">
+			<h2>Disadvantages: </h2> <hr>
+			
+		cxzcxzczxzczczxczxcz
+		</article>
+		
+		<article style="animation-delay:0.3s;">
+			<h2>Etc: </h2> <hr>
+			
+		cxzcxzczxzczczxczxcz
+		</article>
+		
+		<footer id="footer">
+		Brought to you by: Shareef Raheem
+		</footer>
+	</body>
+</html>

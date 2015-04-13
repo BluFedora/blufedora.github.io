@@ -1,0 +1,4 @@
+.post-background               { background-color: #151B40;                          }
+#post-header                   { color: white; text-shadow: none;                    }
+.post-body                     { border-color: #832A71; background-color: #090C24; }
+.post-body-content, img, video { border-color: #009E76;                              }

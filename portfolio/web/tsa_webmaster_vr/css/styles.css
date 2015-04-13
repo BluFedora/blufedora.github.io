@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+
+html, body {
+	padding: 				0px;
+	margin: 				0px auto;
+	background-color: 		#F4F4F4;
+	font-family: 			'Roboto', sans-serif;
+	font-size: 				100%;
+}
+
+* {
+	position: 				relative;
+	box-sizing: 			border-box;
+	z-index: 				1;
+}
+
+nav {
+	background-color: 		rgb(255, 255, 255);
+	box-shadow: 			rgba(0, 0, 0, 0.1) 0px 2px 5px 1px;
+	
+	position: 				relative;
+	height: 				50px;
+	
+	line-height: 			50px;
+	
+	transition: 			height 0.4s;
+	
+	z-index: 				2;
+}
+
+h1 {
+	font-weight: 			lighter;
+	font-size: 				3.5em;
+	text-shadow: 			1px 1px 1px rgb(255, 255, 255);
+	color: 					rgba(96, 167, 188, 0.94);
+	text-align: 			center;
+	margin: 				60px auto;
+	background-color: 		rgba(0, 0, 0, 0.48);
+	background: 			linear-gradient(to right, 
+								rgba(255, 255, 255, 0),
+								rgba(255, 255, 255, 0.08),
+								rgba(255, 255, 255, 0.52), 
+								rgba(255, 255, 255, 0.08),
+								rgba(255, 255, 255, 0));
+	padding: 				30px 0px;
+}
+
+h2 {
+	font-weight: 			lighter;
+	font-size: 				2em;
+	text-shadow: 			1px 1px 1px rgb(255, 255, 255);
+	color: 					#5f5f5f;
+	text-align: 			left;
+	background-color: 		rgba(0, 0, 0, 0.48);
+	background: 			linear-gradient(to right, 
+								rgba(255, 255, 255, 0),
+								rgba(255, 255, 255, 0.08),
+								rgba(255, 255, 255, 0.52), 
+								rgba(255, 255, 255, 0.08),
+								rgba(255, 255, 255, 0));
+	
+	margin: 				0px 0px 10px 0px;
+}
+
+hr {
+	border: 0;
+	border-top: solid rgba(96, 167, 188, 0.94) 1px;
+	border-bottom: solid rgba(255, 255, 255, 0.94) 1px;
+}
+
+
+
+@keyframes fly_in {
+    from {transform: translateY(100vh);}
+    to {transform: translateY(0);}
+}
+
+article {
+	background-color: 		rgba(245, 245, 245, 0.75);
+	box-shadow: 			rgba(118, 118, 118, 0.12) 0px 2px 3px 2px;
+	width: 					90%;
+	max-width: 				1000px;
+	min-height: 			200px;
+	
+	border: 				#ffffff 1px solid;
+	
+	border-radius: 			3px;
+	margin: 				10px auto;
+	padding: 				20px;
+	
+	position: 				relative;
+	z-index: 				1;
+	
+	transform: translateY(100vh);
+	
+	animation-name: fly_in;
+    animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+#gear_icon {
+	transition: all 0.3s ease-in-out;
+}
+
+@keyframes circle_in {
+    from {
+		transform: scale(0.0) rotate(270deg);
+	}
+	
+    to {
+		transform: scale(1.0) rotate(0deg);;
+	}
+}
+
+#header_frame {
+	box-shadow: 			rgba(0, 0, 0, 0.2) 0px 2px 5px 1px;
+	
+    border-width: 0px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+	position:absolute;
+	top: 0px;
+	
+	z-index: 				0;
+	
+	transition: 			height 1s;
+}
+
+
+
+#enter_button {
+	background-color: 		rgba(96, 167, 188, 0.94);
+	color: 					aliceblue;
+	
+	position: 				relative;
+	width: 					90%;
+	max-width: 				200px;
+	height: 				60px;
+	
+	border-radius: 			3px;
+	margin: 				0px auto 50px auto;
+	
+	text-align: 			center;
+	line-height: 			60px;
+	
+	z-index: 				1;
+}
+
+.material_button {
+	box-shadow: 			rgba(0, 0, 0, 0.2) 0px 2px 5px 1px;
+	transition: 			transform 0.25s, box-shadow 0.25s;
+}
+
+.material_button:hover {
+	transform: 				translateY(-5px);
+	box-shadow: 			rgba(0, 0, 0, 0.37) 0px 2px 10px 1px;
+}
+
+#exit_button {
+	background: 			rgba(96, 167, 188, 0.94);
+	color: 					white;
+	
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	
+	font-size: 30px;
+	text-align: 			center;
+	line-height: 			50px;
+	
+	position: absolute;
+	
+	top: 		10px;
+	right: 		10px;
+	
+	display: none;
+	
+	z-index: 				2;
+	
+	animation-name: circle_in;
+    animation-duration: 1s;
+	animation-fill-mode:none;
+}
+
+#exit_button:hover {
+	transform: rotate(-90deg);
+}
+
+footer {
+	background-color: 		rgba(230, 228, 232, 0.54);
+	
+	text-align: 			center;
+	
+	width: 					100%;
+	padding: 				10px;
+}
+
+.vertically-centered {
+    height: 256px;
+}
+
+.vertically-centered:after {
+    content: "";
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}

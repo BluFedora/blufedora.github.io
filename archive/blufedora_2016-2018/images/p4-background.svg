@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="master-artboard"
+   viewBox="0 0 336 235.2"
+   version="1.1"
+   x="0px"
+   y="0px"
+   style="enable-background:new 0 0 336 235.2;"
+   width="336px"
+   height="235.1999969482422px"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="p4-background.svg">
+  <metadata
+     id="metadata549">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs547" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     id="namedview545"
+     showgrid="false"
+     inkscape:zoom="2.4243661"
+     inkscape:cx="134.13115"
+     inkscape:cy="135.59446"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="master-artboard" />
+  <g
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="g3">
+    <path
+       d="M 0 0 H 336 V 235.199997 H 0 V 0 Z"
+       class="st0"
+       style="fill: rgb(69, 166, 168);"
+       id="path5" />
+  </g>
+  <g
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="g7">
+    <path
+       class="st1"
+       d="M209.4,235c38.7-16.7,65.9-55.6,65.9-101c0-60.6-48.4-109.7-108.1-109.7C107.5,24.4,59.1,73.5,59.1,134    c0,45.4,27.2,84.3,65.9,101H209.4z"
+       style="fill: rgb(62, 147, 151);"
+       id="path9" />
+  </g>
+  <path
+     class="st4"
+     d="M2.8,163.7c-1,0-2,0.1-2.9,0.2v46.2c1,0.1,1.9,0.2,2.9,0.2c12.9,0,23.3-10.4,23.3-23.3   C26.1,174.2,15.7,163.7,2.8,163.7z"
+     style="fill: rgb(249, 245, 235);"
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="path515" />
+  <path
+     class="st4"
+     d="M21.6,187c-8.4,0-16,3.2-21.8,8.3v39.8h50.4c2.5-4.6,4-9.9,4-15.6C54.2,201.6,39.6,187,21.6,187z"
+     style="fill: rgb(249, 245, 235);"
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="path517" />
+  <path
+     class="st4"
+     d="M51.6,235.2h28.3c5.6-4.3,9.2-11,9.2-18.6c0-12.9-10.5-23.3-23.3-23.3c-12.9,0-23.3,10.4-23.3,23.3   C42.4,224.2,46,230.9,51.6,235.2z"
+     style="fill: rgb(249, 245, 235);"
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="path519" />
+  <path
+     class="st4"
+     d="M124.4,235.2c0-0.5,0.1-1,0.1-1.5c0-12.9-10.5-23.3-23.3-23.3s-23.3,10.4-23.3,23.3c0,0.5,0,1,0.1,1.5H124.4z"
+     style="fill: rgb(249, 245, 235);"
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="path521" />
+  <path
+     class="st4"
+     d="M240.5,235.2c-12.5-18.7-33.9-31.1-58.1-31.1c-24.2,0-45.6,12.3-58.1,31.1H240.5z"
+     style="fill: rgb(249, 245, 235);"
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="path523" />
+  <path
+     class="st4"
+     d="M239.6,235.2c-2.2-10.6-11.6-18.6-22.9-18.6c-11.3,0-20.7,8-22.9,18.6H239.6z"
+     style="fill: rgb(249, 245, 235);"
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="path525" />
+  <path
+     class="st4"
+     d="M275.3,235.2c1.2-2.9,1.8-6.1,1.8-9.5c0-14.3-11.6-25.9-25.9-25.9c-14.3,0-25.9,11.6-25.9,25.9   c0,3.3,0.6,6.5,1.8,9.5H275.3z"
+     style="fill: rgb(249, 245, 235);"
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="path527" />
+  <path
+     class="st4"
+     d="M307.1,235.2c2.4-3.9,3.7-8.5,3.7-13.4c0-14.3-11.6-25.9-25.9-25.9c-14.3,0-25.9,11.6-25.9,25.9   c0,4.9,1.4,9.5,3.7,13.4H307.1z"
+     style="fill: rgb(249, 245, 235);"
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="path529" />
+  <path
+     class="st4"
+     d="M309,235.2h14.5c4.9-1.4,9.2-4.3,12.5-8.1v-33.5c-4.8-5.6-11.8-9.1-19.7-9.1c-14.3,0-25.9,11.6-25.9,25.9   C290.3,222.1,298.2,232.1,309,235.2z"
+     style="fill: rgb(249, 245, 235);"
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="path531" />
+  <path
+     class="st4"
+     d="M336,158.6c-14.1,0.3-25.4,11.7-25.4,25.9c0,14.1,11.3,25.6,25.4,25.9V158.6z"
+     style="fill: rgb(249, 245, 235);"
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="path533" />
+  <path
+     class="st4"
+     d="M336,235.2v-27.4c-14.1,0.3-25.4,11.7-25.4,25.9c0,0.5,0,1,0,1.5H336z"
+     style="fill: rgb(249, 245, 235);"
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="path535" />
+  <path
+     class="st4"
+     d="M54.2,227.9c5.5,0,10.7-1.7,14.9-4.7c4.7,6.3,12.3,10.4,20.7,10.4c3.6,0,7-0.7,10.1-2   c-0.1,0.7-0.1,1.4-0.1,2.1c0,0.5,0,1,0,1.5h51.7c0-0.5,0-1,0-1.5c0-14.3-11.6-25.9-25.9-25.9c-3.6,0-7,0.7-10.1,2   c0.1-0.7,0.1-1.4,0.1-2.1c0-14.3-11.6-25.9-25.9-25.9c-5.5,0-10.7,1.7-14.9,4.7c-4.7-6.3-12.3-10.4-20.7-10.4   c-14.3,0-25.9,11.6-25.9,25.9S39.9,227.9,54.2,227.9z"
+     style="fill: rgb(249, 245, 235); opacity: 0.5;"
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="path537" />
+  <path
+     class="st4"
+     d="M250.7,235.2c1.9-2.6,3.4-5.5,4.3-8.6c4.6,4.4,10.9,7.1,17.8,7.1c12.5,0,22.9-8.8,25.4-20.6   c1.2,0.2,2.4,0.3,3.6,0.3c14.3,0,25.9-11.6,25.9-25.9s-11.6-25.9-25.9-25.9c-12.5,0-22.9,8.8-25.4,20.6c-1.2-0.2-2.4-0.3-3.6-0.3   c-11.9,0-21.9,8-25,18.9c-4.6-4.4-10.9-7.1-17.8-7.1c-14.3,0-25.9,11.6-25.9,25.9c0,5.9,2,11.3,5.2,15.6H250.7z"
+     style="fill: rgb(249, 245, 235); opacity: 0.5;"
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="path539" />
+  <path
+     d="M 147.599997 70.400002 A 9.4 9.4 0 0 1 138.199997 79.800001 A 9.4 9.4 0 0 1 128.799997 70.400002 A 9.4 9.4 0 0 1 138.199997 61.000002 A 9.4 9.4 0 0 1 147.599997 70.400002 Z"
+     class="st18"
+     style="fill: rgb(255, 231, 161);"
+     transform="matrix(1, 0, 0, 1, 0, 0)"
+     id="path541" />
+</svg>

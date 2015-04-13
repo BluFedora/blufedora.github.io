@@ -1,0 +1,97 @@
+/* Hard Coded
+.col-1    {   width: 8.33%;  }
+.col-2    {   width: 16.66%;  }
+.col-3    {   width: 25%;    }
+.col-4    {   width: 33.33%;  }
+.col-5    {   width: 41.66%;  }
+.col-6    {   width: 50%;    }
+.col-7    {   width: 58.33%;  }
+.col-8    {   width: 66.66%;  }
+.col-9    {  width: 75%;    }
+.col-10   {  width: 83.33%;  }
+.col-11   {  width: 91.66%;  }
+.col-12   {  width: 100%;  }
+*/
+
+* {
+  box-sizing:     border-box;
+}
+
+.col-1  { width: calc(100% / 12 *  1 - 5px); }
+.col-2  { width: calc(100% / 12 *  2 - 5px); }
+.col-3  { width: calc(100% / 12 *  3 - 5px); }
+.col-4  { width: calc(100% / 12 *  4 - 5px); }
+.col-5  { width: calc(100% / 12 *  5 - 5px); }
+.col-6  { width: calc(100% / 12 *  6 - 5px); }
+.col-7  { width: calc(100% / 12 *  7 - 5px); }
+.col-8  { width: calc(100% / 12 *  8 - 5px); }
+.col-9  { width: calc(100% / 12 *  9 - 5px); }
+.col-10 { width: calc(100% / 12 * 10 - 5px); }
+.col-11 { width: calc(100% / 12 * 11 - 5px); }
+.col-12 { width: calc(100% / 12 * 12 - 5px); }
+
+.row::after {
+  content:      "";
+  clear:        both;
+  display:      block;
+}
+
+[class*="col-"] {
+  float:        left;
+  padding:      15px;
+  margin:       2.5px 2.5px;
+}
+
+/* TODO(Shareef): Do the other column sizes as I need them */
+.col-8.col-alone {
+  margin-left:       calc((100% - (100% / 12 * 8 - 5px)) / 2);
+  margin-right:      calc((100% - (100% / 12 * 8 - 5px)) / 2);
+}
+.col-9.col-alone {
+  margin-left:       calc((100% - (100% / 12 * 9 - 5px)) / 2);
+  margin-right:      calc((100% - (100% / 12 * 9 - 5px)) / 2);
+}
+
+.clear {
+  clear:        both;
+}
+
+.hidden {
+  visibility:   hidden;
+}
+
+@media only screen and (max-width : 700px)
+{
+  .col-1  { width: calc(100% / 12 * 12 - 5px); }
+  .col-2  { width: calc(100% / 12 * 12 - 5px); }
+  .col-3  { width: calc(100% / 12 * 12 - 5px); }
+  .col-4  { width: calc(100% / 12 * 12 - 5px); }
+  .col-5  { width: calc(100% / 12 * 12 - 5px); }
+  .col-6  { width: calc(100% / 12 * 12 - 5px); }
+  .col-7  { width: calc(100% / 12 * 12 - 5px); }
+  .col-8  { width: calc(100% / 12 * 12 - 5px); }
+  .col-9  { width: calc(100% / 12 * 12 - 5px); }
+  .col-10 { width: calc(100% / 12 * 12 - 5px); }
+  .col-11 { width: calc(100% / 12 * 12 - 5px); }
+  .col-12 { width: calc(100% / 12 * 12 - 5px); }
+  
+  [class*="col-"] {
+    clear: both;
+  }
+  
+  .col-1.col-alone,
+  .col-2.col-alone,
+  .col-3.col-alone,
+  .col-4.col-alone,
+  .col-5.col-alone,
+  .col-6.col-alone,
+  .col-7.col-alone,
+  .col-8.col-alone,
+  .col-9.col-alone,
+  .col-10.col-alone,
+  .col-11.col-alone,
+  .col-12.col-alone {
+    margin-left:  2.5px;
+    margin-right: 2.5px;
+  }
+}

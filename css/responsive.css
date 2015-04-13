@@ -1,0 +1,145 @@
+/* Hard Coded
+.col-1    {   width: 8.33%;  }
+.col-2    {   width: 16.66%;  }
+.col-3    {   width: 25%;    }
+.col-4    {   width: 33.33%;  }
+.col-5    {   width: 41.66%;  }
+.col-6    {   width: 50%;    }
+.col-7    {   width: 58.33%;  }
+.col-8    {   width: 66.66%;  }
+.col-9    {  width: 75%;    }
+.col-10   {  width: 83.33%;  }
+.col-11   {  width: 91.66%;  }
+.col-12   {  width: 100%;  }
+*/
+
+/*
+  Browser Fixes
+*/
+* {
+  box-sizing:     border-box;
+}
+
+pre {
+  white-space: pre-wrap;      /* Since CSS 2.1          */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999    */
+  white-space: -pre-wrap;     /* Opera 4-6              */
+  white-space: -o-pre-wrap;   /* Opera 7                */
+  word-wrap:    break-word;   /* Internet Explorer 5.5+ */
+  word-break:   break-all;    /* webkit                 */
+  word-wrap:    break-word;
+  white-space:  pre;
+  white-space:  -moz-pre-wrap; /* fennec                */
+  white-space:  pre-wrap;
+  white-space:  pre\9;         /* IE7+                  */
+}
+
+/*
+  12 Column System
+*/
+
+.col-1  { width: calc(100% / 12 *  1); }
+.col-2  { width: calc(100% / 12 *  2); }
+.col-3  { width: calc(100% / 12 *  3); }
+.col-4  { width: calc(100% / 12 *  4); }
+.col-5  { width: calc(100% / 12 *  5); }
+.col-6  { width: calc(100% / 12 *  6); }
+.col-7  { width: calc(100% / 12 *  7); }
+.col-8  { width: calc(100% / 12 *  8); }
+.col-9  { width: calc(100% / 12 *  9); }
+.col-10 { width: calc(100% / 12 * 10); }
+.col-11 { width: calc(100% / 12 * 11); }
+.col-12 { width: calc(100% / 12 * 12); }
+
+.row::after {
+  content:      "";
+  clear:        both;
+  display:      block;
+}
+
+[class*="col-"] {
+  float:        left;
+  margin:       0px;
+}
+
+/*
+  Customization Points
+*/
+[class*="col-"] {
+  padding:      5px;
+  padding-bottom: 0px;
+}
+
+/*
+[class*="col-"]:last-child {
+  padding-bottom: 5px;
+}
+*/
+
+/*
+  Helper Classes
+*/
+.no-pad-right {
+  padding-right: 0px;
+}
+
+.clear {
+  clear:        both;
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+/*
+.hidden {
+  visibility:   hidden;
+}
+*/
+.center-img {
+  text-align: center;
+}
+
+/*
+  Responsive For Small Screens
+*/
+@media only screen and (max-width : 700px)
+{
+  .col-1  { width: calc(100% / 12 * 12); }
+  .col-2  { width: calc(100% / 12 * 12); }
+  .col-3  { width: calc(100% / 12 * 12); }
+  .col-4  { width: calc(100% / 12 * 12); }
+  .col-5  { width: calc(100% / 12 * 12); }
+  .col-6  { width: calc(100% / 12 * 12); }
+  .col-7  { width: calc(100% / 12 * 12); }
+  .col-8  { width: calc(100% / 12 * 12); }
+  .col-9  { width: calc(100% / 12 * 12); }
+  .col-10 { width: calc(100% / 12 * 12); }
+  .col-11 { width: calc(100% / 12 * 12); }
+  .col-12 { width: calc(100% / 12 * 12); }
+  
+  [class*="col-"] {
+    clear: both;
+  }
+  
+  .col-1.col-alone,
+  .col-2.col-alone,
+  .col-3.col-alone,
+  .col-4.col-alone,
+  .col-5.col-alone,
+  .col-6.col-alone,
+  .col-7.col-alone,
+  .col-8.col-alone,
+  .col-9.col-alone,
+  .col-10.col-alone,
+  .col-11.col-alone,
+  .col-12.col-alone {
+    margin-left:  0px;
+    margin-right: 0px;
+  }
+}

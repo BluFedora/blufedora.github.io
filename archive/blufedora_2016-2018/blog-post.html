@@ -1,0 +1,167 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>The History and Current State</title>
+      <meta name="description"  content="Shareef Raheem Blog Post">
+      <meta name="author"       content="BluFedora (Shareef Raheem) of BluWhale Studios">
+      <meta name="theme-color"  content="#333">
+      <meta name="viewport"     content="width = device-width, initial-scale = 1.0"/>
+
+      <link rel="stylesheet" href="css/new-styles.css">
+      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="stylesheet" href="css/hover.min.css">
+      <link rel="stylesheet" href="css/blog-styles.css">
+      <style>
+        
+    </style>
+    
+    <script src="js/blufedora.dom.js" type="text/javascript"></script>
+    <script src="js/blufedora.urlvars.js" type="text/javascript"></script>
+    
+    <script>
+      window.blufedora.urlvars.init();
+      
+      function addContent(root_element, contents)
+      {
+        var contents_type = typeof(contents);
+        
+        if (contents_type == "object")
+        {
+          for (var i = 0; i < contents.length; ++i)
+          {
+            var content_block = contents[i];
+            var content_block_type = typeof(content_block);
+            
+            if (content_block_type == "object")
+            {
+              if (content_block["Type"] == "")
+              {
+                addContent(root_element, content_block["Content"]);
+              }
+              else
+              {
+                var block_element = document.createElement(content_block["Type"]);
+                block_element.className = content_block["Class"] || "";
+                block_element.style = content_block["Style"] || "";
+                
+                if (content_block["Type"] == "img")
+                {
+                  block_element.src = content_block["Source"];
+                }
+                else if (content_block["Content"] !== undefined)
+                {
+                  addContent(block_element, content_block["Content"]);
+                }
+                
+                root_element.appendChild(block_element);
+              }
+            }
+            else if (content_block_type == "string")
+            {
+              root_element.innerHTML += content_block;
+            }
+            else
+            {
+              console.error("addContent ERROR: Un able to parse content_block: " + JSON.stringify(contents));
+            }
+          }
+        }
+        else if (contents_type == "string")
+        {
+          root_element.innerHTML += contents;
+        }
+        else
+        {
+          console.error("addContent ERROR: Un able to parse contents: " + JSON.stringify(contents));
+        }
+      }
+      
+      var post = blufedora.urlvars.get("post", "blog-post-404");
+      var xobj = new XMLHttpRequest();
+      xobj.overrideMimeType("application/json");
+      xobj.open('GET', "blog-posts/" + post + ".json", true);
+      xobj.onreadystatechange = function ()
+      {
+          if (xobj.readyState == 4)
+          {
+            if (xobj.responseText === "")
+            {
+              window.location.href = "blog-post.html";
+            }
+            var json_data = JSON.parse(xobj.responseText);
+            var root_doc = document.getElementById("current-post");
+            var post_header = document.getElementById("post-header");
+            
+            document.title = json_data["Title"];
+            
+            post_header.style.backgroundImage = json_data["Header"]["Image"];
+            
+              // <h2> Post Title </h2>
+            var title_element = document.createElement("h2");
+            title_element.innerHTML = json_data["Title"];
+            root_doc.appendChild(title_element);
+            
+              // <h3>BY: Shareef Raheem | Date: 12/13/2017</h3>
+            var author_element = document.createElement("h3");
+            author_element.innerHTML = json_data["Header"]["Author"] + " | " + json_data["Header"]["Date"];
+            root_doc.appendChild(author_element);
+            
+            var content_element = blufedora.dom.createDivWithClass("content");
+            
+            addContent(content_element, json_data["Content"]);
+            
+            root_doc.appendChild(content_element);
+          }
+      };
+      xobj.send(null);
+    </script>
+  </head>
+
+    <body>
+      <nav>
+        <a href="index.html">
+          <img class="blufedora_icon" src="images/blufedora_icon.png" width="50px;" height="50px;">
+        </a>
+
+        <ul class="navigation">
+          <li class="nav-button hvr-overline-from-center"><a href="index.html">Home</a></li>
+          <li class="nav-button hvr-overline-from-center"><a href="blog.html">Blog</a></li>
+          <li class="nav-button hvr-overline-from-center"><a href="portfolio.html">Portfolio</a></li>
+          <li class="nav-button hvr-overline-from-center"><a href="https://www.youtube.com/channel/UCV_Vr7RDDFQfAH4_WIHmSfg">Videos</a></li>
+          <li class="nav-button hvr-overline-from-center"><a href="services.html">Services</a></li>
+        </ul>
+
+        <ul class="social" style="float:right;">
+          <li class="social-button">
+            <a href="https://aboutme.google.com/b/108322086901236932001/">
+              <img src="images/picons-social/social-040_google_plus.png" width="40px" alt="Google Plus">
+            </a>
+          </li>
+          <li class="social-button">
+            <a href="https://www.facebook.com/BluFedora">
+              <img src="images/picons-social/social-006_facebook.png" width="40px" alt="facebook">
+            </a>
+          </li>
+          <li class="social-button">
+            <a href="https://twitter.com/blufedora">
+            <img src="images/picons-social/social-003_twitter.png" width="40px" alt="facebook">
+            </a>
+          </li>
+          <li class="social-button">
+            <a href="https://www.instagram.com/blufedora/">
+            <img src="images/picons-social/social-038_instagram.png" width="40px" alt="facebook">
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="triangle_strip_b"></div>
+
+    <div id="current-post" class="blog-post">
+      <div id="post-header" class="header">
+      </div>
+    </div>
+  </body>
+</html>

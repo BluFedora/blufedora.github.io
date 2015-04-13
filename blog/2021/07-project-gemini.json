@@ -1,0 +1,360 @@
+{
+    "Header" : {
+        "Theme" : "project-gemini-theme",
+        "Author" : "By: Shareef Raheem",
+        "Date" : "December 5th, 2019",
+        "Image" : "url(data/post-data/07/cover.png)"
+    },
+    "Content" : [
+        {
+            "Content" : [
+                "- Trailer -"
+            ],
+            "Type" : "h3"
+        },
+        {
+            "Source" : "data/post-data/07/trailer.mp4",
+            "Type" : "video",
+            "Class" : " post-full"
+        },
+        {
+            "Content" : [
+                {
+                    "Content" : [
+                        "Steam Download (https://store.steampowered.com/app/1149630/Project_Gemini/])"
+                    ],
+                    "Source" : "https://store.steampowered.com/app/1149630/Project_Gemini/",
+                    "Type" : "a"
+                }
+            ],
+            "Type" : "div",
+            "Class" : "center-text"
+        },
+        {
+            "Content" : [
+                "This game got showcased at <b>PAX West 2019</b> at the DigiPen booth."
+            ],
+            "Type" : "div",
+            "Class" : "center-text"
+        },
+        {
+            "Content" : [
+                "Introduction"
+            ],
+            "Type" : "h3"
+        },
+        {
+            "Content" : [
+                "Project: Gemini is a two player co-op platformer where you Jump, Dash, Shoot and Smash through enemy drones. You play as either Guttierez (Gutz) or Cricket in an attempt to stop the evil corporation from taking over the city. In this cyberpunk-esque level you will encounter turrets, barbed wire, and other road blocks, but don't worry we have checkpoints! Me and a team of 11 other people made this game in our Sophomore year at <b>DigiPen</b> over the course of a year."
+            ],
+            "Type" : "p",
+            "Class" : " post-full"
+        },
+        {
+            "Content" : [
+                "What I did for the Game"
+            ],
+            "Type" : "h3"
+        },
+        {
+            "Content" : [
+                "I was the Tech Director for the 6 man tech team (w/ 2 designers and 4 artists) mostly designing the <b>Engine Architecture and Level Editor</b>."
+            ],
+            "Type" : "p",
+            "Class" : " post-full"
+        },
+        {
+            "Content" : [
+                {
+                    "Content" : [
+                        {
+                            "Content" : [
+                                "2",
+                                "D Rigidbody Physics System"
+                            ],
+                            "Source" : "#demo-physics",
+                            "Type" : "a"
+                        }
+                    ],
+                    "Type" : "li"
+                },
+                {
+                    "Content" : [
+                        {
+                            "Content" : [
+                                "In-Game Level Editor using Dear ImGUI"
+                            ],
+                            "Source" : "#demo-editor",
+                            "Type" : "a"
+                        }
+                    ],
+                    "Type" : "li"
+                },
+                {
+                    "Content" : [
+                        {
+                            "Content" : [
+                                "Job System for \"Easy\" Multi-threading"
+                            ],
+                            "Source" : "#demo-job-sys",
+                            "Type" : "a"
+                        }
+                    ],
+                    "Type" : "li"
+                },
+                {
+                    "Content" : [
+                        {
+                            "Content" : [
+                                "Serialization and Prefabs"
+                            ],
+                            "Source" : "#demo-prefabs",
+                            "Type" : "a"
+                        }
+                    ],
+                    "Type" : "li"
+                },
+                {
+                    "Content" : [
+                        {
+                            "Content" : [
+                                "Asset Manager (Reference Counted Assets)"
+                            ],
+                            "Source" : "#demo-prefabs",
+                            "Type" : "a"
+                        }
+                    ],
+                    "Type" : "li"
+                },
+                {
+                    "Content" : [
+                        {
+                            "Content" : [
+                                "Basic AI System Using Action Lists"
+                            ],
+                            "Source" : "#demo-ai",
+                            "Type" : "a"
+                        }
+                    ],
+                    "Type" : "li"
+                }
+            ],
+            "Type" : "ul",
+            "Class" : " post-half"
+        },
+        {
+            "Content" : [
+                {
+                    "Content" : [
+                        {
+                            "Content" : [
+                                "Spritesheet Animation w/ Spritesheet generator tool for artists"
+                            ],
+                            "Source" : "#demo-spritesheet",
+                            "Type" : "a"
+                        }
+                    ],
+                    "Type" : "li"
+                },
+                {
+                    "Content" : [
+                        {
+                            "Content" : [
+                                "In-Game GUI System w/ Bitmap Text"
+                            ],
+                            "Source" : "#demo-ui",
+                            "Type" : "a"
+                        }
+                    ],
+                    "Type" : "li"
+                },
+                {
+                    "Content" : [
+                        {
+                            "Content" : [
+                                "Basic RTTI System for easier serialization"
+                            ],
+                            "Source" : "#demo-RTTI",
+                            "Type" : "a"
+                        }
+                    ],
+                    "Type" : "li"
+                },
+                {
+                    "Content" : [
+                        {
+                            "Content" : [
+                                "Entity Component System (ECS) Framework"
+                            ],
+                            "Source" : "#demo-ecs",
+                            "Type" : "a"
+                        }
+                    ],
+                    "Type" : "li"
+                },
+                {
+                    "Content" : [
+                        {
+                            "Content" : [
+                                "Debug Logger with Logging Levels"
+                            ],
+                            "Source" : "#demo-debug-logger",
+                            "Type" : "a"
+                        }
+                    ],
+                    "Type" : "li"
+                },
+                {
+                    "Content" : [
+                        {
+                            "Content" : [
+                                "In-Editor live profiler"
+                            ],
+                            "Source" : "#demo-",
+                            "Type" : "a"
+                        }
+                    ],
+                    "Type" : "li"
+                }
+            ],
+            "Type" : "ul",
+            "Class" : " post-half"
+        },
+        {
+            "Content" : [
+                "Demos"
+            ],
+            "Type" : "h3"
+        },
+        {
+            "ID" : "demo-physics",
+            "Content" : [
+                "2",
+                "D Rigidbody Physics System"
+            ],
+            "Type" : "h3"
+        },
+        {
+            "Content" : [
+                "This is the physics engine in action showing support for circles and arbitrary convex polygons. The collision detection starts with a broad-phase only checking the AABB of the physics object then if that check passes the separating axis theorem is used for accurately seeing if two objects collide. Once the collision is detected an impulse is applied to each object with enough magnitude to make it so the objects do not penetrate anymore."
+            ],
+            "Type" : "p",
+            "Class" : " post-half"
+        },
+        {
+            "Source" : "data/post-data/07/demo_physics.mp4",
+            "Type" : "video",
+            "Class" : " post-half"
+        },
+        {
+            "ID" : "demo-editor",
+            "Content" : [
+                "In-Game Level Editor"
+            ],
+            "Type" : "h3"
+        },
+        {
+            "Source" : "data/post-data/07/demo_editor_00.PNG",
+            "Type" : "img",
+            "Class" : " post-half"
+        },
+        {
+            "Content" : [
+                "This editor was the tool we used author content for the game such as asset management and level creation. It sports debug draw, a profiler, checking the current status of connected controllers, changing graphics settings such as bloom, and editing of physic collision geometry. To open the editor all you have to do is press the tilde key ('~') and it will run the editor on top of the game."
+            ],
+            "Type" : "p",
+            "Class" : " post-half"
+        },
+        {
+            "ID" : "demo-prefabs",
+            "Content" : [
+                "Serialization and Prefabs"
+            ],
+            "Type" : "h3"
+        },
+        {
+            "Content" : [
+                "This is a demo of the prefab system, you can make object types in the editor and later use that template for easier level creation. If you edit the prefab then the changes will propagate to all instances of the prefab."
+            ],
+            "Type" : "p",
+            "Class" : " post-half"
+        },
+        {
+            "Source" : "data/post-data/07/demo_prefabs.mp4",
+            "Type" : "video",
+            "Class" : " post-half"
+        },
+        {
+            "ID" : "demo-job-sys",
+            "Content" : [
+                "Job System (Multi-threading)"
+            ],
+            "Type" : "h3"
+        },
+        {
+            "Content" : [
+                "This job system was used to optimize the asset loading and frame animation update systems within the engine. A cleaned up open source version of the system is available&nbsp;",
+                {
+                    "Content" : [
+                        "here"
+                    ],
+                    "Source" : "https://github.com/BluFedora/BF-Job-System",
+                    "Type" : "a"
+                },
+                ". Each thread has a queue of task which other threads may steal from to allow for a very  primitive form of work balancing."
+            ],
+            "Type" : "p",
+            "Class" : " post-full"
+        },
+        {
+            "ID" : "demo-ai",
+            "Content" : [
+                "AI Framework"
+            ],
+            "Type" : "h3"
+        },
+        {
+            "Source" : "data/post-data/07/ai-pathing.gif",
+            "Type" : "img",
+            "Class" : " post-half"
+        },
+        {
+            "Content" : [
+                "The AI framework was based off of the Action List data structure where at startup you push onto lists the various actions you would like the AI to take and then those lists will be evaluated each frame. Each Agent could have multiple lists either executing concurrently or one at a time depending on the  configuration and needs of each particular enemy. Transfering data across the lists used a Blackboard which we called `AIActionMessageBoard`,  which was basically just a mapping from a string to C++17's `std::any`.",
+                {
+                    "Content" : [
+                        "// This is a sample of the API to setup AI.\n auto& movement_list = actions().addList(\"Movement\");\n movement_list.pushBack<action::PatrolWayPoints>(m_WayPointData);\n movement_list.pushBack<action::ActionEvent>(m_JumpToShootPattern);"
+                    ],
+                    "Type" : "pre",
+                    "Class" : "prettyprint linenums lang-cpp"
+                }
+            ],
+            "Type" : "p",
+            "Class" : " post-half"
+        },
+        {
+            "ID" : "demo-ui",
+            "Content" : [
+                "UI and Animation Systems"
+            ],
+            "Type" : "h3"
+        },
+        {
+            "Content" : [
+                "I wrote a UI system for the game with an accompanying animation system for a polished look and feel when iteracting with menus. The animations work through the use of a virtual timeline that allows for animating any value made up of floats such as Vector2f(s) for positioning and sizing. Text is from a bitmap atlas created offline along with a file describing some kerning information. These files at runtime are loaded and parsed to be used by the text renderer. Text is just a bunch of quads with the correct UV  corresponding to the character that you want drawn. The UI supports Mouse, Keyboard, and Joystick controls and will switch automatically depending on which device was last used."
+            ],
+            "Type" : "p"
+        },
+        {
+            "Source" : "data/post-data/07/ui_intro_anim.gif",
+            "Type" : "img",
+            "Class" : " post-half"
+        },
+        {
+            "Source" : "data/post-data/07/ui_pause_anim.gif",
+            "Type" : "img",
+            "Class" : " post-half"
+        }
+    ],
+    "Title" : "- Project: Gemini - <br> (Game Project)"
+}

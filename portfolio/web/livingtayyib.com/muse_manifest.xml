@@ -1,0 +1,85 @@
+<manifest alg="2" build="375" opt="false" iceEnabled="true" ftp_hostname="www.livingtayyib.com" ftp_rootfolder="//livingtayyib.com" exportTarget="FTP" resolutions="1x" timestamp="1409085656846">
+  <folder name="css">
+    <file name="site_global.css" crc="4042299464"/>
+    <file name="master_main.css" crc="388056291" ref="about-us:contact-us:gallery:tilapia:wild-everglades-tomatoes:plantains:moringa:cassava:figs:plants-and-animals-for-sale:mini-jersey-calves:sugar-cane:index:about-junah:papaya:bamboo:loquats:chicken:secret-pages"/>
+    <file name="master_farm-main.css" crc="4251943380" ref="tilapia:wild-everglades-tomatoes:plantains:moringa:cassava:figs:plants-and-animals-for-sale:mini-jersey-calves:sugar-cane:papaya:bamboo:loquats:chicken"/>
+    <file name="about-us.css" crc="4175733697" ref="about-us"/>
+    <file name="contact-us.css" crc="3889983421" ref="contact-us"/>
+    <file name="gallery.css" crc="4065981258" ref="gallery"/>
+    <file name="tilapia.css" crc="4167686494" ref="tilapia"/>
+    <file name="wild-everglades-tomatoes.css" crc="331193176" ref="wild-everglades-tomatoes"/>
+    <file name="plantains.css" crc="372216079" ref="plantains"/>
+    <file name="moringa.css" crc="366517798" ref="moringa"/>
+    <file name="cassava.css" crc="4073189224" ref="cassava"/>
+    <file name="figs.css" crc="4110755189" ref="figs"/>
+    <file name="plants-and-animals-for-sale.css" crc="285192089" ref="plants-and-animals-for-sale"/>
+    <file name="mini-jersey-calves.css" crc="410815146" ref="mini-jersey-calves"/>
+    <file name="sugar-cane.css" crc="110772421" ref="sugar-cane"/>
+    <file name="index.css" crc="443159722" ref="index"/>
+    <file name="about-junah.css" crc="227230975" ref="about-junah"/>
+    <file name="papaya.css" crc="3850074352" ref="papaya"/>
+    <file name="bamboo.css" crc="395075366" ref="bamboo"/>
+    <file name="loquats.css" crc="25039808" ref="loquats"/>
+    <file name="chicken.css" crc="373657638" ref="chicken"/>
+    <file name="secret-pages.css" crc="4188945393" ref="secret-pages"/>
+  </folder>
+  <folder name="assets">
+    <file name="2014-04-08-19.26.20.jpg" crc="493325296" mt="1400528502000"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="4146222537" ref="index:about-us:contact-us:plants-and-animals-for-sale:papaya:mini-jersey-calves:wild-everglades-tomatoes:tilapia:figs:sugar-cane:loquats:cassava:plantains:bamboo:chicken:moringa:gallery:about-junah:secret-pages"/>
+    <file name="museutils.js" crc="135030331" ref="index:about-us:contact-us:plants-and-animals-for-sale:papaya:mini-jersey-calves:wild-everglades-tomatoes:tilapia:figs:sugar-cane:loquats:cassava:plantains:bamboo:chicken:moringa:gallery:about-junah:secret-pages"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="4136176637" ref="index:about-us:contact-us:plants-and-animals-for-sale:papaya:mini-jersey-calves:wild-everglades-tomatoes:tilapia:figs:sugar-cane:loquats:cassava:plantains:bamboo:chicken:moringa:gallery:about-junah:secret-pages"/>
+    <file name="pie.js" crc="3827607177" ref="index:about-us:contact-us:plants-and-animals-for-sale:papaya:mini-jersey-calves:wild-everglades-tomatoes:tilapia:figs:sugar-cane:loquats:cassava:plantains:bamboo:chicken:moringa:gallery:about-junah:secret-pages"/>
+    <file name="jquery.musemenu.js" crc="104492196" ref="index:about-us:contact-us:plants-and-animals-for-sale:papaya:mini-jersey-calves:wild-everglades-tomatoes:tilapia:figs:sugar-cane:loquats:cassava:plantains:bamboo:chicken:moringa:gallery:about-junah:secret-pages"/>
+    <file name="webpro.js" crc="221070874" ref="index:gallery"/>
+    <file name="musewpslideshow.js" crc="4100426672" ref="index:gallery"/>
+    <file name="jquery.museoverlay.js" crc="451237455" ref="index:gallery"/>
+    <file name="touchswipe.js" crc="381331978" ref="index:gallery"/>
+    <file name="html5shiv.js" crc="4241844378" ref="index:about-us:contact-us:plants-and-animals-for-sale:papaya:mini-jersey-calves:wild-everglades-tomatoes:tilapia:figs:sugar-cane:loquats:cassava:plantains:bamboo:chicken:moringa:gallery:about-junah:secret-pages"/>
+  </folder>
+  <folder name="images">
+    <file name="favicon.ico" crc="3930865968" ref="index"/>
+    <file name="photoblog_nature_leaf_21207_h.jpg" crc="3924738161" ref="index:about-us:contact-us:plants-and-animals-for-sale:papaya:mini-jersey-calves:wild-everglades-tomatoes:tilapia:figs:sugar-cane:loquats:cassava:plantains:bamboo:chicken:moringa:gallery:about-junah:secret-pages"/>
+    <file name="u199-grad.png" crc="325749878" ref="index"/>
+    <file name="livingtayyib2b.png" crc="457442602" ref="index:about-us:contact-us:plants-and-animals-for-sale:papaya:mini-jersey-calves:wild-everglades-tomatoes:tilapia:figs:sugar-cane:loquats:cassava:plantains:bamboo:chicken:moringa:gallery:about-junah:secret-pages"/>
+    <file name="blank.gif" crc="4208392903" ref="index:gallery"/>
+    <file name="loading.gif" crc="3815509949" ref="index:gallery"/>
+    <file name="papaya.jpg" crc="4038314961" ref="gallery"/>
+    <file name="bamboo-u2797-fr.jpg" crc="184127426" ref="gallery"/>
+    <file name="papaya-u2802-fr.jpg" crc="3839521580" ref="gallery"/>
+    <file name="bamboo-u2798-fr.jpg" crc="4045408195" ref="gallery"/>
+    <file name="calf-u2800-fr.jpg" crc="335925117" ref="gallery"/>
+    <file name="calf-crop-u3020.png" crc="4125718806" ref="index"/>
+    <file name="imag0914-crop-u3059.png" crc="4202086306" ref="index"/>
+    <file name="2014-05-07 180620-crop-u3117.png" crc="4094377423" ref="mini-jersey-calves"/>
+    <file name="pasted image 2048x1536.jpg" crc="4117960285" ref="mini-jersey-calves"/>
+    <file name="calf680x510.jpg" crc="4028460132" ref="gallery"/>
+    <file name="imag0911-crop-u2957.png" crc="46466086" ref="gallery"/>
+    <file name="imag0912-crop-u2966.png" crc="4221156433" ref="gallery"/>
+    <file name="imag0913-crop-u2975.png" crc="3911017694" ref="gallery"/>
+    <file name="imag0914-crop-u2984.png" crc="83645795" ref="gallery"/>
+    <file name="imag0915-crop-u2993.png" crc="111593557" ref="gallery"/>
+    <file name="pasted image 2048x1536203x152.jpg" crc="174648407" ref="about-junah"/>
+    <file name="imag0915-crop-u3068.png" crc="4186065850" ref="index"/>
+  </folder>
+  <file name="index.html" crc="344734901" mt="1409085634991" redirect="true"/>
+  <file name="about-us.html" crc="4139669278" mt="1409085052876" redirect="true"/>
+  <file name="contact-us.html" crc="4145707757" mt="1409085052877" redirect="true"/>
+  <file name="plants-and-animals-for-sale.html" crc="4010534648" mt="1409085052919" redirect="true"/>
+  <file name="papaya.html" crc="365424850" mt="1409085052921" redirect="true"/>
+  <file name="mini-jersey-calves.html" crc="492885662" mt="1409085052922" redirect="true"/>
+  <file name="wild-everglades-tomatoes.html" crc="447320109" mt="1409085052924" redirect="true"/>
+  <file name="tilapia.html" crc="3817050935" mt="1409085052925" redirect="true"/>
+  <file name="figs.html" crc="3799785963" mt="1409085052926" redirect="true"/>
+  <file name="sugar-cane.html" crc="174854647" mt="1409085052927" redirect="true"/>
+  <file name="loquats.html" crc="4254745882" mt="1409085052929" redirect="true"/>
+  <file name="cassava.html" crc="3869595822" mt="1409085052930" redirect="true"/>
+  <file name="plantains.html" crc="249470493" mt="1409085052931" redirect="true"/>
+  <file name="bamboo.html" crc="480759804" mt="1409085052932" redirect="true"/>
+  <file name="chicken.html" crc="3922113188" mt="1409085052933" redirect="true"/>
+  <file name="moringa.html" crc="132326120" mt="1409085052935" redirect="true"/>
+  <file name="gallery.html" crc="3831237709" mt="1409085634984" redirect="true"/>
+  <file name="about-junah.html" crc="4286623371" mt="1409085052896" redirect="true"/>
+  <file name="secret-pages.html" crc="298677060" mt="1409085601617" redirect="true"/>
+</manifest>
