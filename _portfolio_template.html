@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="css/animation.css">
         
         <script defer src="scripts/main.js" type="text/javascript">             </script>
+        <script src="scripts/blu_lib.js" type="text/javascript">                </script>
     </head>
 
     <body>
@@ -157,16 +158,18 @@
             
             <div class="clear"></div>
             
-            <div class="footer_container">
-                <ul>
-                    <li>                        <a class="homeLink">        Home        </a></li>
-                    <li class="active">         <a class="portfolioLink">   Portfolio   </a></li>
-                    <li>                        <a class="youtubeLink">     Videos      </a></li>
-                    <li>                        <a class="aboutLink">       About       </a></li>
-                    <li style="float:right;">   <a class="contactLink">     Contact     </a></li>
-                </ul>
-                © BluWhale Studios - Shareef Raheem - 2016
-            </div>
+            <footer>
+				<script defer type="text/javascript">
+                    window.addEventListener("load", function()
+                    {
+                        window.loadFile("templates/footer.html", function (text)
+				        {
+                            var footer = document.getElementsByTagName("footer")[0];
+                            footer.insertAdjacentHTML('beforeend', text);
+                        });
+                    });
+				</script>
+			</footer>
         </div>
     </body>
 </html>
