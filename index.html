@@ -22,86 +22,82 @@
 			
 			<a href="#" id="menu-icon"></a>
 			
-            <div class="nav_bar">
-                <ul>
-                    <li class="active">         <a class="homeLink">        Home        </a></li>
-                    <li>                        <a class="portfolioLink">   Portfolio   </a></li>
-                    <li>                        <a class="youtubeLink">     Videos      </a></li>
-                    <li>                        <a class="aboutLink">       About       </a></li>
-                    <li style="float:right;">   <a class="contactLink">     Contact     </a></li>
-                </ul>
-            </div>
-            
-            <div class="triangle_strip_b"></div>
-            
-            <div class="banner_container">
-                <img class="hidden" src="images/blufedora_banner.png">
-            </div>
-            
-            <div class="article article_one" style="animation-delay: 0s;">
+			<nav>
+				<div class="inner_bg">
+					<img class="blufedora_icon" src="images/blufedora_icon.png" width="50px;" height="50px;">
+					
+					<ul>
+						<li class="active">         <a class="homeLink">        Home        </a></li>
+						<li>                        <a class="portfolioLink">   Portfolio   </a></li>
+						<li>                        <a class="youtubeLink">     Videos      </a></li>
+						<li>                        <a class="aboutLink">       About       </a></li>
+						<li style="float:right;">   <a class="contactLink">     Contact     </a></li>
+					</ul>
+				</div>
 				
-				<h1 style="font-size:6.2vw; margin-right:auto; margin-left:auto;">
-					<span style="color:#4652e3;">{&nbsp;</span> 
-					WELCOME 
-					<span style="color:#4652e3;">&nbsp;}</span>
-				</h1>
+				<div class="triangle_strip_b"></div>
+			</nav>
+			
+			<header>
+				<img class="hidden" src="images/blufedora_banner.png" height="420px">
+			</header>
+			
+			<section class="article article_two_third transformable" style="animation-delay: 1s;">
 				
-				<div class="clear"></div>
-				
-				<div class="bare_article" style="width:210px; margin-right:auto; margin-left:auto;">
-                	<img class="blufedora_icon" src="images/blufedora_icon.png" width="200px;" height="200px;">
-                </div>
-            </div>
-            
-            <div class="article article_two_third transformable" style="animation-delay: 1s;">
-                <div class="article" style="float:right;">
-                    <p>
+				<article>
+					<h2>Little about this website:</h2>
+					<p>
                         Hello World and welcome to my website. This website will be dedicated to showcasing my work and providing you with updates on projects , my     life, ect...  Go ahead and explore and give some feedback on the site. P.S everything on this site was produced by me ; ).
                     </p>
-					<a href="about.html"><button>Learn More...</button></a>
-                </div>
+				</article>
 				
 				<hr class="hr_light">
 				
-                <a class="portfolioLink">
-					<div class="portfolio_button elevatable" style="background: url(images/portfolio_button.png) no-repeat center center; max-width:350px; width:100%; height:200px; background-color:#FF788E; margin: 0px auto; border-radius:20px 0px 20px 0px;">
-					PORTFOLIO
-					</div>
-				</a>
-            </div>
-            
-            <div class="article article_one_third transformable" style="animation-delay: 2s;">
-				<a class="twitter-timeline" height="464px" data-chrome ="transparent" href="https://twitter.com/Blufedora">Tweets</a> 
-				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
+				<article>
+					<a href="portfolio.html">
+						<div class="portfolio_button elevatable" style="background: url(images/portfolio_button.png) no-repeat center center; max-width:350px; width:100%; height:200px; background-color:#FF788E; margin: 0px auto; border-radius:20px 0px 20px 0px;">
+							PORTFOLIO
+						</div>
+					</a>
+				</article>
+			</section>
+			
+			<aside>
+				<div class="article article_one_third transformable" style="animation-delay: 2s;">
+					<a class="twitter-timeline" height="464px" data-chrome ="transparent" href="https://twitter.com/Blufedora">Tweets</a> 
+					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				</div>
+			</aside>
             
             <div class="clear"></div>
-            
-            <div class="footer_container">
-                <ul>
-                    <li class="active">         <a class="homeLink">        Home        </a></li>
-                    <li>                        <a class="portfolioLink">   Portfolio   </a></li>
-                    <li>                        <a class="youtubeLink">     Videos      </a></li>
-                    <li>                        <a class="aboutLink">       About       </a></li>
-                    <li style="float:right;">   <a class="contactLink">     Contact     </a></li>
-                </ul>
-				
-				<div class="clear"></div>
-				
-                <ul>
-					<div style="max-width: 480px; margin: 0 auto;">
-						<li class="google_plus"> <a href="_template.html" class="google_plus"> Google+    </a></li>
-						<li class="deviant_art"> <a href="_template.html" class="deviant_art"> DeviantART </a></li>
-						<li class="facebook"> <a href="_template.html" class="facebook"> Facebook   </a></li>
-						<li class="twitter"> <a href="_template.html" class="twitter"> Twitter    </a></li>
-						<li class="tumblr"> <a href="_template.html" class="tumblr"> Tumblr     </a></li>
-					</div>
-                </ul>
-				
-				<div class="clear"></div>
-				
-				<a href='https://twitter.com/Blufedora'><div class='credits'>Developed and Designed by <span style="color:#7ca8ed">Blu</span><span style="color:#666467">Fedora</span></div></a>
-            </div>
+			
+			<footer>
+				<script defer type="text/javascript">
+					function readTextFile(file, callback)
+					{
+						var rawFile = new XMLHttpRequest();
+						rawFile.open("GET", file, true);
+						rawFile.onreadystatechange = function ()
+						{
+							if(rawFile.readyState === 4)
+							{
+								if(rawFile.status === 200 || rawFile.status == 0)
+								{
+									var allText = rawFile.responseText;
+									callback(allText);
+								}
+							}
+						}
+						rawFile.send(null);
+					}
+					
+					readTextFile("templates/footer.html", function (text)
+								{
+						var footer = document.getElementsByTagName("footer")[0];
+						footer.insertAdjacentHTML('beforeend', text);
+					});
+				</script>
+			</footer>
         </div>
     </body>
 </html>
