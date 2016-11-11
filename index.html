@@ -14,13 +14,21 @@
         <link rel="stylesheet" href="css/styles.css">
 		<link rel="stylesheet" href="css/animation.css">
         
-        <script defer src="scripts/main.js" type="text/javascript"> </script>
+        <script src="scripts/main.js" type="text/javascript"> </script>
+        <script src="scripts/blu_lib.js" type="text/javascript"> </script>
     </head>
 
     <body>
         <div class="body_container">
 			
-			<a href="#" id="menu-icon"></a>
+			<a href="#" id="menu-icon">
+                <div id="nav-icon3">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+            </a>
 			
 			<nav>
 				<div class="inner_bg">
@@ -38,9 +46,7 @@
 				<div class="triangle_strip_b"></div>
 			</nav>
 			
-			<header>
-				<img class="hidden" src="images/blufedora_banner.png" height="420px">
-			</header>
+			<header></header>
 			
 			<section class="article article_two_third transformable" style="animation-delay: 1s;">
 				
@@ -73,29 +79,14 @@
 			
 			<footer>
 				<script defer type="text/javascript">
-					function readTextFile(file, callback)
-					{
-						var rawFile = new XMLHttpRequest();
-						rawFile.open("GET", file, true);
-						rawFile.onreadystatechange = function ()
-						{
-							if(rawFile.readyState === 4)
-							{
-								if(rawFile.status === 200 || rawFile.status == 0)
-								{
-									var allText = rawFile.responseText;
-									callback(allText);
-								}
-							}
-						}
-						rawFile.send(null);
-					}
-					
-					readTextFile("templates/footer.html", function (text)
-								{
-						var footer = document.getElementsByTagName("footer")[0];
-						footer.insertAdjacentHTML('beforeend', text);
-					});
+                    window.addEventListener("load", function()
+                    {
+                        window.loadFile("templates/footer.html", function (text)
+				        {
+                            var footer = document.getElementsByTagName("footer")[0];
+                            footer.insertAdjacentHTML('beforeend', text);
+                        });
+                    });
 				</script>
 			</footer>
         </div>

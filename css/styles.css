@@ -2,9 +2,15 @@
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;} body {line-height: 1;}ol, ul{list-style:none;} blockquote, q{quotes:none;} blockquote:before, blockquote:after, q:before, q:after{content:'';content:none;} :focus{outline:0;} ins{text-decoration:none;} del{text-decoration:line-through;} table{border-collapse:collapse; border-spacing:0;}
 */
 
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    line-height: 1.2;
+    font-weight:        400;
+}
 
-footer {
-    background-color:	#4E4E4E;
+h1 {
+  margin: 15px 0;
+  font-size: 48.5px;
 }
 
 nav ul {
@@ -13,6 +19,19 @@ nav ul {
     padding: 			0px;
     overflow: 			hidden;
 }
+
+nav .inner_bg {
+	background-color: 	rgba(51, 51, 51, 0.9);
+}
+
+
+
+
+footer {
+    background-color:	#4E4E4E;
+}
+
+
 
 .body_container {
 	position: 			relative;
@@ -27,9 +46,7 @@ nav {
 	z-index: 			2;
 }
 
-nav .inner_bg {
-	background-color: 	rgba(51, 51, 51, 0.9);
-}
+
 
 nav ul li {
     float: left;
@@ -109,6 +126,8 @@ header::after {
 
 
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 
 body {
@@ -125,7 +144,8 @@ body {
     border-top-color:   azure;
     border-top-style:   solid;
 	
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family:       'Roboto', sans-serif;
+    font-weight:        300;
 }
 
 h1 {
@@ -341,20 +361,14 @@ button:active {
 
 
 #menu-icon {
-
-	display: none;
-	width: 50px;
-	height: 50px;
-	background: #4C8FEC center;
-	background-image: url(../images/bg_grid.png);
+	display:           none;
+	width:             45px;
 	
-    
     position: 			absolute;
 	top:        		5px;
     right:              5px;
 	
 	z-index: 			2;
-
 }
 
 a:hover#menu-icon {
@@ -377,17 +391,7 @@ a:hover#menu-icon {
 
 
 
-h1, h2, h3, h4, h5, h6 {
-  /*margin: 0 0 15px 0;*/
-  color: #333;
-  font-weight: 300;
-  font-family: "myriad-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.2;
-}
-h1 {
-  margin: 15px 0;
-  font-size: 48.5px;
-}
+
 
 .card {
 	background-color: 		#dddddd;
@@ -530,8 +534,38 @@ h1 {
 		display:          inline-block;
 	}
     
-	
-    
+    #nav-icon3  {
+        height:                     40px;
+        position:                   relative;
+        transform:                  rotate(0deg);
+        transition:                 0.5s ease-in-out;
+        cursor:                     pointer;
+    }
+
+    #nav-icon3 span {
+        display:                      block;
+        position:                     absolute;
+        height:                       7px;
+        width:                        100%;
+        background:                   #c0c5d6;
+        border-radius:                9px;
+        opacity:                      1.0;
+        left:                         0px;
+        transform:                    rotate(0deg);
+        transition:                   0.25s ease-in-out;
+    }
+
+    #nav-icon3 span:nth-child(1) {
+        top: 0px;
+    }
+
+    #nav-icon3 span:nth-child(2), #nav-icon3 span:nth-child(3) {
+        top: 15px;
+    }
+
+    #nav-icon3 span:nth-child(4) {
+        top: 30px;
+    }
 
 	nav ul, nav:active ul { 
 
@@ -539,11 +573,8 @@ h1 {
 		
 		padding: 0px;
 		background: #818181;
-		border: 1px solid #b7b7b7;
 		
-		width: 90%;
-		border-radius: 2px;
-
+		width: 100%;
 	}
 	
 	#menu-icon:hover + nav ul, nav:active ul {
@@ -573,3 +604,7 @@ h1 {
 		margin: 				2% 5%;
 	}
 }
+
+
+
+
