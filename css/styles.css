@@ -67,7 +67,7 @@ nav ul li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 21px 22px;
+    padding: 21px 18px;
     text-decoration: none;
 }
 
@@ -144,6 +144,8 @@ html {
     border-top:         1px;
     border-top-color:   azure;
     border-top-style:   solid;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -167,7 +169,7 @@ p {
 }
 
 .body_container {
-    background:         rgba(221, 214, 204, 0.77); /* rgba(51, 51, 51, 0.35); */
+    background:         rgba(221, 214, 204, 0.6); /* rgba(51, 51, 51, 0.35); */
     border-color:       rgba(255, 255, 255, 0.2);
 	box-shadow:         rgba(0, 0, 0, 0.2) 0px 5px 10px 2px;
     
@@ -339,23 +341,42 @@ button:active {
 	color: 				aliceblue;
 }
 
-.google_plus:hover {
+[class*='social-'] {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin: 5px 1%;
+    border-radius: 50%;
+    float: left;
+    color: white;
+}
+
+[class*='social-']:hover {
+    opacity: 0.9;
+}
+
+.socialbar {
+    margin: 0px auto;
+    width: 90%;
+}
+
+.google_plus {
 	background-color: 	rgb(255, 0, 0);
 }
 
-.deviant_art:hover {
+.deviant_art {
 	background-color: 	rgb(98, 204, 139);
 }
 
-.facebook:hover {
+.facebook {
 	background-color: 	rgb(77, 123, 204);
 }
 
-.twitter:hover {
+.twitter {
 	background-color: 	rgb(134, 192, 242);
 }
 
-.tumblr:hover {
+.tumblr {
 	background-color: 	rgb(30, 60, 111);
 }
 
@@ -618,3 +639,107 @@ a:hover#menu-icon {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content {
+    transform: translateY(-40px);
+}
+
+[class*='card-'] {
+    background-color: rgba(255, 255, 255, 0.85);
+    overflow: hidden;
+}
+
+.card-front {
+    height: 400px;
+    background-image: url(../portfolio/art/vk_cavern_keeper.png);
+}
+
+.card-front-bg {
+    position:absolute;
+    left:0px;
+    right: 0px;
+    top: 0px;
+    height: 400px;
+    background-image: url(../portfolio/art/vk_cavern_keeper.png);
+    transition-property: box-shadow transform filter;
+	transition-timing-function: linear;
+	transition-duration: .1s;
+    filter: blur(10px);
+    z-index: 0;
+}
+
+.card-front:hover .card-front-bg {
+    filter: blur(0px);
+}
+
+.card-front:hover .circle-head {
+   height: 120px;
+    border-radius: 0px;
+    opacity: 0.5;
+}
+
+.circle-head {
+    height: 250px;
+    background-color: red;
+    position:absolute;
+    left:0px;
+    right: 0px;
+    top: 0px;
+    border-radius: 0px 0px 50% 50%;
+    opacity: 0.9;
+    border: solid rgba(255, 255, 255, 0.4) 5px;
+    box-shadow:         rgba(0, 0, 0, 0.2) 0px 5px 10px 2px;
+    z-index: 1;
+     transition-property: height border-radius opacity;
+	transition-timing-function: linear;
+	transition-duration: .1s;
+}
+
+.circle-head h3 {
+    color: #062743;
+    font-size: 24px;
+}
+
+.pop-up {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: black;
+    z-index: 2;
+}
+
+.pop-up-content {
+    position: fixed;
+    left: 10%;
+    right: 10%;
+    top: 20%;
+    bottom: 20%;
+    background-color: white;
+}

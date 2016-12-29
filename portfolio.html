@@ -12,35 +12,45 @@
         <link rel="stylesheet" href="css/styles.css">
 		<link rel="stylesheet" href="css/animation.css">
         
-        <script defer src="scripts/main.js" type="text/javascript">             </script>
+        <script src="scripts/main.js" type="text/javascript">             </script>
+        <script src="scripts/blu_lib.js" type="text/javascript"> </script>
     </head>
 
     <body>
         <div class="body_container">
-            <div class="nav_bar">
+            <a href="#" id="menu-icon">
+                <div id="nav-icon3">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+            </a>
+			
+			<nav>
+				<div class="inner_bg">
+					<img class="blufedora_icon" src="images/blufedora_icon.png" width="50px;" height="50px;">
+					
+					<ul>
+						<li>         <a class="homeLink">        Home        </a></li>
+						<li class="active">                        <a class="portfolioLink">   Portfolio   </a></li>
+						<li>                        <a class="youtubeLink">     Videos      </a></li>
+						<li>                        <a class="aboutLink">       About       </a></li>
+						<li style="float:right;">   <a class="contactLink">     Contact     </a></li>
+					</ul>
+				</div>
 				
-				<a href="#" id="menu-icon"></a>
-				
-                <ul>
-                    <li>                        <a class="homeLink">        Home        </a></li>
-                    <li class="active">         <a class="portfolioLink">   Portfolio   </a></li>
-                    <li>                        <a class="youtubeLink">     Videos      </a></li>
-                    <li>                        <a class="aboutLink">       About       </a></li>
-                    <li style="float:right;">   <a class="contactLink">     Contact     </a></li>
-                </ul>
-            </div>
-            
-            <div class="triangle_strip_b"></div>
-            
-            <div class="banner_container">
-                <img class="hidden" src="images/blufedora_banner.png">
-            </div>
+				<div class="triangle_strip_b"></div>
+			</nav>
+			
+			<header>
+			</header>
             
             <div class="article article_one" style="animation:none; transform: 			translateY(0px);">
 				<a href="_portfolio_template.html">
 					<div class="porfolio_button porfolio_btn_animation elevatable" style="animation-delay: 0.0s;"><img class="hidden" src="images/portfolio/animation_normal.png"         width="100%"/></div>
 				</a>
-				<a href="_portfolio_template.html">
+				<a href="portfolio_art.html">
 					<div class="porfolio_button porfolio_btn_drawing elevatable" style="animation-delay: 0.1s;">  <img class="hidden" src="images/portfolio/drawing_normal.png"           width="100%"/></div>
 				</a>
 				<a href="_portfolio_template.html">
@@ -56,25 +66,18 @@
             
             <div class="clear"></div>
             
-            <div class="footer_container">
-                <ul>
-					<div style="max-width: 480px; margin: 0 auto;">
-						<li class="google_plus"> <a href="_template.html" class="google_plus"> Google+    </a></li>
-						<li class="deviant_art"> <a href="_template.html" class="deviant_art"> DeviantART </a></li>
-						<li class="facebook"> <a href="_template.html" class="facebook"> Facebook   </a></li>
-						<li class="twitter"> <a href="_template.html" class="twitter"> Twitter    </a></li>
-						<li class="tumblr"> <a href="_template.html" class="tumblr"> Tumblr     </a></li>
-					</div>
-                </ul>
-                <ul>
-                    <li> <a> Google+    </a></li>
-                    <li> <a> DeviantART </a></li>
-                    <li> <a> Facebook   </a></li>
-                    <li> <a> Twitter    </a></li>
-                    <li> <a> Tumblr     </a></li>
-                </ul>
-                © BluWhale Studios - Shareef Raheem - 2016
-            </div>
+            <footer>
+				<script defer type="text/javascript">
+                    window.addEventListener("load", function()
+                    {
+                        window.loadFile("templates/footer.html", function (text)
+				        {
+                            var footer = document.getElementsByTagName("footer")[0];
+                            footer.insertAdjacentHTML('beforeend', text);
+                        });
+                    });
+				</script>
+			</footer>
         </div>
     </body>
 </html>

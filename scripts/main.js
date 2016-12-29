@@ -43,6 +43,26 @@ function init()
     forEachClass("contactLink",     setHrefFunctor(kContactLink));
 };
 
+ window.loadPortfolio = function(path, element, creatFunc)
+{
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open("GET", path, true);
+    xobj.onreadystatechange = function()
+    {
+        if (xobj.readyState == 4 && xobj.status == 200) 
+        {
+            var data = JSON.parse(xobj.responseText);
+
+            for (var i = 0; i < data.length; ++i)
+            {
+                creatFunc(element, data[i]);
+            }
+        }
+    };
+    xobj.send(null);
+};
+
 function readTextFile(file, callback)
 {
 	var rawFile = new XMLHttpRequest();
