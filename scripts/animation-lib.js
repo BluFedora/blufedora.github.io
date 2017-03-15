@@ -350,7 +350,7 @@ var com_blufedora_Main = function() { };
 com_blufedora_Main.main = function() {
 	window.onload = function() {
 		com_blufedora_Tweener.init(window);
-		window.ondevicemotion = function(evt) {
+		window.ondeviceorientation = function(evt) {
 			var z = evt.alpha;
 			var x = evt.beta;
 			var y = evt.gamma;
