@@ -350,17 +350,18 @@ var com_blufedora_Main = function() { };
 com_blufedora_Main.main = function() {
 	window.onload = function() {
 		com_blufedora_Tweener.init(window);
-		window.ondeviceorientation = function(evt) {
-			var z = evt.alpha;
-			var x = evt.beta;
-			var y = evt.gamma;
+		window.addEventListener("devicemotion",function(evt) {
+			var z = evt.rotationRate.alpha;
+			var x = evt.rotationRate.beta;
+			var y = evt.rotationRate.gamma;
+			console.log(evt);
 			var article = window.document.getElementsByTagName("article").item(0);
 			var element = window.document.createElement("div");
 			element.innerHTML = "<p>Z = " + z + "</p>";
 			element.innerHTML += "<p>X = " + x + "</p>";
 			element.innerHTML += "<p>Y = " + y + "</p>";
 			article.appendChild(element);
-		};
+		},true);
 		window.onmousemove = function(evt1) {
 		};
 		com_blufedora_Tweener.add(window.document.getElementById("shareef"),{ loop : true}).to(new com_blufedora_AnimationStep({ top : 50},2000,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ top : 100},1500,com_blufedora_Easing.easeInOutSine));
