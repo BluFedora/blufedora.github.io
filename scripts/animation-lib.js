@@ -357,9 +357,9 @@ com_blufedora_Main.main = function() {
 			console.log(evt);
 			var article = window.document.getElementsByTagName("article").item(0);
 			var element = window.document.createElement("div");
-			element.innerHTML = "<p>Z = " + z + "</p>";
 			element.innerHTML += "<p>X = " + x + "</p>";
 			element.innerHTML += "<p>Y = " + y + "</p>";
+			element.innerHTML = "<p>Z = " + z + "</p>";
 			article.appendChild(element);
 		},true);
 		window.onmousemove = function(evt1) {
