@@ -403,7 +403,7 @@ com_blufedora_Main.main = function() {
 			} else if(hash == "#web" || hash == "#game") {
 				com_blufedora_portfolio_Links.init(hash.substring(1,hash.length));
 			}
-		} else if(com_blufedora_Main.getFileName() == "index.html") {
+		} else if(com_blufedora_Main.getFileName() == "index.html" || com_blufedora_Main.getFileName() == "") {
 			com_blufedora_Tweener.add(window.document.getElementById("p2"),{ loop : true}).to(new com_blufedora_AnimationStep({ y : -50},2500,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 0},2000,com_blufedora_Easing.easeInOutSine));
 			com_blufedora_Tweener.add(window.document.getElementById("p3"),{ loop : true}).to(new com_blufedora_AnimationStep({ y : -50},4000,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 0},2500,com_blufedora_Easing.easeInOutSine));
 			com_blufedora_Tweener.add(window.document.getElementById("p4"),{ loop : true}).to(new com_blufedora_AnimationStep({ y : -50},5000,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 0},3000,com_blufedora_Easing.easeInOutSine));
