@@ -1,0 +1,69 @@
+[
+    {
+        "title":    "Sans Portrait",
+        "image":    "portfolio/art/sans.png",
+        "comment":  "Some comments on this piece"
+    },
+	
+    {
+        "title":    "Cavern Keeper",
+        "image":    "portfolio/art/vk_cavern_keeper.png",
+        "comment":  "Some comments on this piece"
+    },
+    {
+        "title":    "Crystal Snail",
+        "image":    "portfolio/art/vk_crystal_snail.png",
+        "comment":  "Some comments on this piece"
+    },
+    {
+        "title":    "Enraged Slime",
+        "image":    "portfolio/art/vk_enraged_slime.png",
+        "comment":  "Some comments on this piece"
+    },
+    {
+        "title":    "Shadow Walker",
+        "image":    "portfolio/art/vk_shadow_walker.png",
+        "comment":  "Some comments on this piece"
+    },
+	
+	{
+        "title":    "Plant Lady",
+        "image":    "portfolio/art/breath-final-1.jpg",
+        "comment":  "Some comments on this piece"
+    },
+	{
+        "title":    "A Raindrop's Tension",
+        "image":    "portfolio/art/breath-final-2.jpg",
+        "comment":  "Some comments on this piece"
+    },
+	{
+        "title":    "Fractured Portrait",
+        "image":    "portfolio/art/breath-final-3.jpg",
+        "comment":  "Some comments on this piece"
+    },
+	{
+        "title":    "Perspective Stairs",
+        "image":    "portfolio/art/breath-final-4.jpg",
+        "comment":  "Some comments on this piece"
+    },
+	{
+        "title":    "Paiterly Gears",
+        "image":    "portfolio/art/breath-final-5.jpg",
+        "comment":  "Some comments on this piece"
+    },
+	{
+        "title":    "Paiterly Gears",
+        "image":    "portfolio/art/breath-final-6.jpg",
+        "comment":  "Some comments on this piece"
+    },
+	{
+        "title":    "Eternal Antigua",
+        "image":    "portfolio/art/concentration-1.jpg",
+        "comment":  "Some comments on this piece"
+    },
+	{
+        "title":    "PHoney Badger",
+        "image":    "portfolio/art/HoneyB.jpg",
+        "comment":  "Some comments on this piece"
+    }
+]
