@@ -394,6 +394,8 @@ com_blufedora_Main.main = function() {
 	},true);
 	window.addEventListener("scroll",com_blufedora_Main.onScroll,true);
 	window.onload = function() {
+		com_blufedora_Tweener.init(window);
+		com_blufedora_Tweener.add(window.document.getElementById("shareef"),{ loop : true}).to(new com_blufedora_AnimationStep({ y : 100},2300,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 170},2000,com_blufedora_Easing.easeInOutSine));
 		if(com_blufedora_Main.getFileName() == "portfolio-viewer.html") {
 			var hash = window.location.hash;
 			if(hash == "#illustration" || hash == "#design" || hash == "#animation") {
@@ -401,12 +403,11 @@ com_blufedora_Main.main = function() {
 			} else if(hash == "#web" || hash == "#game") {
 				com_blufedora_portfolio_Links.init(hash.substring(1,hash.length));
 			}
+		} else if(com_blufedora_Main.getFileName() == "index.html") {
+			com_blufedora_Tweener.add(window.document.getElementById("p2"),{ loop : true}).to(new com_blufedora_AnimationStep({ y : -50},2500,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 0},2000,com_blufedora_Easing.easeInOutSine));
+			com_blufedora_Tweener.add(window.document.getElementById("p3"),{ loop : true}).to(new com_blufedora_AnimationStep({ y : -50},4000,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 0},2500,com_blufedora_Easing.easeInOutSine));
+			com_blufedora_Tweener.add(window.document.getElementById("p4"),{ loop : true}).to(new com_blufedora_AnimationStep({ y : -50},5000,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 0},3000,com_blufedora_Easing.easeInOutSine));
 		}
-		com_blufedora_Tweener.init(window);
-		com_blufedora_Tweener.add(window.document.getElementById("shareef"),{ loop : true}).to(new com_blufedora_AnimationStep({ y : 100},2300,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 170},2000,com_blufedora_Easing.easeInOutSine));
-		com_blufedora_Tweener.add(window.document.getElementById("p2"),{ loop : true}).to(new com_blufedora_AnimationStep({ y : -50},2500,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 0},2000,com_blufedora_Easing.easeInOutSine));
-		com_blufedora_Tweener.add(window.document.getElementById("p3"),{ loop : true}).to(new com_blufedora_AnimationStep({ y : -50},4000,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 0},2500,com_blufedora_Easing.easeInOutSine));
-		com_blufedora_Tweener.add(window.document.getElementById("p4"),{ loop : true}).to(new com_blufedora_AnimationStep({ y : -50},5000,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 0},3000,com_blufedora_Easing.easeInOutSine));
 	};
 	window.onunload = function() {
 		com_blufedora_Tweener.destroy();
