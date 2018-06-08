@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+@import url('https://fonts.googleapis.com/css?family=Dosis:400');
+
+html, body {
+	margin: 					0px;
+	padding: 					0px;
+	font-family: 				sans-serif;
+	font-size: 					18px;
+	
+	background-color: 			#36546d;
+}
+
+* {
+    box-sizing: 				border-box;
+}
+
+
+p {
+    text-indent: 20px;
+	text-align: justify;
+	word-wrap: break-word;
+}
+
+.clear {
+	clear: both;
+}
+
+nav {
+	position: 					fixed;
+	top: 						70px;
+	right: 						40px;
+	font-family: 'IM Fell Great Primer', serif;
+	z-index: 1;
+	
+	transition: 				top 0.1s linear, right 0.2s linear;
+}
+
+.glass-menu {
+	list-style-type: 			none;
+    margin: 					0px;
+    padding: 					0px;
+	
+	border: 					2px solid #36546d;
+	background-color: 			rgba(190, 178, 229, 0.9);
+	border-radius: 				2px;
+	
+	overflow: 					hidden;
+	
+	transition: 				width 0.2s ease-in, height 0.2s ease-in;
+}
+
+.glass-menu li {
+	display: 					inline;
+	margin:	 					0px;
+	padding: 					0px;
+	text-align: 				center;
+	float: 						left;
+}
+
+.glass-menu-a-item {
+	display: 					inline-block;
+	padding: 					10px 15px;
+	margin: 					0px;
+	text-align: 				center;
+	text-decoration: 			none;
+	
+	transition: background-color 0.3s linear;
+}
+
+.x-button {
+	display: none;
+}
+
+.glass-menu li a:hover {
+	background-color: 			rgb(215, 206, 245);
+}
+
+li {
+    text-align: center;
+    border-right: 1px solid rgba(105, 162, 142, 0.34);
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li {
+    text-align: center;
+    border-left: 1px solid rgba(112, 102, 119, 0.8);
+}
+
+li:first-child {
+    border-left: none;
+}
+
+
+.nav-mini {
+	top: 10px;
+	right: 15px;
+}
+
+
+.home-cover {
+	background-attachment: fixed;
+	
+	position: relative;
+	width: 100%;
+	height: 					75vh;
+	background-image: 			url(../images/cover_image.jpg);
+	background-size: 			cover;
+	background-position: 		center center;
+	
+	box-shadow:         		inset 0 0 10px #c0d1c2;
+	
+	z-index: 					0;
+	overflow: hidden;
+}
+
+.home-cover h1 {
+	background-color: 			rgba(0, 0, 0, 0.47);
+	
+	font-size:					10vw;
+	text-shadow: 				1px 1px 5px rgb(59, 59, 59);
+	margin: 					calc(40vh - 12vw) auto 0px auto;
+	
+	color: white;
+	text-align: center;
+	
+	font-family: 'IM Fell Great Primer', serif;
+}
+
+.home-cover h2 {
+	background-color: 			rgba(0, 0, 0, 0.47);
+	
+	font-size:					4vw;
+	margin: 					60px auto;
+	
+	color: #e5e5e5;
+	text-align: center;
+	
+	font-family: 'IM Fell Great Primer', serif;
+}
+
+.cover-abstract {
+	border: 			solid #598bb5 1px;
+	background-color:	 #4c7395;
+	
+	border-radius: 5px;
+	
+	margin: 			10px auto;
+	padding: 			20px;
+	width: 				calc(100% - 20px);
+	max-width: 			1000px;
+	color: #e9eff4;
+	
+	z-index: 2;
+}
+
+
+
+
+footer {
+	
+	background-color: 			hsl(207, 41%, 17%);
+	
+	border-radius: 				5px;
+	
+	width: 						95%;
+	padding: 					10px;
+	
+	margin-left: 				2.5%;
+	margin-right: 				2.5%;
+	margin-bottom: 				10px;
+	
+	text-align: 				center;
+	color: 						aliceblue;
+}
+
+@media(max-width:700px) {
+	
+	nav, .nav-mini {
+		top: 10px;
+		right: 10px;
+	}
+}
+/*
+@keyframes blog-post-enter {
+	0% {
+		transform: translateY(100vh);
+		opacity: 					0.0;
+	}
+	
+	70% {
+		transform: translateY(10px);
+		opacity: 					1.0;
+	}
+	
+	100% {
+		transform: translateY(0px);
+		
+	}
+}
+*/
+.blog-post {
+	background-color: 			#efefef;
+	
+	width: 						100vw;
+	
+	padding: 					20px 0px;
+	
+	transform: 					translateY(0vh); /* 100vh */
+				
+	
+	transition: 				transform 0.45s ease-out, opacity 0.4s ease-out;
+	opacity: 					1.0; /* 0.0 */
+	z-index: 					2;
+}
+
+.blog-post .exit {
+	position: 	absolute;
+	top: 		5px;
+	right: 		5px;
+	
+	width: 40px;
+	height: 40px;
+	
+	text-align: center;
+	font-size: 30px;
+	border-radius: 5px;
+	color: white;
+	
+	cursor: pointer;
+	z-index: 1;
+}
+
+.blog-post .exit:hover {
+	background-color: rgba(230, 229, 229, 0.43);
+}
+.blog-post .header {
+	background-image: 			url(../images/test_plant_image.JPG);
+	background-size: 			cover;
+	background-attachment: 		local;
+	background-position: 		center center;
+	margin: 					0px auto;
+	width: 						100%;
+	transform: 					translateY(-20px);
+	height: 					500px;
+	
+	border-bottom: 				2px solid #7e7e7e;
+	
+	z-index: 					0;
+}
+
+.blog-post h2 {
+	font-family: 				'Dosis', sans-serif;
+	font-weight: 				400;
+	font-size: 					60px;
+	margin: 					10px auto;
+	text-align: 				center;
+	color:	 					#7e7e7e;
+}
+
+.blog-post h3 {
+	font-family: 				'Dosis', sans-serif;
+	font-weight: 				400;
+	font-size: 					20px;
+	margin: 					15px auto;
+	text-align: 				center;
+	color:	 					#676767;
+}
+
+.blog-post .content {
+	background-color: 			#e8e8e8;
+	
+	max-width: 					1000px;
+	margin: 					10px auto;
+	padding: 					5px 30px 20px 30px;
+	border-radius: 				6px;
+	
+	font-family: 				'Open Sans', sans-serif;
+	font-weight: 				300;
+	font-kerning: 				normal;
+	line-height: 				25px;
+	color:	 					#656565;
+	
+	box-shadow: 				4px 5px 1px #cccccc;
+}
+
+.blog-post .content p {
+	border-radius: 				3px;
+	padding: 					10px;
+	margin: 					5px;
+	background-color: rgba(255, 255, 255, 0.15);
+	text-align: left;
+}
+
+.blog-post .content img {
+	border: 					1px solid #959595;
+	border-radius: 				3px;
+}
+
+.blog-post {
+	animation-direction: reverse;
+}
+
+.blog-post.opened {
+	/*
+	animation-delay: 			0s;
+	animation-direction: 		normal;
+	animation-name: 			blog-post-enter;
+	animation-duration: 		1s;
+	animation-fill-mode: 		forwards;
+	*/
+	transform: 					translateY(0px);
+	opacity: 					1.0;
+}
+
+@media(max-width:580px) 
+{	
+	nav, .nav-mini {
+		top: 10px;
+		left: 10px;
+		
+		cursor: pointer;
+	}
+	
+	.glass-menu {
+		width: 		50px;
+		min-height: 30px;
+		
+		overflow: hidden;
+	}
+	
+	.glass-menu li {
+		display: 					block;
+		
+		clear: 						both;
+		float: 						none;
+	}
+	
+	.glass-menu li {
+		display: 					block;
+		clear: 						both;
+		float: 						none;
+	}
+	
+	.glass-menu-a-item {
+		background-color: aliceblue;
+		width: 						100%;
+		display: none;
+	}
+	
+	.x-button {
+		display: inline-block;
+		text-align: center;
+	}
+	
+	.glass-menu.active {
+		width: 100%;
+	}
+	
+	.glass-menu.active .glass-menu-a-item {
+		display: inline-block;
+	}
+}
+
+@media print
+{    
+    nav, .glass-menu, .blog-post .header
+    {
+        display: none !important;
+    }
+	
+	* {
+    	box-shadow: none !important;
+	}
+}
