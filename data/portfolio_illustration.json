@@ -4,7 +4,7 @@
         "image":    "portfolio/art/sans.png",
         "comment":  "Some comments on this piece"
     },
-	
+
     {
         "title":    "Cavern Keeper",
         "image":    "portfolio/art/vk_cavern_keeper.png",
@@ -25,7 +25,7 @@
         "image":    "portfolio/art/vk_shadow_walker.png",
         "comment":  "Some comments on this piece"
     },
-	
+
 	{
         "title":    "Plant Lady",
         "image":    "portfolio/art/breath-final-1.jpg",
@@ -52,7 +52,7 @@
         "comment":  "Some comments on this piece"
     },
 	{
-        "title":    "Paiterly Gears",
+        "title":    "Cloth",
         "image":    "portfolio/art/breath-final-6.jpg",
         "comment":  "Some comments on this piece"
     },
@@ -62,7 +62,7 @@
         "comment":  "Some comments on this piece"
     },
 	{
-        "title":    "PHoney Badger",
+        "title":    "Honey Badger",
         "image":    "portfolio/art/HoneyB.jpg",
         "comment":  "Some comments on this piece"
     }

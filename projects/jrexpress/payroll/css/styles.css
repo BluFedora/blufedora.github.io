@@ -1,0 +1,114 @@
+/* utilities */
+
+*, *:before, *:after {
+  box-sizing:       border-box;
+}
+
+.clear {
+  clear: both;
+}
+
+body {
+  background-color: #79d9a6;
+  margin:           0px;
+  padding:          0px;
+}
+
+h1 {
+  background-color: blue;
+  
+  padding:          20px;
+  
+  font-family:      monospace;
+  margin:           0px;
+}
+
+h2 {
+  background-color: #9595ff;
+  
+  padding:          10px;
+  margin:           0px;
+}
+
+nav ul {
+    list-style-type:  none;
+    margin:           0px;
+    padding:          0px;
+  list-style-type:    none;
+}
+
+nav ul li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.truck_list {
+  background-color: bisque;
+  
+  padding:          5px;
+}
+
+.truck_list_item {
+  background-color: red;
+  background-image: linear-gradient(180deg,
+                                    rgba(255, 255, 0, 0.8),
+                                    rgba(255,   0, 0, 0.2));
+  
+  width:            calc(100% - 10px);
+  padding:          10px;
+  margin:           5px;
+  
+  border-radius:    3px;
+  border:           1px white solid;
+  
+  text-align:       center;
+}
+
+.truck_list_item:hover {
+  background-image: linear-gradient(90deg,
+                                    rgba(255, 255, 0, 0.8),
+                                    rgba(255,   0, 0, 0.2));
+}
+
+.truck_list_item.expanded {
+  background-color: green;
+  
+  position:         fixed;
+  left:             0px;
+  top:              0px;
+  margin:           0px;
+  
+  width:            100%;
+  height:           100%;
+}
+
+
+
+footer {
+  background-color: aqua;
+  
+  width :           100%;
+  padding:          10px;
+  
+  text-align:       center;
+}
+
+/* dump_truck.html */
+
+h3 {
+  text-align:       center;
+}
+
+.week_item {
+  width:            calc(100% / 7);
+  min-width:        200px;
+  
+  float:            left;
+}

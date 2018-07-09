@@ -1,0 +1,370 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+
+      <title>JR Express: DumpTruck</title>
+      <meta name="description"  content="Internal Payroll Manager for JR Express">
+      <meta name="author"       content="BluFedora of BluWhale Studios">
+      <meta name="theme-color"  content="#333">
+      <meta name="viewport"     content="width = device-width, initial-scale = 1.0">
+
+      <link rel="stylesheet" href="css/styles.css">
+      
+      <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
+      
+      <script>
+        function Dialog(title_text)
+        {
+          this.dom = document.createElement("div");
+          this.dom.classList.add("dialog");
+          
+          var title = document.createElement("div");
+          title.classList.add("dialog_title");
+          title.innerHTML = title_text;
+          
+          var close_btn = document.createElement("div");
+          close_btn.classList.add("dialog_close");
+          close_btn.innerHTML = "&times;";
+          
+          close_btn.dialog_parent = this;
+          
+          close_btn.addEventListener("click", function(e) {
+            console.log("hello");
+            this.dialog_parent.hide();
+          });
+          
+          var clear_div = document.createElement("div");
+          clear_div.classList.add("clear");
+          
+          title.appendChild(close_btn);
+          title.appendChild(clear_div);
+          
+          this.dom.appendChild(title);
+        }
+        
+        function create_dialogElement()
+        {
+          var element = document.createElement("div");
+          element.classList.add("dialog_element");
+          return element;
+        }
+        
+        Dialog.prototype.pushLabel = function(text)
+        {
+          var e = create_dialogElement();
+          
+            // <div class="dialog_label">Label: </div>
+          var label = document.createElement("div");
+          label.classList.add("dialog_label");
+          label.innerHTML = text;
+          
+          e.appendChild(label);
+          
+          this.dom.appendChild(e);
+          
+          return label;
+        };
+        
+        Dialog.prototype.pushInputText = function(default_value, placeholder_text)
+        {
+          var e = create_dialogElement();
+          
+          // <input type="text" value="" placeholder="Input Text Here">
+          var text = document.createElement("input");
+          text.type = "text";
+          text.value = default_value || "";
+          text.placeholder = placeholder_text || "";
+          
+          e.appendChild(text);
+          
+          this.dom.appendChild(e);
+          
+          return text;
+        };
+        
+        Dialog.prototype.pushOptions = function(options)
+        {
+          var e = create_dialogElement();
+          
+          for (var i = 0; i < options.length; ++i)
+          {
+            var option = options[i];
+            
+            
+            
+          }
+          
+          var label = document.createElement("div");
+          label.classList.add("dialog_label");
+          label.innerHTML = text;
+          
+          e.appendChild(label);
+          
+          this.dom.appendChild(e);
+          
+          return label;
+        };
+        
+        Dialog.prototype.show = function()
+        {
+          document.body.appendChild(this.dom);
+        };
+        
+        Dialog.prototype.hide = function()
+        {
+          document.body.removeChild(this.dom);
+        };
+      </script>
+      
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyD28u3r-lUzC8KaMrHNCp-uWGXJFgxTHLE",
+          authDomain: "jr-express-payroller.firebaseapp.com",
+          databaseURL: "https://jr-express-payroller.firebaseio.com",
+          projectId: "jr-express-payroller",
+          storageBucket: "",
+          messagingSenderId: "757148896133"
+        };
+        firebase.initializeApp(config);
+      </script>
+      <script>
+        var truck_to_view = window.sessionStorage.getItem("ss_truck");
+        
+        if (truck_to_view == undefined)
+        {
+          alert("This page should not be accessable without a truck to view.");
+          window.location.assign("index.html");
+        }
+        
+        var lib_date =
+        {
+          name_list : [
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+          ],
+          to_string_mm_dd_yyy : function(d)
+          {
+            var dd    = d.getDate();
+            var mm    = d.getMonth() + 1; //Month is zero based for some god awful reason
+            var yyyy  = d.getFullYear();
+            
+            if (dd < 10) dd = "0" + dd;
+            if (mm < 10) mm = "0" + mm;
+
+            return mm + "/" + dd + "/" + yyyy;
+          },
+          to_string_day : function(d)
+          {
+            return this.name_list[d.getDay()];
+          }
+        };
+        
+        window.onload = function(evt)
+        {
+          var today_date = new Date();
+          
+          document.getElementById("js_truck_name").innerHTML = 
+            truck_to_view + " : \"" + lib_date.to_string_mm_dd_yyy(today_date) + "\" " + lib_date.to_string_day(today_date);
+          
+          var dlog = new Dialog("My Test Dialog");
+          
+          dlog.pushLabel("My Label");
+          dlog.pushInputText(null, "Placeholder TXT");
+          dlog.pushLabel("My Label 2");
+          
+          //dlog.show();
+        };
+      </script>
+    </head>
+
+    <body>
+      <header>
+        <h1>JR Express Payroll : Dump Truck Viewer</h1>
+      </header>
+        
+      <nav>
+        <ul>
+          <li><a href="index.html">Truck List</a></li>
+          <li><a href="index.html">Add Entry</a></li>
+        </ul>
+      </nav>
+      
+      <section class="truck_list">
+        <h2>
+          Truck : <span id="js_truck_name">TRUCK_NAME_HERE (If you see this text here an error occured loading the name)</span>
+        </h2>
+        
+        <article id="js_truck_list">
+          <section class="week_item"><h3>Monday</h3></section>
+          <section class="week_item"><h3>Tuesday</h3></section>
+          <section class="week_item"><h3>Wednesday</h3></section>
+          <section class="week_item"><h3>Thursday</h3></section>
+          <section class="week_item"><h3>Friday</h3></section>
+          <section class="week_item"><h3>Saturday</h3></section>
+          <section class="week_item"><h3>Sunday</h3></section>
+          <div class="clear"></div>
+        </article>
+      </section>
+      
+      <footer>
+        <div class='credits'>
+          Copyright 2018 &copy; 
+          <span style="color:#7ca8ed">
+            Shareef 
+          </span>
+          <span style="color:#666467">
+            Raheem
+          </span>
+        </div>
+      </footer>
+      
+      <style>
+        .dialog {
+          background-color: gray;
+          
+          position:         fixed;
+          left:             50%;
+          top:              50%;
+          transform:        translate(-50%, -50%);
+          
+         
+          max-width:        95%;
+          width:            500px;
+          padding:          5px;
+          
+          border:           1px solid white;
+          border-radius:    4px;
+        }
+        
+        .dialog_title {
+          background-color: #bcbcbc;
+          
+          position:         relative;
+          
+          width:            100%;
+          padding:          5px;
+          margin:           0px 0px 10px 0px;
+          
+          border-radius:    4px;
+        }
+        
+        .dialog_close {
+          background-color: #d4d4d4;
+          
+          padding:          2px 6px;
+          
+          border-radius:    2px;
+          
+          float:            right;
+        }
+        
+        .dialog_element {
+          width:            100%;
+          color:            #efefef;
+        }
+        
+        .dialog_label {
+          margin:           10px 0px 0px 10px;
+        }
+        
+        .dialog_element input[type="text"] {
+          width:            calc(100% - 4px);
+          
+          padding:          5px;
+          margin:           4px 2px;
+          
+          border-radius:    4px;
+          border:           1px solid #464242;
+        }
+        
+        .dialog_element select {
+          width:            calc(100% - 4px);
+          
+          padding:          5px;
+          margin:           4px 2px;
+          
+          border-radius:    4px;
+          border:           1px solid #464242;
+        }
+        
+        .dialog_element input[type="submit"] {
+          
+          padding:          5px 15px;
+          margin:           4px 2px;
+          
+          border-radius:    3px;
+          border:           2px solid #183c22;
+          
+          float:            right;
+        }
+        
+        .dialog_element input[type="date"] {
+          
+          width:            100%;
+          
+          padding:          5px 15px;
+          margin:           4px 2px;
+          
+          border-radius:    3px;
+          border:           2px solid #183c22;
+        }
+      </style>
+      
+      
+      <!-- -->
+      <div class="dialog">
+        <div class="dialog_title">
+          Dialog Title
+          <div class="dialog_close">
+            &times;
+          </div>
+          <div class="clear"></div>
+        </div>
+      
+        <div class="dialog_element">
+          <div class="dialog_label">Label: </div>
+        </div>
+        
+        <div class="dialog_element">
+          <input type="text" value="" placeholder="Input Text Here">
+        </div>
+        
+        <div class="dialog_element">
+          <div class="dialog_label">My Dialog DropDown: </div>
+        </div>
+        
+        <div class="dialog_element">
+          <select onchange="alert(this.value);">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+        </div>
+        
+        
+        <div class="dialog_element">
+          <input type="submit" value="Decline">
+        </div>
+        
+        <div class="dialog_element">
+          <input type="submit" value="Accept">
+        </div>
+        
+        <div class="dialog_element">
+          <input type="date" value="Accept">
+        </div>
+        
+      </div>
+     <!-- -->
+    </body>
+</html>

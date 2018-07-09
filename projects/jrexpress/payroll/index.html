@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+
+      <title>JR Express: Payroller</title>
+      <meta name="description"  content="Internal Payroll Manager for JR Express">
+      <meta name="author"       content="BluFedora of BluWhale Studios">
+      <meta name="theme-color"  content="#333">
+      <meta name="viewport"     content="width = device-width, initial-scale = 1.0">
+
+      <link rel="stylesheet" href="css/styles.css">
+      
+      <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyD28u3r-lUzC8KaMrHNCp-uWGXJFgxTHLE",
+          authDomain: "jr-express-payroller.firebaseapp.com",
+          databaseURL: "https://jr-express-payroller.firebaseio.com",
+          projectId: "jr-express-payroller",
+          storageBucket: "",
+          messagingSenderId: "757148896133"
+        };
+        firebase.initializeApp(config);
+      </script>
+      <script src="js/main.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+      <header>
+        <h1>JR Express Payroll</h1>
+      </header>
+        
+        
+      <!-- New HTML5 Sematic Tags: header, nav, section, aside, footer -->
+      <nav>
+        <ul>
+          <li>
+            <a id="js_add_truck_btn">
+              Add Truck
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <section class="truck_list">
+        <h2>
+          Truck List
+        </h2>
+        
+        <article id="js_truck_list">
+          Loading Truck List From Database...
+        </article>
+      </section>
+      
+      <footer>
+        <div class='credits'>
+          Copyright 2018 &copy; 
+          <span style="color:#7ca8ed">
+            Shareef 
+          </span>
+          <span style="color:#666467">
+            Raheem
+          </span>
+        </div>
+      </footer>
+    </body>
+</html>
