@@ -11,9 +11,9 @@
 		<meta name="viewport" 		content="width = device-width, initial-scale = 1.0"/>
 
 		<script src="js/main.js" type="text/javascript"></script>
-		
+
       	<link rel="stylesheet" 		href="css/styles.css">
-		
+
 		<style>
 	table {
 		font-family: arial, sans-serif;
@@ -42,7 +42,7 @@
 		}
 		</script>
     </head>
-	
+
     <body>
 		<nav id="nav">
 			<ul class="glass-menu">
@@ -50,25 +50,25 @@
 				<li><a class="glass-menu-a-item" href="index.html">HOME</a></li>
 				<li><a class="glass-menu-a-item" href="blog.html">BLOG</a></li>
 				<li><a class="glass-menu-a-item" href="research.html">RESEARCH</a></li>
-				<li><a class="glass-menu-a-item" href="resume.html">RESUME</a></li>
+				<li><a class="glass-menu-a-item" href="data/shareef-raheem-resume.pdf">RESUME</a></li>
 				<li><a class="glass-menu-a-item" href="about-me.html">ABOUT ME</a></li>
 			</ul>
 		</nav>
-		
+
 			<style>
 				.post-card
 				{
 					background-color: #302340;
 					padding: 2px;
-					
+
 					width: calc(50% - 10px);
 					margin: 5px;
-					
+
 					border-radius: 4px;
-					
+
 					display: inline-block;
 				}
-				
+
 				.post-card .header
 				{
 					background-color: #423057;
@@ -76,24 +76,24 @@
 					padding: 10px;
 					text-align: center;
 					border-radius: 4px;
-					
+
 					font-family: 				'Dosis', sans-serif;
 					font-size: 20px;
 				}
-				
+
 				.post-card .cover-image
 				{
 					background-image: 			url(images/test_plant_image.JPG);
 					background-size: 			cover;
 					background-position: 		center center;
-					
+
 					border-radius: 8px;
-					
+
 					width: 100%;
 					height: 250px;
 				}
-				
-				@media(max-width:580px) 
+
+				@media(max-width:580px)
 				{
 					.post-card
 					{
@@ -101,11 +101,11 @@
 					}
 				}
 			</style>
-		
+
 		<div id="current-post" class="blog-post">
-			
+
 			<a href="blog.html" class="exit">&times;</a>
-			
+
 			<style>
 			.blog-post .header {
 	background-image: 			url(images/old_cover_image.jpg);
@@ -113,36 +113,36 @@
 				background-position: center center;
 }
 			</style>
-			
+
 			<div class="header">
 			</div>
-			
+
 			<h2>Blog Post 3: <br> The Inner Working Of Image Processing</h2>
-			
+
 			<h3>BY: Shareef Raheem | Date: 11/29/2017</h3>
-			
+
 			<div class="content">
-				
+
 				<h4>Introduction:</h4>
-				
+
 				<p>
-					This post will be on how image processing is done and what techniques are used to create certain effects such as a ‘Gaussian Blur'. 
-					I have digressed away from talking about image processing from a more technical perspective and want to come back to that. 
-					In the last blog post, I covered the philosophical debates of photography as this technology advances but not so much what advances were made. 
+					This post will be on how image processing is done and what techniques are used to create certain effects such as a ‘Gaussian Blur'.
+					I have digressed away from talking about image processing from a more technical perspective and want to come back to that.
+					In the last blog post, I covered the philosophical debates of photography as this technology advances but not so much what advances were made.
 					This was so I could observe the most direct effect imaging technology had on the world.
 				</p>
 				<p>
 					Although digital image processing is a broad topic, it happens to be “a subfield of signals and systems” (TutorialsPoint). Image processing at its core is the method of obtaining information from a particular signal; namely pictures. This information can be the detection of a face to unlock a device or given a set of points that shade a 3D model accordingly. For my purposes these signals are solely going to be grids of pixels that need to be changed or manipulated in some way.
 				</p>
-				
+
 				<h4>Terminology and Images:</h4>
-				
+
 				<p>
-					I’ve mentioned ‘pixels’ a couple of times throughout my blog posts but never fully defined them. 
+					I’ve mentioned ‘pixels’ a couple of times throughout my blog posts but never fully defined them.
 					A pixel is the smallest unit of an image, the value is simply an integer. These pixels are put in a 2 dimensional grid to represent some kind of image. Below is a table (Image A) representing some image of pseudo random ‘colors’.
 				</p>
-				
-				
+
+
 				<table>
 					<tr>
 						<td>101</td>
@@ -170,58 +170,58 @@
 					</tr>
 				</table>
 				(Image A: 4 rows x 4 cols = 16 pixels total)
-				
+
 				<p>
 					All these numbers in ‘Image A’ are under the number 256; this is a conscious decision. This is a representation of an 8-bit image meaning each pixel must be represented by eight 1’s and 0’s (binary). This gives us from 0 to 255 to represent the intensity of that pixel on the image. The color black is always 0, while white is variable, always being the maximum number that a pixel can be. The number of colors a pixel can represent can be calculated with this formula:
 				</p>
-				
-				
+
+
 				<p style="text-align: center;"><b>Number of colors = (2)bits_per_pixel</b></p>
-				
+
 				<p>
 					Most color images use 24 bits per pixel to have enough space to represent the base three colors: red, green, and blue. Each color channel will have eight bits of accuracy:
 				</p>
-				
+
 				<p style="text-align: center;"><b>PixelColor(24bits) = Red(8bits) + Green(8bits) + Blue(8bits)</b></p>
-				
+
 				<p>
 					Now we know the storage of an image depends on the amount of rows and columns along with the bits per pixel. The size of the image in bits is:
 				</p>
-				
-				
+
+
 				<p style="text-align: center;"><b>rows x cols x bit_per_pixel.</b></p>
-				
+
 				<h4>
 					Methods on which to Change:
 				</h4>
-				
+
 				<p>
 					Images for the most part are manipulated in one of two ways, the first (affine transformations) keeps the data of the image intact (linearly speaking) while the other (convolution) warps the pixels for either an effect or to extract information such as edge.
 				</p>
-				
+
 				<h5 style="text-align: center;">
 					Affine Transformations:
 				</h5>
-				
+
 				<p>
-					Affine transformations use transformation matrices to rotate, scale, reflect, sheer or translate an image. Although we don’t gain new information from these transformations they do have their use in photography and video games. For example, in the post-production phase of photography a mountain may be too small for the photographer so they will use some image editing tool to scale it up. The image editing tool most likely uses a scaling matrix to get the work done efficiently. Rather than working on a pixel by pixel basis this matrix would be applied to the four corners of the image. 
+					Affine transformations use transformation matrices to rotate, scale, reflect, sheer or translate an image. Although we don’t gain new information from these transformations they do have their use in photography and video games. For example, in the post-production phase of photography a mountain may be too small for the photographer so they will use some image editing tool to scale it up. The image editing tool most likely uses a scaling matrix to get the work done efficiently. Rather than working on a pixel by pixel basis this matrix would be applied to the four corners of the image.
 				</p>
-				
+
 				<div class="clear"></div>
 				<img style="margin: 10px 40%;" src="images/post_3/mat_scale_x2.gif" width="20%">
 				<div class="clear"></div>
 				(Table B: This matrix would scale an image by 2 horizontally and keep the same vertical height.)
 				<div class="clear"></div>
-				
-				
+
+
 				<h5 style="text-align: center;">
 					Convolution Matrices:
 				</h5>
-				
+
 				<p>
 					These type of manipulation works on a pixel by pixel basis. It uses a special kind of matrix called a ‘kernel’ (filter array). A kernel is a square matrix with an odd number of rows and columns so that it has center. Each pixel is multiplied by the center element in the kernel, now with this kernel centered at this pixel multiply the corresponding pixels and add them all together. This is how the new color at that pixel is calculated of the new output image. One thing to note is that the generated image ends up being the same size as the original.
 				</p>
-				 
+
 				<div style="background-color: white; padding: 5px; border-radius: 5px;">
 					<div class="clear"></div>
 					<img style="float: left; margin: 10px 1.5%;" src="images/post_3/Affine_Transformation_Original_Checkerboard.jpg" width="30%">
@@ -233,19 +233,19 @@
 					(Table C: A Spatial High-pass Kernel.)
 					<div class="clear"></div>
 				</div>
-				
+
 				<h4>
 					Conclusion:
 				</h4>
-				
+
 				<p>
 					This is a solid foundation towards understanding image processing and what is done to images to extract information. We use imaging technology in our daily life and I feel that it is important to know how the world around us works. Technology is so embedded into our life that I consider it essential to understand it even at a basic level.
 				</p>
 			</div>
-			
+
 			<div class="content" style="word-wrap: break-word;">
 				<h4>Cited Works</h4>
-				
+
 				“Digital Image Processing,” TutorialsPoint, https://www.tutorialspoint.com/dip/
 				<br> <br>
 			</div>

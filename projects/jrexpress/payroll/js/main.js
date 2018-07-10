@@ -138,6 +138,23 @@ function onLoad(load_event)
           if (change.type === "added")
           {
             console.log("Added: ", change.doc.id, change.doc.data());
+            
+            var doc = change.doc;
+            
+            var truck_child = lib_dom.createDivWithClass("truck_list_item");
+            truck_child.innerHTML = doc.id;
+            truck_child.truck_data = new DumpTruck(doc.id);
+
+            // console.log(doc.data());
+
+            truck_child.onclick = function()
+            {
+              window.sessionStorage.setItem("ss_truck", this.innerHTML);
+              window.location.assign(this.truck_data.viewer);
+              //this.classList.toggle("expanded");
+            };
+
+            jr_express_payroller.truck_list.appendChild(truck_child);
           }
           
           if (change.type === "modified") 
@@ -167,17 +184,36 @@ function onLoad(load_event)
   
   var add_truck_btn = window.jr_express_payroller.add_truck_btn;
   
+  jr_express_payroller.dialog_is_open = false;
+  
   add_truck_btn.addEventListener(
     "click",
     function(evt)
     {
-      var truck_name = window.prompt("Name Of the New Truck");
-      
-      if (truck_name != null)
+      if (!jr_express_payroller.dialog_is_open)
       {
-        truck_db.doc(truck_name).set({
-          "name" : "This is the new truck"
-        });
+        var dialog = new Dialog("New Truck", function(dialog) { jr_express_payroller.dialog_is_open = false; });
+
+        dialog.pushLabel("Truck Name:");
+        var truck_name_input = dialog.pushInputText(null, "Truck Name Here");
+        dialog.pushLabel("Truck Type:");
+        var truck_type_input = dialog.pushOptions([
+          { value : "dump_truck", label : "Dump Truck"    },
+          { value : "otr_truck",  label : "Over The Road" }
+        ]);
+        var accept_btn = dialog.pushButton("Make Truck");
+
+        accept_btn.addEventListener(
+          "click", function()
+          {
+            jr_express_payroller.dialog_is_open = false;
+            this.dialog_parent.hide();
+          }
+        );
+
+        dialog.show();
+        
+        jr_express_payroller.dialog_is_open = true;
       }
     }
   );

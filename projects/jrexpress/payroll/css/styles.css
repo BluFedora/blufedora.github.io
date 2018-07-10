@@ -1,3 +1,15 @@
+/* https://material.io/design/color/the-color-system.html#tools-for-picking-colors */
+
+/* Includes */
+@import url("styles-dialog.css");
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500'); /* font-family: 'Roboto', sans-serif; */
+
+* {
+  font-family:      'Roboto', sans-serif;
+}
+
 /* utilities */
 
 *, *:before, *:after {
@@ -5,7 +17,7 @@
 }
 
 .clear {
-  clear: both;
+  clear:            both;
 }
 
 body {
@@ -14,43 +26,57 @@ body {
   padding:          0px;
 }
 
-h1 {
-  background-color: blue;
+header {
+  position:         relative;
+  box-shadow:       0px 0px 7px #32573f;
   
-  padding:          20px;
-  
-  font-family:      monospace;
-  margin:           0px;
+  z-index:          1;
 }
 
-h2 {
-  background-color: #9595ff;
+h1 {
+  background-color: #00695C;
   
-  padding:          10px;
+  padding:          5px 10px;
   margin:           0px;
+  
+  font-family:      'Roboto', sans-serif;
+  font-weight:      300;
+  text-align:       center;
+  color:            #E0F2F1;
+  
+  border-bottom:    2px solid #004D40;
+}
+
+h2 {  
+  padding:          5px 10px;
+  margin:           0px;
+  
+  font-weight:      400;
 }
 
 nav ul {
-    list-style-type:  none;
-    margin:           0px;
-    padding:          0px;
-  list-style-type:    none;
+  background-color: #009688;
+  
+  list-style-type:  none;
+  margin:           0px;
+  padding:          0px;
+  list-style-type:  none;
 }
 
 nav ul li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
+  display:          block;
+  color:            #000000;
+  padding:          8px 16px;
+  text-decoration:  none;
 }
 
 nav ul li a:hover {
-    background-color: #555;
-    color: white;
+  background-color: #555;
+  color:            white;
 }
 
 .truck_list {
-  background-color: bisque;
+  background-color: #4DB6AC;
   
   padding:          5px;
 }
@@ -92,7 +118,7 @@ nav ul li a:hover {
 
 
 footer {
-  background-color: aqua;
+  background-color: #B2DFDB;
   
   width :           100%;
   padding:          10px;
