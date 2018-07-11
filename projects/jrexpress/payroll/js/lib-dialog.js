@@ -137,6 +137,7 @@ Dialog.prototype.pushButtons = function(texts)
     submit.type = "submit";
     submit.value = texts[i];
     e.appendChild(submit);
+    submit.dialog_parent = this;
     buttons.push(submit);
   }
 
@@ -153,4 +154,32 @@ Dialog.prototype.show = function()
 Dialog.prototype.hide = function()
 {
   document.body.removeChild(this.dom);
+};
+
+window.lib_date =
+{
+  name_list : [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+  ],
+  to_string_mm_dd_yyy : function(d)
+  {
+    var dd    = d.getDate();
+    var mm    = d.getMonth() + 1; //Month is zero based for some god awful reason
+    var yyyy  = d.getFullYear();
+
+    if (dd < 10) dd = "0" + dd;
+    if (mm < 10) mm = "0" + mm;
+
+    return mm + "/" + dd + "/" + yyyy;
+  },
+  to_string_day : function(d)
+  {
+    return this.name_list[d.getDay()];
+  }
 };

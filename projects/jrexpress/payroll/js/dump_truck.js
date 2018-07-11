@@ -1,10 +1,12 @@
 function DumpTruck(name)
 {
   this.name = name;
-  this.weeks = [
+  
+  this.data = {
     
+    weeks: []
     
-  ];
+  };
   
   // Meta Info
   this.viewer = "dump_truck.html";

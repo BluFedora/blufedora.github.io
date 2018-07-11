@@ -37,78 +37,53 @@
           window.location.assign("index.html");
         }
         
-        var lib_date =
-        {
-          name_list : [
-              "Sunday",
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday"
-          ],
-          to_string_mm_dd_yyy : function(d)
-          {
-            var dd    = d.getDate();
-            var mm    = d.getMonth() + 1; //Month is zero based for some god awful reason
-            var yyyy  = d.getFullYear();
-            
-            if (dd < 10) dd = "0" + dd;
-            if (mm < 10) mm = "0" + mm;
-
-            return mm + "/" + dd + "/" + yyyy;
-          },
-          to_string_day : function(d)
-          {
-            return this.name_list[d.getDay()];
-          }
-        };
-        
         window.onload = function(evt)
         {
+          var add_entry = document.getElementById("js_add_entry");
+          
+          add_entry.addEventListener(
+            "click", 
+            function(evt)
+            {
+              var dialog = new Dialog("New Dump Truck Entry");
+              
+              var buttons = dialog.pushButtons(["Accept"]);
+              
+              buttons[0].onclick = function()
+              {
+                alert("Make a new Entry");
+                this.dialog_parent.hide();
+              };
+              
+              dialog.show();
+            }
+          );
+          
           var today_date = new Date();
           
-          document.getElementById("js_truck_name").innerHTML = 
-            truck_to_view + " : \"" + lib_date.to_string_mm_dd_yyy(today_date) + "\" " + lib_date.to_string_day(today_date);
-          
-          var dlog = new Dialog("My Test Dialog");
-          
-          dlog.pushLabel("My Label");
-          dlog.pushInputText(null, "Placeholder TXT");
-          dlog.pushLabel("My Label 2");
-          dlog.pushOptions([
-            
-            { value : "value0", label : "Option1" },
-            { value : "value1", label : "Option2" },
-            { value : "value2", label : "Option3" },
-            { value : "value3", label : "Option4" }
-            
-          ]);
-          dlog.pushButton("Single Button");
-          dlog.pushButtons(["Accept", "Decline"]);
-          
-          dlog.show();
+          document.getElementById("js_truck_name").innerHTML = truck_to_view;
+          // lib_date.to_string_mm_dd_yyy(today_date) + "\" " + lib_date.to_string_day(today_date)
         };
       </script>
     </head>
 
     <body>
       <header>
-        <h1>JR Express Payroll : Dump Truck Viewer</h1>
+        <h1>JR Express Payroll <br>
+          <span id="js_truck_name">
+            TRUCK_NAME_HERE (If you see this text here an error occured loading the name)
+          </span>
+        </h1>
       </header>
         
       <nav>
         <ul>
           <li><a href="index.html">Truck List</a></li>
-          <li><a href="index.html">Add Entry</a></li>
+          <li><a id="js_add_entry" >Add Entry</a></li>
         </ul>
       </nav>
       
       <section class="truck_list">
-        <h2>
-          Truck : <span id="js_truck_name">TRUCK_NAME_HERE (If you see this text here an error occured loading the name)</span>
-        </h2>
         
         <article id="js_truck_list">
           <section class="week_item"><h3>Monday</h3></section>

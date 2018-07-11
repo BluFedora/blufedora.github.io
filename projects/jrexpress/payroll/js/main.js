@@ -170,7 +170,7 @@ function onLoad(load_event)
       );
     }
   );
-  
+  /*
   truck_db.doc("new_doc2").set(emailObject);
   truck_db.doc("new_doc3").set(emailObject);
   truck_db.doc("new_doc4").set(emailObject);
@@ -181,7 +181,7 @@ function onLoad(load_event)
   }).catch(function(error) {
       console.error("Error removing document: ", error);
   });
-  
+  */
   var add_truck_btn = window.jr_express_payroller.add_truck_btn;
   
   jr_express_payroller.dialog_is_open = false;
@@ -206,6 +206,20 @@ function onLoad(load_event)
         accept_btn.addEventListener(
           "click", function()
           {
+            const truck_type = truck_type_input.value;
+            var truck_data = null;
+            
+            if (truck_type == "dump_truck")
+            {
+              truck_data = new DumpTruck(truck_name_input.value);
+            }
+            else if (truck_type == "otr_truck")
+            {
+              truck_data = new OverTheRoadTruck(truck_name_input.value);
+            }
+            
+            truck_db.doc(truck_name_input.value).set(truck_data.data);
+            
             jr_express_payroller.dialog_is_open = false;
             this.dialog_parent.hide();
           }
