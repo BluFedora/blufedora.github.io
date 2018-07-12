@@ -1,90 +1,88 @@
 .dialog {
-          background-color: gray;
-          
-          position:         fixed;
-          left:             50%;
-          top:              50%;
-          transform:        translate(-50%, -50%);
-          
-         
-          max-width:        95%;
-          width:            500px;
-          padding:          5px;
-          
-          border:           1px solid white;
-          border-radius:    4px;
-        }
-        
-        .dialog_title {
-          background-color: #bcbcbc;
-          
-          position:         relative;
-          
-          width:            100%;
-          padding:          5px;
-          margin:           0px 0px 10px 0px;
-          
-          border-radius:    4px;
-        }
-        
-        .dialog_close {
-          background-color: #d4d4d4;
-          
-          padding:          2px 6px;
-          
-          border-radius:    2px;
-          
-          float:            right;
-        }
-        
-        .dialog_element {
-          width:            100%;
-          color:            #efefef;
-          clear:            both;
-        }
-        
-        .dialog_label {
-          margin:           10px 0px 0px 10px;
-        }
-        
-        .dialog_element input[type="text"] {
-          width:            calc(100% - 4px);
-          
-          padding:          5px;
-          margin:           4px 2px;
-          
-          border-radius:    4px;
-          border:           1px solid #464242;
-        }
-        
-        .dialog_element select {
-          width:            calc(100% - 4px);
-          
-          padding:          5px;
-          margin:           4px 2px;
-          
-          border-radius:    4px;
-          border:           1px solid #464242;
-        }
-        
-        .dialog_element input[type="submit"] {
-          
-          padding:          5px 15px;
-          margin:           4px 2px;
-          
-          border-radius:    3px;
-          border:           2px solid #183c22;
-          
-          float:            right;
-        }
-        
-        .dialog_element input[type="date"] {
-          
-          width:            100%;
-          
-          padding:          5px 15px;
-          margin:           4px 2px;
-          
-          border-radius:    3px;
-          border:           2px solid #183c22;
-        }
+  background-color: gray;
+
+  position:         fixed;
+  left:             50%;
+  top:              50%;
+  transform:        translate(-50%, -50%);
+
+
+  max-width:        95%;
+  width:            500px;
+  padding:          5px;
+
+  border:           1px solid white;
+  border-radius:    4px;
+}
+
+.dialog_title {
+  background-color: #bcbcbc;
+
+  position:         relative;
+
+  width:            100%;
+  padding:          5px;
+  margin:           0px 0px 10px 0px;
+
+  border-radius:    4px;
+}
+
+.dialog_close {
+  background-color: #d4d4d4;
+
+  padding:          2px 6px;
+
+  border-radius:    2px;
+
+  float:            right;
+}
+
+.dialog_element {
+  width:            100%;
+  color:            #efefef;
+  clear:            both;
+}
+
+.dialog_label {
+  margin:           10px 0px 0px 10px;
+}
+
+.dialog_element input[type="text"] {
+  width:            calc(100% - 4px);
+
+  padding:          5px;
+  margin:           4px 2px;
+
+  border-radius:    4px;
+  border:           1px solid #464242;
+}
+
+.dialog_element select {
+  width:            calc(100% - 4px);
+
+  padding:          5px;
+  margin:           4px 2px;
+
+  border-radius:    4px;
+  border:           1px solid #464242;
+}
+
+.dialog_element input[type="submit"] {
+  padding:          5px 15px;
+  margin:           4px 2px;
+
+  border-radius:    3px;
+  border:           2px solid #183c22;
+
+  float:            right;
+}
+
+.dialog_element input[type="date"] {
+  width:            100%;
+
+  padding:          5px 15px;
+  margin:           4px 2px;
+
+  border-radius:    3px;
+  border:           2px solid #183c22;
+}

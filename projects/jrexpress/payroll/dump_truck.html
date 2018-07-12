@@ -62,7 +62,14 @@
           var today_date = new Date();
           
           document.getElementById("js_truck_name").innerHTML = truck_to_view;
-          // lib_date.to_string_mm_dd_yyy(today_date) + "\" " + lib_date.to_string_day(today_date)
+          
+          var t = document.getElementById("js_test");
+          var text = document.createTextNode(
+            lib_date.to_string_mm_dd_yyy(
+              lib_date.get_monday(new Date("03/17/2018"))
+            )
+          );
+          t.appendChild(text);
         };
       </script>
     </head>
@@ -83,16 +90,15 @@
         </ul>
       </nav>
       
-      <section class="truck_list">
-        
+      <section class="truck_list" id="js_test">
         <article id="js_truck_list">
-          <section class="week_item"><h3>Monday</h3></section>
-          <section class="week_item"><h3>Tuesday</h3></section>
-          <section class="week_item"><h3>Wednesday</h3></section>
-          <section class="week_item"><h3>Thursday</h3></section>
-          <section class="week_item"><h3>Friday</h3></section>
-          <section class="week_item"><h3>Saturday</h3></section>
-          <section class="week_item"><h3>Sunday</h3></section>
+          <section id="js_mon_week_item" class="week_item"><h3>Monday</h3></section>
+          <section id="js_tue_week_item" class="week_item"><h3>Tuesday</h3></section>
+          <section id="js_wed_week_item" class="week_item"><h3>Wednesday</h3></section>
+          <section id="js_thu_week_item" class="week_item"><h3>Thursday</h3></section>
+          <section id="js_fri_week_item" class="week_item"><h3>Friday</h3></section>
+          <section id="js_sat_week_item" class="week_item"><h3>Saturday</h3></section>
+          <section id="js_sun_week_item" class="week_item"><h3>Sunday</h3></section>
           <div class="clear"></div>
         </article>
       </section>

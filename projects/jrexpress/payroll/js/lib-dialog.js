@@ -181,5 +181,17 @@ window.lib_date =
   to_string_day : function(d)
   {
     return this.name_list[d.getDay()];
+  },
+  next_day : function(d)
+  {
+    var tommorow = new Date(d);
+    tommorow.setDate(d.getDate() + 1);
+    return tommorow;
+  },
+  get_monday : function(d)
+  {
+    var day   = d.getDay(),
+        diff  = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
+    return new Date(d.setDate(diff));
   }
 };
