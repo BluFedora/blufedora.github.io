@@ -1,5 +1,4 @@
 // if (typeof (Storage) !== "undefined"){ /* browser supports it */ }
-
 function UrlVars()
 {
   this.vars = {};
@@ -30,17 +29,6 @@ UrlVars.prototype.has = function(key)
   return (key in this.vars);
 };
 
-var lib_dom = {
-  
-  createDivWithClass : function(clzName)
-  {
-    var element = document.createElement("div");
-    element.classList.add(clzName);
-    return element;
-  }
-  
-};
-
 function require_script(url, callback)
 {
   'use strict';
@@ -66,11 +54,9 @@ function onLoad(load_event)
 {
   window.jr_express_payroller = {
     "truck_list"    : document.getElementById("js_truck_list"),
-    "add_truck_btn" : document.getElementById("js_add_truck_btn")
+    "add_truck_btn" : document.getElementById("js_add_truck_btn"),
+    "truck_map"     : {}
   };
-  
-  console.log(jr_express_payroller);
-  console.log(new OverTheRoadTruck());
   
   const firestore = firebase.firestore();
   const settings = { timestampsInSnapshots: true };
@@ -98,30 +84,9 @@ function onLoad(load_event)
   truck_db.get().then(
     (querySnapshot) =>
     {
-      while (jr_express_payroller.truck_list.lastChild)
-      {
-        jr_express_payroller.truck_list.removeChild(jr_express_payroller.truck_list.lastChild);
-      }
       
-      querySnapshot.forEach(
-        (doc) =>
-        {
-          var truck_child = lib_dom.createDivWithClass("truck_list_item");
-          truck_child.innerHTML = doc.id;
-          truck_child.truck_data = new DumpTruck(doc.id);
-          
-          // console.log(doc.data());
-
-          truck_child.onclick = function()
-          {
-            window.sessionStorage.setItem("ss_truck", this.innerHTML);
-            window.location.assign(this.truck_data.viewer);
-            //this.classList.toggle("expanded");
-          };
-
-          jr_express_payroller.truck_list.appendChild(truck_child);
-        }
-      );
+      TruckList_clearChildren();
+      querySnapshot.forEach(TruckList_add);
     }
   );
   
@@ -138,32 +103,19 @@ function onLoad(load_event)
           if (change.type === "added")
           {
             console.log("Added: ", change.doc.id, change.doc.data());
-            
-            var doc = change.doc;
-            
-            var truck_child = lib_dom.createDivWithClass("truck_list_item");
-            truck_child.innerHTML = doc.id;
-            truck_child.truck_data = new DumpTruck(doc.id);
-
-            // console.log(doc.data());
-
-            truck_child.onclick = function()
-            {
-              window.sessionStorage.setItem("ss_truck", this.innerHTML);
-              window.location.assign(this.truck_data.viewer);
-              //this.classList.toggle("expanded");
-            };
-
-            jr_express_payroller.truck_list.appendChild(truck_child);
+            TruckList_add(change.doc);
           }
           
           if (change.type === "modified") 
           {
+            // NOTE(Shareef): Not needed for no but maybe in the future...
             console.log("Modified: ", change.doc.id, change.doc.data());
           }
           
           if (change.type === "removed")
           {
+            var truck_item = jr_express_payroller.truck_map[change.doc.id];
+            truck_item.parentElement.removeChild(truck_item);
             console.log("Removed: ", change.doc.id, change.doc.data());
           }
         }
@@ -212,6 +164,7 @@ function onLoad(load_event)
             if (truck_type == "dump_truck")
             {
               truck_data = new DumpTruck(truck_name_input.value);
+              truck_data.addWeek(new Date());
             }
             else if (truck_type == "otr_truck")
             {
@@ -231,6 +184,9 @@ function onLoad(load_event)
       }
     }
   );
+  
+  console.log(jr_express_payroller);
+  console.log(new OverTheRoadTruck());
 }
 
 function main()
@@ -253,6 +209,37 @@ function main()
   );
   
   window.addEventListener("load", onLoad);
+}
+
+function TruckList_clearChildren()
+{
+  var truck_map   = jr_express_payroller.truck_map;
+  var truck_list  = jr_express_payroller.truck_list;
+  
+  Object.keys(truck_map).forEach(function(key) {
+    delete truck_map[key];
+  });
+  
+  while (truck_list.lastChild)
+  {
+    truck_list.removeChild(truck_list.lastChild);
+  }
+}
+
+function TruckList_add(doc)
+{
+  var truck_child = lib_dom.createDivWithClass("truck_list_item");
+  truck_child.innerHTML = doc.id;
+  truck_child.truck_data = new DumpTruck(doc.id);
+
+  truck_child.onclick = function()
+  {
+    window.sessionStorage.setItem("ss_truck", this.innerHTML);
+    window.location.assign(this.truck_data.viewer);
+  };
+
+  jr_express_payroller.truck_map[doc.id] = truck_child;
+  jr_express_payroller.truck_list.appendChild(truck_child);
 }
 
 main();

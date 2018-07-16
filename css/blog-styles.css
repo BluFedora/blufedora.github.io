@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+@import url('https://fonts.googleapis.com/css?family=Dosis:400');
+
+
+/* For Indentation of the posts */
+p {
+  text-indent: 20px;
+  text-align: justify;
+  word-wrap: break-word;
+}
+
+.home-cover {
+  background-attachment: fixed;
+  
+  position: relative;
+  width: 100%;
+  height:           400px;
+  background-image:       url(../images/cover_image.jpg);
+  background-size:       cover;
+  background-position:     center center;
+  
+  box-shadow:             inset 0 0 10px #c0d1c2;
+  
+  z-index:           0;
+  overflow: hidden;
+}
+
+.home-cover h1 {
+  background-color:       rgba(0, 0, 0, 0.47);
+  
+  font-size:          10vw;
+  text-shadow:         1px 1px 5px rgb(59, 59, 59);
+  margin:             calc(300px - 12vw) auto 0px auto;
+  
+  color: white;
+  text-align: center;
+  
+  font-family: 'IM Fell Great Primer', serif;
+}
+
+.cover-abstract {
+  border-radius: 5px;
+  
+  margin:       10px auto;
+  padding:       20px;
+  width:         calc(100% - 20px);
+  max-width:       1000px;
+  color: #e9eff4;
+  
+  z-index: 2;
+}
+
+.blog-post {
+  background-color:       #efefef;
+  
+  width:             100%;
+  
+  padding:           20px 0px;
+  
+  transform:           translateY(0vh); /* 100vh */
+        
+  
+  transition:         transform 0.45s ease-out, opacity 0.4s ease-out;
+  opacity:           1.0; /* 0.0 */
+  z-index:           2;
+}
+
+.blog-post .header {
+  background-image:       url(../images/test_plant_image.JPG);
+  background-size:       cover;
+  background-attachment:     local;
+  background-position:     center center;
+  margin:           0px auto;
+  width:             100%;
+  transform:           translateY(-20px);
+  height:           500px;
+  
+  border-bottom:         2px solid #7e7e7e;
+  
+  z-index:           0;
+}
+
+.blog-post img {
+  width:              calc(100% - 20px);
+  margin:             10px;
+  border:             2px solid #c3c3c3;
+  border-radius:      7px;
+}
+
+.blog-post h2 {
+  font-family:         'Dosis', sans-serif;
+  font-weight:         400;
+  font-size:           60px;
+  margin:           10px auto;
+  text-align:         center;
+  color:             #7e7e7e;
+  transform:                    none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  transform:                    none;
+}
+
+.blog-post h3 {
+  font-family:         'Dosis', sans-serif;
+  font-weight:         400;
+  font-size:           20px;
+  margin:           15px auto;
+  text-align:         center;
+  color:             #676767;
+}
+
+.blog-post .content {
+  background-color:       #e8e8e8;
+  
+  max-width:           1000px;
+  margin:           10px auto;
+  padding:           5px 30px 20px 30px;
+  border-radius:         6px;
+  
+  font-family:         'Open Sans', sans-serif;
+  font-weight:         300;
+  font-kerning:         normal;
+  line-height:         25px;
+  color:             #656565;
+  
+  box-shadow:         4px 5px 1px #cccccc;
+}
+
+.blog-post .content p {
+  border-radius:         3px;
+  padding:           10px;
+  margin:           5px;
+  background-color: rgba(255, 255, 255, 0.15);
+  text-align: left;
+}
+
+.blog-post {
+  animation-direction: reverse;
+}
+
+.blog-post.opened {
+  transform:           translateY(0px);
+  opacity:           1.0;
+}
+
+@media print
+{
+  nav, .blog-post .header {
+    display: none;
+  }
+  
+  .blog-post .content {
+    box-shadow:         none;
+  }
+  
+  table {
+    page-break-inside: avoid;
+  }
+  
+  /* page margins */
+  @page {
+    margin: 0.5cm;
+  }
+  
+  /* links will be shown with the actual url */
+  p a:after {
+    content: " (" attr(href) ")";
+    font-size: 80%;
+  }
+}

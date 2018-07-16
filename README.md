@@ -1,2 +1,2 @@
-# libBlu
-WIP Code Library for making games and other media based applications !
+# blufedora.github.io
+Shareef Raheem's Personal Website showcasing his projects and thoughts on Computer Science.

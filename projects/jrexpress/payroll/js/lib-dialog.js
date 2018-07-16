@@ -178,6 +178,17 @@ window.lib_date =
 
     return mm + "/" + dd + "/" + yyyy;
   },
+  to_string_yyyy_mm_dd : function(d)
+  {
+    var dd    = d.getDate();
+    var mm    = d.getMonth() + 1; //Month is zero based for some god awful reason
+    var yyyy  = d.getFullYear();
+
+    if (dd < 10) dd = "0" + dd;
+    if (mm < 10) mm = "0" + mm;
+
+    return yyyy + "-" + mm + "-" + dd;
+  },
   to_string_day : function(d)
   {
     return this.name_list[d.getDay()];
@@ -193,5 +204,15 @@ window.lib_date =
     var day   = d.getDay(),
         diff  = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
     return new Date(d.setDate(diff));
+  }
+};
+
+var lib_dom =
+{
+  createDivWithClass : function(clzName)
+  {
+    var element = document.createElement("div");
+    element.classList.add(clzName);
+    return element;
   }
 };

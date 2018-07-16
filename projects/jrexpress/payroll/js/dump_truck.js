@@ -1,22 +1,27 @@
 function DumpTruckEntry()
 {
-  this.date_str       = "";
-  this.hours_worked   = 0.0;
-  this.tons           = 0.0;
-  this.driver_advance = 0.0;
-  this.gross_pay      = 0.0;
-  this.net_pay        = 0.0;
+  var ret = {};
+  ret.date_str       = "";
+  ret.hours_worked   = 0.0;
+  ret.tons           = 0.0;
+  ret.driver_advance = 0.0;
+  ret.gross_pay      = 0.0;
+  ret.net_pay        = 0.0;
+  return ret;
 }
 
-function DumpTruckWeek(monday_date)
+function DumpTruckWeek()
 {
-  this.mon  = new DumpTruckEntry();
-  this.tue  = new DumpTruckEntry();
-  this.wed  = new DumpTruckEntry();
-  this.thu  = new DumpTruckEntry();
-  this.fri  = new DumpTruckEntry();
-  this.sat  = new DumpTruckEntry();
-  this.sun  = new DumpTruckEntry();
+  var ret = [
+    DumpTruckEntry(),
+    DumpTruckEntry(),
+    DumpTruckEntry(),
+    DumpTruckEntry(),
+    DumpTruckEntry(),
+    DumpTruckEntry(),
+    DumpTruckEntry()
+  ];
+  return ret;
 }
 
 function DumpTruck(name)
@@ -24,14 +29,27 @@ function DumpTruck(name)
   this.data =
   {
     name: name,
-    weeks: {}
+    weeks: { }
   };
   
   // Meta Info
   this.viewer = "dump_truck.html";
 }
 
-DumpTruck.prototype.addWeek = function(monday_date, week_data)
+DumpTruck.prototype.addWeek = function(date)
 {
-  this.data.weeks[lib_date.to_string_mm_dd_yyy(monday_date)] = week_data;
+  this.data.weeks[
+    lib_date.to_string_mm_dd_yyy(
+      window.lib_date.get_monday(date)
+    )
+  ] = DumpTruckWeek();
+};
+
+DumpTruck.prototype.hasWeek = function(date)
+{
+  return this.data.weeks[
+    lib_date.to_string_mm_dd_yyy(
+      window.lib_date.get_monday(date)
+    )
+  ] !== undefined;
 };
