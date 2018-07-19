@@ -1,7 +1,6 @@
 function DumpTruckEntry()
 {
   var ret = {};
-  ret.date_str       = "";
   ret.hours_worked   = 0.0;
   ret.tons           = 0.0;
   ret.driver_advance = 0.0;

@@ -49,7 +49,7 @@ function require_script(url, callback)
   head.appendChild(script);
 }
 
-  // Will be called when all resources are done loading ala scripts
+  // NOTE(Shareef): Will be called when all resources are done loading ala scripts
 function onLoad(load_event)
 {
   window.jr_express_payroller = {
@@ -58,45 +58,19 @@ function onLoad(load_event)
     "truck_map"     : {}
   };
   
-  const firestore = firebase.firestore();
-  const settings = { timestampsInSnapshots: true };
-  firestore.settings(settings);
-  
-  firestore.enablePersistence()
-  .then(function() {
-      // Initialize Cloud Firestore through firebase
-      var db = firebase.firestore();
-  })
-  .catch(function(err) {
-      if (err.code == 'failed-precondition') {
-          // Multiple tabs open, persistence can only be enabled
-          // in one tab at a a time.
-          // ...
-      } else if (err.code == 'unimplemented') {
-          // The current browser does not support all of the
-          // features required to enable persistence
-          // ...
-      }
+  initJRExpressPayroll(firebase, function()
+                      {
+    console.log("JR Express: Payroll initilized")
   });
   
-  var truck_db = firestore.collection("db_trucks");
-  
-  truck_db.get().then(
-    (querySnapshot) =>
-    {
-      
-      TruckList_clearChildren();
-      querySnapshot.forEach(TruckList_add);
-    }
-  );
-  
-  var emailObject = {
-    email: "hello 3 sdfsdjfhskdjhkj"
-  };
+  const firestore = payroll.firestore;
+  const truck_db  = firestore.collection("db_trucks");
   
   truck_db.onSnapshot(
     function(snapshot)
     {
+      TruckList_clearChildren();
+      
       snapshot.docChanges().forEach(
         function(change) 
         {
@@ -185,8 +159,8 @@ function onLoad(load_event)
     }
   );
   
+  
   console.log(jr_express_payroller);
-  console.log(new OverTheRoadTruck());
 }
 
 function main()
@@ -202,7 +176,6 @@ function main()
         function()
         {
           console.log("All required scripts loaded");
-          console.log(new DumpTruck("Test"));
         }
       );
     }

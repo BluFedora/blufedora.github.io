@@ -201,8 +201,12 @@ window.lib_date =
   },
   get_monday : function(d)
   {
-    var day   = d.getDay(),
-        diff  = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
+    var day   = d.getDay();
+    if (day == 1) {
+      return d;
+    }
+    console.log(d);
+    var diff  = d.getDate() - day + (day == 0 ? -6 : 1);
     return new Date(d.setDate(diff));
   }
 };

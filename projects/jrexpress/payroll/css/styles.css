@@ -149,10 +149,12 @@ h3 {
 }
 
 .week_item_slot {
-  background-color: red;
-  width:            100%;
+  background-color: #b5e5da;
+  width:            95%;
   padding:          10px;
-  margin:           0px 0px 05px 0px;
+  margin:           0px 0px 2.5% 2.5%;
+  border:           1px solid red;
+  border-radius:    4px;
 }
 
 .week_selector {
