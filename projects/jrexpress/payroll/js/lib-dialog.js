@@ -71,6 +71,25 @@ Dialog.prototype.pushInputText = function(default_value, placeholder_text)
   return text;
 };
 
+Dialog.prototype.pushInputNumber = function(default_value, placeholder_text)
+{
+  var e = create_dialogElement();
+
+  // <input type="text" value="" placeholder="Input Text Here">
+  var text = document.createElement("input");
+  text.type = "number";
+  text.value = default_value || "";
+  text.placeholder = placeholder_text || "";
+
+  e.appendChild(text);
+
+  this.dom.appendChild(e);
+  
+  text.dialog_parent = this;
+
+  return text;
+};
+
 Dialog.prototype.pushOptions = function(options)
 {
   var e = create_dialogElement();

@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
-@import url('https://fonts.googleapis.com/css?family=Dosis:400');
 
 
 /* For Indentation of the posts */
@@ -10,75 +7,22 @@ p {
   word-wrap: break-word;
 }
 
-.home-cover {
-  background-attachment: fixed;
-  
-  position: relative;
-  width: 100%;
-  height:           400px;
-  background-image:       url(../images/cover_image.jpg);
-  background-size:       cover;
-  background-position:     center center;
-  
-  box-shadow:             inset 0 0 10px #c0d1c2;
-  
-  z-index:           0;
-  overflow: hidden;
-}
-
-.home-cover h1 {
-  background-color:       rgba(0, 0, 0, 0.47);
-  
-  font-size:          10vw;
-  text-shadow:         1px 1px 5px rgb(59, 59, 59);
-  margin:             calc(300px - 12vw) auto 0px auto;
-  
-  color: white;
-  text-align: center;
-  
-  font-family: 'IM Fell Great Primer', serif;
-}
-
-.cover-abstract {
-  border-radius: 5px;
-  
-  margin:       10px auto;
-  padding:       20px;
-  width:         calc(100% - 20px);
-  max-width:       1000px;
-  color: #e9eff4;
-  
-  z-index: 2;
-}
-
 .blog-post {
   background-color:       #efefef;
-  
   width:             100%;
-  
-  padding:           20px 0px;
-  
-  transform:           translateY(0vh); /* 100vh */
-        
-  
-  transition:         transform 0.45s ease-out, opacity 0.4s ease-out;
-  opacity:           1.0; /* 0.0 */
+  opacity:           1.0;
   z-index:           2;
 }
 
 .blog-post .header {
-  background-image:       url(../images/test_plant_image.JPG);
-  background-size:       cover;
-  background-attachment:     local;
-  background-position:     center center;
-  margin:           0px auto;
-  width:             100%;
-  transform:           translateY(-20px);
-  height:           500px;
-  
+  background-size:        cover;
+  background-attachment:  local;
+  background-position:    center center;
+  margin:                 0px auto;
+  width:                  100%;
+  height:                 500px;
   border-bottom:         2px solid #7e7e7e;
-  
-  z-index:           0;
+  z-index:                0;
 }
 
 .blog-post img {
@@ -143,6 +87,22 @@ h1, h2, h3, h4, h5, h6 {
 .blog-post.opened {
   transform:           translateY(0px);
   opacity:           1.0;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
 
 @media print

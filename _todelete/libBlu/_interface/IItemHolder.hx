@@ -8,9 +8,9 @@ import libBlu.display.Item;
 
 interface IItemHolder 
 {
-	private var heldItems:Array<Item>;
-	
-	public function addItem(item:Item):Void;
-	public function removeItem(item:Item):Item;
-	public function hasItem(item:Item):Bool;
+  private var heldItems:Array<Item>;
+  
+  public function addItem(item:Item):Void;
+  public function removeItem(item:Item):Item;
+  public function hasItem(item:Item):Bool;
 }

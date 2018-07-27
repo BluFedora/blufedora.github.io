@@ -6,7 +6,7 @@ package libBlu._enum;
 
 enum EntityType 
 {
-	FRIENDLY; 
-	HOSTILE; 
-	NEUTRAL;
+  FRIENDLY; 
+  HOSTILE; 
+  NEUTRAL;
 }

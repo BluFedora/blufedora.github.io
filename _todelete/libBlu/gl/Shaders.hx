@@ -15,12 +15,12 @@ class Texture extends ByteArray { }
  
 class Shaders
 {
-	public static var TEXTURE_COLOR_FRAGMENT:String = new ColorOverlay().toString();
-	public static var TEXTURE:String = new Texture().toString();
+  public static var TEXTURE_COLOR_FRAGMENT:String = new ColorOverlay().toString();
+  public static var TEXTURE:String = new Texture().toString();
 
-	public function new() 
-	{
-		
-	}
-	
+  public function new() 
+  {
+    
+  }
+  
 }

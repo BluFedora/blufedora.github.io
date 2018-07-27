@@ -14,14 +14,14 @@ import libBlu.utils.Utils;
 class Coll2D
 {
 
-	@:noCompletion public function new()
-	{
+  @:noCompletion public function new()
+  {
         throw "Collision2D is a static class. No instances can be created.";
     }
-	
-	/** Internal api - check a circle against a polygon */
+  
+  /** Internal api - check a circle against a polygon */
     public static function testCircleVsPolygon(circle:Circle, polygon:Polygon, flip:Bool):Data
-	{
+  {
         var test1 : Float; //numbers for testing max/mins
         var test2 : Float;
         var test : Float;
@@ -196,22 +196,22 @@ class Coll2D
         return null;
 
     } //checkCircles
-	
-	public static function testPolygons(polygon1:Polygon, polygon2:Polygon, flip:Bool = false):Data
-	{
-		var result1 = checkPolygons(polygon1, polygon2, flip);
-		if(result1 == null) return null; //early exit if there's no collision
-		var result2 = checkPolygons(polygon2, polygon1, !flip);
-		if (result2 == null) return null; //early exit if there's no collision
-		
-			//take the closest overlap
-		(Math.abs(result1.overlap) < Math.abs(result2.overlap)) ?
-			return result1:
-			return result2;
-	}
-	
-	/** Internal api - check a polygon against a polygon */
-	public static function checkPolygons(polygon1:Polygon, polygon2:Polygon, flip:Bool):Data {
+  
+  public static function testPolygons(polygon1:Polygon, polygon2:Polygon, flip:Bool = false):Data
+  {
+    var result1 = checkPolygons(polygon1, polygon2, flip);
+    if(result1 == null) return null; //early exit if there's no collision
+    var result2 = checkPolygons(polygon2, polygon1, !flip);
+    if (result2 == null) return null; //early exit if there's no collision
+    
+      //take the closest overlap
+    (Math.abs(result1.overlap) < Math.abs(result2.overlap)) ?
+      return result1:
+      return result2;
+  }
+  
+  /** Internal api - check a polygon against a polygon */
+  public static function checkPolygons(polygon1:Polygon, polygon2:Polygon, flip:Bool):Data {
 
         var test1 : Float; // numbers to use to test for overlap
         var test2 : Float;
@@ -301,110 +301,110 @@ class Coll2D
         return collisionData;
 
     } //checkPolygons
-	
-	public static function rayCircle(ray:Ray, circle:Circle):RayData
-	{
-		var delta = ray.end.clone().sub(ray.start);
-		var ray2circle = ray.start.clone().sub(circle.position);
-		
-		var a = delta.lengthsq;
-		var b = 2 * delta.dot(ray2circle);
-		var c = ray2circle.dot(ray2circle) - circle.radius * circle.radius;
-		
+  
+  public static function rayCircle(ray:Ray, circle:Circle):RayData
+  {
+    var delta = ray.end.clone().sub(ray.start);
+    var ray2circle = ray.start.clone().sub(circle.position);
+    
+    var a = delta.lengthsq;
+    var b = 2 * delta.dot(ray2circle);
+    var c = ray2circle.dot(ray2circle) - circle.radius * circle.radius;
+    
         var d:Float = b * b - 4 * a * c;
-		
-		if (d >= 0)
-		{
-			d = Math.sqrt(d);
+    
+    if (d >= 0)
+    {
+      d = Math.sqrt(d);
             
             var t1:Float = (-b - d) / (2 * a);
             var t2:Float = (-b + d) / (2 * a);
-			
-			if (ray.isInfinite || t1 <= 1.0) return new RayData(circle, ray, t1, t2);
-		}
-		
-		return null;
-	}
-	
-	public static function rayPolygon(ray:Ray, polygon:Polygon):RayData
-	{
-		var delta = ray.end.clone().sub(ray.start);
-		var vertices = polygon.transformedVertices;
-		
-		var min_u:Float = Math.POSITIVE_INFINITY;
-		var max_u:Float = 0.0;
-		
-		if (vertices.length > 2)
-		{
-			var v1 = vertices[vertices.length - 1];
-			var v2 = vertices[0];
-			
-			var r = intersectRayRay(ray.start, delta, v1, v2.clone().sub(v1));
-			if (r != null && r.ub >= 0.0 && r.ub <= 1.0)
-			{
-				if (r.ua < min_u) min_u = r.ua;
-				if (r.ua > max_u) max_u = r.ua;
-			}
-			
-			for (i in 1...vertices.length)
-			{
-				v1 = vertices[i - 1];
-				v2 = vertices[i];
-				
-				r = intersectRayRay(ray.start, delta, v1, v2.clone().sub(v1));
-				if (r != null && r.ub >= 0.0 && r.ub <= 1.0)
-				{
-					if (r.ua < min_u) min_u = r.ua;
-					if (r.ua > max_u) max_u = r.ua;
-				}
-			}
-			
-			if (ray.isInfinite || min_u <= 1.0) return new RayData(polygon, ray, min_u, max_u);
-		}
-		
-		return null;
-	}
-	
-	/**
-	 * same thing as rayRay, except without using Ray objects - saves the construction of a Ray object when testing Polygon/Ray.
-	 * @param	a
-	 * @param	adelta
-	 * @param	b
-	 * @param	bdelta
-	 */
-	private static function intersectRayRay(a:Vec, adelta:Vec, b:Vec, bdelta:Vec) : { ua:Float, ub:Float }
-	{
-		var dx = a.clone().sub(b);
-		
-		var d = bdelta.y * adelta.x - bdelta.x * adelta.y;
-		
-		if (d == 0.0) return null;
-		
-		var ua = (bdelta.x * dx.y - bdelta.y * dx.x) / d;
-		var ub = (adelta.x * dx.y - adelta.y * dx.x) / d;
-		
-		return { ua : ua, ub : ub };
-	}
-	
-	public static function rayRay(ray1:Ray, ray2:Ray):RayIntersection
-	{
-		var delta1 = ray1.end.clone().sub(ray1.start);
-		var delta2 = ray2.end.clone().sub(ray2.start);
-		
-		var dx = ray1.start.clone().sub(ray2.start);
-		
-		var d = delta2.y * delta1.x - delta2.x * delta1.y;
-		
-		if (d == 0.0) return null;
-		
-		var u1 = (delta2.x * dx.y - delta2.y * dx.x) / d;
-		var u2 = (delta1.x * dx.y - delta1.y * dx.x) / d;
-		
-		if ((ray1.isInfinite || u1 <= 1.0) && (ray2.isInfinite || u2 <= 1.0)) return new RayIntersection(ray1, u1, ray2, u2);
-		return null;
-	}
-	
-	/** Internal api - generate a bresenham line between given start and end points */
+      
+      if (ray.isInfinite || t1 <= 1.0) return new RayData(circle, ray, t1, t2);
+    }
+    
+    return null;
+  }
+  
+  public static function rayPolygon(ray:Ray, polygon:Polygon):RayData
+  {
+    var delta = ray.end.clone().sub(ray.start);
+    var vertices = polygon.transformedVertices;
+    
+    var min_u:Float = Math.POSITIVE_INFINITY;
+    var max_u:Float = 0.0;
+    
+    if (vertices.length > 2)
+    {
+      var v1 = vertices[vertices.length - 1];
+      var v2 = vertices[0];
+      
+      var r = intersectRayRay(ray.start, delta, v1, v2.clone().sub(v1));
+      if (r != null && r.ub >= 0.0 && r.ub <= 1.0)
+      {
+        if (r.ua < min_u) min_u = r.ua;
+        if (r.ua > max_u) max_u = r.ua;
+      }
+      
+      for (i in 1...vertices.length)
+      {
+        v1 = vertices[i - 1];
+        v2 = vertices[i];
+        
+        r = intersectRayRay(ray.start, delta, v1, v2.clone().sub(v1));
+        if (r != null && r.ub >= 0.0 && r.ub <= 1.0)
+        {
+          if (r.ua < min_u) min_u = r.ua;
+          if (r.ua > max_u) max_u = r.ua;
+        }
+      }
+      
+      if (ray.isInfinite || min_u <= 1.0) return new RayData(polygon, ray, min_u, max_u);
+    }
+    
+    return null;
+  }
+  
+  /**
+   * same thing as rayRay, except without using Ray objects - saves the construction of a Ray object when testing Polygon/Ray.
+   * @param  a
+   * @param  adelta
+   * @param  b
+   * @param  bdelta
+   */
+  private static function intersectRayRay(a:Vec, adelta:Vec, b:Vec, bdelta:Vec) : { ua:Float, ub:Float }
+  {
+    var dx = a.clone().sub(b);
+    
+    var d = bdelta.y * adelta.x - bdelta.x * adelta.y;
+    
+    if (d == 0.0) return null;
+    
+    var ua = (bdelta.x * dx.y - bdelta.y * dx.x) / d;
+    var ub = (adelta.x * dx.y - adelta.y * dx.x) / d;
+    
+    return { ua : ua, ub : ub };
+  }
+  
+  public static function rayRay(ray1:Ray, ray2:Ray):RayIntersection
+  {
+    var delta1 = ray1.end.clone().sub(ray1.start);
+    var delta2 = ray2.end.clone().sub(ray2.start);
+    
+    var dx = ray1.start.clone().sub(ray2.start);
+    
+    var d = delta2.y * delta1.x - delta2.x * delta1.y;
+    
+    if (d == 0.0) return null;
+    
+    var u1 = (delta2.x * dx.y - delta2.y * dx.x) / d;
+    var u2 = (delta1.x * dx.y - delta1.y * dx.x) / d;
+    
+    if ((ray1.isInfinite || u1 <= 1.0) && (ray2.isInfinite || u2 <= 1.0)) return new RayIntersection(ray1, u1, ray2, u2);
+    return null;
+  }
+  
+  /** Internal api - generate a bresenham line between given start and end points */
     @:noCompletion public static function bresenhamLine( start:Vec, end:Vec ) : Array<Vec> {
             
             //the array of all the points on the line
@@ -472,8 +472,8 @@ class Coll2D
         return points;
 
     } //bresenhamLine
-	
-	/** Internal api - swap a and b */
+  
+  /** Internal api - swap a and b */
     static function swap(a:Float, b:Float) : Vec {
 
         var t : Float = a;
@@ -484,5 +484,5 @@ class Coll2D
         return new Vec(a,b);
 
     } //swap
-	
+  
 }

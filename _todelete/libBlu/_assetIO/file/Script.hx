@@ -6,8 +6,8 @@ package libBlu._assetIO.file;
 
 typedef Script =
 {
-	var name:String;
-	var path:String;
-	
-	var text:String;
+  var name:String;
+  var path:String;
+  
+  var text:String;
 }

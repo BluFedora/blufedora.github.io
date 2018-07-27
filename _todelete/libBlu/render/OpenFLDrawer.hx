@@ -37,7 +37,7 @@ class OpenFLDrawer extends ShapeDrawer
     public override function drawVector( p0:Vec, p1:Vec, ?startPoint:Bool = true ) {
         
         if (graphics != null) 
-		{
+    {
             if(startPoint)
                 graphics.moveTo( p0.x, p0.y );
             graphics.lineTo( p1.x, p1.y);

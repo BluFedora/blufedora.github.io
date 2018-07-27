@@ -9,31 +9,31 @@ import libBlu.display.Tile;
  */
 class TileManager
 {
-	public var tiles:Array<Tile>;
-	public var names:Array<String>;
+  public var tiles:Array<Tile>;
+  public var names:Array<String>;
 
-	public function new() 
-	{
-		tiles = [];
-		names = [];
-	}
-	
-	public function receiveTiles():Array<Tile>
-	{
-		return tiles;
-		clear();
-	}
-	
-	public function addTile(tile:Tile):Void
-	{
-		tiles.push(tile);
-		names.push(tile.name);
-	}
-	
-	public function clear():Void
-	{
-		tiles = [];
-		names = [];
-	}
-	
+  public function new() 
+  {
+    tiles = [];
+    names = [];
+  }
+  
+  public function receiveTiles():Array<Tile>
+  {
+    return tiles;
+    clear();
+  }
+  
+  public function addTile(tile:Tile):Void
+  {
+    tiles.push(tile);
+    names.push(tile.name);
+  }
+  
+  public function clear():Void
+  {
+    tiles = [];
+    names = [];
+  }
+  
 }

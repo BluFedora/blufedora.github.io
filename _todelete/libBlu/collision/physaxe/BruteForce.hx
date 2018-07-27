@@ -29,57 +29,57 @@ import phx.Shape;
 
 class BruteForce implements BroadPhase {
 
-	var shapes : haxe.ds.GenericStack<Shape>;
-	var callb : BroadCallback;
+  var shapes : haxe.ds.GenericStack<Shape>;
+  var callb : BroadCallback;
 
-	public function new() {
-	}
+  public function new() {
+  }
 
-	public function init( bounds, callb, staticBody ) {
-		this.callb = callb;
-		shapes = new haxe.ds.GenericStack<Shape>();
-	}
+  public function init( bounds, callb, staticBody ) {
+    this.callb = callb;
+    shapes = new haxe.ds.GenericStack<Shape>();
+  }
 
-	public function addShape( s : Shape ) {
-		shapes.add(s);
-	}
+  public function addShape( s : Shape ) {
+    shapes.add(s);
+  }
 
-	public function removeShape( s : Shape ) {
-		shapes.remove(s);
-	}
+  public function removeShape( s : Shape ) {
+    shapes.remove(s);
+  }
 
-	public function collide() {
-		var s1 = shapes.head;
-		while( s1 != null ) {
-			var box1 = s1.elt.aabb;
-			var s2 = s1.next;
-			while( s2 != null ) {
-				if( box1.intersects2(s2.elt.aabb) )
-					callb.onCollide(s1.elt,s2.elt);
-				s2 = s2.next;
-			}
-			s1 = s1.next;
-		}
-	}
+  public function collide() {
+    var s1 = shapes.head;
+    while( s1 != null ) {
+      var box1 = s1.elt.aabb;
+      var s2 = s1.next;
+      while( s2 != null ) {
+        if( box1.intersects2(s2.elt.aabb) )
+          callb.onCollide(s1.elt,s2.elt);
+        s2 = s2.next;
+      }
+      s1 = s1.next;
+    }
+  }
 
-	public function pick( box : AABB ) {
-		var shapes = new haxe.ds.GenericStack<phx.Shape>();
-		for( s in this.shapes )
-			if( s.aabb.intersects(box) )
-				shapes.add(s);
-		return shapes;
-	}
+  public function pick( box : AABB ) {
+    var shapes = new haxe.ds.GenericStack<phx.Shape>();
+    for( s in this.shapes )
+      if( s.aabb.intersects(box) )
+        shapes.add(s);
+    return shapes;
+  }
 
-	public function syncShape( s : phx.Shape ) {
-		// nothing
-	}
+  public function syncShape( s : phx.Shape ) {
+    // nothing
+  }
 
-	public function commit() {
-		// nothing
-	}
+  public function commit() {
+    // nothing
+  }
 
-	public function validate() {
-		return true;
-	}
+  public function validate() {
+    return true;
+  }
 
 }

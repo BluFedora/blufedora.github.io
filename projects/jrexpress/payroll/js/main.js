@@ -1,51 +1,15 @@
 // if (typeof (Storage) !== "undefined"){ /* browser supports it */ }
-function UrlVars()
-{
-  this.vars = {};
-  
-  window.location.href.replace(
-    /[?&]+([^=&]+)=([^&]*)/gi,
-    function(m, key, value)
-    {
-      this.vars[key] = value;
-    }
-  );
-}
-
-UrlVars.prototype.get = function(key, defaultValue)
-{
-  var return_value = defaultValue;
-  
-  if (this.has(key))
-  {
-    return_value = this.vars[key];
-  }
-  
-  return return_value;
-};
-
-UrlVars.prototype.has = function(key)
-{
-  return (key in this.vars);
-};
 
 function require_script(url, callback)
 {
   'use strict';
-  
-    // Adding the script tag to the head as suggested before
   var head = document.getElementsByTagName('head')[0];
   var script = document.createElement('script');
-  
   script.type = 'text/javascript';
   script.src = url;
-
-    // Then bind the event to the callback function.
     // There are several events for cross browser compatibility.
   script.onreadystatechange = callback;
   script.onload = callback;
-
-    // Fire the loading
   head.appendChild(script);
 }
 
@@ -60,19 +24,19 @@ function onLoad(load_event)
   
   initJRExpressPayroll(firebase, function()
                       {
-    console.log("JR Express: Payroll initilized")
+    console.log("JR Express: Payroll Initialized");
   });
   
   const firestore = payroll.firestore;
   const truck_db  = firestore.collection("db_trucks");
   
+  TruckList_clearChildren();
+  
   truck_db.onSnapshot(
     function(snapshot)
     {
-      TruckList_clearChildren();
-      
       snapshot.docChanges().forEach(
-        function(change) 
+        function(change)
         {
           if (change.type === "added")
           {
@@ -80,7 +44,7 @@ function onLoad(load_event)
             TruckList_add(change.doc);
           }
           
-          if (change.type === "modified") 
+          if (change.type === "modified")
           {
             // NOTE(Shareef): Not needed for no but maybe in the future...
             console.log("Modified: ", change.doc.id, change.doc.data());
@@ -89,6 +53,7 @@ function onLoad(load_event)
           if (change.type === "removed")
           {
             var truck_item = jr_express_payroller.truck_map[change.doc.id];
+            
             truck_item.parentElement.removeChild(truck_item);
             console.log("Removed: ", change.doc.id, change.doc.data());
           }
@@ -96,18 +61,7 @@ function onLoad(load_event)
       );
     }
   );
-  /*
-  truck_db.doc("new_doc2").set(emailObject);
-  truck_db.doc("new_doc3").set(emailObject);
-  truck_db.doc("new_doc4").set(emailObject);
-  truck_db.doc("new_doc5").set(emailObject);
   
-  truck_db.doc("new_doc3").delete().then(function() {
-    console.log("Document successfully deleted!");
-  }).catch(function(error) {
-      console.error("Error removing document: ", error);
-  });
-  */
   var add_truck_btn = window.jr_express_payroller.add_truck_btn;
   
   jr_express_payroller.dialog_is_open = false;
@@ -204,15 +158,49 @@ function TruckList_add(doc)
   var truck_child = lib_dom.createDivWithClass("truck_list_item");
   truck_child.innerHTML = doc.id;
   truck_child.truck_data = new DumpTruck(doc.id);
+  
+   jr_express_payroller.truck_map[doc.id] = truck_child;
+   jr_express_payroller.truck_list.appendChild(truck_child);
+  
+  var truck_delete_button = lib_dom.createDivWithClass("truck_list_item_delete");
+  
+  truck_delete_button.innerHTML = "Delete";
+  
+  truck_delete_button.onclick = function(e)
+  {
+    var dialog = new Dialog("Are You Sure?");
+    
+    var btns = dialog.pushButtons(["No", "Yes"]);
+    
+    btns[0].onclick = function()
+    {
+      this.dialog_parent.hide();
+    };
+    
+    btns[1].truck_data = truck_child.truck_data;
+    
+    btns[1].onclick = function()
+    {
+      jrexpress.payroll.db_trucks.doc(this.truck_data.data.name).delete().then(function() {
+          console.log("Document successfully deleted!");
+      }).catch(function(error) {
+          console.error("Error removing document: ", error);
+      });
+      this.dialog_parent.hide();
+    };
+    
+    dialog.show();
+    
+    e.stopImmediatePropagation();
+  };
+  
+  truck_child.appendChild(truck_delete_button);
 
   truck_child.onclick = function()
   {
-    window.sessionStorage.setItem("ss_truck", this.innerHTML);
+    window.sessionStorage.setItem("ss_truck", this.truck_data.data.name);
     window.location.assign(this.truck_data.viewer);
   };
-
-  jr_express_payroller.truck_map[doc.id] = truck_child;
-  jr_express_payroller.truck_list.appendChild(truck_child);
 }
 
 main();

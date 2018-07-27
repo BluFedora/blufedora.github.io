@@ -8,21 +8,21 @@ package libBlu._assetIO;
 
 typedef TileObject = 
 {
-	@:optional var entity:Bool;
-	@:optional var type:TileType;
-	
-	var collision:EnumValue;
-	var tileType:Int;
-	var tileID:Int;
-	var depthZ:Int;
-	var posX:Float;
-	var posY:Float;
+  @:optional var entity:Bool;
+  @:optional var type:TileType;
+  
+  var collision:EnumValue;
+  var tileType:Int;
+  var tileID:Int;
+  var depthZ:Int;
+  var posX:Float;
+  var posY:Float;
 }
 
 enum TileType
 {
-	ANIMATED_TILE;
-	STATIC_TILE;
-	ENTITY;
-	WARP;
+  ANIMATED_TILE;
+  STATIC_TILE;
+  ENTITY;
+  WARP;
 }

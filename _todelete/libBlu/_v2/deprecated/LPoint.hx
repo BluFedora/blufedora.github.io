@@ -6,19 +6,19 @@ package libBlu._v2.deprecated;
  */
 class LPoint
 {
-	public var x:Float;
-	public var y:Float;
+  public var x:Float;
+  public var y:Float;
 
-	public function new(X:Float = 0, Y:Float = 0) 
-	{
-		x = X;
-		y = Y;
-	}
-	
-	public function updateLocation(inPoint:LPoint):Void 
-	{
-		x = inPoint.x;
-		y = inPoint.y;
-	}
-	
+  public function new(X:Float = 0, Y:Float = 0) 
+  {
+    x = X;
+    y = Y;
+  }
+  
+  public function updateLocation(inPoint:LPoint):Void 
+  {
+    x = inPoint.x;
+    y = inPoint.y;
+  }
+  
 }

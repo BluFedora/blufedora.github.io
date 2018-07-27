@@ -10,24 +10,24 @@ import openfl.display.Shape;
 class Scene extends Shape implements IScene
 {
 
-	public function new() 
-	{
-		super();
-	}
-	
-	public function initialize():Void
-	{
-		
-	}
-	
-	public function update():Void
-	{
-		
-	}
-	
-	public function clear():Void
-	{
-		
-	}
-	
+  public function new() 
+  {
+    super();
+  }
+  
+  public function initialize():Void
+  {
+    
+  }
+  
+  public function update():Void
+  {
+    
+  }
+  
+  public function clear():Void
+  {
+    
+  }
+  
 }

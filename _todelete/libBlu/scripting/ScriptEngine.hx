@@ -9,53 +9,53 @@ import libBlu.scripting.LuaEngine;
  */
 class ScriptEngine
 {
-	public var LUA_STATE:LuaEngine = new LuaEngine();
-	public var HX_SCRIPT:HxsEngine = new HxsEngine();
+  public var LUA_STATE:LuaEngine = new LuaEngine();
+  public var HX_SCRIPT:HxsEngine = new HxsEngine();
 
-	public function new() 
-	{
-		
-	}
-	
-	public function runScript(script:String, type:SCRIPT):Void
-	{
-		switch(type)
-		{
-			case SCRIPT.HXS: HX_SCRIPT.runScript(script, false);
-			case SCRIPT.LUA: LUA_STATE.runScript(script);
-		}
-	}
-	
-	public function callFunction(script:String = "", type:SCRIPT, ?args:Dynamic):Void
-	{
-		switch(type)
-		{
-			case SCRIPT.HXS: HX_SCRIPT.callFunction(script);
-			case SCRIPT.LUA: LUA_STATE.callFunction(script, args);
-		}
-	}
-	
-	public function exposeMethod(names:Dynamic, type:SCRIPT, ?values:Dynamic):Void
-	{
-		switch(type)
-		{
-			case SCRIPT.HXS: HX_SCRIPT.exposeMethod(names, values);
-			case SCRIPT.LUA: LUA_STATE.exposeMethod(names);
-		}
-	}
-	
+  public function new() 
+  {
+    
+  }
+  
+  public function runScript(script:String, type:SCRIPT):Void
+  {
+    switch(type)
+    {
+      case SCRIPT.HXS: HX_SCRIPT.runScript(script, false);
+      case SCRIPT.LUA: LUA_STATE.runScript(script);
+    }
+  }
+  
+  public function callFunction(script:String = "", type:SCRIPT, ?args:Dynamic):Void
+  {
+    switch(type)
+    {
+      case SCRIPT.HXS: HX_SCRIPT.callFunction(script);
+      case SCRIPT.LUA: LUA_STATE.callFunction(script, args);
+    }
+  }
+  
+  public function exposeMethod(names:Dynamic, type:SCRIPT, ?values:Dynamic):Void
+  {
+    switch(type)
+    {
+      case SCRIPT.HXS: HX_SCRIPT.exposeMethod(names, values);
+      case SCRIPT.LUA: LUA_STATE.exposeMethod(names);
+    }
+  }
+  
 }
 
 #end
 
 typedef ScriptVar = 
 {
-	name:String,
-	value:Dynamic
+  name:String,
+  value:Dynamic
 }
 
 enum SCRIPT
 {
-	LUA;
-	HXS;
+  LUA;
+  HXS;
 }

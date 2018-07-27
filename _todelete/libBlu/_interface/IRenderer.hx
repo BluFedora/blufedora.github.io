@@ -6,6 +6,6 @@ package libBlu._interface;
 
 interface IRenderer 
 {
-	//public function render():Void;
-	public function clear():Void;
+  //public function render():Void;
+  public function clear():Void;
 }

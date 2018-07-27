@@ -5,9 +5,9 @@ package libBlu._interface;
  */
 interface IHealth 
 {
-	public var health:Float;
-	public var damage:Float;
-	
-	public function giveHealth(damage:Float):Void;
-	public function takeDamage(damage:Float):Void;
+  public var health:Float;
+  public var damage:Float;
+  
+  public function giveHealth(damage:Float):Void;
+  public function takeDamage(damage:Float):Void;
 }

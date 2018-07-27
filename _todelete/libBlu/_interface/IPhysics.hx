@@ -9,12 +9,12 @@ import libBlu.geom.Vec;
 
 interface IPhysics 
 {
-	public var force(get, null):Float;
-	
-	public var restitution:Float;
-	public var friction:Float;
-	public var velocity:Vec;
-	public var mass:Float;
-	
-	private function updatePhysics():Void;
+  public var force(get, null):Float;
+  
+  public var restitution:Float;
+  public var friction:Float;
+  public var velocity:Vec;
+  public var mass:Float;
+  
+  private function updatePhysics():Void;
 }

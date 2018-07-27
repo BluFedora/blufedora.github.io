@@ -9,25 +9,25 @@ import libBlu.component.Component;
  */
 class PathFinder implements IComponent
 {
-	/* INTERFACE libBlu._interface.IComponent */
-	private var props:ComponentProps;
-	private var _instance:Component;
+  /* INTERFACE libBlu._interface.IComponent */
+  private var props:ComponentProps;
+  private var _instance:Component;
 
-	public function new() 
-	{
-		
-	}
-	
-	/* INTERFACE libBlu._interface.IComponent */
-	
-	public function init(comp:Component) 
-	{
-		
-	}
-	
-	public function run() 
-	{
-		
-	}
-	
+  public function new() 
+  {
+    
+  }
+  
+  /* INTERFACE libBlu._interface.IComponent */
+  
+  public function init(comp:Component) 
+  {
+    
+  }
+  
+  public function run() 
+  {
+    
+  }
+  
 }

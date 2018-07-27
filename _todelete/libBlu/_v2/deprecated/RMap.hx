@@ -12,6 +12,6 @@ import openfl.utils.ByteArray;
  
 class RMap
 {
-	public static var testMapVar:ByteArray = new TestMap();
-	public static var CAVE_MAP:ByteArray = new CaveMap();
+  public static var testMapVar:ByteArray = new TestMap();
+  public static var CAVE_MAP:ByteArray = new CaveMap();
 }

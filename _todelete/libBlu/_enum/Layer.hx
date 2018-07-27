@@ -6,12 +6,12 @@ package libBlu._enum;
 
 enum Layer 
 {
-	UI;
-	COLLISION;
-	ENTITY;
-	
-	WARP;
-	
-	ONE;
-	ZERO;
+  UI;
+  COLLISION;
+  ENTITY;
+  
+  WARP;
+  
+  ONE;
+  ZERO;
 }

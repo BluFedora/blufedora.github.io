@@ -2,7 +2,7 @@ function OverTheRoadTruck(name)
 {
   this.data = {
     "name"    : name,
-    "entries" : []
+    "trips"   : []
   };
   
   // Meta Info

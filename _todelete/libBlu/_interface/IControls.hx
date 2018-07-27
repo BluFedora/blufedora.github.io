@@ -6,6 +6,6 @@ package libBlu._interface;
 
 interface IControls 
 {
-	private function onDown():Void;
-	private function onUp():Void;
+  private function onDown():Void;
+  private function onUp():Void;
 }

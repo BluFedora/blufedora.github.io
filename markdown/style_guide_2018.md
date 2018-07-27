@@ -2,6 +2,7 @@
   Cover Comment Syle
   Includes Style
   Forward Declarations
+  Pointer Output Parameters
 
 # Norse Code's 2018 Style Guide :
 
@@ -161,8 +162,7 @@
   - C++ Example
   ```cpp
       // Example C++ Class
-      // The ‘CamelCase_t’ can be left off but will be there in my code.
-    class CamelCase
+    class CamelCaseClass
     {
       ... fields and methods ...
     };
@@ -187,7 +187,101 @@
 
 #### Functions that Operate on Struct(s) (C ONLY)
 
-## Enum Naming Conventions
+- When using C you should try to emulate C++ conventions to make things easier for other programmers using C++ to interop with your code.
+- You can do this by defining these types of functions for you type:
+
+```c
+  // To Initialize 'Stack' Allocated Objects
+  // Ctor stands for “Constructor”
+void            <struct_name>Ctor(<struct_name>* self, argument...);
+
+  // To Destroy 'Stack' Allocated Objects
+  // Dtor stands for “Destructor”
+void            <struct_name>Dtor(<struct_name>* self);
+
+  // To Initialize 'Heap' Allocated Structs
+  // Using ‘new’ emulating C++
+  // This function should just malloc / calloc the self pointer and then call the 'Constructor' method.
+<struct_name>*  <struct_name>_new(arguments...);
+
+  // To Destroy 'Heap' Allocated Structs
+  // Using ‘delete’ emulating C++
+  // This function should just call the 'Destructor' method and then free the self pointer.
+void            <struct_name>_delete(<struct_name>* self);
+```
+
+- The first parameter should almost always be a pointer to the object you are manipulating so by convention I use the word “self” (stolen from languages such as Lua, Swift, Python etc…) although it can be anything. Just make it make sense.
+  
+- Functions that operate on structs formatting:
+  
+    ```c
+      <return_type> <struct_name>_<verb>(<struct_name>* self, arguments…);
+    ```
+  
+  - For Example:
+    ```c
+      void CamelCase_update(CamelCase* const self, double deltaTime);
+    ```
+- By using my rules of only using verbs for function names we can get rid of the use of "get/Get" for getters.
+  - Function that just get a piece of state should just return that object.
+  - Also generally your getters should return a __CONSTANT__ pointer to that object.
+  
+    ```c
+      BAD:  Animation*        GameObject_getAnimation(CamelCase* const self);
+      GOOD: const Animation*  GameObject_animation(const CamelCase* const self);
+    ```
+    
+- Functions that return state as a boolean should use being verbs suchs as "is" and "are".
+
+  ```c
+    bool CamelCase_isDead(const CamelCase* const self);
+  ```
+
+## Enums Naming Conventions
+
+- Enums should follow the same naming conventions as structs, but enum values should be in all capitals with a prefix.
+- The enum values should end in a "<enum_prefix>_MAX" format to denote the maximum value the enum has. This may be left off but is often useful for error checking and using it as a loop condition.
+- Enums in C++ should be "enum class" since they are more type safe and allow you to define the underlying datatype.
+  
+  - C++ Example
+    ```c
+        // C++ Example Enum Class:
+        //   The Prefix in this case is uncessary since
+        //   you must always use the scope resolution operator ("::")
+        //   to access the value.
+      enum class TestEnumCpp
+      {
+        TE_FIRST_VALUE,
+        TE_ANOTHER_ONE,
+        TE_MAX
+      };
+
+        // Even better is to define the underlying type if you know
+        // the maximum value of the enum.
+        // This will help save on space if done diligently.
+      enum class BetterTestEnumCpp : uint8_t
+      {
+        FIRST_VALUE,
+        
+          // NOTE(Shareef) : MAX may be a bad name since MAX is
+          //                 a macro defined by some headers.
+        MAX_VALUE
+      };
+    ```
+    
+  - C Example
+    ```c
+      // C Example Enum:
+      //   The ‘TestEnumC_t’ can be left off but will be there in my code.
+      //   The Prefix ‘TE’ just stands for TestEnum but you can prefix it anyway you want. Just be consistent with all values.
+      typedef enum TestEnumC_t
+      {
+        TE_FIRST_VALUE,
+        TE_ANOTHER_ONE,
+        TE_MAX
+      } TestEnumC;
+    ```
+
 
 ## Typedef (and Using)
 

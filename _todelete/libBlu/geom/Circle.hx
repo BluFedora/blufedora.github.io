@@ -24,28 +24,28 @@ class Circle extends Solid
         name = 'circle ' + _radius;
 
     } //new
-	
-	override public function test(shape:Solid):Data
-	{
-		return shape.testCircle(this, true);
-	}
-	
-	override public function testCircle(circle:Circle, flip:Bool = false):Data
-	{
-		var c1 = flip ? circle : this;
-		var c2 = flip ? this : circle;
-		return Coll2D.testCircles( c1, c2 );
-	}
-	
-	override public function testPolygon(polygon:Polygon, flip:Bool = false):Data
-	{
-		return Coll2D.testCircleVsPolygon( this, polygon, flip );
-	}
-	
-	override public function testRay(ray:Ray):RayData 
-	{
-		return Coll2D.rayCircle(ray, this);
-	}
+  
+  override public function test(shape:Solid):Data
+  {
+    return shape.testCircle(this, true);
+  }
+  
+  override public function testCircle(circle:Circle, flip:Bool = false):Data
+  {
+    var c1 = flip ? circle : this;
+    var c2 = flip ? this : circle;
+    return Coll2D.testCircles( c1, c2 );
+  }
+  
+  override public function testPolygon(polygon:Polygon, flip:Bool = false):Data
+  {
+    return Coll2D.testCircleVsPolygon( this, polygon, flip );
+  }
+  
+  override public function testRay(ray:Ray):RayData 
+  {
+    return Coll2D.rayCircle(ray, this);
+  }
 
 //Internal API
 
@@ -60,5 +60,5 @@ class Circle extends Solid
         return _radius * scaleX;
 
     } //get_transformedRadius
-	
+  
 }

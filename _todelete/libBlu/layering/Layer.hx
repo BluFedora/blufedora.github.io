@@ -9,10 +9,10 @@ import openfl.display.Shape;
  */
 class Layer
 {
-	public static var TILE(get, null):Shape = new Shape();
-	
-	private static inline function get_TILE():Shape 
-	{
-		return LayersManager.layerT;
-	}
+  public static var TILE(get, null):Shape = new Shape();
+  
+  private static inline function get_TILE():Shape 
+  {
+    return LayersManager.layerT;
+  }
 }

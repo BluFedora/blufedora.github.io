@@ -8,22 +8,22 @@ import openfl.events.Event;
  */
 class TemplateEvent extends Event
 {
-	public static inline var EVENTTYPE:String = "temp";
-	
-	public var _someData:Dynamic;
+  public static inline var EVENTTYPE:String = "temp";
+  
+  public var _someData:Dynamic;
 
-	public function new(type:String, someData:Dynamic, bubbles:Bool=false, cancelable:Bool=false) 
-	{
-		super(type, bubbles, cancelable);
-		_someData = someData;
-	}
-	
-	override public function clone():Event 
-	{
-		//return super.clone();
-		return new TemplateEvent(type, bubbles, cancelable);
-	}
-	
+  public function new(type:String, someData:Dynamic, bubbles:Bool=false, cancelable:Bool=false) 
+  {
+    super(type, bubbles, cancelable);
+    _someData = someData;
+  }
+  
+  override public function clone():Event 
+  {
+    //return super.clone();
+    return new TemplateEvent(type, bubbles, cancelable);
+  }
+  
 }
 
 /* How To Use:

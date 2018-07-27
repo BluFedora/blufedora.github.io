@@ -38,7 +38,7 @@ function DumpTruck(name)
 DumpTruck.prototype.addWeek = function(date)
 {
   this.data.weeks[
-    lib_date.to_string_mm_dd_yyy(
+    lib_date.to_string_yyyy_mm_dd(
       window.lib_date.get_monday(date)
     )
   ] = DumpTruckWeek();
@@ -47,7 +47,7 @@ DumpTruck.prototype.addWeek = function(date)
 DumpTruck.prototype.hasWeek = function(date)
 {
   return this.data.weeks[
-    lib_date.to_string_mm_dd_yyy(
+    lib_date.to_string_yyyy_mm_dd(
       window.lib_date.get_monday(date)
     )
   ] !== undefined;

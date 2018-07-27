@@ -13,6 +13,7 @@
       <link rel="stylesheet" href="css/styles.css">
       
       <script src="js/global_init.js" type="text/javascript"></script>
+      <script src="js/dump_truck.js" type="text/javascript"></script>
       <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
       <script src="js/lib-dialog.js" type="text/javascript"></script>
@@ -24,7 +25,7 @@
           alert("This page should not be accessable without a truck to view.");
           window.location.assign("index.html");
         }
-      
+        
         window.onload = function(evt)
         {
           window.globals = {
@@ -58,57 +59,23 @@
 
           const truck_db    = payroll.firestore.collection("db_trucks");
           const truck_data  = truck_db.doc(truck_to_view);
-
-          truck_data
-            .get()
-            .then(
-              function(doc)
+          
+          truck_db.onSnapshot(
+              function(snapshot)
               {
-                if (doc.exists)
-                {
-                  const week_item_names = [
-                    "js_sun_week_item",
-                    "js_mon_week_item",
-                    "js_tue_week_item",
-                    "js_wed_week_item",
-                    "js_thu_week_item",
-                    "js_fri_week_item",
-                    "js_sat_week_item"
-                  ];
-                  
-                  const document_data     = doc.data();
-                  const current_week_str  = globals.selected_week;
-                  const current_week_data = document_data[current_week_str];
-                  
-                  for (var day = 0; day < 7; ++day)
+                snapshot.docChanges().forEach(
+                  function(change)
                   {
-                    var week_item_name = week_item_names[day];
-                    var day_data = current_week_data[day];
-                    
-                    Object.keys(day_data).forEach(function(key)
+                    if (change.type === "modified")
                     {
-                     var week_item_element = document.getElementById(week_item_name);
-                      var week_item_slot = lib_dom.createDivWithClass("week_item_slot");
-                      week_item_slot.innerHTML = key + " = " + day_data[key];
-                      week_item_element.appendChild(week_item_slot);
-                    });
+                        // NOTE(Shareef): Recreating the whole DOM is a bad idea but I don't get paid enough
+                      globals.week_selector.dispatchEvent(new Event("change"));
+                    }
                   }
-                  console.log("Document data:", doc.data());
-                }
-                else
-                {
-                    // NOTE(Shareef): doc.data() will be undefined in this case.
-                  alert("No such document could be found");
-                }
-              }
-            )
-            .catch(
-              function(error)
-              {
-                console.log("Error getting document:", error);
+                );
               }
             );
-          
+
           globals.week_selector.addEventListener("change", onSelectedWeekChange, false);
           window.globals.week_selector.value =
             lib_date.to_string_yyyy_mm_dd(

@@ -8,18 +8,18 @@ import libBlu.display.GameObject;
  */
 class ObjectManager
 {
-	public var objects:Array<GameObject>;
-	public var names:Array<String>;
+  public var objects:Array<GameObject>;
+  public var names:Array<String>;
 
-	public function new() 
-	{
-		objects = [];
-	}
-	
-	public function addObject(object:GameObject):Void
-	{
-		objects.push(object);
-		names.push(object.name);
-	}
-	
+  public function new() 
+  {
+    objects = [];
+  }
+  
+  public function addObject(object:GameObject):Void
+  {
+    objects.push(object);
+    names.push(object.name);
+  }
+  
 }

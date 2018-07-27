@@ -5,7 +5,7 @@ package libBlu._interface;
  */
 interface IScene 
 {
-	public function initialize():Void;
-	public function update():Void;
-	public function clear():Void;
+  public function initialize():Void;
+  public function update():Void;
+  public function clear():Void;
 }

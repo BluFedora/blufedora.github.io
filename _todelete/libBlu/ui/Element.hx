@@ -10,20 +10,20 @@ import openfl.display.Sprite;
  */
 class Element extends Sprite
 {
-	private var snapToEdge:Bool = false;
-	private var snappedEdge:Location = Location.LEFT;
+  private var snapToEdge:Bool = false;
+  private var snappedEdge:Location = Location.LEFT;
 
-	public function new(x:Float, y:Float) 
-	{
-		super();
-		
-		LayoutManager.addElement(this);
-	}
-	
-	@:allow(LayersManager)
-	private function onResize():Void
-	{
-		
-	}
-	
+  public function new(x:Float, y:Float) 
+  {
+    super();
+    
+    LayoutManager.addElement(this);
+  }
+  
+  @:allow(LayersManager)
+  private function onResize():Void
+  {
+    
+  }
+  
 }

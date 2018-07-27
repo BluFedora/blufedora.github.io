@@ -8,11 +8,11 @@ import libBlu._assetIO.TileObject;
  */
 typedef Level =
 {
-	var name:String;
-	var path:String;
-	
-	var comps:Array<ComponentProps>;
-	var tiles:Array<TileObject>;
-	
-	var history:Array<Array<TileObject>>;
+  var name:String;
+  var path:String;
+  
+  var comps:Array<ComponentProps>;
+  var tiles:Array<TileObject>;
+  
+  var history:Array<Array<TileObject>>;
 }

@@ -26,20 +26,20 @@ package libBlu._interface;
 
 class IAABB {
 
-	public var l:Int;
-	public var b:Int;
-	public var r:Int;
-	public var t:Int;
+  public var l:Int;
+  public var b:Int;
+  public var r:Int;
+  public var t:Int;
 
-	public function new(left,top,right,bottom) {
-		this.l = left;
-		this.t = top;
-		this.r = right;
-		this.b = bottom;
-	}
+  public function new(left,top,right,bottom) {
+    this.l = left;
+    this.t = top;
+    this.r = right;
+    this.b = bottom;
+  }
 
-	public function toString() {
-		return "[l = " + l + ", b = " + b + ", r = " + r + ", t = " + t + "]";
-	}
+  public function toString() {
+    return "[l = " + l + ", b = " + b + ", r = " + r + ", t = " + t + "]";
+  }
 
 }

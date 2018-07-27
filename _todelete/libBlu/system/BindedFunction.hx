@@ -5,6 +5,6 @@ package libBlu.system;
  */
 
 typedef BindedFunction = {
-	var func:DynamicObject;
-	var numArgs:Int;
+  var func:DynamicObject;
+  var numArgs:Int;
 }

@@ -12,34 +12,34 @@ import libBlu.math.Matrix;
  */
 class Solid
 {
-	public var active:Bool = true;
+  public var active:Bool = true;
     public var name:String = 'shape';
-	
+  
     public var tags:Map<String, String>;
-	public var data:Dynamic;
-	
-	public var rotation(get, set):Float;
+  public var data:Dynamic;
+  
+  public var rotation(get, set):Float;
     public var position(get, set):Vec;
-	
-	public var scaleX(get, set):Float;
+  
+  public var scaleX(get, set):Float;
     public var scaleY(get, set):Float;
-	
+  
     public var x(get, set):Float;
     public var y(get, set):Float;
-	
-	private var _position:Vec;
-	private var _rotation:Float = 0;
-	private var _rotation_radians:Float = 0;
-	private var _scale:Vec;
+  
+  private var _position:Vec;
+  private var _rotation:Float = 0;
+  private var _rotation_radians:Float = 0;
+  private var _scale:Vec;
 
-	private var _scaleX:Float = 1;
-	private var _scaleY:Float = 1;
+  private var _scaleX:Float = 1;
+  private var _scaleY:Float = 1;
 
-	private var _transformed:Bool = false;
-	private var _transformMatrix:Matrix;
+  private var _transformed:Bool = false;
+  private var _transformMatrix:Matrix;
 
-	public function new( _x:Float, _y:Float )
-	{
+  public function new( _x:Float, _y:Float )
+  {
         tags = new Map();
 
         _position = new Vec(_x,_y);
@@ -53,28 +53,28 @@ class Solid
         _transformMatrix.makeTranslation( _position.x, _position.y );
     } //new
 
-	public function test(shape:Solid):Data
-	{
-		return null;
-	}
+  public function test(shape:Solid):Data
+  {
+    return null;
+  }
 
-	public function testCircle( circle:Circle, flip:Bool = false ):Data
-	{
-		return null;
-	}
+  public function testCircle( circle:Circle, flip:Bool = false ):Data
+  {
+    return null;
+  }
 
-	public function testPolygon( polygon:Polygon, flip:Bool = false ):Data
-	{
-		return null;
-	}
+  public function testPolygon( polygon:Polygon, flip:Bool = false ):Data
+  {
+    return null;
+  }
 
-	public function testRay( ray:Ray ):RayData
-	{
-		return null;
-	}
+  public function testRay( ray:Ray ):RayData
+  {
+    return null;
+  }
 
-	/** clean up and destroy this shape */
-	public function destroy():Void {
+  /** clean up and destroy this shape */
+  public function destroy():Void {
         _position = null;
         _scale = null;
         _transformMatrix = null;
@@ -166,5 +166,5 @@ class Solid
         refresh_transform();
         return _scaleY;
     }
-	
+  
 }
