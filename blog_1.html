@@ -1,104 +1,5 @@
 
 
-      <h2>Image Processing: <br> The History and Current State</h2>
-
-      <h3>BY: Shareef Raheem | Date: 10/18/2017 (Revised 11/13/2017)</h3>
-
-      <div class="content">
-
-        <h4>Introduction and Definitions: </h4>
-
-        <p>
-          The expansive field of digital image processing informational technology is the backbone of many modern conveniences. Image processing borrows talents from a variety of fields such as computer science, electrical engineering, mathematics, physiology, biology, and even cognitive science. These sciences come together to create ways for computers to capture and then interpret the three-dimensional (3D) world around us.
-        </p>
-
-        <p>
-          The aspect of image processing that handles interpreting the world is called “Computer Vision.” Computer Vision is the study of developing ways to use and analyze data from digital images and videos. This data needs to be interpreted in such a way to allow computers to have a high-level understanding of what the image or video represents. The goal is to emulate the “human visual system,” automating its tasks to make life easier.
-        </p>
-
-        <p>
-          The term ‘image,’ which is traditionally thought of as a picture or grid of pixels, can exist in many forms. An image can be collected from various methods such as bouncing radio or ultrasonic waves. The many mediums to project the world onto allow for different representations of the data so that depending on the aspect we want to focus on it is easy to see. Take the case of the way we use x-rays to see if there is a fracture in someone’s bones, that image is not very useful when trying to create a fingerprint scanner. Fortunately to mitigate this problem “[t]here is an amazing availability of radiation to be sensed, recorded as images, and viewed, analyzed, transmitted, or stored.” (Bovik)
-        </p>
-
-        <p>
-          Development of computer vision picked up in the late 1960s at universities in an attempt to advance artificial intelligence (A.I).
-          The idea was for analyzing images to act as a steppingstone for more intelligent robots that could make context aware decisions.
-          Based on that idea, some projects were just attaching a camera to a computer and haing it ‘describe what it saw’.
-          In the eary stage of image processing there was a heavy separation between image processing and computer vision. While computer vision wanting extract three dimensional representations of a scene from the collected data.
-          In the late 1990s computer vision started to merge with computer graphics (image based rendering, image morphing, light-field rendering).
-          Modern research of computer vision incorporate machine learning techniques (which is somewhat out of the scope of this blog) for more precise interpretations of this world.
-        </p>
-
-        <h4>Current State of Affairs:  </h4>
-
-        <table>
-          <tr>
-            <th>Company</th>
-            <th>Technology</th>
-            <th>What it Does</th>
-          </tr>
-          <tr>
-            <td>Microsoft</td>
-            <td>Windows Hello</td>
-            <td>Uses Facial Identification technology to let you be able to unlock your computer just by looking at it.</td>
-          </tr>
-          <tr>
-            <td>Apple</td>
-            <td>TouchID, FaceID</td>
-            <td>Uses your fingerprint and face respectively to unlock your iPhone and recent MacBooks.</td>
-          </tr>
-          <tr>
-            <td>Google</td>
-            <td>Image Search</td>
-            <td>This allows you to search for images similar to the one you are using to search with.</td>
-          </tr>
-          <tr>
-            <td>Adobe</td>
-            <td>Photoshop ©</td>
-            <td>Photoshop is the industry standard for software to edit digital photography in almost anyway.</td>
-          </tr>
-          <tr>
-            <td>Apple</td>
-            <td>Portrait Mode</td>
-            <td>This is a new technology using the iPhone 8’s camera to analyze a portrait image of a person and emulate professional lighting.</td>
-          </tr>
-        </table>
-        (Table A: list of notable consumer products using image processing technology)
-
-        <h5>Video Games:</h5>
-
-        <p>
-          Digital image manipulation is quite prevalent in the field of videos games.
-          Often times used for effects such as bloom lighting using a small program, called a shader, to make calculation based off of the current pixels on-screen.
-          Algorithms for these effects are getting very efficient to where we can update millions (1920 x 1080) of pixels sixty or more times a second while performing hundreds of other tasks. All video games use image processing concepts at some level, although it may be difficult to tell since there are sometimes many levels of abstraction from what is actually happening with the hardware. The graphics are drawn to something called a frame buffer which is a grid / array of pixels holding the data of what’s currently onscreen. That buffer is then ‘pushed’ to the Graphic Processing Unit (GPU) for manipulation by the small shader programs. After all the shaders have run the GPU draws all these pixels to the screen through a process called ‘rasterization’.
-        </p>
-
-        <img style="float: left; margin: 10px 0px;" src="images/post_1/minecraft-bloom.jpg" width="100%">
-        (IMAGE B: FROM “THE SCORPION KING” SHOWCASING ‘BAD’ CGI)
-        <div class="clear"></div>
-
-        (IMAGE A: FROM MINECRAFT SHOWCASING BLOOM LIGHTING SHADERS)
-
-        <h5>Movies: </h5>
-
-        <p>
-          Movies are a very popular medium of entertainment today, and now commonly make use of ‘computer generated imagery’ (CGI).
-          A technique used make the digital objects look like they are in the scene is known as “Camera Tracking.”
-          A computer analyzes the scene and tries to generate a 3D visualization based on the 2-Dimensional (2D) camera shots to help with the placing of the digital models.
-          If done well it is often difficult for the audience to know what is real vs CGI, although realism doesn’t have to always be the goal.
-          In the past CGI was very distracting as in the 2002 movie <i>The Scorpion King,</i> but now is used exceptionally effectively as in <i>Interstellar</i> (2014) or <i>Gravity</i> (2013).
-          The CGI in <i>The Scorpion King</i> had very staggered motion and the models were not well textured.
-          The movie <i>300</i> (2006) was made with great use of CGI with its stylistic scenes that are aesthetically pleasing.
-          Evolution of animated films changed with the advent of CGI technology, such as amazing movies like Disney's “Toy Story” (1995).
-        </p>
-
-        <img src="images/post_1/crappy-cgi-scorpion-king.jpg">
-        (IMAGE B: FROM “THE SCORPION KING” SHOWCASING ‘BAD’ CGI)
-        <div class="clear"></div>
-        <img src="images/post_1/good-cgi-300.jpg" width="100%">
-        (IMAGE C: FROM “300” SHOWCASING WELL IMPLEMENTED CGI)
-        <div class="clear"></div>
-
         <h5>Smart Phones: </h5>
 
         <p>
@@ -125,20 +26,14 @@ MacBook Pros use this biometric form of identification. Recent versions of Andro
           According to Apple, “[w]ith Touch ID, it stated that there was a 1 in 50,000 chance that someone would be able to open your phone with their fingerprint.
           These numbers were a little better for Face ID, at 1 in 1,000,000,” (Casserly) this is a dramatic increase in security and this technology will only get more accurate with time.
         </p>
-      </div>
 
       <div class="content" style="word-wrap: break-word;">
         <h4>Cited Works</h4>
 
         Bovik, Al. <i>The Essential Guide to Image Processing</i>. Google Play Books, Elsevier Inc, 2009  <br> <br>
-
         Casserly, Martyn. “Face ID vs Touch ID”. Macworld, 14 September 2017, http:// www.macworld.co.uk/feature/iphone/face-id-v-touch-id-3663945/ <br> <br>
-
         “Computer Vision and Computer Graphics,” TutorialsPoint, https://www.tutorialspoint.com/dip/ computer_vision_and_graphics.htm <br> <br>
-
         “Image Processing and Related Fields,” http://fourier.eng.hmc.edu/e161/lectures/e161ch1.pdf <br> <br>
-
         Welch, Chris. “Google Assistant will soon search by sight with your smartphone camera”. <i>The Verge</i>, 17 May 2017, https://www.theverge.com/2017/5/17/15648128/google-assistantcamera-sight-search-feature-io-2017
-
       </div>
     </div>
