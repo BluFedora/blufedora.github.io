@@ -1,39 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 
-* {
-   box-sizing:     border-box;
-  
-  image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
-  image-rendering: -moz-crisp-edges;          /* Firefox                        */
-  image-rendering: -o-crisp-edges;            /* Opera                          */
-  image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-  image-rendering: pixelated; /* Chrome */
-  image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
-  -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
-}
-
 pre {
-  white-space: pre-wrap;       /* Since CSS 2.1 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
-  
-  word-break: break-all; /* webkit */
-    word-wrap: break-word;
-    white-space: pre;
-    white-space: -moz-pre-wrap; /* fennec */
-    white-space: pre-wrap;
-    white-space: pre\9; /* IE7+ */
+  white-space: pre-wrap;      /* Since CSS 2.1          */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999    */
+  white-space: -pre-wrap;     /* Opera 4-6              */
+  white-space: -o-pre-wrap;   /* Opera 7                */
+  word-wrap:    break-word;   /* Internet Explorer 5.5+ */
+  word-break:   break-all;    /* webkit                 */
+  word-wrap:    break-word;
+  white-space:  pre;
+  white-space:  -moz-pre-wrap; /* fennec                */
+  white-space:  pre-wrap;
+  white-space:  pre\9;         /* IE7+                  */
 }
 
 h1, h2, h3, h4 {
   position:       relative;
   text-align:     center;
   
-  font-family:         'Dosis', sans-serif;
-  margin:       5px auto;
+  font-family:    'Dosis', sans-serif;
+  margin:         5px auto;
 }
 
 h1 {
@@ -56,7 +43,7 @@ h3 {
 }
 
 h4 {
-  margin:       5px auto;
+  margin:       40px auto;
   font-size:       1.6em;
 }
 
@@ -73,22 +60,16 @@ html, body {
   margin:       0px;
   
   font-family:       'Open Sans', sans-serif;
-    font-weight:        400;
+  font-weight:        400;
   
-  background:
-                        linear-gradient(
-                          rgba(63, 96, 234, 0.69), 
-                          rgba(83, 94, 230, 0.35)
-                        ),
-                        url(../images/bg_grid.png);
+  background: rgb(21, 21, 26);
 }
 
-nav {
-  width:         100%;
-  height:       50px;
-  background-color:   rgba(51, 51, 51, 0.9);
-  position:       fixed;
-  z-index:       4;
+.nav-content {
+  background-color: rgba(51, 51, 51, 0.9);
+
+  width:              100%;
+  height: max-content;
 }
 
 .triangle_strip_b {
@@ -100,9 +81,6 @@ nav {
     
   clear:        both;
   
-  top:         50px;
-  
-  position:       fixed;
   z-index:       4;
 }
 
@@ -110,27 +88,7 @@ nav img {
   float:         left;
 }
 
-nav ul {
-  list-style-type:  none;
-  display:       inline-block;
-  float:         left;
-  padding:       0px;
-  margin:       0px;
-}
-
-nav ul li {
-  float:         left;
-  height:       50px;
-  line-height:     50px;
-}
-
-nav .navigation li {
-  margin:       0px 0px 0px 5px;
-  
-}
-
  nav .navigation li a {
-  padding:       10px 20px;
    color:         aliceblue;
    text-decoration: none;
 }
@@ -154,42 +112,34 @@ nav .social li {
 }
 
 header {
-  box-shadow:       rgba(0, 0, 0, 0.2) 0px 2px 5px 1px;
-  
   width: 100%;
-  height: 640px;
-  
-  background-color: aqua;
+  height: 100vh;
+  background:  url(../images/covers/blog_cover_2.jpg);
+  background-position-y: -100px;
   position:relative;
-  
-  overflow: hidden;
-  
-  border-bottom: #897e91 2px solid;
-  
-  
+  overflow: hidden;  
   z-index: 1;
 }
 
+header::after {
+  content: "";
+  background: linear-gradient(
+    rgba(41, 30, 48, 0.0), 
+      rgb(21, 21, 26)
+    )/*, 
+    url(../images/bg_grid_dark.png)*/;
+  opacity: 1.0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
 .content-container {
-  width:       95%;
-  max-width:     1200px;
+  max-width:  1200px;
   margin:     0px auto;
-}
-
-article {
-  box-shadow:       rgba(0, 0, 0, 0.2) 0px 2px 5px 1px;
-  
-  border:         solid white 1px;
-  
-  background-color:     #e6ecf2;
-  position:         relative;
-  
-  display:         inline-block;
-  z-index:         2;
-}
-
-article:nth-of-type(1) {
-  margin-top: -40px;
 }
 
 .gallery-card {
@@ -234,7 +184,7 @@ article:nth-of-type(1) {
   padding:       20px;
   margin:       0px auto;
   
-  top:         150px;
+  top:         200px;
   
   position:       relative;
   
@@ -245,20 +195,16 @@ article:nth-of-type(1) {
 }
 
 footer {
-  width:             95%;
+  width:              95%;
   height:             25px;
-  position:       relative;
-  background-color:   rgb(70, 58, 87);
+  position:           relative;
+  background-color:   rgb(49, 54, 71);
   margin-top:         5px;
-  
-  border-radius:         5px;
-  
-  margin-left:         2.5%;
-  margin-right:         2.5%;
-  margin-bottom:         10px;
-  
+  border-radius:      3px;
+  margin-left:        2.5%;
+  margin-right:       2.5%;
+  margin-bottom:      10px;
   text-align:         center;
-  border:             1px solid #867b93;
 }
 
 .credits {
@@ -267,70 +213,11 @@ footer {
   line-height:        23px;
   text-align:     center;
   position:       absolute;
-  color:         #aa93b5;
+  color:         #e4dce7;
 }
 
 .nav-button {
   transition: all 0.5s;
-}
-
-.nav-button:hover {
-}
-
-.porfolio_button {
-    max-width:              430px;
-    width:                  100%;
-    display:                inline-block;
-    background-size:        cover;
-    background-repeat:      no-repeat;
-    background-position:    center center;
-}
-
-.porfolio_button:hover {
-}
-
-.porfolio_btn_animation {
-    background-image: url(../images/portfolio/animation_normal.png);
-}
-
-.porfolio_btn_animation:hover {
-    background-image: url(../images/portfolio/animation_hover.png);
-}
-
-.porfolio_btn_drawing {
-    background-image: url(../images/portfolio/drawing_normal.png);
-    
-}
-
-.porfolio_btn_drawing:hover {
-    background-image: url(../images/portfolio/drawing_hover.png);
-}
-
-.porfolio_btn_game {
-    background-image: url(../images/portfolio/game_design_normal.png);
-    
-}
-
-.porfolio_btn_game:hover {
-    background-image: url(../images/portfolio/game_design_hover.png);
-}
-
-.porfolio_btn_graphic {
-    background-image: url(../images/portfolio/graphic_design_normal.png);
-    
-}
-
-.porfolio_btn_graphic:hover {
-    background-image: url(../images/portfolio/graphic_design_hover.png);
-}
-
-.porfolio_btn_web {
-    background-image: url(../images/portfolio/web_design_normal.png);
-    
-}
-
-.porfolio_btn_web:hover {
-    background-image: url(../images/portfolio/web_design_hover.png);
 }
 
 .portfolio_cover {
@@ -340,9 +227,9 @@ footer {
   text-shadow:       0px 1px 1px rgb(255, 255, 255);
   border:         solid #ededed 1px;
   
-  width:           250px;
-  height:         250px;
-  margin:         2% 2%;
+  width:           240px;
+  height:         240px;
+  margin:         8px;
   border-radius:       3px;
   
   text-align:       center;
@@ -454,87 +341,37 @@ footer {
   height: 300px;
 }
 
-.profile_icon {
-  box-shadow:       rgba(0, 0, 0, 0.2) 0px 2px 5px 1px inset;
-  background-image:     url(../images/reef_profile_2018.png);
-  background-position:   center center;
-  background-size:     contain;
-  border:         solid #d8d8d8 2px;
-  
-  width:           200px;
-  height:         200px;
-  margin:         5px auto;
-  border-radius:       50%;
+/*
+  New Menu
+*/
+
+#menu {
+  background-color: white;
+  border-radius:    50%;
+  width:            45px;
+  height:           45px;
+  position:         fixed;
+  left:             20px;
+  top:              20px;
+  padding-top:      5px;
 }
 
-.service-card {
-  box-shadow:       rgba(0, 0, 0, 0.2) 0px 2px 5px 1px inset;
-  border:         2px solid #b6b4ba;
-  
-  width:           100%;
-  height:         300px;
-  
-  border-radius:       30px;
-  background-size:     cover;
-  background-position: center center;
-  
-  transition: border-radius 0.2s linear;
+.menu-bar {
+  background-color: black;
+  transition:       0.3s;
+  width:            30px;
+  height:           5px;
+  margin:           5px auto auto auto;
 }
 
-.col-4:nth-of-type(2) .service-card {
-  background-image: url(../portfolio/web/jrexpress/thumbnail.png);
+.opened .menu-bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-8px, 7px);
 }
 
-.col-4:nth-of-type(3) .service-card {
-  background-image: url(../portfolio/art/breath-final-1.jpg);
+.opened .menu-bar:nth-child(2) {
+  opacity: 0;
 }
 
-.col-4:nth-of-type(4) .service-card {
-  background-image: url(../portfolio/animation/player-attack-beta.gif);
-}
-
-.service-card:hover {
-  border-radius:       0px;
-}
-
-@media only screen and (max-width : 740px)
-{
-  .blufedora_icon {
-    display:       none;
-  }
-  
-  nav {
-    width: 100%;
-    height:       100px;
-  }
-  
-  nav .navigation {
-    width: 100%;
-  }
-
-  .triangle_strip_b {
-    top:         100px;
-  }
-
-  nav .navigation li {
-    margin:       0px 0px 0px 0px;
-    width:         20%;
-    text-align: center;
-    
-    transition-duration: 0.1s;
-  }
-  
-  nav .navigation li a {
-    width: 100%;
-  }
-
-  nav .social {
-    margin:     0px auto;
-    background:   rgba(246, 242, 255, 0.19);
-    width:       100%;
-  }
-  
-  nav .social li {
-    padding:       5px calc(12.5% - 20px);
-  }
+.opened .menu-bar:nth-child(3) {
+  transform: rotate(45deg) translate(-8px, -6px);
 }

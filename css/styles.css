@@ -1,0 +1,175 @@
+/* CSS Notes:
+    transition: <property> <duration> <timing-function> <delay>;
+*/
+
+#menu {
+  z-index: 4;
+}
+
+.side-panel {
+  box-shadow:       rgba(0, 0, 0, 0.6) 0px 2px 5px 1px;
+  width:            350px;
+  height:           100vh;
+  background-color: rgb(29, 32, 43);
+  position:         fixed;
+  top:              0px;
+  left:             0px;
+  z-index:          3;
+  border:         rgb(74, 81, 105) 1px solid;
+  opacity:          0.0;
+
+  transition:       opacity 0.14s ease-in-out 0s;
+}
+
+.side-panel.opened {
+  opacity: 1.0;
+}
+
+.social-icons {
+  margin-top:    5px;
+  margin-bottom: 5px;
+}
+
+.social-icon {
+  width:  40px;
+  cursor: pointer;
+  filter: invert(100%);
+}
+
+.main-article {
+  width:            100%;
+  position:         relative;
+  left:             0px;
+  transition:       left 0.3s ease-in-out 0s, width 0.3s ease-in-out 0s;
+}
+
+.main-article.opened {
+  width:            calc(100% - 350px);
+  left:             350px;
+}
+
+article {
+  box-shadow:       rgba(0, 0, 0, 0.2) 0px 2px 5px 1px;
+  border:             solid white 1px;
+  background-color:   #e6ecf2;
+  position:           relative;
+  display:            inline-block;
+  padding:            10px;
+  z-index:            2;
+}
+
+.profile_icon {
+  box-shadow:         rgba(0, 0, 0, 0.2) 0px 2px 5px 1px inset;
+  background-image:     url(../images/reef_profile_2018.png);
+  background-position:  center center;
+  background-size:      contain;
+  border:               solid #d8d8d8 2px;
+  margin:               50px auto;
+  border-radius:        50%;
+
+  width:                150px;
+  height:               150px;
+}
+
+h4 {
+  margin: 20px 0px;
+}
+
+nav ul {
+  list-style-type:  none;
+  padding:          0px;
+  margin:           0px;
+  overflow:         hidden;
+}
+
+.nav-bar {
+  width: 100%;
+}
+
+.nav-items {
+  width: 100%;
+  border-bottom: 1px rgb(74, 81, 105) solid;
+}
+
+.menu-item a {
+  color: #ffffff;
+  display: block;
+
+  background-color: rgba(51, 55, 73, 0.932);
+  padding: 10px 25px;
+  float: left;
+
+  width: 100%;
+
+  text-align: center;
+
+  border-top:  1px solid rgb(74, 81, 105);
+}
+
+.menu-item:first-of-type {
+  border-left: none;
+}
+
+.menu-item:last-of-type {
+  border-right: none;
+}
+
+.menu-item a {
+  text-decoration: none;
+}
+
+/* unvisited link */
+.menu-item a:link {
+  color: red;
+}
+
+/* visited link */
+.menu-item a:visited {
+  color: green;
+}
+
+/* mouse over link */
+.menu-item a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+.menu-item a:active {
+  color: blue;
+}
+
+@media only screen and (max-width: 1000px) 
+{
+  .side-panel {
+    width:  100%;
+    height: auto;
+  }
+
+  .side-panel.opened {
+    opacity: 0.9;
+  }
+
+  .main-article,
+  .main-article.opened {
+    width: 100%;
+    left:  0px;
+  }
+
+  .profile_icon {
+    width:  80px;
+    height: 80px;
+    margin: 5px 10px;
+    float:  right;
+  }
+
+  .menu-item {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 180px) 
+{
+  .profile_icon {
+    opacity: 0.0;
+  }
+}
