@@ -1,7 +1,14 @@
 [
-    {
-        "title":    "Coming Soon: Eternal Antigua",
-        "image":    "images/picons-social/social-054_slack.png",
-        "comment":  "Some comments on this piece"
-    }
+  {
+    "title": "Project Gemini",
+    "image": "portfolio/game/project_gemini/thumbnail.png",
+    "comment": "",
+    "url": "https://arcade.digipen.edu/games/mosh-pit"
+  },
+  {
+    "title": "Blank Dungeon",
+    "image": "portfolio/game/project_gemini/thumbnail.png",
+    "comment": "",
+    "url": "https://arcade.digipen.edu/games/mosh-pit"
+  }
 ]

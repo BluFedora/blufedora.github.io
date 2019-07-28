@@ -32,7 +32,7 @@ class Animation
 	
 	public function wait(ms:Float):Animation
 	{
-		return this.to(new AnimationStep({}, ms, Easing.none));
+		return this.to(new AnimationStep({}, ms, Easing.easeLinear));
 	}
 	
 	public function update(ms:Float):Void
@@ -64,7 +64,7 @@ class Animation
 			
 			if (step != null)
 			{
-				var time 		= this._deltaTime;
+				// var time 		= this._deltaTime;
 				var timeTot 	= step.time;
 				
 				for (field in Reflect.fields(step.properties))

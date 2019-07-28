@@ -13,8 +13,6 @@ class Easing
 	Linear
 	---------------------------------------------------------------------------------
 	*/
-	public static var linear:Float->Float->Float->Float->Float 	= Easing.easeLinear;
-	public static var none:Float->Float->Float->Float->Float 	= Easing.easeLinear;
 	public static function easeLinear (t:Float, b:Float, c:Float, d:Float):Float
 	{
 		return c*t/d + b;

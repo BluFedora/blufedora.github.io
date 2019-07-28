@@ -13,9 +13,30 @@
 .col-12   {  width: 100%;  }
 */
 
+/*
+  Browser Fixes
+*/
 * {
   box-sizing:     border-box;
 }
+
+pre {
+  white-space: pre-wrap;      /* Since CSS 2.1          */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999    */
+  white-space: -pre-wrap;     /* Opera 4-6              */
+  white-space: -o-pre-wrap;   /* Opera 7                */
+  word-wrap:    break-word;   /* Internet Explorer 5.5+ */
+  word-break:   break-all;    /* webkit                 */
+  word-wrap:    break-word;
+  white-space:  pre;
+  white-space:  -moz-pre-wrap; /* fennec                */
+  white-space:  pre-wrap;
+  white-space:  pre\9;         /* IE7+                  */
+}
+
+/*
+  12 Column System
+*/
 
 .col-1  { width: calc(100% / 12 *  1); }
 .col-2  { width: calc(100% / 12 *  2); }
@@ -40,18 +61,6 @@
   float:        left;
   margin:       0px;
 }
-
-/* TODO(Shareef): Do the other column sizes as I need them */
-.col-8.col-alone {
-  margin-left:       calc((100% - (100% / 12 * 8)) / 2);
-  margin-right:      calc((100% - (100% / 12 * 8)) / 2);
-}
-.col-9.col-alone {
-  margin-left:       calc((100% - (100% / 12 * 9)) / 2);
-  margin-right:      calc((100% - (100% / 12 * 9)) / 2);
-}
-
-
 
 /*
   Customization Points

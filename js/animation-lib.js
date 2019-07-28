@@ -93,7 +93,7 @@ com_blufedora_Animation.prototype = {
 		return this;
 	}
 	,wait: function(ms) {
-		return this.to(new com_blufedora_AnimationStep({ },ms,com_blufedora_Easing.none));
+		return this.to(new com_blufedora_AnimationStep({ },ms,com_blufedora_Easing.easeLinear));
 	}
 	,update: function(ms) {
 		this._deltaTime += ms;
@@ -111,7 +111,6 @@ com_blufedora_Animation.prototype = {
 				this.setIndex(-1);
 			}
 			if(step != null) {
-				var time = this._deltaTime;
 				var timeTot = step.time;
 				var _g = 0;
 				var _g1 = Reflect.fields(step.properties);
@@ -397,32 +396,25 @@ com_blufedora_JSAnimObject.prototype = {
 var com_blufedora_Main = function() { };
 com_blufedora_Main.__name__ = true;
 com_blufedora_Main.main = function() {
-	window.addEventListener("devicemotion",function(evt) {
-	},true);
 	window.onload = function() {
 		com_blufedora_Tweener.init(window);
-		com_blufedora_Tweener.add(window.document.getElementById("shareef"),{ loop : true}).to(new com_blufedora_AnimationStep({ y : 100},2300,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 170},2000,com_blufedora_Easing.easeInOutSine));
+		var name_logo = window.document.getElementById("shareef");
+		if(name_logo != null) {
+			com_blufedora_Tweener.add(name_logo,{ loop : true}).to(new com_blufedora_AnimationStep({ y : 170},2300,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 200},2000,com_blufedora_Easing.easeInOutSine));
+		}
 		if(com_blufedora_Main.getFileName() == "index.html") {
-			var hash = window.location.hash;
+			com_blufedora_portfolio_Links.init("game");
+			com_blufedora_portfolio_Links.init("web");
 			com_blufedora_portfolio_Photos.init("illustration");
 			com_blufedora_portfolio_Photos.init("design");
 			com_blufedora_portfolio_Photos.init("animation");
-			com_blufedora_portfolio_Links.init("web");
-			com_blufedora_portfolio_Links.init("game");
-			if(hash == "#illustration" || hash == "#design" || hash == "#animation") {
-				com_blufedora_portfolio_Photos.init(hash.substring(1,hash.length));
-			} else if(hash == "#web" || hash == "#game") {
-				com_blufedora_portfolio_Links.init(hash.substring(1,hash.length));
-			}
-		} else {
-			var tmp = com_blufedora_Main.getFileName() == "index.html" || com_blufedora_Main.getFileName() == "";
 		}
 		var menu = window.document.getElementById("menu");
 		var side_panel = window.document.getElementById("side_panel");
 		var main_article = window.document.getElementById("main_article");
 		if(menu != null && side_panel != null && main_article != null) {
-			var callback = function(evt1) {
-				(js_Boot.__cast(evt1.currentTarget , HTMLElement)).classList.toggle("opened");
+			var callback = function(evt) {
+				(js_Boot.__cast(evt.currentTarget , HTMLElement)).classList.toggle("opened");
 				side_panel.classList.toggle("opened");
 				main_article.classList.toggle("opened");
 			};
@@ -925,8 +917,6 @@ Object.defineProperty(js__$Boot_HaxeError.prototype,"message",{ get : function()
 js_Boot.__toStr = ({ }).toString;
 com_blufedora_Easing.PI_M2 = Math.PI * 2.0;
 com_blufedora_Easing.PI_D2 = Math.PI * 0.5;
-com_blufedora_Easing.linear = com_blufedora_Easing.easeLinear;
-com_blufedora_Easing.none = com_blufedora_Easing.easeLinear;
 com_blufedora_portfolio_Photos.images = [];
 com_blufedora_portfolio_Photos.index = 0;
 com_blufedora_Main.main();

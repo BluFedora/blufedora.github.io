@@ -1,11 +1,9 @@
 {
-  "Title"    : "Image Processing: <br> Journalism and Ethics Within Photography",
-  "Header"   : {
-    "Image"  : "url(images/covers/blog_post_3_cover.jpg)",
-    "Author" : "By: Shareef Raheem",
-    "Date"   : "November 29th, 2017"
+  "Title": "Image Processing: <br> Journalism and Ethics Within Photography",
+  "Header": {
+    "Image": "url(images/covers/blog_post_3_cover.jpg)",
+    "Author": "By: Shareef Raheem",
+    "Date": "November 29th, 2017"
   },
-  "Content"  : [
-    
-  ]
+  "Content": []
 }

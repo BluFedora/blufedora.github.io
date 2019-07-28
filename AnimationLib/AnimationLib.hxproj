@@ -4,7 +4,7 @@
   <output>
     <movie outputType="Application" />
     <movie input="" />
-    <movie path="..\scripts\animation-lib.js" />
+    <movie path="..\js\animation-lib.js" />
     <movie fps="0" />
     <movie width="0" />
     <movie height="0" />

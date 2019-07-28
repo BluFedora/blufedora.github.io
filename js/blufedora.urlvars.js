@@ -17,14 +17,7 @@ window.blufedora.urlvars = (window.blufedora.urlvars ||
   
   get : function(key, defaultValue)
   {
-    var return_value = defaultValue;
-  
-    if (this.has(key))
-    {
-      return_value = this.vars[key];
-    }
-
-    return return_value;
+    return this.has(key) ? this.vars[key] : defaultValue;
   },
   
   has : function(key)

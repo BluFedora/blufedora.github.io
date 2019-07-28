@@ -1,5 +1,16 @@
 /* CSS Notes:
-    transition: <property> <duration> <timing-function> <delay>;
+    transition: 
+      <property> <duration> <timing-function> <delay>;
+    
+
+      // TODO(Shareef):
+      //   One of these is probably wrong....
+
+    class starts with:
+      class^="prefixed_word"
+
+    class starts with:
+      class*="col-"
 */
 
 #menu {
@@ -26,14 +37,57 @@
 }
 
 .social-icons {
-  margin-top:    5px;
-  margin-bottom: 5px;
+  margin-top:       5px;
+  margin-bottom:    5px;
+  padding:          5px;
+  background-color: rgb(49, 54, 71);
 }
 
 .social-icon {
   width:  40px;
+  margin: 0px;
   cursor: pointer;
-  filter: invert(100%);
+  border-radius:    5px;
+  border: 2px white solid;
+
+  transition: transform 0.3s ease-out 0s, border-radius 0.2s ease-out 0s;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px);
+  border-radius:    10px;
+  
+}
+
+.social-icon:hover:nth-child(1) {
+  border:           2px #00aced solid;
+  background-color: #00aced;
+}
+
+.social-icon:hover:nth-child(2) {
+  border:           2px #211F1F solid;
+  background-color: #211F1F;
+}
+
+.social-icon:hover:nth-child(3) {
+  border:           2px #3C5A99 solid;
+  background-color: #3C5A99;
+}
+
+.social-icon:hover:nth-child(4) {
+  border:           2px #F77737 solid;
+  background: linear-gradient(#400080, transparent), 
+              linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+}
+
+.social-icon:hover:nth-child(5) {
+  border:           2px #ff0000 solid;
+  background-color: #ff0000;
+}
+
+.social-icon:hover:nth-child(6) {
+  border:           2px #FF4301 solid;
+  background-color: #FF4301;
 }
 
 .main-article {
@@ -56,6 +110,7 @@ article {
   display:            inline-block;
   padding:            10px;
   z-index:            2;
+  width:              100%;
 }
 
 .profile_icon {
@@ -89,6 +144,7 @@ nav ul {
 .nav-items {
   width: 100%;
   border-bottom: 1px rgb(74, 81, 105) solid;
+  overflow: visible;
 }
 
 .menu-item a {
@@ -104,49 +160,65 @@ nav ul {
   text-align: center;
 
   border-top:  1px solid rgb(74, 81, 105);
+  
+  z-index: 0;
+
+  font-weight: bold;
 }
 
-.menu-item:first-of-type {
-  border-left: none;
+.menu-item:last-child a {
+  border-bottom:  1px solid rgb(74, 81, 105);
 }
 
-.menu-item:last-of-type {
-  border-right: none;
+.menu-item a:hover {
+  background-color: rgb(74, 81, 105);
+  text-shadow: 2px 2px rgb(112, 112, 112);
 }
 
 .menu-item a {
   text-decoration: none;
 }
 
-/* unvisited link */
 .menu-item a:link {
-  color: red;
+  color: rgb(202, 202, 202);
 }
 
-/* visited link */
 .menu-item a:visited {
-  color: green;
+  color: rgb(202, 202, 202);
 }
 
-/* mouse over link */
 .menu-item a:hover {
-  color: hotpink;
+  color: white;
 }
 
-/* selected link */
 .menu-item a:active {
-  color: blue;
+  color: rgb(201, 201, 201);
+}
+
+footer {
+  width:              95%;
+  height:             25px;
+  position:           relative;
+  background-color:   rgb(49, 54, 71);
+  margin-top:         5px;
+  border-radius:      3px;
+  margin-left:        2.5%;
+  margin-right:       2.5%;
+  margin-bottom:      10px;
+  text-align:         center;
 }
 
 @media only screen and (max-width: 1000px) 
 {
   .side-panel {
-    width:  100%;
-    height: auto;
+    width:      100%;
+    height:     auto;
+    max-height: 100vh;
+    overflow-y: auto;
   }
 
   .side-panel.opened {
-    opacity: 0.9;
+    opacity: 0.95;
   }
 
   .main-article,

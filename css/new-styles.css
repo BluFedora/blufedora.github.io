@@ -1,20 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 
-pre {
-  white-space: pre-wrap;      /* Since CSS 2.1          */
-  white-space: -moz-pre-wrap; /* Mozilla, since 1999    */
-  white-space: -pre-wrap;     /* Opera 4-6              */
-  white-space: -o-pre-wrap;   /* Opera 7                */
-  word-wrap:    break-word;   /* Internet Explorer 5.5+ */
-  word-break:   break-all;    /* webkit                 */
-  word-wrap:    break-word;
-  white-space:  pre;
-  white-space:  -moz-pre-wrap; /* fennec                */
-  white-space:  pre-wrap;
-  white-space:  pre\9;         /* IE7+                  */
-}
-
 h1, h2, h3, h4 {
   position:       relative;
   text-align:     center;
@@ -65,55 +51,9 @@ html, body {
   background: rgb(21, 21, 26);
 }
 
-.nav-content {
-  background-color: rgba(51, 51, 51, 0.9);
-
-  width:              100%;
-  height: max-content;
-}
-
-.triangle_strip_b {
-  background-image:  url(../images/bg_triangle_bottom.png);
-  background-repeat:  repeat-x;  
-  
-  width:        100%;
-  height:        16px;
-    
-  clear:        both;
-  
-  z-index:       4;
-}
-
-nav img {
-  float:         left;
-}
-
- nav .navigation li a {
-   color:         aliceblue;
-   text-decoration: none;
-}
-
-nav .social {
-  background: -webkit-linear-gradient(left, rgba(51, 51, 51, 0.0), rgba(93, 93, 93, 0.94));
-  background: -o-linear-gradient(left, rgba(51, 51, 51, 0.0), rgba(93, 93, 93, 0.9));
-  background: linear-gradient(to right, rgba(83, 83, 83, 0.45), rgba(175, 165, 165, 0.94));
-}
-
-nav .social li {
-  padding:       5px 5px;
-}
-
-.social-button {
-  transition: all 0.5s;
-}
-
-.social-button:hover {
-  background-color: rgba(255, 255, 255, 0.33);
-}
-
 header {
   width: 100%;
-  height: 100vh;
+  height: 86vh;
   background:  url(../images/covers/blog_cover_2.jpg);
   background-position-y: -100px;
   position:relative;
@@ -142,15 +82,6 @@ header::after {
   margin:     0px auto;
 }
 
-.gallery-card {
-  border: 3px solid gray;
-  
-  width: 300px;
-  height: 120px;
-  
-  float: left;
-}
-
 [class^="parallax"] {
   width:     100%;
   margin:   0px auto;
@@ -164,24 +95,11 @@ header::after {
   position: absolute;
 }
 
-.parallax-4 {
-  background-image: url(../images/p4-background.svg);
-}
-
-.parallax-3 {
-  background-image: url(../images/p3-mountains.svg);
-}
-
-.parallax-2 {
-  background-image: url(../images/parallal_2-clouds.png)
-}
-
 .parallax-1 {
-  max-width:       550px;
   width:         100%;
   height:       auto;
   
-  padding:       20px;
+  padding:       30px;
   margin:       0px auto;
   
   top:         200px;
@@ -189,22 +107,11 @@ header::after {
   position:       relative;
   
   background-color:   rgba(70, 63, 70, 0.54);
-  border:       8px solid rgba(62, 62, 90, 0.31);
-  
-  transform:       skewY(-8deg);
-}
 
-footer {
-  width:              95%;
-  height:             25px;
-  position:           relative;
-  background-color:   rgb(49, 54, 71);
-  margin-top:         5px;
-  border-radius:      3px;
-  margin-left:        2.5%;
-  margin-right:       2.5%;
-  margin-bottom:      10px;
-  text-align:         center;
+  border-top:       4px solid rgba(62, 62, 90, 0.8);
+  border-bottom:    4px solid rgba(62, 62, 90, 0.8);
+
+  transform:       skewY(-6deg);
 }
 
 .credits {
@@ -216,10 +123,6 @@ footer {
   color:         #e4dce7;
 }
 
-.nav-button {
-  transition: all 0.5s;
-}
-
 .portfolio_cover {
   background-color:     #dddddd;
   color:           #818181;
@@ -228,7 +131,7 @@ footer {
   border:         solid #ededed 1px;
   
   width:           240px;
-  height:         240px;
+  height:         250px;
   margin:         8px;
   border-radius:       3px;
   
@@ -316,7 +219,6 @@ footer {
   opacity:         0;
 }
 
-
 @keyframes circle {
   0% {
     opacity:   1.0;
@@ -328,7 +230,7 @@ footer {
   
   100% {
     width:     400px;
-    height:   400px;
+    height:    400px;
     opacity:   0.6;
   }
 }

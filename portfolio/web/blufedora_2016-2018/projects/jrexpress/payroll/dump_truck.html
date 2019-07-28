@@ -1,0 +1,169 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+
+      <title>JR Express: DumpTruck</title>
+      <meta name="description"  content="Internal Payroll Manager for JR Express">
+      <meta name="author"       content="BluFedora of BluWhale Studios">
+      <meta name="theme-color"  content="#333">
+      <meta name="viewport"     content="width = device-width, initial-scale = 1.0">
+
+      <link rel="stylesheet" href="css/styles.css">
+      
+      <script src="js/global_init.js" type="text/javascript"></script>
+      <script src="js/dump_truck.js" type="text/javascript"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
+      <script src="js/lib-dialog.js" type="text/javascript"></script>
+      <script>
+        var truck_to_view = window.sessionStorage.getItem("ss_truck");
+
+        if (truck_to_view == undefined)
+        {
+          alert("This page should not be accessable without a truck to view.");
+          window.location.assign("index.html");
+        }
+        
+        window.onload = function(evt)
+        {
+          window.globals = {
+            "week_selector" : document.getElementById("js_week_selector"),
+            "selected_week" : lib_date.to_string_yyyy_mm_dd(new Date())
+          };
+          
+          initJRExpressPayroll(firebase);
+          
+          const add_entry = document.getElementById("js_add_entry");
+
+          add_entry.addEventListener(
+            "click",
+            function(evt)
+            {
+              var dialog = new Dialog("New Dump Truck Entry");
+
+              var buttons = dialog.pushButtons(["Accept"]);
+
+              buttons[0].onclick = function()
+              {
+                alert("Make a new Entry");
+                this.dialog_parent.hide();
+              };
+
+              dialog.show();
+            }
+          );
+
+          document.getElementById("js_truck_name").innerHTML = truck_to_view;
+
+          const truck_db    = payroll.firestore.collection("db_trucks");
+          const truck_data  = truck_db.doc(truck_to_view);
+          
+          truck_db.onSnapshot(
+              function(snapshot)
+              {
+                snapshot.docChanges().forEach(
+                  function(change)
+                  {
+                    if (change.type === "modified")
+                    {
+                        // NOTE(Shareef): Recreating the whole DOM is a bad idea but I don't get paid enough
+                      globals.week_selector.dispatchEvent(new Event("change"));
+                    }
+                  }
+                );
+              }
+            );
+
+          globals.week_selector.addEventListener("change", onSelectedWeekChange, false);
+          window.globals.week_selector.value =
+            lib_date.to_string_yyyy_mm_dd(
+            lib_date.get_monday(new Date()));
+          globals.week_selector.dispatchEvent(new Event("change"));
+        };
+      </script>
+      <script src="js/main_dump_truck.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+      <header>
+        <h1>JR Express Payroll <br>
+          <span id="js_truck_name">
+            TRUCK_NAME_HERE (If you see this text here an error occured loading the name)
+          </span>
+        </h1>
+      </header>
+        
+      <nav>
+        <ul>
+          <li><a href="index.html">Truck List</a></li>
+          <li><a id="js_add_entry" >Add Entry</a></li>
+        </ul>
+      </nav>
+      
+      <style>
+        .week_item_edit {
+          background-color: #8adbd3;
+          width: 98%;
+          padding: 10px;
+          text-align: center;
+          margin: 1%;
+          
+          border: 2px solid white;
+          border-radius: 4px;
+        }
+        
+        .week_item_edit:hover {
+          background-color: #c8f0ec;
+        }
+      </style>
+      
+      <section class="truck_list">
+        Select Week: <input id="js_week_selector" class="week_selector" type="date" >
+        <article id="js_truck_list">
+          <section id="js_mon_week_item" class="week_item">
+            <h3>Monday</h3>
+            <div class="week_item_edit">Edit Entry</div>
+          </section>
+          <section id="js_tue_week_item" class="week_item">
+            <h3>Tuesday</h3>
+            <div class="week_item_edit">Edit Entry</div>
+          </section>
+          <section id="js_wed_week_item" class="week_item">
+            <h3>Wednesday</h3>
+            <div class="week_item_edit">Edit Entry</div>
+          </section>
+          <section id="js_thu_week_item" class="week_item">
+            <h3>Thursday</h3>
+            <div class="week_item_edit">Edit Entry</div>
+          </section>
+          <section id="js_fri_week_item" class="week_item">
+            <h3>Friday</h3>
+            <div class="week_item_edit">Edit Entry</div>
+          </section>
+          <section id="js_sat_week_item" class="week_item">
+            <h3>Saturday</h3>
+            <div class="week_item_edit">Edit Entry</div>
+          </section>
+          <section id="js_sun_week_item" class="week_item">
+            <h3>Sunday</h3>
+            <div class="week_item_edit">Edit Entry</div>
+          </section>
+          <div class="clear"></div>
+        </article>
+      </section>
+      
+      <footer>
+        <div class='credits'>
+          Copyright 2018 &copy; 
+          <span style="color:#7ca8ed">
+            Shareef 
+          </span>
+          <span style="color:#666467">
+            Raheem
+          </span>
+        </div>
+      </footer>
+    </body>
+</html>

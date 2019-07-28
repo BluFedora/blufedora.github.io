@@ -1,58 +1,68 @@
+#current-post {
+  width: 100%;
+  padding: 10px 0px;
+}
 
 
-/* For Indentation of the posts */
-p {
+/* Indentation of the posts */
+.blog-post p {
   text-indent: 20px;
-  text-align: justify;
-  word-wrap: break-word;
+  text-align:  justify;
+  word-wrap:   break-word;
 }
 
 .blog-post {
-  background-color:       #efefef;
-  width:             100%;
-  opacity:           1.0;
-  z-index:           2;
+  background-color: #efefef;
+  width:            100%;
+  opacity:          1.0;
+  z-index:          2;
 }
 
-.blog-post .header {
-  background-size:        cover;
-  background-attachment:  local;
-  background-position:    center center;
-  margin:                 0px auto;
-  width:                  100%;
-  height:                 500px;
+.blog-post.header {
+  background-size:       cover;
+  background-attachment: local;
+  background-position:   center center;
+  margin:                0px auto;
+  width:                 100%;
+  height:                500px;
+  border-top:            2px solid #7e7e7e;
   border-bottom:         2px solid #7e7e7e;
-  z-index:                0;
+  z-index:               0;
 }
 
 .blog-post img {
-  width:              calc(100% - 20px);
-  margin:             10px;
-  border:             2px solid #c3c3c3;
-  border-radius:      7px;
+  width:         calc(100% - 20px);
+  margin:        10px;
+  border:        2px solid #c3c3c3;
+  border-radius: 7px;
 }
 
 .blog-post h2 {
-  font-family:         'Dosis', sans-serif;
-  font-weight:         400;
-  font-size:           60px;
-  margin:           10px auto;
-  text-align:         center;
-  color:             #7e7e7e;
-  transform:                    none;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  font-size:   60px;
+  margin:      10px auto;
+  text-align:  center;
+  color:       #7e7e7e;
+  transform:    none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  transform:                    none;
+.blog-post h1,
+.blog-post h2,
+.blog-post h3,
+.blog-post h4,
+.blog-post h5,
+.blog-post h6 {
+  transform: none;
 }
 
 .blog-post h3 {
-  font-family:         'Dosis', sans-serif;
-  font-weight:         400;
-  font-size:           20px;
-  margin:           15px auto;
-  text-align:         center;
-  color:             #676767;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  font-size:   20px;
+  margin:      15px auto;
+  text-align:  center;
+  color:     #676767;
 }
 
 .blog-post .content {
@@ -85,34 +95,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .blog-post.opened {
-  transform:           translateY(0px);
-  opacity:           1.0;
+  transform: translateY(0px);
+  opacity:   1.0;
 }
 
-table {
-  font-family: arial, sans-serif;
+.blog-post table {
+  font-family:     arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width:           100%;
 }
 
-td, th {
-  border: 1px solid #dddddd;
+.blog-post td,
+.blog-post th {
+  border:     1px solid #dddddd;
   text-align: left;
-  padding: 8px;
+  padding:    8px;
 }
 
-tr:nth-child(even) {
+.blog-post tr:nth-child(even) {
   background-color: #dddddd;
 }
 
 @media print
 {
-  nav, .blog-post .header {
+  nav, .blog-post.header {
     display: none;
   }
   
   .blog-post .content {
-    box-shadow:         none;
+    box-shadow: none;
   }
   
   table {
@@ -126,7 +137,52 @@ tr:nth-child(even) {
   
   /* links will be shown with the actual url */
   p a:after {
-    content: " (" attr(href) ")";
+    content:   " (" attr(href) ")";
     font-size: 80%;
   }
+}
+
+
+/* All Posts Page */
+.post-card
+{
+  background-color: #302340;
+  padding: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: transform 0.15s ease-in-out;
+  display: inline-block;
+  color: #f0e7fc;
+}
+.post-card:hover
+{
+  transform: translateY(-5px);
+}
+.post-card .header
+{
+  background-color: #423057;
+  border-bottom: 2px solid #302340;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  font-family:         'Dosis', sans-serif;
+  font-size: 20px;
+}
+.post-card .cover-image
+{
+  background-image:       url(images/test_plant_image.JPG);
+  background-size:       cover;
+  background-position:     center center;
+  border-radius: 8px;
+  width: 100%;
+  height: 300px;
+}
+.post-card .mini-content
+{
+  width: calc(100% - 10px);
+  margin: 5px;
+  background-color: #423057;
+  padding: 6px;
+  border-radius: 5px;
 }

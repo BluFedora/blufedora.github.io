@@ -1,35 +1,30 @@
 {
-  "Title"  : "Image Processing: <br> Final Thoughts",
-  "Header" : {
-    "Image" : "url(images/post_4/post_4_cover.jpg)",
-    "Author" : "By: Shareef Raheem",
-    "Date"  : "December 13th, 2017"
+  "Title": "Image Processing: <br> Final Thoughts",
+  "Header": {
+    "Image": "url(images/post_4/post_4_cover.jpg)",
+    "Author": "By: Shareef Raheem",
+    "Date": "December 13th, 2017"
   },
-  "Content" : [
+  "Content": [
     {
-      "Type" : "p",
-      "Content" :
-        "Image processing has been an interest of mine and I’m happy I was able to explore it to new depths. I actually didn’t realize before writing these blog posts how much of an impact on society and how we view our selfs and the world. What really surprised me was that “there is an amazing availability of radiation to be sensed, recorded as images, and viewed, analyzed, transmitted, or stored.” There is so much data at our disposal we just need to extract using various algorithms."
+      "Type": "p",
+      "Content": "Image processing has been an interest of mine and I’m happy I was able to explore it to new depths. I actually didn’t realize before writing these blog posts how much of an impact on society and how we view our selfs and the world. What really surprised me was that “there is an amazing availability of radiation to be sensed, recorded as images, and viewed, analyzed, transmitted, or stored.” There is so much data at our disposal we just need to extract using various algorithms."
     },
     {
-      "Type" : "p",
-      "Content" :
-        "Image processing has great significance since it will be integrated more and more into our daily lives. Fingerprint scanners started off on only the highest end smartphone of yesteryear and were a bit unreliable; we now have even cheap fifty dollar handhelds with quite decent fingerprint scanners. Reliable face detection as a form of identification for unlocking your smartphone is what the next few years should be."
+      "Type": "p",
+      "Content": "Image processing has great significance since it will be integrated more and more into our daily lives. Fingerprint scanners started off on only the highest end smartphone of yesteryear and were a bit unreliable; we now have even cheap fifty dollar handhelds with quite decent fingerprint scanners. Reliable face detection as a form of identification for unlocking your smartphone is what the next few years should be."
     },
     {
-      "Type" : "p",
-      "Content" :
-        "Due to image processing being relatively new current literature either fails to include more modern approaches or don’t go in-depth into the complexities of how to program something more useful such as face detection. It seems as if the more complex aspects of image processing are trade secrets. Despite this shortcoming the current literature provides a great base knowledge on which you can form your own conclusions on how you would perform a certain task."
+      "Type": "p",
+      "Content": "Due to image processing being relatively new current literature either fails to include more modern approaches or don’t go in-depth into the complexities of how to program something more useful such as face detection. It seems as if the more complex aspects of image processing are trade secrets. Despite this shortcoming the current literature provides a great base knowledge on which you can form your own conclusions on how you would perform a certain task."
     },
     {
-      "Type" : "p",
-      "Content" :
-        "Further research can be made to finding out how to extract data from images in a much more accurate. At this point in time facial recognition technology is brittle so we need to make sure it better as to make it a valid method for securing devices. We would also benefit from more efficiency since as image processing is very resource intensive. The technology industry is pushing for augmented reality on the go but for that to be feasible there needs to be a bump in both speed of processors and faster software. Realtime simulations need all the optimization possible to keep a smooth user experience. Hopefully we can acheive a great augmented system and improve people's quality of life."
+      "Type": "p",
+      "Content": "Further research can be made to finding out how to extract data from images in a much more accurate. At this point in time facial recognition technology is brittle so we need to make sure it better as to make it a valid method for securing devices. We would also benefit from more efficiency since as image processing is very resource intensive. The technology industry is pushing for augmented reality on the go but for that to be feasible there needs to be a bump in both speed of processors and faster software. Realtime simulations need all the optimization possible to keep a smooth user experience. Hopefully we can acheive a great augmented system and improve people's quality of life."
     },
     {
-      "Type" : "p",
-      "Content" :
-        "I have enjoyed writing most of these blog posts on image processing with photography. It was a great experience learning, not just implementation but also the 'real world' effects of it. It often feels like the digital world is a whole nother domain but it really is just an extenstion of the physical world. This extension will hopfully help us all on our path to the future."
+      "Type": "p",
+      "Content": "I have enjoyed writing most of these blog posts on image processing with photography. It was a great experience learning, not just implementation but also the 'real world' effects of it. It often feels like the digital world is a whole nother domain but it really is just an extenstion of the physical world. This extension will hopfully help us all on our path to the future."
     }
   ]
 }

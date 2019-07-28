@@ -1,15 +1,18 @@
 {
-  "Title"    : "Image Processing: <br> Inner Workings",
-  "Header"   : {
-    "Image"  : "url(images/covers/blog_post_3_cover.jpg)",
-    "Author" : "By: Shareef Raheem",
-    "Date"   : "November 29th, 2017"
+  "Title": "Image Processing: <br> Inner Workings",
+  "Header": {
+    "Image": "url(images/covers/blog_post_3_cover.jpg)",
+    "Author": "By: Shareef Raheem",
+    "Date": "November 29th, 2017"
   },
-  "Content"  : [
-    { "Type" : "h4", "Content" : "Introduction:" },
+  "Content": [
     {
-      "Type" : "p",
-      "Content" : [
+      "Type": "h4",
+      "Content": "Introduction:"
+    },
+    {
+      "Type": "p",
+      "Content": [
         "This post will be on how image processing is done and what techniques are used to create certain effects such as a ‘Gaussian Blur'.",
         "I have digressed away from talking about image processing from a more technical perspective and want to come back to that.",
         "In the last blog post, I covered the philosophical debates of photography as this technology advances but not so much what advances were made.",
@@ -17,36 +20,51 @@
       ]
     },
     {
-      "Type" : "p",
-      "Content" : [
+      "Type": "p",
+      "Content": [
         "Although digital image processing is a broad topic, it happens to be “a subfield of signals and systems” (TutorialsPoint). ",
         "Image processing at its core is the method of obtaining information from a particular signal; namely pictures. ",
         "This information can be the detection of a face to unlock a device or given a set of points that shade a 3D model accordingly. ",
         "For my purposes these signals are solely going to be grids of pixels that need to be changed or manipulated in some way."
       ]
     },
-    { "Type" : "h4", "Content" : "Terminology and Images:" },
     {
-      "Type" : "p",
-      "Content" : [
+      "Type": "h4",
+      "Content": "Terminology and Images:"
+    },
+    {
+      "Type": "p",
+      "Content": [
         "I’ve mentioned ‘pixels’ a couple of times throughout my blog posts but never fully defined them. ",
         "A pixel is the smallest unit of an image, the value is simply an integer. ",
         "These pixels are put in a 2 dimensional grid to represent some kind of image. Below is a table (Image A) representing some image of pseudo random ‘colors’."
       ]
     },
     {
-      "Type" : "table",
-      "Content" : [
-        { "Type" : "tr", "Content" : "<td>101</td> <td>203</td> <td>231</td> <td>213</td>" },
-        { "Type" : "tr", "Content" : "<td> 53</td> <td>200</td> <td> 25</td> <td> 31</td>" },
-        { "Type" : "tr", "Content" : "<td> 21</td> <td>  0</td> <td>255</td> <td>  2</td>" },
-        { "Type" : "tr", "Content" : "<td>  3</td> <td> 23</td> <td>  2</td> <td> 54</td>" }
+      "Type": "table",
+      "Content": [
+        {
+          "Type": "tr",
+          "Content": "<td>101</td> <td>203</td> <td>231</td> <td>213</td>"
+        },
+        {
+          "Type": "tr",
+          "Content": "<td> 53</td> <td>200</td> <td> 25</td> <td> 31</td>"
+        },
+        {
+          "Type": "tr",
+          "Content": "<td> 21</td> <td>  0</td> <td>255</td> <td>  2</td>"
+        },
+        {
+          "Type": "tr",
+          "Content": "<td>  3</td> <td> 23</td> <td>  2</td> <td> 54</td>"
+        }
       ]
     },
     "(Image A: 4 rows x 4 cols = 16 pixels total)",
     {
-      "Type" : "p",
-      "Content" : [
+      "Type": "p",
+      "Content": [
         "All these numbers in ‘Image A’ are under the number 256; this is a conscious decision. ",
         "This is a representation of an 8-bit image meaning each pixel must be represented by eight 1’s and 0’s (binary). ",
         "This gives us from 0 to 255 to represent the intensity of that pixel on the image. ",
@@ -54,42 +72,45 @@
         "The number of colors a pixel can represent can be calculated with this formula:"
       ]
     },
-    { "Type" : "p", "Style" : "text-align: center;", "Content": "<b>Number of colors = (2)bits_per_pixel</b>" },
     {
-      "Type" : "p",
+      "Type": "p",
+      "Style": "text-align: center;",
+      "Content": "<b>Number of colors = (2)bits_per_pixel</b>"
+    },
+    {
+      "Type": "p",
       "Content": "Most color images use 24 bits per pixel to have enough space to represent the base three colors: red, green, and blue. Each color channel will have eight bits of accuracy:"
     },
     {
-      "Type" : "p",
-      "Style" : "text-align: center;",
-      "Content" : "<b>PixelColor(24bits) = Red(8bits) + Green(8bits) + Blue(8bits)</b>"
+      "Type": "p",
+      "Style": "text-align: center;",
+      "Content": "<b>PixelColor(24bits) = Red(8bits) + Green(8bits) + Blue(8bits)</b>"
     },
     {
-      "Type" : "p",
-      "Content" : "Now we know the storage of an image depends on the amount of rows and columns along with the bits per pixel. The size of the image in bits is:"
+      "Type": "p",
+      "Content": "Now we know the storage of an image depends on the amount of rows and columns along with the bits per pixel. The size of the image in bits is:"
     },
     {
-      "Type" : "p",
-      "Style" : "text-align: center;",
-      "Content" : "<b>rows x cols x bit_per_pixel.</b>"
+      "Type": "p",
+      "Style": "text-align: center;",
+      "Content": "<b>rows x cols x bit_per_pixel.</b>"
     },
     {
-      "Type" : "h4",
-      "Content" : "Methods of Manipulation:"
+      "Type": "h4",
+      "Content": "Methods of Manipulation:"
     },
     {
-      "Type" : "p",
-      "Content" :
-        "Images for the most part are manipulated in one of two ways, the first (affine transformations) keeps the data of the image intact (linearly speaking) while the other (convolution) warps the pixels for either an effect or to extract information such as edge."
+      "Type": "p",
+      "Content": "Images for the most part are manipulated in one of two ways, the first (affine transformations) keeps the data of the image intact (linearly speaking) while the other (convolution) warps the pixels for either an effect or to extract information such as edge."
     },
     {
-      "Type" : "h5",
-      "Style" : "text-align: center;",
-      "Content" : "Affine Transformations:"
+      "Type": "h5",
+      "Style": "text-align: center;",
+      "Content": "Affine Transformations:"
     },
     {
-      "Type" : "p",
-      "Content" : [
+      "Type": "p",
+      "Content": [
         "Affine transformations use transformation matrices to rotate, scale, reflect, sheer or translate an image. ",
         "Although we don’t gain new information from these transformations they do have their use in photography and video games. ",
         "For example, in the post-production phase of photography a mountain may be too small for the photographer so they will use some image editing tool to scale it up. ",
@@ -97,19 +118,32 @@
         "Rather than working on a pixel by pixel basis this matrix would be applied to the four corners of the image then all the program has to do is interpolate the value of the pixel inbetween each vertex."
       ]
     },
-    { "Type" : "div", "Class" : "clear" },
     {
-      "Type" : "img",
-      "Style" : "margin: 10px 30%; width: 40%;",
-      "Source" : "images/post_3/mat_scale_x2.gif"
+      "Type": "div",
+      "Class": "clear"
     },
-    { "Type" : "div", "Class" : "clear" },
-    "(Table B: This matrix would scale an image by 2 horizontally and keep the same vertical height.)",
-    { "Type" : "div", "Class" : "clear" },
-    { "Type" : "h5", "Style" : "text-align: center;", "Content" : "Convolution Matrices:" },
     {
-      "Type" : "p",
-      "Content" : [
+      "Type": "img",
+      "Style": "margin: 10px 30%; width: 40%;",
+      "Source": "images/post_3/mat_scale_x2.gif"
+    },
+    {
+      "Type": "div",
+      "Class": "clear"
+    },
+    "(Table B: This matrix would scale an image by 2 horizontally and keep the same vertical height.)",
+    {
+      "Type": "div",
+      "Class": "clear"
+    },
+    {
+      "Type": "h5",
+      "Style": "text-align: center;",
+      "Content": "Convolution Matrices:"
+    },
+    {
+      "Type": "p",
+      "Content": [
         "These type of manipulation works on a pixel by pixel basis. ",
         "It uses a special kind of matrix called a ‘kernel’ (filter array). ",
         "A kernel is a square matrix with an odd number of rows and columns so that it has center. ",
@@ -118,34 +152,64 @@
       ]
     },
     {
-      "Type" : "div",
-      "Style" : "background-color: rgba(255, 255, 255, 0.44); padding: 5px; border-radius: 5px;",
-      "Content" : [
-        { "Type" : "div", "Class" : "clear" },
-        { "Type" : "img", "Style" : "margin: 10px 5px; width: 350px;", "Source" : "images/post_3/Affine_Transformation_Original_Checkerboard.jpg" },
-        { "Type" : "img", "Style" : "margin: 10px 5px; width: 350px;", "Source" : "images/post_3/spacial_highpass.png" },
-        { "Type" : "img", "Style" : "margin: 10px 5px; width: 350px;", "Source" : "images/post_3/Spatial_Laplacian_Filter_Checkerboard.png" },
-        { "Type" : "div", "Class" : "clear" },
+      "Type": "div",
+      "Style": "background-color: rgba(255, 255, 255, 0.44); padding: 5px; border-radius: 5px;",
+      "Content": [
+        {
+          "Type": "div",
+          "Class": "clear"
+        },
+        {
+          "Type": "img",
+          "Style": "margin: 10px 5px; width: 350px;",
+          "Source": "images/post_3/Affine_Transformation_Original_Checkerboard.jpg"
+        },
+        {
+          "Type": "img",
+          "Style": "margin: 10px 5px; width: 350px;",
+          "Source": "images/post_3/spacial_highpass.png"
+        },
+        {
+          "Type": "img",
+          "Style": "margin: 10px 5px; width: 350px;",
+          "Source": "images/post_3/Spatial_Laplacian_Filter_Checkerboard.png"
+        },
+        {
+          "Type": "div",
+          "Class": "clear"
+        },
         "(Images A, C: Showcases a Spatial High-pass Filter for Edge Detection.)",
-        { "Type" : "div", "Class" : "clear" },
+        {
+          "Type": "div",
+          "Class": "clear"
+        },
         "(Table C: A Spatial High-pass Kernel.)",
-        { "Type" : "div", "Class" : "clear" }
+        {
+          "Type": "div",
+          "Class": "clear"
+        }
       ]
     },
-    { "Type" : "h4", "Content" : "Conclusion:" },
     {
-      "Type" : "p",
-      "Content" : [
+      "Type": "h4",
+      "Content": "Conclusion:"
+    },
+    {
+      "Type": "p",
+      "Content": [
         "This is a solid foundation towards understanding image processing and what is done to images to extract information. ",
         "We use imaging technology in our daily life and I feel that it is important to know how the world around us works. ",
         "Technology is so embedded into our life that I consider it essential to understand it even at a basic level."
       ]
     },
-    { "Type" : "h4", "Content" : "Cited Works:" },
     {
-      "Type" : "p",
-      "Style" : "word-wrap: break-word;",
-      "Content" : "Digital Image Processing,” TutorialsPoint, https://www.tutorialspoint.com/dip/"
+      "Type": "h4",
+      "Content": "Cited Works:"
+    },
+    {
+      "Type": "p",
+      "Style": "word-wrap: break-word;",
+      "Content": "Digital Image Processing,” TutorialsPoint, https://www.tutorialspoint.com/dip/"
     }
   ]
 }

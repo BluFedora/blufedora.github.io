@@ -1,23 +1,26 @@
 {
-  "Title"    : "Image Processing: <br> Introduction and History",
-  "Header"   : {
-    "Image"  : "url(images/cover_image.jpg)",
-    "Author" : "By: Shareef Raheem",
-    "Date"   : "October 18th, 2017 (Revised November 13th, 2017)"
+  "Title": "Image Processing: <br> Introduction and History",
+  "Header": {
+    "Image": "url(images/cover_image.jpg)",
+    "Author": "By: Shareef Raheem",
+    "Date": "October 18th, 2017 (Revised November 13th, 2017)"
   },
-  "Content"  : [
-    { "Type" : "h4", "Content" : "Introduction and Definitions:" },
+  "Content": [
     {
-      "Type" : "p",
-      "Content" : [
+      "Type": "h4",
+      "Content": "Introduction and Definitions:"
+    },
+    {
+      "Type": "p",
+      "Content": [
         " The expansive field of digital image processing informational technology is the backbone of many modern conveniences. ",
         "Image processing borrows talents from a variety of fields such as computer science, electrical engineering, mathematics, physiology, biology, and even cognitive science. ",
         "These sciences come together to create ways for computers to capture and then interpret the three-dimensional (3D) world around us."
       ]
     },
     {
-      "Type" : "p",
-      "Content" : [
+      "Type": "p",
+      "Content": [
         "The aspect of image processing that handles interpreting the world is called “Computer Vision.” ",
         "Computer Vision is the study of developing ways to use and analyze data from digital images and videos. ",
         "This data needs to be interpreted in such a way to allow computers to have a high-level understanding of what the image or video represents. ",
@@ -25,8 +28,8 @@
       ]
     },
     {
-      "Type" : "p",
-      "Content" : [
+      "Type": "p",
+      "Content": [
         "The term ‘image,’ which is traditionally thought of as a picture or grid of pixels, can exist in many forms. ",
         "An image can be collected from various methods such as bouncing radio or ultrasonic waves. ",
         "The many mediums to project the world onto allow for different representations of the data so that depending on the aspect we want to focus on it is easy to see. ",
@@ -35,8 +38,8 @@
       ]
     },
     {
-      "Type" : "p",
-      "Content" : [
+      "Type": "p",
+      "Content": [
         "Development of computer vision picked up in the late 1960s at universities in an attempt to advance artificial intelligence (A.I). ",
         "The idea was for analyzing images to act as a steppingstone for more intelligent robots that could make context aware decisions. ",
         "Based on that idea, some projects were just attaching a camera to a computer and haing it ‘describe what it saw’.",
@@ -45,23 +48,47 @@
         "Modern research of computer vision incorporate machine learning techniques (which is somewhat out of the scope of this blog) for more precise interpretations of this world."
       ]
     },
-    { "Type" : "h4", "Content" : "Current State of Affairs:" },
     {
-      "Type" : "table",
-      "Content" : [
-        { "Type" : "tr", "Content" : "<th>Company</th>    <th>Technology</th>       <th>What it Does</th>" },
-        { "Type" : "tr", "Content" : "<td>Microsoft</td>  <td>Windows Hello</td>    <td>Uses Facial Identification technology to let you be able to unlock your computer just by looking at it.</td>" },
-        { "Type" : "tr", "Content" : "<td>Apple</td>      <td>TouchID, FaceID</td>  <td>Uses your fingerprint and face respectively to unlock your iPhone and recent MacBooks.</td>" },
-        { "Type" : "tr", "Content" : "<td>Google</td>     <td>Image Search</td>     <td>This allows you to search for images similar to the one you are using to search with.</td>" },
-        { "Type" : "tr", "Content" : "<td>Adobe</td>      <td>Photoshop ©</td>      <td>Photoshop is the industry standard for software to edit digital photography in almost anyway.</td>" },
-        { "Type" : "tr", "Content" : "<td>Apple</td>      <td>Portrait Mode</td>    <td>This is a new technology using the iPhone 8’s camera to analyze a portrait image of a person and emulate professional lighting.</td>" }
+      "Type": "h4",
+      "Content": "Current State of Affairs:"
+    },
+    {
+      "Type": "table",
+      "Content": [
+        {
+          "Type": "tr",
+          "Content": "<th>Company</th>    <th>Technology</th>       <th>What it Does</th>"
+        },
+        {
+          "Type": "tr",
+          "Content": "<td>Microsoft</td>  <td>Windows Hello</td>    <td>Uses Facial Identification technology to let you be able to unlock your computer just by looking at it.</td>"
+        },
+        {
+          "Type": "tr",
+          "Content": "<td>Apple</td>      <td>TouchID, FaceID</td>  <td>Uses your fingerprint and face respectively to unlock your iPhone and recent MacBooks.</td>"
+        },
+        {
+          "Type": "tr",
+          "Content": "<td>Google</td>     <td>Image Search</td>     <td>This allows you to search for images similar to the one you are using to search with.</td>"
+        },
+        {
+          "Type": "tr",
+          "Content": "<td>Adobe</td>      <td>Photoshop ©</td>      <td>Photoshop is the industry standard for software to edit digital photography in almost anyway.</td>"
+        },
+        {
+          "Type": "tr",
+          "Content": "<td>Apple</td>      <td>Portrait Mode</td>    <td>This is a new technology using the iPhone 8’s camera to analyze a portrait image of a person and emulate professional lighting.</td>"
+        }
       ]
     },
     " (Table A: list of notable consumer products using image processing technology)",
-    { "Type" : "h5", "Content" : "Video Games:" },
     {
-      "Type" : "p",
-      "Content" : [
+      "Type": "h5",
+      "Content": "Video Games:"
+    },
+    {
+      "Type": "p",
+      "Content": [
         "Digital image manipulation is quite prevalent in the field of videos games. ",
         "Often times used for effects such as bloom lighting using a small program, called a shader, to make calculation based off of the current pixels on-screen. ",
         "Algorithms for these effects are getting very efficient to where we can update millions (1920 x 1080) of pixels sixty or more times a second while performing hundreds of other tasks. All video games use image processing concepts at some level, although it may be difficult to tell since there are sometimes many levels of abstraction from what is actually happening with the hardware. ",
@@ -71,16 +98,22 @@
       ]
     },
     {
-      "Type" : "img",
-      "Style" : "float: left; margin: 10px 0px; width:100%;",
-      "Source" : "images/post_1/minecraft-bloom.jpg"
+      "Type": "img",
+      "Style": "float: left; margin: 10px 0px; width:100%;",
+      "Source": "images/post_1/minecraft-bloom.jpg"
     },
     "(IMAGE A: FROM MINECRAFT SHOWCASING BLOOM LIGHTING SHADERS)",
-    { "Type" : "div", "Class" : "clear" },
-    { "Type" : "h5", "Content" : "Movies:" },
     {
-      "Type" : "p",
-      "Content" : [
+      "Type": "div",
+      "Class": "clear"
+    },
+    {
+      "Type": "h5",
+      "Content": "Movies:"
+    },
+    {
+      "Type": "p",
+      "Content": [
         "Movies are a very popular medium of entertainment today, and now commonly make use of ‘computer generated imagery’ (CGI). ",
         "A technique used make the digital objects look like they are in the scene is known as “Camera Tracking.” ",
         "A computer analyzes the scene and tries to generate a 3D visualization based on the 2-Dimensional (2D) camera shots to help with the placing of the digital models. ",
@@ -92,33 +125,44 @@
       ]
     },
     {
-      "Type" : "img",
-      "Style" : "width:100%",
-      "Source" : "images/post_1/crappy-cgi-scorpion-king.jpg"
+      "Type": "img",
+      "Style": "width:100%",
+      "Source": "images/post_1/crappy-cgi-scorpion-king.jpg"
     },
     "(IMAGE B: FROM “THE SCORPION KING” SHOWCASING ‘BAD’ CGI)",
-    { "Type" : "div", "Class" : "clear" },
     {
-      "Type" : "img",
-      "Style" : "width:100%",
-      "Source" : "images/post_1/good-cgi-300.jpg"
+      "Type": "div",
+      "Class": "clear"
+    },
+    {
+      "Type": "img",
+      "Style": "width:100%",
+      "Source": "images/post_1/good-cgi-300.jpg"
     },
     "(IMAGE C: FROM “300” SHOWCASING WELL IMPLEMENTED CGI)",
-    { "Type" : "div", "Class" : "clear" },
-    { "Type" : "h5", "Content" : "Smart Phones:" },
     {
-      "Type" : "p",
-      "Content" : [
-        
-      ]
+      "Type": "div",
+      "Class": "clear"
     },
-    { "Type" : "h4", "Content" : "Cutting Edge: " },
     {
-      "Type" : "p",
-      "Content" : [
-        
-      ]
+      "Type": "h5",
+      "Content": "Smart Phones:"
     },
-    { "Type" : "h4", "Content" : "What’s at stake and why it matters?" }
+    {
+      "Type": "p",
+      "Content": []
+    },
+    {
+      "Type": "h4",
+      "Content": "Cutting Edge: "
+    },
+    {
+      "Type": "p",
+      "Content": []
+    },
+    {
+      "Type": "h4",
+      "Content": "What’s at stake and why it matters?"
+    }
   ]
 }
