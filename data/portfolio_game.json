@@ -9,6 +9,12 @@
     "title": "Blank Dungeon",
     "image": "portfolio/game/project_gemini/thumbnail.png",
     "comment": "",
-    "url": "https://arcade.digipen.edu/games/mosh-pit"
+    "url": "index.html"
+  },
+  {
+    "title": "Zombie Boy Level Editor",
+    "image": "portfolio/game/zombie_boy/thumbnail.png",
+    "comment": "",
+    "url": "portfolio/game/zombie_boy/thumbnail.png"
   }
 ]

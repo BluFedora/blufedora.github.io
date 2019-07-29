@@ -29,10 +29,6 @@
     particlesJS.load('p4', 'data/particles.json', function () {
       // console.log('callback - particles.js config loaded');
     });
-
-    window.blufedora.urlvars.init();
-    const post = blufedora.urlvars.get("post", "blog-post-404");
-    window.blufedora.blog.loadBlogpost("blog-posts/" + post + ".json", "current-post", "post-header");
   </script>
 </head>
 
@@ -124,10 +120,10 @@
         </article>
       </div>
 
-      <div class="col-4">
+      <div id="page-about" class="col-4">
         <article>
 
-          <h4 id="page-about">A Little About "Us":</h4>
+          <h4>A Little About "Us":</h4>
           We are focused on providing quality development and design services,
           we’re sure you’ll be happy working with us.
           Look around our website and check out past work,

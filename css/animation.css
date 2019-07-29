@@ -1,11 +1,11 @@
 @keyframes load 
 {
-    0% {
+  0% {
     transform:   translateY(1000px);
     box-shadow:  rgba(0, 0, 0, 0.0) 0px 2px 5px 1px;
   }
   
-     75% {
+  75% {
     transform: translateY(5px);
     box-shadow:  rgba(0, 0, 0, 0.0) 0px 2px 5px 1px;
   }
