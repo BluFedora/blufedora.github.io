@@ -402,13 +402,11 @@ com_blufedora_Main.main = function() {
 		if(name_logo != null) {
 			com_blufedora_Tweener.add(name_logo,{ loop : true}).to(new com_blufedora_AnimationStep({ y : 170},2300,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 200},2000,com_blufedora_Easing.easeInOutSine));
 		}
-		if(com_blufedora_Main.getFileName() == "index.html") {
-			com_blufedora_portfolio_Links.init("game");
-			com_blufedora_portfolio_Links.init("web");
-			com_blufedora_portfolio_Photos.init("illustration");
-			com_blufedora_portfolio_Photos.init("design");
-			com_blufedora_portfolio_Photos.init("animation");
-		}
+		com_blufedora_portfolio_Links.init("game");
+		com_blufedora_portfolio_Links.init("web");
+		com_blufedora_portfolio_Photos.init("illustration");
+		com_blufedora_portfolio_Photos.init("design");
+		com_blufedora_portfolio_Photos.init("animation");
 		var menu = window.document.getElementById("menu");
 		var side_panel = window.document.getElementById("side_panel");
 		var main_article = window.document.getElementById("main_article");

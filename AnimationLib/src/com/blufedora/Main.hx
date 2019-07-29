@@ -31,7 +31,7 @@ class Main
 			.to(new AnimationStep({ y: 200		}, 2000, Easing.easeInOutSine));
 			}
 			
-			if (Main.getFileName() == "index.html")
+			// if (Main.getFileName() == "index.html")
 			{
 				Links.init("game");
 				Links.init("web");
