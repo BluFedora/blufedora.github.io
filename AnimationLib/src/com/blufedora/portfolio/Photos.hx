@@ -29,7 +29,10 @@ class Photos
 			i = Photos.images.length - 1;
 		}
 		
-		Popup.popup.content.style.backgroundImage = "url(" + cast(images[i], DivElement).dataset.image + ")";
+		var data = cast(images[i], DivElement).dataset;
+		
+		Popup.popup.content.style.backgroundImage = "url(" + data.image + ")";
+		Popup.popup.setText(data.title, data.comments);
 		Popup.popup.show();
 		index = i;
 	}
@@ -59,7 +62,12 @@ class Photos
 		portfolio_text.classList.add("portfolio_text");
 		portfolio_text.innerHTML = data.title;
 		
-		ele.dataset.image = data.image;
+		var fields = Reflect.fields(data);
+		
+		for (f in fields)
+		{
+			Reflect.setField(ele.dataset, f, Reflect.field(data, f));
+		}
 		
 		ele.appendChild(circle_hover);
 		circle_hover.appendChild(portfolio_look_icon);

@@ -3,7 +3,6 @@
   padding: 10px 0px;
 }
 
-
 /* Indentation of the posts */
 .blog-post p {
   text-indent: 20px;
@@ -14,6 +13,7 @@
 .blog-post {
   background-color: #efefef;
   width:            100%;
+  min-height:       100vh;
   opacity:          1.0;
   z-index:          2;
 }
@@ -142,10 +142,8 @@
   }
 }
 
-
 /* All Posts Page */
-.post-card
-{
+.post-card {
   background-color: #302340;
   padding: 2px;
   border-radius: 4px;

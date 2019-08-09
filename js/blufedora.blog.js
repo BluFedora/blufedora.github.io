@@ -47,11 +47,10 @@ window.blufedora.blog = {
       }
     }
 
-    
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
     xobj.open('GET', blog_path, true);
-    xobj.onreadystatechange = function() {
+    xobj.onreadystatechange = function () {
       if (xobj.readyState == 4) {
         if (xobj.responseText === "") {
           window.location.href = "blog-post.html";

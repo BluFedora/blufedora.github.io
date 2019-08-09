@@ -15,15 +15,19 @@ class Popup
 	public var bg:Element;
 	public var prev:Element;
 	public var content:Element;
+	public var text:Element;
 	public var next:Element;
 
 	public function new() 
 	{
-		this.popUp 		= Browser.document.getElementById("pop-up");
-		this.bg 		= Browser.document.getElementById("pop-up-bg");
-		this.prev 		= Browser.document.getElementById("pop-up-prev");
-		this.content 	= Browser.document.getElementById("pop-up-content");
-		this.next 		= Browser.document.getElementById("pop-up-next");
+		var doc = Browser.document;
+		
+		this.popUp 		= doc.getElementById("pop-up");
+		this.bg 		= doc.getElementById("pop-up-bg");
+		this.prev 		= doc.getElementById("pop-up-prev");
+		this.content 	= doc.getElementById("pop-up-content");
+		this.text 	    = doc.getElementById("pop-up-text");
+		this.next 		= doc.getElementById("pop-up-next");
 		
 		this.prev.onclick = function()
 		{
@@ -39,6 +43,23 @@ class Popup
 		{
 			this.popUp.classList.add("hidden-2");
 		};
+	}
+	
+	public function setText(title:String, txt:String)
+	{
+		if (this.text != null)
+		{
+			if (txt != null)
+			{
+				this.text.innerHTML = "<h4>" + title + "</h4><hr>\n" + txt;
+				this.text.classList.remove("hidden-2");
+			}
+			else
+			{
+				this.text.innerHTML = "";
+				this.text.classList.add("hidden-2");
+			}
+		}
 	}
 	
 	public function show()

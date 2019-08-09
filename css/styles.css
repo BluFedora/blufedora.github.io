@@ -127,7 +127,8 @@ article {
 }
 
 h4 {
-  margin: 20px 0px;
+  margin:    15px 0px;
+  font-size: 1.5em;
 }
 
 nav ul {
