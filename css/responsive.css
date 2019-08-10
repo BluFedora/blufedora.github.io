@@ -87,10 +87,11 @@ pre {
   clear:        both;
 }
 
+/*
 .hidden {
   visibility:   hidden;
 }
-
+*/
 .center-img {
   text-align: center;
 }

@@ -31,17 +31,17 @@ class Popup
 		
 		this.prev.onclick = function()
 		{
-			Photos.setImage(Photos.index - 1);
+			LoadPortfolio.setImage(LoadPortfolio.s_CurrentIndex - 1);
 		}
 		
 		this.next.onclick = function()
 		{
-			Photos.setImage(Photos.index + 1);
+			LoadPortfolio.setImage(LoadPortfolio.s_CurrentIndex + 1);
 		}
 		
 		this.bg.onclick = function()
 		{
-			this.popUp.classList.add("hidden-2");
+			this.popUp.classList.add("hidden");
 		};
 	}
 	
@@ -52,19 +52,19 @@ class Popup
 			if (txt != null)
 			{
 				this.text.innerHTML = "<h4>" + title + "</h4><hr>\n" + txt;
-				this.text.classList.remove("hidden-2");
+				this.text.classList.remove("hidden");
 			}
 			else
 			{
 				this.text.innerHTML = "";
-				this.text.classList.add("hidden-2");
+				this.text.classList.add("hidden");
 			}
 		}
 	}
 	
 	public function show()
 	{
-		this.popUp.classList.remove("hidden-2");
+		this.popUp.classList.remove("hidden");
 	}
 	
 	static function get_popup():Popup 

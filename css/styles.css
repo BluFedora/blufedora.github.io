@@ -11,6 +11,10 @@
 
     class starts with:
       class*="col-"
+
+
+      visibility - invisible but still takes up space.
+      display: none - Removes the element from the doc layout.
 */
 
 #menu {

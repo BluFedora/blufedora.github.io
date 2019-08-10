@@ -1,13 +1,17 @@
-[ ] Make it so link based portfolio items just open like the photo based ones except they allow for an extra link button at the bottom.
-  [ ] This button needs to be hidden and shown at th right time.
-  [ ] The buttons text should be customizable.
+[X] Make it so link based portfolio items just open like the photo based ones except they allow for an extra link button at the bottom.
+  [X] This button needs to be hidden and shown at th right time.
+  [X] The buttons text should be customizable.
 [ ] Update the "About Us" text.
 [ ] Update the welcome text.
 [ ] Add a separation between thumbnails and the final image (low rez vs high rez).
 [ ] Stretch Goal: Make it so the portfolio items are steamed? (This is not needed as much if the aboce TODO is implemented though)
-[ ] Merge all the portfolio files to reduce disk accesses and make it so I can make it have a deterministic ordering of items.
+[X] Merge all the portfolio files to reduce disk accesses and make it so I can make it have a deterministic ordering of items.
   [ ] Still would be nice to have different catagories.
 [ ] Add a description / comment to all the portfolition pieces.
 [ ] Fully update the blog page.
   [ ] Make the next / prev post buttons work.
   [ ] Stretch Goal: Somehow make new post making more automatic.
+[ ] Add in social media links.
+[ ] Go through with a spell check pass through the portfolio comments.
+[ ] https://haxe.org/manual/target-javascript-expose.html
+  [ ] Try to make more cross Haxe / Js COmmunication so that I don't need to recompile Haxe to make any changes,
