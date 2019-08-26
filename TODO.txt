@@ -1,8 +1,8 @@
 [X] Make it so link based portfolio items just open like the photo based ones except they allow for an extra link button at the bottom.
   [X] This button needs to be hidden and shown at th right time.
   [X] The buttons text should be customizable.
-[ ] Update the "About Us" text.
-[ ] Update the welcome text.
+[X] Update the "About Us" text.
+[X] Update the welcome text.
 [ ] Add a separation between thumbnails and the final image (low rez vs high rez).
 [ ] Stretch Goal: Make it so the portfolio items are steamed? (This is not needed as much if the aboce TODO is implemented though)
 [X] Merge all the portfolio files to reduce disk accesses and make it so I can make it have a deterministic ordering of items.

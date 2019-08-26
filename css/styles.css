@@ -32,12 +32,14 @@
   z-index:          3;
   border:         rgb(74, 81, 105) 1px solid;
   opacity:          0.0;
+  display: none;
 
   transition:       opacity 0.14s ease-in-out 0s;
 }
 
 .side-panel.opened {
   opacity: 1.0;
+  display: inline;
 }
 
 .social-icons {
