@@ -1,124 +1,127 @@
 [
   {
-    "title": "Project Gemini",
-    "image": "portfolio/game/project_gemini/thumbnail.png",
-    "comments": "This was a game I made during my Sophomore year at DigiPen. I acted as Tech Director mostly creating the base system of the engine such as Physics and Serialization systems.",
-    "url": "https://arcade.digipen.edu/games/mosh-pit",
+    "title": "Project: Gemini",
+    "thumbnail": "portfolio/game/project_gemini/thumbnail.png",
+    "cover": "portfolio/game/project_gemini/cover.png",
+    "comments": "This was a game I made during my Sophomore year at DigiPen. <br> I acted as Tech Director mostly creating the base system of the engine such as the Physics and Serialization systems.",
+    "url": "https://arcade.digipen.edu/games/project-gemini",
     "button" : "Click Here To Download"
   },
   {
+    "title": "Blank Dungeon",
+    "thumbnail": "portfolio/game/blank_dungeon/thumbnail.png",
+    "comments": "",
+    "url": "portfolio/game/blank_dungeon/thumbnail.png"
+  },
+  {
+    "title": "Zombie Boy Level Editor",
+    "thumbnail": "portfolio/game/zombie_boy/thumbnail.png",
+    "comments": "I made this level editor using the Qt framework for the creation of content for my Freshman year game project names 'Zombie Boy'. <h4 style='text-align:left;'>The editor featured:</h4><div style='text-align:left;'><ul><li>Game Object Editing</li><li>Basic Undo/Redo</li><li>Copy and Paste</li><li>Drag and Drop Interface for Asset managemnent.</li></ul></div>",
+    "url": "portfolio/game/zombie_boy/thumbnail.png"
+  },
+  {
     "title": "Foraging Interpretations",
-    "image": "portfolio/web/foraging_interpretations/thumbnail.png",
+    "thumbnail": "portfolio/web/foraging_interpretations/thumbnail.png",
     "url": "http://www.foraginginterpretations.com/",
     "comments" : "",
     "button": "Visit the Site"
   },
   {
     "title": "Living Tayyib",
-    "image": "portfolio/web/living_tayyib/thumbnail.png",
+    "thumbnail": "portfolio/web/living_tayyib/thumbnail.png",
     "url": "http://www.livingtayyib.com/index.html",
     "comments" : "",
     "button": "Visit the Site"
   },
   {
     "title": "My Site Circa 2014-2017",
-    "image": "portfolio/web/blufedora_2014-2017/thumbnail.png",
+    "thumbnail": "portfolio/web/blufedora_2014-2017/thumbnail.png",
     "url": "portfolio/web/blufedora_2014-2017/index.html",
     "comments" : "",
     "button": "Visit the Site"
   },
   {
     "title": "My Site Circa 2016-2018",
-    "image": "portfolio/web/blufedora_2016-2018/thumbnail.png",
+    "thumbnail": "portfolio/web/blufedora_2016-2018/thumbnail.png",
     "url": "portfolio/web/blufedora_2016-2018/index.html",
     "comments" : "",
     "button": "Visit the Site"
   },
   {
     "title": "Sans Portrait",
-    "image": "portfolio/art/sans.png",
+    "thumbnail": "portfolio/art/sans.png",
     "comments": ""
   },
   {
     "title": "Cavern Keeper",
-    "image": "portfolio/art/vk_cavern_keeper.png",
+    "thumbnail": "portfolio/art/vk_cavern_keeper.png",
     "comments": ""
   },
   {
     "title": "Crystal Snail",
-    "image": "portfolio/art/vk_crystal_snail.png",
+    "thumbnail": "portfolio/art/vk_crystal_snail.png",
     "comments": ""
   },
   {
     "title": "Enraged Slime",
-    "image": "portfolio/art/vk_enraged_slime.png",
+    "thumbnail": "portfolio/art/vk_enraged_slime.png",
     "comments": ""
   },
   {
     "title": "Shadow Walker",
-    "image": "portfolio/art/vk_shadow_walker.png",
+    "thumbnail": "portfolio/art/vk_shadow_walker.png",
     "comments": ""
   },
   {
     "title": "Plant Lady",
-    "image": "portfolio/art/breath-final-1.jpg",
+    "thumbnail": "portfolio/art/breath-final-1.jpg",
     "comments": ""
   },
   {
     "title": "A Raindrop's Tension",
-    "image": "portfolio/art/breath-final-2.jpg",
+    "thumbnail": "portfolio/art/breath-final-2.jpg",
     "comments": ""
   },
   {
     "title": "Fractured Portrait",
-    "image": "portfolio/art/breath-final-3.jpg",
+    "thumbnail": "portfolio/art/breath-final-3.jpg",
     "comments": ""
   },
   {
     "title": "Perspective Stairs",
-    "image": "portfolio/art/breath-final-4.jpg",
+    "thumbnail": "portfolio/art/breath-final-4.jpg",
     "comments": ""
   },
   {
     "title": "Paiterly Gears",
-    "image": "portfolio/art/breath-final-5.jpg",
+    "thumbnail": "portfolio/art/breath-final-5.jpg",
     "comments": ""
   },
   {
     "title": "Cloth",
-    "image": "portfolio/art/breath-final-6.jpg",
+    "thumbnail": "portfolio/art/breath-final-6.jpg",
     "comments": ""
   },
   {
     "title": "Eternal Antigua",
-    "image": "portfolio/art/concentration-1.jpg",
+    "thumbnail": "portfolio/art/concentration-1.jpg",
     "comments": ""
   },
   {
     "title": "Honey Badger",
-    "image": "portfolio/art/HoneyB.jpg",
+    "thumbnail": "portfolio/art/HoneyB.jpg",
     "comments": ""
   },
   {
-    "title": "Blank Dungeon",
-    "image": "portfolio/game/blank_dungeon/thumbnail.png",
-    "comment": "",
-    "url": "portfolio/game/blank_dungeon/thumbnail.png"
-  },
-  {
-    "title": "Zombie Boy Level Editor",
-    "image": "portfolio/game/zombie_boy/thumbnail.png",
-    "comment": "",
-    "url": "portfolio/game/zombie_boy/thumbnail.png"
-  },
-  {
     "title": "Logo For HCPS 90 by 20",
-    "image": "portfolio/design/hcps_logo_comp.png",
-    "comments": "A logo I made in 2017 for the 'HCPS 90 by 20' compentiton"
+    "thumbnail": "portfolio/design/hcps_logo_comp.png",
+    "comments": "A logo I made in 2017 for the 'HCPS 90 by 20' compentiton",
+    "url": "https://sdhc.k12.fl.us/departments/209/going-for-the-gold-90-x-20",
+    "button": "Competition Information"
   },
   {
     "title": "Eternal Antigua Player Attack",
-    "image": "portfolio/animation/player-attack-beta.gif",
+    "thumbnail": "portfolio/animation/player-attack-beta.gif",
     "comments": "Prototype of the attack animation for the 2016-2017 TSA Game Design Competition."
   }
 ]

@@ -26,10 +26,10 @@ class LoadPortfolio
 		{
 			idx = 0;
 		}
-
+		
 		var data = cast(s_Items[idx], DivElement).dataset;
-
-		Popup.popup.content.style.backgroundImage = "url(" + data.image + ")";
+		
+		Popup.popup.content.style.backgroundImage = "url(" + (data.cover != null ? data.cover : data.thumbnail) + ")";
 		Popup.popup.setText(data.title, data.comments);
 		
 		if (data.url != null && data.button != null)
@@ -90,31 +90,30 @@ class LoadPortfolio
 		portfolio_look_icon.classList.add("portfolio_look_icon");
 		var portfolio_image = Browser.document.createElement("div");
 		portfolio_image.classList.add("portfolio_image");
-		portfolio_image.style.backgroundImage = "url('" + data.image + "')";
+		portfolio_image.style.backgroundImage = "url('" + data.thumbnail + "')";
 		var portfolio_text = Browser.document.createElement("div");
 		portfolio_text.classList.add("portfolio_text");
 		portfolio_text.innerHTML = data.title;
-
+		
 		var fields = Reflect.fields(data);
-
+		
 		for (f in fields)
 		{
 			Reflect.setField(ele.dataset, f, Reflect.field(data, f));
 		}
-
+		
 		/*
-		untyped ele.href = data.url;
-		untyped ele.target = "_blank";
-
-		ele.dataset.image = data.image;
+			untyped ele.href = data.url;
+			untyped ele.target = "_blank";
 		*/
+		
 		ele.appendChild(circle_hover);
 		circle_hover.appendChild(portfolio_look_icon);
 		circle_hover.appendChild(portfolio_image);
 		circle_hover.appendChild(portfolio_text);
-
+		
 		ele.addEventListener("click", onClick, false);
-
+		
 		element.appendChild(ele);
 		s_Items.push(ele);
 	}
@@ -129,7 +128,7 @@ class LoadPortfolio
 			if (xobj.readyState == 4 && xobj.status == 200)
 			{
 				var data:Array<Dynamic> = Json.parse(xobj.responseText);
-
+				
 				for (i in 0...data.length)
 				{
 					makeButton(element, data[i]);

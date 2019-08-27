@@ -77,21 +77,19 @@
 }
 
 .pop-up-container {
-  border: solid white 1px;
-
-  width: calc(100% - 100px);
-  height: calc(100vh - 60px);
-  max-height: 100vh;
+  border:           solid white 1px;
+  width:            calc(100% - 100px);
+  height:           calc(100vh - 60px);
+  max-height:       100vh;
   background-color: #eeebf8;
-  margin: calc(50vh - ((100vh - 60px) / 2)) 50px;
-  position: relative;
-
-  overflow-y: auto;
+  margin:           calc(50vh - ((100vh - 60px) / 2)) 50px;
+  position:         relative;
+  overflow-y:       auto;
 }
 
 .pop-up-content {
   width: 100%;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 300px);
   
   background-size: contain;
   background-repeat: no-repeat;
@@ -102,31 +100,28 @@
 
 #pop-up-text {
   border: 1px solid rgba(201, 190, 224, 0.712);
-  padding: 10px;
-  margin: 10px 10px;
-  background-color: rgba(47, 47, 56, 0.75);
-  color: white;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 6px 1px;
+  padding: 10px 6%;
+  background-color: rgb(226, 226, 241);
+  color:            black;
+  margin-top: 10px;
   animation: slide-up linear 1.0s 1;
   text-align: center;
 }
 
 .pop-up-prev,
 .pop-up-next {
-  text-align: center;
-  line-height: 150px;
-  border: solid white 1px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 5px 1px;
-  width: 50px;
-  height: 150px;
-  margin: calc(50vh - ((150px) / 2)) 15px;
-  position: absolute;
+  text-align:       center;
+  line-height:      150px;
+  border:           solid white 1px;
+  box-shadow: rg    ba(0, 0, 0, 0.4) 0px 2px 5px 1px;
+  width:            50px;
+  height:           150px;
+  margin:           calc(50vh - ((150px) / 2)) 15px;
+  position:         absolute;
   background-color: #ededed;
-  cursor: pointer;
-  z-index: 4;
-
-  animation: slide-up linear 0.8s 1;
+  cursor:           pointer;
+  z-index:          4;
+  animation:        slide-up linear 0.8s 1;
 }
 
 .pop-up-next {

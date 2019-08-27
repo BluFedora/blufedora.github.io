@@ -3,8 +3,8 @@
   [X] The buttons text should be customizable.
 [X] Update the "About Us" text.
 [X] Update the welcome text.
-[ ] Add a separation between thumbnails and the final image (low rez vs high rez).
-[ ] Stretch Goal: Make it so the portfolio items are steamed? (This is not needed as much if the aboce TODO is implemented though)
+[X] Add a separation between thumbnails and the final image (low rez vs high rez).
+[ ] Stretch Goal: Make it so the portfolio items are steamed? (This is not needed as much if the above TODO is implemented though)
 [X] Merge all the portfolio files to reduce disk accesses and make it so I can make it have a deterministic ordering of items.
   [ ] Still would be nice to have different catagories.
 [ ] Add a description / comment to all the portfolition pieces.

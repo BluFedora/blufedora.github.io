@@ -10,9 +10,10 @@
   @author Author Name
   @par    project: GAM200 - Tide Engine 2018
   @brief
-      A small description or something. I don't think it's necessary though.
+    A small description or something. 
+    I don't think it's necessary to be too detailed just a general overview.
 
-      Copyright (C) 2018 DigiPen (USA) Corporation.
+    Copyright (C) 2018 DigiPen (USA) Corporation.
 */
 /******************************************************************************/
 ```
@@ -39,8 +40,7 @@
 ### Tabs vs Spaces
 
 - We use **SPACES** not tabs.
- - Preferably 2 spaces since that’s how Mead likes it but honestly doesn’t matter to me.
-   Just be consistent and be reasonable, 4 should be the max.
+ - Preferably 2 spaces since that’s how Mead likes it and it's a compact and neat style.
 
 ### Namespaces
 
@@ -126,7 +126,7 @@
 ### Switch Statements
 
 - Switch cases should be indented.
-  - I prefer to also put indented braces since I find it easier to read that way.
+  - Prefer to also put indented braces since I find it easier to read that way.
 
   - EX:
   ```cpp
@@ -158,24 +158,60 @@
 - **Do not** place spaces around unary operators.
 - **Do** place spaces around binary and ternary operators.
 - Place spaces around the colon in a range-based for loop.
-- Do not place spaces before comma and semicolon.
+- Do not place spaces before commas and semicolons.
 - Place spaces between control statements and their parentheses.
 - Do not place spaces between a function and its parentheses, or between a parenthesis and its content.
 - When initializing an object, place a space before the leading brace as well as between the braces and their content.
 
 ## Line Breaks
 - Each statement should get its own line.
-- An else statement should go on the same line as a preceding close brace if one is present, else it should line up with the if statement.
+- An else statement should go on the separate line from the preceding close brace of the if.
+  - EX:
+  ```cpp
+  if (condition)
+  {
+
+  } 
+  else 
+  {
+
+  }
+  ```
 - An else if statement should be written as an if statement when the prior if concludes with a return statement.
+  - EX:
+  ```cpp
+
+  // The correct style
+  bool func(float a, float b)
+  {
+    if (a > b)
+    {
+      return true;
+    }
+
+    return false;
+  }
+
+  // Don't include that extraneous else block.
+  bool func(float a, float b)
+  {
+    if (a > b)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+
+  ```
 
 ## Floating Point Literals
-- Unless required in order to force floating point math, do not append .0, .f and .0f to floating point literals.
-
-## Braces
-- Control clauses without a body should use empty braces:
+- Always append .0 and .0f to floating point literals.
 
 ## Null, True, False, 0
-- In C++, the null pointer value should be written as nullptr. In C, it should be written as NULL.
+- In C++, the null pointer value should be written as *nullptr*. In C, it should be written as *NULL*.
 - Tests for true/false, null/non-null, and zero/non-zero should all be done without equality comparisons.
 
 ## File Naming Conventions
@@ -200,7 +236,6 @@
     class CamelCaseClass
     {
       ... fields and methods ...
-  
     };
   ```
 
@@ -214,13 +249,14 @@
     {
       ... fields and shit ...
   
-  
     } CStyleCamelCaseStruct;
   ```
 
 ### Member Variable Naming Conventions (C++ Only)
+- Should always start with 'm_'.
 
 #### Method Naming Conventions (C++ ONLY)
+- Methods should be in lower camel-case.
 
 ##### Overiding Methods
 
@@ -350,7 +386,7 @@ void            <struct_name>_delete(<struct_name>* self);
     #define MAX(a, b) ((a) > (b)) ? (a) : (b)
   ```
 
-- If you can ‘#undef’ ing the macro when you’re done with it is a good idea.
+- '#undef’ing the macro when you’re done with it is a good idea.
 
   ```c
       // NOTE(Shareef): This is so this macro doesn’t clutter the global 
