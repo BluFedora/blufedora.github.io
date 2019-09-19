@@ -1,4 +1,67 @@
-# RISING TIDE's 2018 Style Guide :
+---
+header-includes:
+  - \hypersetup{
+      colorlinks=true,
+      linkcolor=red,
+      filecolor=cyan,
+      allbordercolors={1 0 0},
+      pdfborderstyle={/S/U/W 1}
+    }
+title:       "RISING TIDE's 2018 Style Guide"
+author:
+- Created By The Rising Tide Team
+date:        Last Updated on December 5th, 2018
+geometry:    "left=3cm, right=3cm, top=3cm, bottom=3cm"
+output:      pdf_document
+rights:      (C) 2018 Copyright Shareef Abdoul-Raheem
+language:    en-US
+description: "hello"
+footer:      'Created By the Rising Tide Team'
+keywords:    [engine, architecture, rising, tide, c++, game]
+---
+
+#### This document is incomplete partially due to most other style guideslines are enforced by the custom clang format file in the project. ####
+
+<!-- 
+  https://ecotrust-canada.github.io/markdown-toc/ 
+-->
+## Table of Contents
+
+- [Comments](#comments)
+  * [File Header Comments Style](#file-header-comments-style)
+  * [General Comment Style](#general-comment-style)
+  * [Include Comments](#include-comments)
+- [File Naming](#file-naming)
+- [Include Guards](#include-guards)
+- [Order of Includes / Include Style](#order-of-includes---include-style)
+- [Classes and Structs](#classes-and-structs)
+  * [Class vs Struct](#class-vs-struct)
+  * [Inheritance](#inheritance)
+  * [Interfaces](#interfaces)
+  * [Friend Classes](#friend-classes)
+- [Casting](#casting)
+- [Indentation](#indentation)
+  * [Tabs vs Spaces](#tabs-vs-spaces)
+  * [Namespaces](#namespaces)
+  * [Switch Statements](#switch-statements)
+- [Spacing](#spacing)
+- [Line Breaks](#line-breaks)
+- [Floating Point Literals](#floating-point-literals)
+- [Null, True, False, 0](#null--true--false--0)
+- [File Naming Conventions](#file-naming-conventions)
+- [Free Function Naming Conventions](#free-function-naming-conventions)
+- [Class / Struct Naming Conventions](#class---struct-naming-conventions)
+  * [Member Variable Naming Conventions (C++ Only)](#member-variable-naming-conventions--c---only-)
+    + [Method Naming Conventions (C++ ONLY)](#method-naming-conventions--c---only-)
+      - [Overriding Methods](#overriding-methods)
+    + [Functions that Operate on Struct(s) (C ONLY)](#functions-that-operate-on-struct-s---c-only-)
+- [Enums Naming Conventions](#enums-naming-conventions)
+- [Aliases (Typedef and Using)](#aliases--typedef-and-using-)
+- [Macros](#macros)
+- [Misc Code Style Notes](#misc-code-style-notes)
+
+\newpage{}
+
 
 ## Comments
 
@@ -6,11 +69,11 @@
 ```cpp
 /******************************************************************************/
 /*!
-  @file   file_name.hpp
-  @author Author Name
+  @file   [file_name.hpp]
+  @author [Author Name]
   @par    project: GAM200 - Tide Engine 2018
   @brief
-    A small description or something. 
+    A small description or something.
     I don't think it's necessary to be too detailed just a general overview.
 
     Copyright (C) 2018 DigiPen (USA) Corporation.
@@ -33,7 +96,70 @@
         ```
         
 ### Include Comments
-  - You should comment your includes for what you are using the include for, this helps document 
+  - You should comment your includes for what you are using the include for, this helps document what items is being used from what modules.
+
+## File Naming
+  - C++ header and source files must have the '.hpp' / '.cpp' extensions respectively.
+  - C header and source files must have the '.h' / '.c' extensions respectively.
+  - All files must be in _lower_snake_case_:
+    - All Engine code must be prefixed with "tide_"
+    - All Gameplay code must be prefixed with "pg_" with "pg" standing for Project Gemini.
+    - EX: "tide_particle_system.hpp" / "tide_particle_system.cpp"
+    - EX: "pg_player_controller.hpp" / "pg_player_controller.cpp"
+
+
+\newpage{}
+
+
+## Include Guards
+  - I prefer the use of include guards rather than '#pragma once' since include guards are strictly conforming to the C/++ standard.
+  - They should be in all capitals ([Macro Naming](#macros)) and match the name of the file.
+  - The ending '#endif' should have a comment with the name of the include guard macro.
+  - EX:
+    ```cpp
+    // Imagine this file is named "tide_engine.hpp"
+
+    #ifndef TIDE_ENGINE_HPP
+    #define TIDE_ENGINE_HPP
+
+    // ... file contents here ...
+
+    #endif /* TIDE_ENGINE_HPP */
+    ```
+
+## Order of Includes / Include Style
+  - Headers local to the project should be included before standard headers.
+    - Rational is that it is more important to know what other local modules
+      are being used from a dependency perspective while the standard library is more of an implementation detail.
+  - Includes should use "header.hpp" for local includes and <header.hpp> for standard includes.
+  - EX:
+    ```cpp
+    #include "engine/graphics/tide_vertex.hpp" /* Vertex        */
+    #include <unordered_map>                   /* unordered_map */
+    ```
+
+## Classes and Structs
+
+### Class vs Struct
+  - This is very much a sematic battle but structs for POD (Plan Old Data) and Classes for everthing else.
+  - Classes should have exclusively private / protected data while struct should have exclusively public fields.
+  - Struct optimally should have no methods but constructors (or other setup methods) are welcome as they ease initialization.
+
+### Inheritance
+  - Avoid if you can composition is usually better. You should only inherit from engine interfaces.
+
+### Interfaces
+  - Should start with the 'I' prefix.
+  - EX: 
+    ```cpp
+      class IEcsSystem { ... };
+    ```
+
+### Friend Classes
+  - Should be used very sparingly. There are little cases where we should need to use this.
+
+## Casting
+  - Modern C++ style casts are prefered but even I don't adhere to them as often as a should as they tend to be overly verbose and visually noisy.
 
 ## Indentation
 
@@ -45,12 +171,14 @@
 ### Namespaces
 
 - Code within namespaces should be indented:
+- All Engine code should be in the 'tide' namespace.
+- If you must expose an internal implementation detail in a header file then put that in a nested namespace named 'detail'.
 
   - Right:
 
   ```cpp
       // my_class.hpp
-    namespace engine
+    namespace tide
     {
       namespace detail
       {
@@ -59,7 +187,6 @@
           protected:
             void internalImpl();
           ...
-         
         };
       }
 
@@ -68,12 +195,11 @@
         public:
           MyClass() = default;
           ...
-  
       };
     }
 
       // my_class.cpp
-    namespace engine
+    namespace tide
     {
       namespace detail
       {
@@ -89,7 +215,7 @@
 
   ```cpp
       // my_class.hpp
-    namespace engine
+    namespace tide
     {
     namespace detail
     {
@@ -98,7 +224,6 @@
       protected:
         void internalImpl();
       ...
-
     };
     }
     class MyClass
@@ -106,12 +231,11 @@
       public:
         MyClass() = default;
         ...
-
     };
     }
 
       // my_class.cpp
-    namespace engine
+    namespace tide
     {
     namespace detail
     {
@@ -149,7 +273,6 @@
           i += 5;
           break;
         }
-     
     }
   ```
 
@@ -162,6 +285,13 @@
 - Place spaces between control statements and their parentheses.
 - Do not place spaces between a function and its parentheses, or between a parenthesis and its content.
 - When initializing an object, place a space before the leading brace as well as between the braces and their content.
+- When variabled are declared or assigned next to each other the names and '=' sign should be lined up.
+  - EX:
+  ```cpp
+  Vertex   vertices[]       = {...};
+  Material material         = { Color::RED };
+  int      another_variable = 7;
+  ```
 
 ## Line Breaks
 - Each statement should get its own line.
@@ -170,11 +300,9 @@
   ```cpp
   if (condition)
   {
-
   } 
   else 
   {
-
   }
   ```
 - An else if statement should be written as an if statement when the prior if concludes with a return statement.
@@ -186,7 +314,8 @@
   {
     if (a > b)
     {
-      return true;
+      return true; // Since this is a return statement
+                   // Execution will not continue anyway.
     }
 
     return false;
@@ -204,7 +333,6 @@
       return false;
     }
   }
-
   ```
 
 ## Floating Point Literals
@@ -226,6 +354,7 @@
 - • If you can put the code files in the actual directory in the SVN then add it to the project. This is so the project folder is not cluttered up with random ass files everywhere.
 
 ## Free Function Naming Conventions
+  - "lowerCamelCase" like member functions.
 
 ## Class / Struct Naming Conventions
 
@@ -253,17 +382,19 @@
   ```
 
 ### Member Variable Naming Conventions (C++ Only)
-- Should always start with 'm_'.
+  - Should always start with 'm_'.
 
 #### Method Naming Conventions (C++ ONLY)
-- Methods should be in lower camel-case.
+  - Methods should be in lower camel-case.
 
-##### Overiding Methods
+##### Overriding Methods
+  - When overriding a virtual method in a subclass drop the virtual and add the 'override' keyword to the end.
+    This cleans up the function declaration and also makes sure the compiler enforces all is correct with the method.
 
 #### Functions that Operate on Struct(s) (C ONLY)
 
 - When using C you should try to emulate C++ conventions to make things easier for other programmers using C++ to interop with your code.
-- You can do this by defining these types of functions for you type:
+- You can do this by defining these types of functions for your type:
 
 ```c
   // To Initialize 'Stack' Allocated Objects
@@ -289,7 +420,7 @@ void            <struct_name>_delete(<struct_name>* self);
 
 - The first parameter should almost always be a pointer to the object you are manipulating so by convention I use the word “self” (stolen from languages such as Lua, Swift, Python etc…) although it can be anything. Just make it make sense.
 
-- Functions that operate on structs formatting:
+- Functions that operate on structs format:
 
     ```c
       <return_type> <struct_name>_<verb>(<struct_name>* self, arguments…);
@@ -316,7 +447,8 @@ void            <struct_name>_delete(<struct_name>* self);
 
 ## Enums Naming Conventions
 
-- Enums should follow the same naming conventions as structs, but enum values should be in all capitals with a prefix.
+- Enums should follow the same naming conventions as structs / classes, but enum values should be in all capitals.
+  - A prefix for each enum value should be used in C but not C++.
 - The enum values should end in a "<enum_prefix>_MAX" format to denote the maximum value the enum has. This may be left off but is often useful for error checking and using it as a loop condition.
 - Enums in C++ should be "enum class" since they are more type safe and allow you to define the underlying datatype.
 
@@ -329,9 +461,9 @@ void            <struct_name>_delete(<struct_name>* self);
         //     to access the value.
       enum class TestEnumCpp
       {
-        TE_FIRST_VALUE,
-        TE_ANOTHER_ONE,
-        TE_MAX
+        FIRST_VALUE,
+        ANOTHER_ONE,
+        TEST_ENUM_MAX,
       };
 
         // NOTE(Shareef): 
@@ -359,12 +491,12 @@ void            <struct_name>_delete(<struct_name>* self);
       {
         TE_FIRST_VALUE,
         TE_ANOTHER_ONE,
-        TE_MAX
+        TE_MAX,
         
       } TestEnumC;
     ```
 
-## Typedef (and Using)
+## Aliases (Typedef and Using)
 
 - In C++ there is a new 'using' keyword.
   - For proper C++ style you should prefer to use _using_ rather than _typedef_ although there is no technical difference between the two.
@@ -379,7 +511,8 @@ void            <struct_name>_delete(<struct_name>* self);
 
 ## Macros
 
-- Macros should be declared at the top of the file and in all capitals:
+- Macros should be declared at the top of the file if in the header.
+- UPPER_SNAKE_CASE should be used for naming.
 
   ```c
       // NOTE(Shareef): This macros gives me the max of two values.
@@ -394,6 +527,7 @@ void            <struct_name>_delete(<struct_name>* self);
     #undef MAX(a, b)
   ```
 
-## Other Code Style Notes
+## Misc Code Style Notes
 - Avoid using global variables as much as possible, if you absolutely needs a global variable make sure to have is scopes as small as possible. Such as using the ‘static’ keyword in a ‘*.c’ file.
+  - If a true global is needed prefix it's name with "g_"
 - I prefer having curly bois (‘{‘ and ‘}’) on a new line but won’t enforce it.

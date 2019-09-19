@@ -1,3 +1,5 @@
+// [https://www.w3schools.com/jsref/met_document_queryselectorall.asp]
+
 window.blufedora = window.blufedora || {};
 
 window.blufedora.dom = {

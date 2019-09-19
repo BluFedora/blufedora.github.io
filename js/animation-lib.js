@@ -402,48 +402,51 @@ com_blufedora_Main.main = function() {
 		if(name_logo != null) {
 			com_blufedora_Tweener.add(name_logo,{ loop : true}).to(new com_blufedora_AnimationStep({ y : 170},2300,com_blufedora_Easing.easeInOutSine)).to(new com_blufedora_AnimationStep({ y : 200},2000,com_blufedora_Easing.easeInOutSine));
 		}
-		var element = window.document.getElementById("portfolio");
-		var xobj = new XMLHttpRequest();
-		xobj.overrideMimeType("application/json");
-		xobj.open("GET","data/" + "portfolio" + ".json",true);
-		xobj.onreadystatechange = function() {
-			if(xobj.readyState == 4 && xobj.status == 200) {
-				var data = JSON.parse(xobj.responseText);
-				var _g = 0;
-				var _g1 = data.length;
-				while(_g < _g1) {
-					var i = _g++;
-					var data1 = data[i];
-					var ele = window.document.createElement("div");
-					ele.classList.add("portfolio_cover");
-					var circle_hover = window.document.createElement("div");
-					circle_hover.classList.add("circle_hover");
-					var portfolio_look_icon = window.document.createElement("div");
-					portfolio_look_icon.classList.add("portfolio_look_icon");
-					var portfolio_image = window.document.createElement("div");
-					portfolio_image.classList.add("portfolio_image");
-					portfolio_image.style.backgroundImage = "url('" + Std.string(data1.thumbnail) + "')";
-					var portfolio_text = window.document.createElement("div");
-					portfolio_text.classList.add("portfolio_text");
-					portfolio_text.innerHTML = data1.title;
-					var fields = Reflect.fields(data1);
-					var _g2 = 0;
-					while(_g2 < fields.length) {
-						var f = fields[_g2];
-						++_g2;
-						ele.dataset[f] = Reflect.field(data1,f);
+		var portfolio_element = window.document.getElementById("portfolio");
+		if(portfolio_element != null) {
+			var element = portfolio_element;
+			var xobj = new XMLHttpRequest();
+			xobj.overrideMimeType("application/json");
+			xobj.open("GET","data/" + "portfolio" + ".json",true);
+			xobj.onreadystatechange = function() {
+				if(xobj.readyState == 4 && xobj.status == 200) {
+					var data = JSON.parse(xobj.responseText);
+					var _g = 0;
+					var _g1 = data.length;
+					while(_g < _g1) {
+						var i = _g++;
+						var data1 = data[i];
+						var ele = window.document.createElement("div");
+						ele.classList.add("portfolio_cover");
+						var circle_hover = window.document.createElement("div");
+						circle_hover.classList.add("circle_hover");
+						var portfolio_look_icon = window.document.createElement("div");
+						portfolio_look_icon.classList.add("portfolio_look_icon");
+						var portfolio_image = window.document.createElement("div");
+						portfolio_image.classList.add("portfolio_image");
+						portfolio_image.style.backgroundImage = "url('" + Std.string(data1.thumbnail) + "')";
+						var portfolio_text = window.document.createElement("div");
+						portfolio_text.classList.add("portfolio_text");
+						portfolio_text.innerHTML = data1.title;
+						var fields = Reflect.fields(data1);
+						var _g2 = 0;
+						while(_g2 < fields.length) {
+							var f = fields[_g2];
+							++_g2;
+							ele.dataset[f] = Reflect.field(data1,f);
+						}
+						ele.appendChild(circle_hover);
+						circle_hover.appendChild(portfolio_look_icon);
+						circle_hover.appendChild(portfolio_image);
+						circle_hover.appendChild(portfolio_text);
+						ele.addEventListener("click",com_blufedora_portfolio_LoadPortfolio.onClick,false);
+						element.appendChild(ele);
+						com_blufedora_portfolio_LoadPortfolio.s_Items.push(ele);
 					}
-					ele.appendChild(circle_hover);
-					circle_hover.appendChild(portfolio_look_icon);
-					circle_hover.appendChild(portfolio_image);
-					circle_hover.appendChild(portfolio_text);
-					ele.addEventListener("click",com_blufedora_portfolio_LoadPortfolio.onClick,false);
-					element.appendChild(ele);
-					com_blufedora_portfolio_LoadPortfolio.s_Items.push(ele);
 				}
-			}
-		};
-		xobj.send(null);
+			};
+			xobj.send(null);
+		}
 		var menu = window.document.getElementById("menu");
 		var side_panel = window.document.getElementById("side_panel");
 		var main_article = window.document.getElementById("main_article");

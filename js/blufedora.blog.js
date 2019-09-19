@@ -23,6 +23,11 @@ window.blufedora.blog = {
 
               if (content_block["Type"] == "img") {
                 block_element.src = content_block["Source"];
+              } 
+              else if (content_block["Type"] == "a")
+              {
+                block_element.href = content_block["Source"];
+                block_element.innerHTML = content_block["Content"];
               }
               else if (content_block["Content"] !== undefined) {
                 addContent(block_element, content_block["Content"]);
