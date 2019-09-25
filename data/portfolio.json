@@ -4,14 +4,15 @@
     "thumbnail": "portfolio/game/project_gemini/thumbnail.png",
     "cover": "portfolio/game/project_gemini/cover.png",
     "comments": "This was a game I made during my Sophomore year at DigiPen. <br> I acted as Tech Director mostly creating the base system of the engine such as the Physics and Serialization systems.",
-    "url": "https://arcade.digipen.edu/games/project-gemini",
+    "url": "https://store.steampowered.com/app/1149630/Project_Gemini/",
     "button" : "Click Here To Download"
   },
   {
-    "title": "Blank Dungeon",
-    "thumbnail": "portfolio/game/blank_dungeon/thumbnail.png",
-    "comments": "",
-    "url": "portfolio/game/blank_dungeon/thumbnail.png"
+    "title": "Foraging Interpretations",
+    "thumbnail": "portfolio/web/foraging_interpretations/thumbnail.png",
+    "url": "http://www.foraginginterpretations.com/",
+    "comments" : "",
+    "button": "Visit the Site"
   },
   {
     "title": "Zombie Boy Level Editor",
@@ -21,11 +22,10 @@
     "button": "Github Page"
   },
   {
-    "title": "Foraging Interpretations",
-    "thumbnail": "portfolio/web/foraging_interpretations/thumbnail.png",
-    "url": "http://www.foraginginterpretations.com/",
-    "comments" : "",
-    "button": "Visit the Site"
+    "title": "Blank Dungeon",
+    "thumbnail": "portfolio/game/blank_dungeon/thumbnail.png",
+    "comments": "",
+    "url": "portfolio/game/blank_dungeon/thumbnail.png"
   },
   {
     "title": "Living Tayyib",

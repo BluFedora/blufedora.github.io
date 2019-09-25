@@ -23,9 +23,8 @@ window.blufedora.blog = {
 
               if (content_block["Type"] == "img") {
                 block_element.src = content_block["Source"];
-              } 
-              else if (content_block["Type"] == "a")
-              {
+              }
+              else if (content_block["Type"] == "a") {
                 block_element.href = content_block["Source"];
                 block_element.innerHTML = content_block["Content"];
               }
@@ -57,10 +56,28 @@ window.blufedora.blog = {
     xobj.open('GET', blog_path, true);
     xobj.onreadystatechange = function () {
       if (xobj.readyState == 4) {
-        if (xobj.responseText === "") {
-          window.location.href = "blog-post.html";
-        }
-        var json_data = JSON.parse(xobj.responseText);
+
+        // TODO(Shareef): To make this better I should use the 404 blogpost file.
+        // but there really isn't much of the need to do more IO than neccessary.
+        var json_data = (xobj.status !== 404) ? JSON.parse(xobj.responseText) : {
+          "Title": "Post Could Not Be Found",
+          "Header": {
+            "Image": "url(images/covers/blog_cover_2.jpg)",
+            "Author": "",
+            "Date": ""
+          },
+          "Content": [
+            {
+              "Type": "h4",
+              "Content": "404 Not Found"
+            },
+            {
+              "Type": "p",
+              "Content": "The post that you are looking for could not be found, please check out my other posts you may be interested in."
+            }
+          ]
+        };
+
         var root_doc = document.getElementById(current_post);
         var post_header = document.getElementById(post_header_id);
 
