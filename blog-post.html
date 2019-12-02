@@ -22,6 +22,7 @@
   <script src="js/particles.min.js" type="text/javascript"></script>
   <script src="js/blufedora.dom.js" type="text/javascript"></script>
   <script src="js/blufedora.urlvars.js" type="text/javascript"></script>
+  <script src="js/blufedora.worker.js" type="text/javascript"></script>
   <script src="scripts/blu_lib.js" type="text/javascript"></script>
   <script src="js/blufedora.blog.js" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=desert"></script>
@@ -31,7 +32,22 @@
   <script>
     window.blufedora.urlvars.init();
     const post = blufedora.urlvars.get("post", "blog-post-404");
-    window.blufedora.blog.loadBlogpost("data/blog-posts/" + post + ".json", "current-post", "post-header");
+
+    if (window.Worker) 
+    {
+      var worker = new Worker('js/main.blog-post.js');
+
+      worker.onmessage = blufedora.worker.onMessageMain;
+
+      worker.postMessage({
+        "action" : blufedora.worker.LOAD_POST,
+        "post" : post
+      });
+    }
+    else
+    {
+      window.blufedora.blog.loadBlogpost("data/blog-posts/" + post + ".json", "current-post", "post-header");
+    }
   </script>
 </head>
 

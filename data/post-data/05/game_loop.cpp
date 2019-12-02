@@ -31,4 +31,3 @@ void UpdateLoop()
     // At the end of the Update.
   player.UpdateAnimator();
 }
-

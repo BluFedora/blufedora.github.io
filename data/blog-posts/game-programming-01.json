@@ -166,7 +166,7 @@
       "Content":
       [
         "At the end of the frame you need you just need to process if any changes has happened. ",
-        "The following snippet should be fairly self explanatory. It checks if we should and <b>CAN</b> change the animation."
+        "The following snippet should be fairly self explanatory. It checks if we should and <b>are allowed to</b> change the animation."
       ]
     },
     {

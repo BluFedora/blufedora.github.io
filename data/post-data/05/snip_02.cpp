@@ -17,4 +17,3 @@ bool Animator::update(AnimationComponent& animation_component)
 
   return false;
 }
-
