@@ -26,6 +26,7 @@
   <script src="js/blufedora.blog.js" type="text/javascript"></script>
 
   <script>
+    response.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
     particlesJS.load('p4', 'data/particles.json', function () {
       // console.log('callback - particles.js config loaded');
     });
