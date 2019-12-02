@@ -15,6 +15,7 @@
   width:            100%;
   min-height:       100vh;
   opacity:          1.0;
+  display:          inline-block;
   z-index:          2;
 }
 
@@ -192,4 +193,14 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 
+{
+  list-style-type: decimal;
+} 
+
+pre {
+  border-radius: 5px;
+  line-height:   18px;
 }

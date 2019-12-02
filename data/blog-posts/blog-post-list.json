@@ -1,5 +1,11 @@
 [
   {
+    "title": "<b>Game Programming:</b> Sprite Animation Management",
+    "cover": "url(images/post_05/cover.png)",
+    "link": "game-programming-01",
+    "blurb": "A little write-up on how I handled transitions for a frame based animations for a student game project."
+  },
+  {
     "title": "Image Processing: <br> Final Thoughts",
     "cover": "url(images/post_4/post_4_cover.jpg)",
     "link": "image-processing-final-thoughts",

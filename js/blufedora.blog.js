@@ -1,4 +1,5 @@
 // This module depends on "blufedora.dom.js"
+// This module depends on "blu_lib.js"
 
 window.blufedora = window.blufedora || {};
 
@@ -7,8 +8,10 @@ window.blufedora.blog = {
     function addContent(root_element, contents) {
       var contents_type = typeof (contents);
 
-      if (contents_type == "object") {
-        for (var i = 0; i < contents.length; ++i) {
+      if (contents_type == "object") 
+      {
+        for (var i = 0; i < contents.length; ++i) 
+        {
           var content_block = contents[i];
           var content_block_type = typeof (content_block);
 
@@ -23,6 +26,22 @@ window.blufedora.blog = {
 
               if (content_block["Type"] == "img") {
                 block_element.src = content_block["Source"];
+              }
+              else if (content_block["Type"] == "file")
+              {
+                // TODO: I need to make this async.
+                window.loadFile(content_block["Source"], ((function(obj) {
+                  return function(file_source)
+                  {
+                    obj.innerHTML += window.escapeHtml(file_source);
+                  };
+                })(root_element)), false);
+                return; // Don't add this to the dom.
+              }
+              else if (content_block["Type"] == "pre")
+              {
+                addContent(block_element, content_block["Content"]);
+                block_element.innerHTML = (window.PR !== undefined && window.PR !== null) ? "\n" + PR.prettyPrintOne(block_element.innerHTML) + "\n" : block_element.innerHTML;
               }
               else if (content_block["Type"] == "a") {
                 block_element.href = content_block["Source"];
@@ -57,8 +76,8 @@ window.blufedora.blog = {
     xobj.onreadystatechange = function () {
       if (xobj.readyState == 4) {
 
-        // TODO(Shareef): To make this better I should use the 404 blogpost file.
-        // but there really isn't much of the need to do more IO than neccessary.
+        // TODO(Shareef): To make this better I should use the 404 blog-post file.
+        // but there really isn't much of the need to do more IO than necessary.
         var json_data = (xobj.status !== 404) ? JSON.parse(xobj.responseText) : {
           "Title": "Post Could Not Be Found",
           "Header": {
@@ -81,7 +100,8 @@ window.blufedora.blog = {
         var root_doc = document.getElementById(current_post);
         var post_header = document.getElementById(post_header_id);
 
-        document.title = json_data["Title"];
+        // Strip out html formatting
+        document.title = json_data["Title"].replace(/<[^>]*>?/gm, '');
 
         post_header.style.backgroundImage = json_data["Header"]["Image"];
 

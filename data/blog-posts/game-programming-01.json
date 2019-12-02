@@ -1,0 +1,190 @@
+{
+  "Title": "Game Programming: <br>Sprite Animation Management",
+  "Header": 
+  {
+    "Image": "url(images/post_05/cover.png)",
+    "Author": "By: Shareef Raheem",
+    "Date": "September 25th, 2019"
+  },
+  "Content": 
+  [
+    {
+      "Type" : "h3",
+      "Content": "Introduction"
+    },
+    {
+      "Type": "p",
+      "Content": 
+      [
+        "For the student project I work on Sophomore year, ",
+        {
+          "Type" : "a",
+          "Content": "Project Gemini",
+          "Source" : "https://store.steampowered.com/app/1149630/Project_Gemini/"
+        },
+        ", we decided to use hand drawn sprite-sheet animations.",
+        "This lead to the problem of us having to manage certain transitions between the animations and which animations take priority over another.",
+        "To solve this I designed the Animation Controller as a directed graph with edges that determine when a certain animation can be cut short (aka interrupted) in favor of the requested animation."
+      ]
+    },
+    {
+      "Type" : "h3",
+      "Content": "Concept"
+    },
+    {
+      "Type": "p",
+      "Content": 
+      [
+        "Here is the list of animations for the character names Gutierrez, Gutz for short, with some rough priorities:",
+        {
+          "Type": "ul",
+          "Content":
+          [
+            {
+              "Type" : "li",
+              "Content" : "IDLE (priority : 0)"
+            },
+            {
+              "Type" : "li",
+              "Content" : "RUN (priority : 1)"
+            },
+            {
+              "Type" : "li",
+              "Content" : "JUMP (priority : 2)"
+            },
+            {
+              "Type" : "li",
+              "Content" : "FALL (priority : 2)"
+            },
+            {
+              "Type" : "li",
+              "Content" : "LAND (priority : 2)"
+            },
+            {
+              "Type" : "li",
+              "Content" : "FLINCH (priority : 3.5ish)"
+            },
+            {
+              "Type" : "li",
+              "Content" : "ATTACK_MELEE (priority : 3)"
+            },
+            {
+              "Type" : "li",
+              "Content" : "ATTACK_SPECIAL (priority : 4)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Type" : "p",
+      "Content": "Here is our the graph we needed to represent in code to get the behavior we wanted from the character:"
+    },
+    {
+      "Type" : "p",
+      "Content": 
+      [
+        {
+          "Type":"img",
+          "Source" : "images/post_05/animation_graph_diagram.png"
+        },
+        "(We actually had a few more cases than what is shown but the details aren't too important for understanding the concept, also this diagram is messy enough)"
+      ]
+    },
+    {
+      "Type" :"p",
+      "Content":
+      [
+        "Each Animation is a node with edges to certain other animations, and each transition contains information on if it can interrupt an animation otherwise it will queue the requested animation to be played after the current one.",
+        "To make it easy to use I wanted an API where you can request an animation to be played and not worry about the ordering of the calls. For example in a frame you may request a walk but later realize the attack button was pressed ",
+        "so we need to override the run request. Manually doing this (our previous approach) was very tedious and error-prone. Now we just let the graph handle it."
+      ]
+    },
+    {
+      "Type" : "h3",
+      "Content": "Implementation / Code"
+    },
+    {
+      "Type" : "pre",
+      "Class" : "prettyprint linenums lang-cpp",
+      "Content" : [
+        {
+          "Type" : "file",
+          "Source" : "data/post-data/05/game_loop.cpp"
+        }
+      ]
+    },
+    {
+      "Type": "p",
+      "Content":
+      [
+        "To represent the the animation node I pair of the animation data with a map of transitions.",
+        {
+          "Type":"pre",
+          "Class":"prettyprint linenums lang-cpp",
+          "Content":[
+            {
+            "Type" : "file",
+            "Source" : "data/post-data/05/animation_node.cpp"
+            }
+          ]
+        },
+        "The graph was just a set of Root animation nodes, current animation and transition along with if the same animation as the current one was requested.",
+        {
+          "Type":"pre",
+          "Class":"prettyprint linenums lang-cpp",
+          "Content":
+          [
+            {
+              "Type" : "file",
+              "Source" : "data/post-data/05/animator.cpp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        "This next function is the heart of what makes this system work. ",
+        "The basic concept is checking if we can make a transition based what has currently been submitted throughout the frame. "
+      ]
+    },
+    {
+      "Type" : "pre",
+      "Class" : "prettyprint linenums lang-cpp",
+      "Content" : [
+        {
+          "Type" : "file",
+          "Source" : "data/post-data/05/snip_01.cpp"
+        }
+      ]
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        "At the end of the frame you need you just need to process if any changes has happened. ",
+        "The following snippet should be fairly self explanatory. It checks if we should and <b>CAN</b> change the animation."
+      ]
+    },
+    {
+      "Type" : "pre",
+      "Class" : "prettyprint linenums lang-cpp",
+      "Content" : [
+        {
+          "Type" : "file",
+          "Source" : "data/post-data/05/snip_02.cpp"
+        }
+      ]
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        "This system may have some bugs but it worked well for our purposes and I hope it can help someone out if they are trying to solve a similar problem."
+      ]
+    }
+  ]
+}

@@ -126,17 +126,42 @@
 
   window.blu = $;
 
-  window.loadFile = function (file, callback) {
+  window.loadFile = function (file, callback, async) {
+    if (async === undefined)
+    {
+      async = true;
+    }
+
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function () {
-      if (rawFile.readyState === 4) {
-        if (rawFile.status === 200 || rawFile.status == 0) {
-          var allText = rawFile.responseText;
-          callback(allText);
+    rawFile.open("GET", file, async);
+
+    if (async)
+    {
+      rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4) {
+          if (rawFile.status === 200 || rawFile.status == 0) {
+            var allText = rawFile.responseText;
+            callback(allText);
+          }
         }
       }
     }
+
     rawFile.send(null);
+
+    if (!async)
+    {
+      var allText = rawFile.responseText;
+      callback(allText);
+    }
   };
+
+  window.escapeHtml = function(unsafe) {
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+ }
 })();
