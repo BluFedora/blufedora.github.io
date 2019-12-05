@@ -42,6 +42,7 @@ class Popup
 		this.bg.onclick = function()
 		{
 			this.popUp.classList.add("hidden");
+			Browser.document.body.classList.remove("modal-open");
 		};
 	}
 	
@@ -65,6 +66,7 @@ class Popup
 	public function show()
 	{
 		this.popUp.classList.remove("hidden");
+		Browser.document.body.classList.add("modal-open");
 	}
 	
 	static function get_popup():Popup 

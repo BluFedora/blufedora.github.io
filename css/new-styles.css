@@ -46,6 +46,19 @@ html, body {
   background: rgb(21, 21, 26);
 }
 
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+}
+
+@media only screen and (min-width : 700px)
+{
+  body.modal-open 
+  {
+    position: absolute; 
+  }
+}
+
 hr {
   border: none;
   border-top: 1px solid rgb(180, 180, 180);

@@ -705,6 +705,7 @@ var com_blufedora_portfolio_Popup = function() {
 	};
 	this.bg.onclick = function() {
 		_gthis.popUp.classList.add("hidden");
+		window.document.body.classList.remove("modal-open");
 	};
 };
 com_blufedora_portfolio_Popup.__name__ = true;
@@ -729,6 +730,7 @@ com_blufedora_portfolio_Popup.prototype = {
 	}
 	,show: function() {
 		this.popUp.classList.remove("hidden");
+		window.document.body.classList.add("modal-open");
 	}
 	,__class__: com_blufedora_portfolio_Popup
 };

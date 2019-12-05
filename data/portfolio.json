@@ -17,7 +17,7 @@
   {
     "title": "Zombie Boy Level Editor",
     "thumbnail": "portfolio/game/zombie_boy/thumbnail.png",
-    "comments": "I made this level editor using the Qt framework for the creation of content for my Freshman year game project names 'Zombie Boy'. <h4 style='text-align:left;'>The editor featured:</h4><div style='text-align:left;'><ul><li>Game Object Editing</li><li>Basic Undo/Redo</li><li>Copy and Paste</li><li>Drag and Drop Interface for Asset managemnent.</li></ul></div>",
+    "comments": "I made this level editor using the Qt framework for the creation of content for my Freshman year game project named 'Zombie Boy'. <h4 style='text-align:left;'>The editor featured:</h4><div style='text-align:left;'><ul><li>Game Object Editing</li><li>Basic Undo/Redo</li><li>Copy and Paste</li><li>Drag and Drop Interface for Asset managemnent.</li></ul></div>",
     "url": "https://github.com/BluFedora/ZombieBoyLevelEditor",
     "button": "Github Page"
   },
