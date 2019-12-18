@@ -1,0 +1,194 @@
+{
+  "Title": "Project: 'Project: Gemini'",
+  "Header": 
+  {
+    "Image": "url(images/post_05/cover.png)",
+    "Author": "By: Shareef Raheem",
+    "Date": "December 5th, 2019"
+  },
+  "Content": 
+  [
+    {
+      "Type" : "h3",
+      "Content": "Introduction"
+    },
+    {
+      "Type":"hr"
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        {
+          "Type":"video",
+          "Source": "data/post-data/07/trailer.mp4"
+        },
+        {
+          "Type":"div",
+          "Class":"center-text",
+          "Content":[
+            {
+              "Type": "a",
+              "Content": "Steam Download [https://store.steampowered.com/app/1149630/Project_Gemini/]",
+              "Source":"https://store.steampowered.com/app/1149630/Project_Gemini/"
+            }
+          ]
+        },
+        {
+          "Type":"div",
+          "Class":"center-text",
+          "Content":[
+            "This game got showcased at <b>PAX West 2019</b> at the DigiPen booth."
+          ]
+        }
+      ]
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        "Project: Gemini is a two player co-op platformer where you Jump, Dash, Shoot and Smash through enemy drones.",
+        "You play as either Guttierez (Gutz) or Cricket in an attempt to stop the _evil_ corporation from taking over the city.",
+        "In this cyberpunk-esque level you will encounter turrets, barbed wire, and other road blocks, but don't worry we have checkpoints!",
+        "<br>",
+        "Me and a team of 11 other people made this game in our Sophomore year at <b>DigiPen</b> over the course of a year."
+      ]
+    },
+    {
+      "Type" : "h3",
+      "Content": "What I did for the Game"
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        "I was the Tech Director for the 6 man tech team (w/ 2 designers and 3 artists) mostly designing the <b>Engine Architecture and Level Editor</b>.",
+        "<br><br>Engine Systems I Wrote:",
+        {
+          "Type": "ul",
+          "Content":
+          [
+            {
+              "Type" : "li",
+              "Content" : "2D Rigidbody Physics System using Impulse Based Collision Resolution"
+            },
+            {
+              "Type" : "li",
+              "Content" : "In-Game Level Editor using ImGUI"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Serialization and Prefabs"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Asset Manager (Reference Counted Assets)"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Base AI System Using Action Lists"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Spritesheet Animation"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Health Manager (dubbed Combat System)"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Gamestate Manager"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Custom Memory Managers"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Job System for Easy Multi-threading"
+            },
+            {
+              "Type" : "li",
+              "Content" : "In-Game GUI System w/ Bitmap Text (Had an ImGUI like API)"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Basic RTTI System for easier serialization"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Event Manager for Core Engine Subsystems"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Parallax Backgrounds"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Behavior System (The scripts attached to Entities)"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Base Entity Component System (ECS) Framework"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Debug Logger with Logging Levels"
+            },
+            {
+              "Type" : "li",
+              "Content" : "In-Editor live profiler"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Debug Drawer"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Custom Data-Structures (Variant, SparseArray, Cache Friendly HashTable)"
+            }
+          ]
+        },
+        "Gameplay Tasks:",
+        {
+          "Type": "ul",
+          "Content":
+          [
+            {
+              "Type" : "li",
+              "Content" : "Arena System"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Destructible Walls / Platforms"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Switches that Trigger an Event"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Checkpoint System"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Some of the Drone AI"
+            },
+            {
+              "Type" : "li",
+              "Content" : "Win, Lose, and Start Screen(s) Implementation and VFX"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        "...To Be Continued..."
+      ]
+    }
+  ]
+}

@@ -32,6 +32,13 @@ window.blufedora.blog =
                 {
                   block_element.src = content_block["Source"];
                 }
+                else if (content_block["Type"] == "video")
+                {
+                  var video_src = document.createElement("source");
+                  video_src.src = content_block["Source"];
+                  video_src.type = "video/mp4";
+                  block_element.appendChild(video_src);
+                }
                 else if (content_block["Type"] == "file")
                 {
                   // TODO: I need to make this async.

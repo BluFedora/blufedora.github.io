@@ -1,0 +1,211 @@
+{
+  "Title": "Image Processing: <br> Introduction and History",
+  "Header": {
+    "Image": "url(images/cover_image.jpg)",
+    "Author": "By: Shareef Raheem",
+    "Date": "October 18th, 2017 (Revised November 13th, 2017)"
+  },
+  "Content": [
+    {
+      "Type": "h4",
+      "Content": "Introduction and Definitions:"
+    },
+    {
+      "Type": "p",
+      "Content": [
+        " The expansive field of digital image processing informational technology is the backbone of many modern conveniences. ",
+        "Image processing borrows talents from a variety of fields such as computer science, electrical engineering, mathematics, physiology, biology, and even cognitive science. ",
+        "These sciences come together to create ways for computers to capture and then interpret the three-dimensional (3D) world around us."
+      ]
+    },
+    {
+      "Type": "p",
+      "Content": [
+        "The aspect of image processing that handles interpreting the world is called “Computer Vision.” ",
+        "Computer Vision is the study of developing ways to use and analyze data from digital images and videos. ",
+        "This data needs to be interpreted in such a way to allow computers to have a high-level understanding of what the image or video represents. ",
+        "The goal is to emulate the “human visual system,” automating its tasks to make life easier."
+      ]
+    },
+    {
+      "Type": "p",
+      "Content": [
+        "The term ‘image,’ which is traditionally thought of as a picture or grid of pixels, can exist in many forms. ",
+        "An image can be collected from various methods such as bouncing radio or ultrasonic waves. ",
+        "The many mediums to project the world onto allow for different representations of the data so that depending on the aspect we want to focus on it is easy to see. ",
+        "Take the case of the way we use x-rays to see if there is a fracture in someone’s bones, that image is not very useful when trying to create a fingerprint scanner. ",
+        "Fortunately to mitigate this problem “[t]here is an amazing availability of radiation to be sensed, recorded as images, and viewed, analyzed, transmitted, or stored.” (Bovik)"
+      ]
+    },
+    {
+      "Type": "p",
+      "Content": [
+        "Development of computer vision picked up in the late 1960s at universities in an attempt to advance artificial intelligence (A.I). ",
+        "The idea was for analyzing images to act as a steppingstone for more intelligent robots that could make context aware decisions. ",
+        "Based on that idea, some projects were just attaching a camera to a computer and haing it ‘describe what it saw’.",
+        "In the eary stage of image processing there was a heavy separation between image processing and computer vision. While computer vision wanting extract three dimensional representations of a scene from the collected data. ",
+        " In the late 1990s computer vision started to merge with computer graphics (image based rendering, image morphing, light-field rendering). ",
+        "Modern research of computer vision incorporate machine learning techniques (which is somewhat out of the scope of this blog) for more precise interpretations of this world."
+      ]
+    },
+    {
+      "Type": "h4",
+      "Content": "Current State of Affairs:"
+    },
+    {
+      "Type": "table",
+      "Content": [
+        {
+          "Type": "tr",
+          "Content": "<th>Company</th>    <th>Technology</th>       <th>What it Does</th>"
+        },
+        {
+          "Type": "tr",
+          "Content": "<td>Microsoft</td>  <td>Windows Hello</td>    <td>Uses Facial Identification technology to let you be able to unlock your computer just by looking at it.</td>"
+        },
+        {
+          "Type": "tr",
+          "Content": "<td>Apple</td>      <td>TouchID, FaceID</td>  <td>Uses your fingerprint and face respectively to unlock your iPhone and recent MacBooks.</td>"
+        },
+        {
+          "Type": "tr",
+          "Content": "<td>Google</td>     <td>Image Search</td>     <td>This allows you to search for images similar to the one you are using to search with.</td>"
+        },
+        {
+          "Type": "tr",
+          "Content": "<td>Adobe</td>      <td>Photoshop ©</td>      <td>Photoshop is the industry standard for software to edit digital photography in almost anyway.</td>"
+        },
+        {
+          "Type": "tr",
+          "Content": "<td>Apple</td>      <td>Portrait Mode</td>    <td>This is a new technology using the iPhone 8’s camera to analyze a portrait image of a person and emulate professional lighting.</td>"
+        }
+      ]
+    },
+    " (Table A: list of notable consumer products using image processing technology)",
+    {
+      "Type": "h5",
+      "Content": "Video Games:"
+    },
+    {
+      "Type": "p",
+      "Content": [
+        "Digital image manipulation is quite prevalent in the field of videos games. ",
+        "Often times used for effects such as bloom lighting using a small program, called a shader, to make calculation based off of the current pixels on-screen. ",
+        "Algorithms for these effects are getting very efficient to where we can update millions (1920 x 1080) of pixels sixty or more times a second while performing hundreds of other tasks. All video games use image processing concepts at some level, although it may be difficult to tell since there are sometimes many levels of abstraction from what is actually happening with the hardware. ",
+        "The graphics are drawn to something called a frame buffer which is a grid / array of pixels holding the data of what’s currently onscreen. ",
+        "That buffer is then ‘pushed’ to the Graphic Processing Unit (GPU) for manipulation by the small shader programs. ",
+        "After all the shaders have run the GPU draws all these pixels to the screen through a process called ‘rasterization’."
+      ]
+    },
+    {
+      "Type": "img",
+      "Style": "float: left; margin: 10px 0px; width:100%;",
+      "Source": "images/post_1/minecraft-bloom.jpg"
+    },
+    "(IMAGE A: FROM MINECRAFT SHOWCASING BLOOM LIGHTING SHADERS)",
+    {
+      "Type": "div",
+      "Class": "clear"
+    },
+    {
+      "Type": "h5",
+      "Content": "Movies:"
+    },
+    {
+      "Type": "p",
+      "Content": [
+        "Movies are a very popular medium of entertainment today, and now commonly make use of ‘computer generated imagery’ (CGI). ",
+        "A technique used make the digital objects look like they are in the scene is known as “Camera Tracking.” ",
+        "A computer analyzes the scene and tries to generate a 3D visualization based on the 2-Dimensional (2D) camera shots to help with the placing of the digital models. ",
+        " If done well it is often difficult for the audience to know what is real vs CGI, although realism doesn’t have to always be the goal. ",
+        "In the past CGI was very distracting as in the 2002 movie <i>The Scorpion King,</i> but now is used exceptionally effectively as in <i>Interstellar</i> (2014) or <i>Gravity</i> (2013). ",
+        "The CGI in <i>The Scorpion King</i> had very staggered motion and the models were not well textured. ",
+        "The movie <i>300</i> (2006) was made with great use of CGI with its stylistic scenes that are aesthetically pleasing. ",
+        "Evolution of animated films changed with the advent of CGI technology, such as amazing movies like Disney's “Toy Story” (1995)."
+      ]
+    },
+    {
+      "Type": "img",
+      "Style": "width:100%",
+      "Source": "images/post_1/crappy-cgi-scorpion-king.jpg"
+    },
+    "(IMAGE B: FROM “THE SCORPION KING” SHOWCASING ‘BAD’ CGI)",
+    {
+      "Type": "div",
+      "Class": "clear"
+    },
+    {
+      "Type": "img",
+      "Style": "width:100%",
+      "Source": "images/post_1/good-cgi-300.jpg"
+    },
+    "(IMAGE C: FROM “300” SHOWCASING WELL IMPLEMENTED CGI)",
+    {
+      "Type": "div",
+      "Class": "clear"
+    },
+    {
+      "Type": "h5",
+      "Content": "Smart Phones:"
+    },
+    {
+      "Type": "p",
+      "Content": [
+        "Digital image processing is integrated into many parts of our modern life.",
+        "Many smart phones today come with a fingerprint scanner standard.",
+        "This biometric form of authentication improved to be become much faster and more accurate since its début (on mobile phones) on the “Toshiba G500” (2007).",
+        "Even some new computers such as the 2016 and 2017 Apple MacBook Pros use this biometric form of identification.",
+        "Recent versions of Android and the Apple iPhone X support facial identification as a way to secure your device.",
+        "Low light performance of facial identification currently is very poor but supposedly Apple has found a solution to this problem.",
+        "Using infrared cameras and projecting dots on the subject’s face is supposedly going to solve the problem but we cannot do usability tests until the phone is released."
+      ]
+    },
+    {
+      "Type": "h4",
+      "Content": "Cutting Edge: "
+    },
+    {
+      "Type": "p",
+      "Content": [
+        "The new Google Lens project will make it so “your smartphone camera won’t just see what you see, but will also understand what you see to help you take action.”", 
+        {
+          "Type" : "a",
+          "Content": "(Google, via Twitter)",
+          "Source" : "https://twitter.com/Google/status/864891667723300864"
+        },
+        " This is an amazing step towards a fully automated life. Google photos can now detect faces from all of your photos and categorize based on who is in the photo. In my experience the feature has been eerily accurate but at times useful for organization."
+      ]
+    },
+    {
+      "Type": "h4",
+      "Content": "What’s at stake and why it matters?"
+    },
+    {
+      "Type" : "p",
+      "Content" : [
+        "As technology advances in regards to imaging, our ways of interacting with the world around us changes.",
+          "There is less need for manually analyzing pictures to find an object or putting in alphanumeric passwords.",
+          "Image processing at its core is automation of the many tasks humans do with their visual system.",
+          "This technology helps improve quality of life and makes it so that many trivial activities are done just from a simple facial expression.",
+          "The problem now becomes if we do use this form of biometrics for security, then this method of authentication must be as precise as possible.",
+          "According to Apple, “[w]ith Touch ID, it stated that there was a 1 in 50,000 chance that someone would be able to open your phone with their fingerprint.",
+          "These numbers were a little better for Face ID, at 1 in 1,000,000,” (Casserly) this is a dramatic increase in security and this technology will only get more accurate with time."
+      ]
+    },
+    {
+      "Type" : "div",
+      "Class" : "content",
+      "Content" : [
+        {
+          "Type" : "h4",
+          "Content" : "Cited Works"
+        },
+        "Bovik, Al. <i>The Essential Guide to Image Processing</i>. Google Play Books, Elsevier Inc, 2009  <br> <br>",
+            "Casserly, Martyn. “Face ID vs Touch ID”. Macworld, 14 September 2017, http:// www.macworld.co.uk/feature/iphone/face-id-v-touch-id-3663945/ <br> <br>",
+            "“Computer Vision and Computer Graphics,” TutorialsPoint, https://www.tutorialspoint.com/dip/ computer_vision_and_graphics.htm <br> <br>",
+            "“Image Processing and Related Fields,” http://fourier.eng.hmc.edu/e161/lectures/e161ch1.pdf <br> <br>",
+            "Welch, Chris. “Google Assistant will soon search by sight with your smartphone camera”. <i>The Verge</i>, 17 May 2017, https://www.theverge.com/2017/5/17/15648128/google-assistantcamera-sight-search-feature-io-2017"
+      ]
+    }
+  ]
+}

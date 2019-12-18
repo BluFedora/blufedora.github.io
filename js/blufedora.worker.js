@@ -115,7 +115,17 @@ this.blufedora.worker =
 
       if (evt.action == blufedora.worker.CREATE_ELEMENT)
       {
-        blufedora.worker.elementMap[evt.id] = document.createElement(evt.type);
+        var element = document.createElement(evt.type);
+        blufedora.worker.elementMap[evt.id] = element;
+
+        if (evt.type == "source")
+        {
+          element.type = "video/mp4";
+        }
+        else if (evt.type == "video")
+        {
+          element.controls = "_";
+        }
       }
       else if (evt.action == blufedora.worker.SET_FIELD)
       {
@@ -261,6 +271,14 @@ this.blufedora.worker =
                 if (content_block["Type"] == "img")
                 {
                   doc.setSource(block_element, content_block["Source"]);
+                }
+                else if (content_block["Type"] == "video")
+                {
+                  var video_src = doc.createElement("source");
+                  video_src.type = "video/mp4";
+
+                  doc.setSource(video_src, content_block["Source"]);
+                  doc.addChild(block_element, video_src);
                 }
                 else if (content_block["Type"] == "file")
                 {

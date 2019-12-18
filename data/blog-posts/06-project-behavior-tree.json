@@ -1,0 +1,135 @@
+{
+  "Title": "Project:<br> Behavior Tree Editor for Unity",
+  "Header": 
+  {
+    "Image": "url(images/post_05/cover.png)",
+    "Author": "By: Shareef Raheem",
+    "Date": "December 5th, 2019"
+  },
+  "Content": 
+  [
+    {
+      "Type" : "h3",
+      "Content": "Introduction"
+    },
+    {
+      "Type": "p",
+      "Content": 
+      [
+        "For the student project I worked on Junior year, ",
+        {
+          "Type" : "b",
+          "Content": "Metamorphos"
+        },
+        ", I wanted to work on a tool used by designers and myself for making AI for our <i>Souls Like</i> game.",
+        "We decided on using behavior trees as our AI architecture and along with that a custom tool built into Unity for all of our editing needs."
+      ]
+    },
+    {
+      "Type": "p",
+      "Content": 
+      [
+        "This editor was used by designers and programmers to author all of the AI for our game. ",
+        "Our development process consisted of starting off by quickly prototyping out a single attack / behavior of an Enemy with very little context, ",
+        "then a designer layouts out on paper how an enemy should react to the player. Taking this outline a programmer (or a technical designer) makes a base tree (along with utility sub-trees) ",
+        "with editable parameters using the Blackboard system.", 
+        "Afterwards a designer fine tunes the tree and get the numbers <i>_just right_</i> using the blackboard, as well as change nodes around and polish the AI based on play-testing data."
+      ]
+    },
+    {
+      "Type" : "p",
+      "Content":
+      [
+        "The main window looked like this:",
+        {
+          "Type":"img",
+          "Source": "data/post-data/06/cover.png"
+        },
+        {
+          "Type":"hr"
+        },
+        {
+          "Type":"div",
+          "Class": "center-text",
+          "Content":
+          [
+            "(I tried my best to make is look as native <b><i>Unity</i></b> as possible by using their own editor assets)"
+          ]
+        },
+        {
+          "Type":"hr"
+        },
+        "The window on the left is the 'Inspector' / 'Blackboard' and the rest is the 'Canvas' where the nodes live."
+      ]
+    },
+    {
+      "Type": "h3",
+      "Content": "Feature Set"
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        {
+          "Type": "ul",
+          "Content":
+          [
+            {
+              "Type" : "li",
+              "Content" : "Copy and Pasting of nodes (works across documents as well)."
+            },
+            {
+              "Type" : "li",
+              "Content" : "Live debugging of a Tree on a specific GameObject."
+            },
+            {
+              "Type" : "li",
+              "Content" : "Blackboard with a variant datatype for defining variables."
+            },
+            {
+              "Type" : "li",
+              "Content" : "Running of a behavior tree from within another tree."
+            },
+            {
+              "Type" : "li",
+              "Content" : "Calling of C# functions through the 'Event' Node."
+            },
+            {
+              "Type" : "li",
+              "Content" : "Canvas zooming in / out and panning."
+            },
+            {
+              "Type" : "li",
+              "Content" : "Open Behavior Tree Asset with double clicking. (Similar to the Way Unity AnimatorController work)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Type" : "h3",
+      "Content": "Live Debugging Demo Video"
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        {
+          "Type":"video",
+          "Source": "data/post-data/06/Project_Behavior_Tree_Live_Debugging_Demo.mp4"
+        }
+      ]
+    },
+    {
+      "Type" : "h3",
+      "Content": "Details"
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        "...To Be Continued..."
+      ]
+    }
+  ]
+}

@@ -16,6 +16,10 @@
       visibility - invisible but still takes up space.
       display: none - Removes the element from the doc layout.
 */
+video {
+  width:  100%;
+  height: auto;
+}
 
 #menu {
   z-index: 4;
