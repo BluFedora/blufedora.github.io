@@ -8,7 +8,7 @@ struct Transition
   // 'AnimationID' is just anything you want.
   // We used an enum but strings work as well.
   //
-  // The Key in this may is what animation we can transition too.
+  // The Key in this map is what animation we can transition too.
   // The Value is a glorified 'bool' that holds whether or not this
   // transition can interrupt the current animation.
 using TransitionMap = std::unordered_map<AnimationID, Transition>;
