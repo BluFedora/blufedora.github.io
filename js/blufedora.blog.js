@@ -28,6 +28,8 @@ window.blufedora.blog =
               {
                 var block_element = document.createElement(content_block["Type"]);
                 
+                block_element.id = content_block["ID"] || "";
+
                 if (content_block["Type"] == "img")
                 {
                   block_element.src = content_block["Source"];
@@ -78,7 +80,7 @@ window.blufedora.blog =
             }
             else
             {
-              console.error("addContent ERROR: Un able to parse content_block: " + JSON.stringify(contents));
+              console.error("addContent ERROR: Unable to parse content_block: " + JSON.stringify(contents));
             }
           }
         }
@@ -88,7 +90,7 @@ window.blufedora.blog =
         }
         else
         {
-          console.error("addContent ERROR: Un able to parse contents: " + JSON.stringify(contents));
+          console.error("addContent ERROR: Unable to parse contents: " + JSON.stringify(contents));
         }
       }
 
@@ -149,3 +151,4 @@ window.blufedora.blog =
       xobj.send(null);
     }
   };
+  

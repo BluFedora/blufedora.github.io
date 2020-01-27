@@ -33,7 +33,7 @@
         "Our development process consisted of starting off by quickly prototyping out a single attack / behavior of an Enemy with very little context, ",
         "then a designer layouts out on paper how an enemy should react to the player. Taking this outline a programmer (or a technical designer) makes a base tree (along with utility sub-trees) ",
         "with editable parameters using the Blackboard system.", 
-        "Afterwards a designer fine tunes the tree and get the numbers <i>_just right_</i> using the blackboard, as well as change nodes around and polish the AI based on play-testing data."
+        "Afterwards a designer fine tunes the tree and get the numbers <i>just right</i> using the blackboard, as well as change nodes around and polish the AI based on play-testing data."
       ]
     },
     {
@@ -100,7 +100,7 @@
             },
             {
               "Type" : "li",
-              "Content" : "Open Behavior Tree Asset with double clicking. (Similar to the Way Unity AnimatorController work)"
+              "Content" : "Open Behavior Tree Asset with double clicking in the Project View."
             }
           ]
         }
@@ -128,7 +128,28 @@
       "Type":"p",
       "Content":
       [
-        "...To Be Continued..."
+        "Here is a demo of making a simple tree in the editor.",
+        "Just drag from the bottom of a node to add a child to it.",
+        "All the tree does is check if the current enemy is aggravated then attack and wait a second otherwise just patrol around.",
+        {
+          "Type":"video",
+          "Source": "data/post-data/06/demo.mp4"
+        },
+        "Creating a new Node type entails inheriting from <b><i>BaseBehaviorTreeNode</i></b> and implementing the interface:",
+        {
+          "Type" : "pre",
+          "Class" : "prettyprint linenums lang-cs",
+          "Content": 
+          [
+            "// Called when the node is created\n",
+            "protected override void Ctor();\n\n",
+            "// Called when the node is evaluated.\n// This is a 'stateless' design so\n\n// you operate on the BehaviorTreeContext rather your member variables.\n",
+            "protected override BehaviorTreeNodeStatus Evaluate(BehaviorTreeContext context);\n\n",
+            "// Called when the node is inspected in the editor\n// This is so you can custom editor features.\n",
+            "public override void OnInspect()"
+          ]
+        },
+        "Any class inheriting from <b><i>BaseBehaviorTreeNode</i></b> is automatically added to the editor through C#'s reflection utilities."
       ]
     }
   ]

@@ -20,6 +20,10 @@
       "Content":
       [
         {
+          "Type" : "h3",
+          "Content": "- Trailer - "
+        },
+        {
           "Type":"video",
           "Source": "data/post-data/07/trailer.mp4"
         },
@@ -48,7 +52,7 @@
       "Content":
       [
         "Project: Gemini is a two player co-op platformer where you Jump, Dash, Shoot and Smash through enemy drones.",
-        "You play as either Guttierez (Gutz) or Cricket in an attempt to stop the _evil_ corporation from taking over the city.",
+        "You play as either Guttierez (Gutz) or Cricket in an attempt to stop the evil corporation from taking over the city.",
         "In this cyberpunk-esque level you will encounter turrets, barbed wire, and other road blocks, but don't worry we have checkpoints!",
         "<br>",
         "Me and a team of 11 other people made this game in our Sophomore year at <b>DigiPen</b> over the course of a year."
@@ -62,7 +66,7 @@
       "Type":"p",
       "Content":
       [
-        "I was the Tech Director for the 6 man tech team (w/ 2 designers and 3 artists) mostly designing the <b>Engine Architecture and Level Editor</b>.",
+        "I was the Tech Director for the 6 man tech team (w/ 2 designers and 4 artists) mostly designing the <b>Engine Architecture and Level Editor</b>.",
         "<br><br>Engine Systems I Wrote:",
         {
           "Type": "ul",
@@ -70,83 +74,193 @@
           [
             {
               "Type" : "li",
-              "Content" : "2D Rigidbody Physics System using Impulse Based Collision Resolution"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "2D Rigidbody Physics System using Impulse Based Collision Resolution",
+                  "Source":"#demo-physics"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "In-Game Level Editor using ImGUI"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "In-Game Level Editor using Dear ImGUI",
+                  "Source":"#demo-editor"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Serialization and Prefabs"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Serialization and Prefabs",
+                  "Source":"#demo-prefabs"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Asset Manager (Reference Counted Assets)"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Asset Manager (Reference Counted Assets)",
+                  "Source":"#demo-assets"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Base AI System Using Action Lists"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Base AI System Using Action Lists",
+                  "Source":"#demo-ai"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Spritesheet Animation"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Spritesheet Animation w/ Spritesheet generator from a list of images",
+                  "Source":"#demo-spritesheet"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Health Manager (dubbed Combat System)"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Health Manager (dubbed Combat System)",
+                  "Source":"#demo-combat"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Gamestate Manager"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Gamestate Manager",
+                  "Source":"#demo-gamestate"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Custom Memory Managers"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Custom Memory Managers",
+                  "Source":"#demo-memory"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Job System for Easy Multi-threading"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Job System for Easy Multi-threading",
+                  "Source":"#demo-"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "In-Game GUI System w/ Bitmap Text (Had an ImGUI like API)"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "In-Game GUI System w/ Bitmap Text (Had an ImGUI like API)",
+                  "Source":"#demo-ui"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Basic RTTI System for easier serialization"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Basic RTTI System for easier serialization",
+                  "Source":"#demo-RTTI"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Event Manager for Core Engine Subsystems"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Event Manager for Core Engine Subsystems",
+                  "Source":"#events"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Parallax Backgrounds"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Base Entity Component System (ECS) Framework",
+                  "Source":"#demo-ecs"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Behavior System (The scripts attached to Entities)"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Debug Logger with Logging Levels",
+                  "Source":"#demo-debug-logger"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Base Entity Component System (ECS) Framework"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "In-Editor live profiler",
+                  "Source":"#"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Debug Logger with Logging Levels"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Debug Drawer",
+                  "Source":"#demo-drawer"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "In-Editor live profiler"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Custom Data-Structures (Variant, SparseArray, Cache Friendly HashTable)",
+                  "Source":"#demo-data-structures"
+                }
+              ]
             },
             {
               "Type" : "li",
-              "Content" : "Debug Drawer"
-            },
-            {
-              "Type" : "li",
-              "Content" : "Custom Data-Structures (Variant, SparseArray, Cache Friendly HashTable)"
+              "Content" : [
+                {
+                  "Type": "a",
+                  "Content": "Parallax Backgrounds",
+                  "Source":"#demo-parallax-backgrounds "
+                }
+              ]
             }
           ]
         },
@@ -181,6 +295,61 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "Type" : "h3",
+      "Content": "Demos"
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        {
+          "Type" : "h3",
+          "ID": "demo-physics",
+          "Content": "2D Rigidbody Physics System"
+        },
+        {
+          "Type":"video",
+          "Source": "data/post-data/07/demo_physics.mp4"
+        },
+        "This is the physics engine in action showing support for circles and arbitrary convex polygons."
+      ]
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        {
+          "Type" : "h3",
+          "ID": "demo-editor",
+          "Content": "In-Game Level Editor"
+        },
+        {
+          "Type":"img",
+          "Source": "data/post-data/07/demo_editor_00.png"
+        },
+        "This editor was the tool we used author content for the game such as asset management and level creation.",
+        "It sports debug draw, a profiler, checking the current status of connected controllers, changing graphics settings such as bloom, and editing of physic collision geometry. ",
+        "To open the editor all you have to do is press the tilde key ('~') and it will run the editor on tome of the game."
+      ]
+    },
+    {
+      "Type":"p",
+      "Content":
+      [
+        {
+          "Type" : "h3",
+          "ID": "demo-prefabs",
+          "Content": "Serialization and Prefabs"
+        },
+        {
+          "Type":"video",
+          "Source": "data/post-data/07/demo_prefabs.mp4"
+        },
+        "This is a demo of the prefab system, you can make object types in the editor and later use that template for easier level creation.",
+        "If you edit the prefab then the changes will propagate to all instances of the prefab."
       ]
     },
     {

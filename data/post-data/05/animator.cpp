@@ -1,5 +1,4 @@
 
-
 using AnimationMap = std::unordered_map<AnimationID, Transition>;
 
 class Animator
@@ -23,4 +22,3 @@ class Animator
 
     // ... Functions for adding animations and transitions ...
 };
-

@@ -192,9 +192,10 @@ this.blufedora.worker =
       msg.value = value;
       postMessage(msg);
     },
-    setClassName: function (id, value)
+    setClassName: function (id, value, id_value)
     {
       postMessage(createSetFieldAction(id, "className", value));
+      postMessage(createSetFieldAction(id, "id", id_value || ""));
     },
     setData: function (id, field, value)
     {
@@ -265,7 +266,7 @@ this.blufedora.worker =
               else
               {
                 var block_element = doc.createElement(content_block["Type"]);
-                doc.setClassName(block_element, content_block["Class"] || "");
+                doc.setClassName(block_element, content_block["Class"] || "", content_block["ID"]);
                 doc.setStyle(block_element, content_block["Style"] || "");
 
                 if (content_block["Type"] == "img")

@@ -1,15 +1,15 @@
 [
   {
-    "title": "<b>Project:</b> 'Project: Gemini' (Custom Engine)",
+    "title": "<b>Project:</b> 'Project: Gemini' (Custom C++ Engine)",
     "cover": "url(data/post-data/07/cover.png)",
     "link": "07-project-project-gemini",
-    "blurb": ""
+    "blurb": "A writeup on what I did for my Sophomore game project."
   },
   {
     "title": "<b>Project:</b> Behavior Tree Editor for Unity",
     "cover": "url(data/post-data/06/cover.png)",
     "link": "06-project-behavior-tree",
-    "blurb": ""
+    "blurb": "Made a behavior tree system with a visual editor for Unity."
   },
   {
     "title": "<b>Game Programming:</b> Sprite Animation Management",

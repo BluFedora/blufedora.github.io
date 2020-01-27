@@ -4,15 +4,8 @@
     "thumbnail": "portfolio/game/project_gemini/thumbnail.png",
     "cover": "portfolio/game/project_gemini/cover.png",
     "comments": "This was a game I made during my Sophomore year at DigiPen. <br> I acted as Tech Director mostly creating the base system of the engine such as the Physics and Serialization systems.",
-    "url": "https://store.steampowered.com/app/1149630/Project_Gemini/",
-    "button" : "Click Here To Download"
-  },
-  {
-    "title": "Foraging Interpretations",
-    "thumbnail": "portfolio/web/foraging_interpretations/thumbnail.png",
-    "url": "http://www.foraginginterpretations.com/",
-    "comments" : "",
-    "button": "Visit the Site"
+    "url": "http://blufedora.github.io/blog-post.html?post=07-project-project-gemini",
+    "button" : "Project Blogpost"
   },
   {
     "title": "Zombie Boy Level Editor",
@@ -20,6 +13,13 @@
     "comments": "I made this level editor using the Qt framework for the creation of content for my Freshman year game project named 'Zombie Boy'. <h4 style='text-align:left;'>The editor featured:</h4><div style='text-align:left;'><ul><li>Game Object Editing</li><li>Basic Undo/Redo</li><li>Copy and Paste</li><li>Drag and Drop Interface for Asset managemnent.</li></ul></div>",
     "url": "https://github.com/BluFedora/ZombieBoyLevelEditor",
     "button": "Github Page"
+  },
+  {
+    "title": "Foraging Interpretations",
+    "thumbnail": "portfolio/web/foraging_interpretations/thumbnail.png",
+    "url": "http://www.foraginginterpretations.com/",
+    "comments" : "",
+    "button": "Visit the Site"
   },
   {
     "title": "Blank Dungeon",
@@ -35,16 +35,16 @@
     "button": "Visit the Site"
   },
   {
-    "title": "My Site Circa 2014-2017",
-    "thumbnail": "portfolio/web/blufedora_2014-2017/thumbnail.png",
-    "url": "portfolio/web/blufedora_2014-2017/index.html",
+    "title": "My Site Circa 2016-2018",
+    "thumbnail": "portfolio/web/blufedora_2016-2018/thumbnail.png",
+    "url": "portfolio/web/blufedora_2016-2018/index.html",
     "comments" : "",
     "button": "Visit the Site"
   },
   {
-    "title": "My Site Circa 2016-2018",
-    "thumbnail": "portfolio/web/blufedora_2016-2018/thumbnail.png",
-    "url": "portfolio/web/blufedora_2016-2018/index.html",
+    "title": "My Site Circa 2014-2016",
+    "thumbnail": "portfolio/web/blufedora_2014-2017/thumbnail.png",
+    "url": "portfolio/web/blufedora_2014-2017/index.html",
     "comments" : "",
     "button": "Visit the Site"
   }

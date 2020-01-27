@@ -31,7 +31,13 @@
 
   <script>
     window.blufedora.urlvars.init();
-    const post = blufedora.urlvars.get("post", "blog-post-404");
+    var post = blufedora.urlvars.get("post", "blog-post-404");
+    const hash_idx = post.lastIndexOf("#");
+
+    if (hash_idx != -1)
+    {
+      post = post.substring(0, hash_idx);
+    }
 
     if (window.Worker) 
     {
@@ -101,7 +107,7 @@
 
       <footer>
         <div class='credits'>
-          &copy; 2019 Copyright
+          &copy;2020 Copyright
           <span style="color:#7ca8ed">Shareef</span>
           <span style="color:#a3a3a3">Raheem</span>
         </div>
