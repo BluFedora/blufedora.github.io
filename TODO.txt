@@ -1,5 +1,0 @@
-[ ] Stretch Goal: Make it so the portfolio items are steamed?
-[ ] Add a description / comment to all the portfolition pieces.
-[ ] Go through with a spell check pass through the portfolio comments.
-[ ] https://haxe.org/manual/target-javascript-expose.html
-  [ ] Try to make more cross Haxe / Js Communication so that I don't need to recompile Haxe to make any changes.

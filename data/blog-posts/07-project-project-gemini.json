@@ -328,7 +328,7 @@
         },
         {
           "Type":"img",
-          "Source": "data/post-data/07/demo_editor_00.png"
+          "Source": "data/post-data/07/demo_editor_00.PNG"
         },
         "This editor was the tool we used author content for the game such as asset management and level creation.",
         "It sports debug draw, a profiler, checking the current status of connected controllers, changing graphics settings such as bloom, and editing of physic collision geometry. ",
