@@ -3,6 +3,7 @@ package com.blufedora;
 import com.blufedora.portfolio.LoadPortfolio;
 import js.Browser;
 import js.html.Element;
+import js.html.HTMLCollection;
 
 /**
  * ...
@@ -35,12 +36,17 @@ class Main {
 
 			if (menu != null && side_panel != null && main_article != null) {
 				var callback = function(evt) {
-					cast(evt.currentTarget, Element).classList.toggle("opened");
+					menu.classList.toggle("opened");
 					side_panel.classList.toggle("opened");
 					main_article.classList.toggle("opened");
 				};
 
 				menu.onclick = callback;
+				
+				for (e in Browser.document.getElementsByClassName("menu-item"))
+				{
+					e.onclick = callback;
+				}
 			}
 		};
 

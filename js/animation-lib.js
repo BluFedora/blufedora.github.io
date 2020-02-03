@@ -452,11 +452,18 @@ com_blufedora_Main.main = function() {
 		var main_article = window.document.getElementById("main_article");
 		if(menu != null && side_panel != null && main_article != null) {
 			var callback = function(evt) {
-				(js_Boot.__cast(evt.currentTarget , HTMLElement)).classList.toggle("opened");
+				menu.classList.toggle("opened");
 				side_panel.classList.toggle("opened");
 				main_article.classList.toggle("opened");
 			};
 			menu.onclick = callback;
+			var _g3 = 0;
+			var _g11 = window.document.getElementsByClassName("menu-item");
+			while(_g3 < _g11.length) {
+				var e = _g11[_g3];
+				++_g3;
+				e.onclick = callback;
+			}
 		}
 	};
 	window.onunload = function() {
