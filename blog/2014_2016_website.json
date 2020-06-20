@@ -1,0 +1,38 @@
+{
+  "Title": "2014 - 2016 Website",
+  "Header": {
+    "Image": "url(portfolio/web/blufedora_2014-2017/thumbnail.png)",
+    "Author": "By: Shareef Raheem",
+    "Date": "June 20th, 2020"
+  },
+  "Content": [
+    {
+      "Type": "p",
+      "Content": [
+        "This is the first version of my website.",
+        {
+          "Type": "wbr"
+        },
+        "This was before I had a good understanding of web technologies so this was made in Adobe Muse (now discontinued). I was 15-17 years old at the time so many things about the site just sucked and I didn",
+        "'",
+        "t have many projects under my belt so it wasn",
+        "'",
+        "t all that useful."
+      ]
+    },
+    {
+      "Type": "p",
+      "Content": [
+        {
+          "Type": "a",
+          "Content": [
+            "Here",
+            "'",
+            "s The Link To Visit The Site"
+          ],
+          "Source": "portfolio/web/blufedora_2014-2017/index.html"
+        }
+      ]
+    }
+  ]
+}

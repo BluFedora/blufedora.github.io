@@ -42,7 +42,7 @@
       "Content": [
         "Development of computer vision picked up in the late 1960s at universities in an attempt to advance artificial intelligence (A.I). ",
         "The idea was for analyzing images to act as a steppingstone for more intelligent robots that could make context aware decisions. ",
-        "Based on that idea, some projects were just attaching a camera to a computer and haing it ‘describe what it saw’.",
+        "Based on that idea, some projects were just attaching a camera to a computer and having it ‘describe what it saw’.",
         "In the eary stage of image processing there was a heavy separation between image processing and computer vision. While computer vision wanting extract three dimensional representations of a scene from the collected data. ",
         " In the late 1990s computer vision started to merge with computer graphics (image based rendering, image morphing, light-field rendering). ",
         "Modern research of computer vision incorporate machine learning techniques (which is somewhat out of the scope of this blog) for more precise interpretations of this world."

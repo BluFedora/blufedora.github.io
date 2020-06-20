@@ -40,5 +40,17 @@
     "cover": "url(images/cover_image.jpg)",
     "link": "01-image-processing-intro-to-history",
     "blurb": "The expansive field of digital image processing informational technology is the backbone of many modern conveniences. Image processing borrows talents from a variety of fields such as computer science, electrical engineering, mathematics, physiology, biology..."
+  },
+  {
+    "title": "<b>Website Project: </b>My Portfolio Site 2016 - 2018",
+    "cover": "url(portfolio/web/blufedora_2016-2018/thumbnail.png)",
+    "link": "2016_2018_website",
+    "blurb": "Just a small little showcase of an older version of my portfolio site my later highschool years to early college."
+  },
+  {
+    "title": "<b>Website Project: </b>My Portfolio Site 2014 - 2016",
+    "cover": "url(portfolio/web/blufedora_2014-2017/thumbnail.png)",
+    "link": "2014_2016_website",
+    "blurb": "Just a small little showcase of an older version of my portfolio site from my highschool years."
   }
 ]

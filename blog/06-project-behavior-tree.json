@@ -2,7 +2,7 @@
   "Title": "Project:<br> Behavior Tree Editor for Unity",
   "Header": 
   {
-    "Image": "url(images/post_05/cover.png)",
+    "Image": "url(data/post-data/06/cover.png)",
     "Author": "By: Shareef Raheem",
     "Date": "December 5th, 2019"
   },
@@ -143,7 +143,7 @@
           [
             "// Called when the node is created\n",
             "protected override void Ctor();\n\n",
-            "// Called when the node is evaluated.\n// This is a 'stateless' design so\n\n// you operate on the BehaviorTreeContext rather your member variables.\n",
+            "// Called when the node is evaluated.\n// This is a 'stateless' design so\n// you operate on the BehaviorTreeContext rather your member variables.\n",
             "protected override BehaviorTreeNodeStatus Evaluate(BehaviorTreeContext context);\n\n",
             "// Called when the node is inspected in the editor\n// This is so you can custom editor features.\n",
             "public override void OnInspect()"

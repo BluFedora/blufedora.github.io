@@ -6,8 +6,6 @@ onmessage = function(e)
 
   if (evt.action == blufedora.worker.LOAD_POST)
   {
-    blufedora.worker.loadBlogpost("../data/blog-posts/" + evt.post + ".json", "current-post", "post-header");
+    blufedora.worker.loadBlogpost("../blog/" + evt.post + ".json", "current-post", "post-header");
   }  
 }
-
-

@@ -60,6 +60,11 @@ window.blufedora.blog =
                 }
                 else if (content_block["Type"] == "a")
                 {
+                  if (typeof content_block["Content"] == "object")
+                  {
+                    content_block["Content"] = content_block["Content"].join("");
+                  }
+                  
                   block_element.href = content_block["Source"];
                   block_element.innerHTML = content_block["Content"];
                 }

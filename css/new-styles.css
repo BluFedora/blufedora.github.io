@@ -67,30 +67,16 @@ hr {
 
 header {
   width: 100%;
-  height: 86vh;
+  min-height: 100vh;
   background:  url(../images/covers/blog_cover_2.jpg);
-  background-position-y: -100px;
   background-repeat: no-repeat;
   background-size: cover;
-  position:relative;
-  overflow: hidden;  
+  position: relative;
   z-index: 1;
-}
 
-header::after {
-  content: "";
-  background: linear-gradient(
-    rgba(41, 30, 48, 0.0), 
-      rgb(21, 21, 26)
-    )/*, 
-    url(../images/bg_grid_dark.png)*/;
-  opacity: 1.0;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content-container {
@@ -116,17 +102,13 @@ header::after {
   height:       auto;
   
   padding:       30px;
-  margin:       0px auto;
-  
-  top:         200px;
-  
+  margin:        auto;
   position:       relative;
-  
   background-color:   rgba(70, 63, 70, 0.54);
 
   border-top:       4px solid rgba(62, 62, 90, 0.8);
   border-bottom:    4px solid rgba(62, 62, 90, 0.8);
-
+  
   transform:       skewY(-6deg);
 }
 
@@ -146,10 +128,16 @@ header::after {
   text-shadow:       0px 1px 1px rgb(255, 255, 255);
   border:         solid #ededed 1px;
   
+  /*
   width:           240px;
   height:         250px;
   margin:         8px;
-  border-radius:       3px;
+  */
+
+  width:           100%;
+  height:         250px;
+  border-radius:       5px;
+  margin:         4px 0px;
   
   text-align:       center;
   
@@ -245,14 +233,14 @@ header::after {
   }
   
   100% {
-    width:     400px;
-    height:    400px;
+    width:     2000px;
+    height:    2000px;
     opacity:   0.6;
   }
 }
 
 .circle_hover:hover::after {
-  animation:       circle .3s ease-out 0s 1 normal forwards;
+  animation:       circle .8s ease-out 0s 1 normal forwards;
 }
 
 .circle_hover:hover::after + .portfolio_image {

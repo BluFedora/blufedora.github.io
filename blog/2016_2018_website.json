@@ -1,0 +1,30 @@
+{
+  "Title": "2016 - 2018 Website",
+  "Header": {
+    "Image": "url(portfolio/web/blufedora_2016-2018/thumbnail.png)",
+    "Author": "By: Shareef Raheem",
+    "Date": "June 20th, 2020"
+  },
+  "Content": [
+    {
+      "Type": "p",
+      "Content": [
+        "This is a later upgrade of my site after i had just learned the basics of web technologies (html, css, javascript) and wanted to make a site completely custom."
+      ]
+    },
+    {
+      "Type": "p",
+      "Content": [
+        {
+          "Type": "a",
+          "Content": [
+            "Here",
+            "'",
+            "s The Link To Visit The Site"
+          ],
+          "Source": "portfolio/web/blufedora_2016-2018/index.html"
+        }
+      ]
+    }
+  ]
+}

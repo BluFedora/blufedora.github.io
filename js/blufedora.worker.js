@@ -1,5 +1,3 @@
-
-
 this.blufedora = this.blufedora || {};
 
 function createAction(action, id)
@@ -219,7 +217,7 @@ this.blufedora.worker =
     },
     setStyleField: function (id, field, value)
     {
-      postMessage(createSetStyleFieldAction(id, "href", value));
+      postMessage(createSetStyleFieldAction(id, field, value));
     },
     addChild: function (id, child_id)
     {
@@ -294,6 +292,12 @@ this.blufedora.worker =
                 else if (content_block["Type"] == "a")
                 {
                   doc.setHRef(block_element, content_block["Source"]);
+
+                  if (typeof content_block["Content"] == "object")
+                  {
+                    content_block["Content"] = content_block["Content"].join("");
+                  }
+
                   doc.setHTML(block_element, content_block["Content"]);
                 }
                 else if (content_block["Content"] !== undefined)
@@ -360,7 +364,7 @@ this.blufedora.worker =
           // Strip out html formatting
           doc.setDocumentTitle(json_data["Title"].replace(/<[^>]*>?/gm, ''))
           doc.setStyleField(post_header, "backgroundImage", json_data["Header"]["Image"])
-
+          
           // <h2> Post Title </h2>
           var title_element = doc.createElement("h2");
           doc.setHTML(title_element, json_data["Title"]);

@@ -18,34 +18,29 @@
     "title": "Foraging Interpretations",
     "thumbnail": "portfolio/web/foraging_interpretations/thumbnail.png",
     "url": "http://www.foraginginterpretations.com/",
-    "comments" : "",
     "button": "Visit the Site"
   },
   {
     "title": "Blank Dungeon",
     "thumbnail": "portfolio/game/blank_dungeon/thumbnail.png",
-    "comments": "",
     "url": "portfolio/game/blank_dungeon/thumbnail.png"
   },
   {
     "title": "Living Tayyib",
     "thumbnail": "portfolio/web/living_tayyib/thumbnail.png",
     "url": "http://www.livingtayyib.com/index.html",
-    "comments" : "",
     "button": "Visit the Site"
   },
   {
     "title": "My Site Circa 2016-2018",
     "thumbnail": "portfolio/web/blufedora_2016-2018/thumbnail.png",
-    "url": "portfolio/web/blufedora_2016-2018/index.html",
-    "comments" : "",
+    "url": "blog-post.html?post=2016_2018_website",
     "button": "Visit the Site"
   },
   {
     "title": "My Site Circa 2014-2016",
     "thumbnail": "portfolio/web/blufedora_2014-2017/thumbnail.png",
-    "url": "portfolio/web/blufedora_2014-2017/index.html",
-    "comments" : "",
+    "url": "blog-post.html?post=2014_2016_website",
     "button": "Visit the Site"
   }
 ]
