@@ -2,11 +2,11 @@
 
 # Requires Python 3.4 (pathlib)
 
-import sys        # argv, exit
-import os         # path.isdir
-from pathlib import Path # Path
+import sys                    # argv, exit
+import os                     # path.isdir
+from pathlib  import Path     # Path
 from datetime import datetime # datetime
-import commonmark # Parser
+import commonmark             # Parser
 import json
 
 ERR_PATH_NOT_DIR   = 1
@@ -190,7 +190,7 @@ def main(args):
 
   json_output_str = json.dumps(json_output, indent=2)
 
-  json_output_path = Path(args[2])
+  json_output_path = "blog" / Path(args[2] + ".json") 
   json_output_path.touch()
 
   json_output_path.write_text(json_output_str)
@@ -206,7 +206,6 @@ if __name__ == "__main__":
   if num_args < 3:
     print(f"Invalid number of arguments. {args}")
     print(f"Usage: make_post.py <post-directory> <output-blog-post-file>")
+    sys.exit(2)
   else:
     sys.exit(main(args))
-
-  sys.exit(2)

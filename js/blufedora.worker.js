@@ -240,7 +240,7 @@ this.blufedora.worker =
       msg.title = title;
       postMessage(msg);
     },
-    loadBlogpost: function (blog_path, current_post, post_header_id)
+    loadBlogpost: function (blog_path, current_post, post_header_img_id, post_header_content_id)
     {
       var doc = blufedora.worker;
 
@@ -358,27 +358,23 @@ this.blufedora.worker =
               ]
           };
 
-          var root_doc = doc.getElementById(current_post);
-          var post_header = doc.getElementById(post_header_id);
+          var root_doc            = doc.getElementById(current_post);
+          var post_header         = doc.getElementById(post_header_img_id);
+          var post_content_header = doc.getElementById(post_header_content_id);
 
           // Strip out html formatting
           doc.setDocumentTitle(json_data["Title"].replace(/<[^>]*>?/gm, ''))
           doc.setStyleField(post_header, "backgroundImage", json_data["Header"]["Image"])
-          
-          // <h2> Post Title </h2>
-          var title_element = doc.createElement("h2");
-          doc.setHTML(title_element, json_data["Title"]);
-          doc.addChild(root_doc, title_element);
+
+          doc.setHTML(post_content_header, json_data["Title"]);
 
           // <h3>BY: Shareef Raheem | Date: 12/13/2017</h3>
           var author_element = doc.createElement("h3");
+          doc.setClassName(author_element, "post-full");
           doc.setHTML(author_element, json_data["Header"]["Author"] + " | " + json_data["Header"]["Date"]);
           doc.addChild(root_doc, author_element);
 
-          var content_element = doc.createElement("div");
-          doc.setClassName(content_element, "content");
-          addContent(content_element, json_data["Content"]);
-          doc.addChild(root_doc, content_element);
+          addContent(root_doc, json_data["Content"]);
 
           postMessage(createAction("DONE_LOADING", 0));
         }

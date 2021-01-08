@@ -1,0 +1,22 @@
+{
+  "Title": "Thought Piece: Extended-Selection Is Inconsistent",
+  "Header": {
+    "Image": "url(images/cover_image.jpg)",
+    "Author": "By: Shareef Raheem",
+    "Date": "August 25th, 2020"
+  },
+  "Content": [
+    {
+      "Type": "h3",
+      "Content": [
+        "Intro"
+      ]
+    },
+    {
+      "Type": "p",
+      "Content": [
+        "For a program I am writing (SRSM) I wanted to implement multi-selection of items in the timeline."
+      ]
+    }
+  ]
+}

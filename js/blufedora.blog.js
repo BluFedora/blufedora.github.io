@@ -5,7 +5,7 @@ window.blufedora = window.blufedora || {};
 
 window.blufedora.blog =
   {
-    loadBlogpost: function (blog_path, current_post, post_header_id)
+    loadBlogpost: function (blog_path, current_post, post_header_img_id, post_header_content_id)
     {
       function addContent(root_element, contents)
       {
@@ -130,17 +130,15 @@ window.blufedora.blog =
           };
 
           var root_doc = document.getElementById(current_post);
-          var post_header = document.getElementById(post_header_id);
+          var post_header = document.getElementById(post_header_img_id);
+          var post_content_header = document.getElementById(post_header_content_id);
 
           // Strip out html formatting
           document.title = json_data["Title"].replace(/<[^>]*>?/gm, '');
 
           post_header.style.backgroundImage = json_data["Header"]["Image"];
 
-          // <h2> Post Title </h2>
-          var title_element = document.createElement("h2");
-          title_element.innerHTML = json_data["Title"];
-          root_doc.appendChild(title_element);
+          post_content_header.innerHTML = json_data["Title"];
 
           // <h3>BY: Shareef Raheem | Date: 12/13/2017</h3>
           var author_element = document.createElement("h3");

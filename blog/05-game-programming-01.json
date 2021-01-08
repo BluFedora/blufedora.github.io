@@ -81,15 +81,12 @@
       "Content": "Here is our the graph we needed to represent in code to get the behavior we wanted from the character:"
     },
     {
-      "Type" : "p",
-      "Content": 
-      [
-        {
-          "Type":"img",
-          "Source" : "images/post_05/animation_graph_diagram.png"
-        },
-        "(We actually had a few more cases than what is shown but the details aren't too important for understanding the concept, also this diagram is messy enough)"
-      ]
+      "Type":"img",
+      "Source" : "images/post_05/animation_graph_diagram.png"
+    },
+    {
+      "Class":"post-full",
+      "Content" : "(We actually had a few more cases than what is shown but the details aren't too important for understanding the concept, also this diagram is messy enough)"
     },
     {
       "Type" :"p",
@@ -106,7 +103,7 @@
     },
     {
       "Type" : "pre",
-      "Class" : "prettyprint linenums lang-cpp",
+      "Class" : "prettyprint lang-cpp",
       "Content" : [
         {
           "Type" : "file",
@@ -121,7 +118,7 @@
         "To represent the the animation node I pair of the animation data with a map of transitions.",
         {
           "Type":"pre",
-          "Class":"prettyprint linenums lang-cpp",
+          "Class":"prettyprint lang-cpp",
           "Content":[
             {
             "Type" : "file",
@@ -132,7 +129,7 @@
         "The graph was just a set of Root animation nodes, current animation and transition along with if the same animation as the current one was requested.",
         {
           "Type":"pre",
-          "Class":"prettyprint linenums lang-cpp",
+          "Class":"prettyprint lang-cpp",
           "Content":
           [
             {
@@ -153,7 +150,7 @@
     },
     {
       "Type" : "pre",
-      "Class" : "prettyprint linenums lang-cpp",
+      "Class" : "prettyprint lang-cpp",
       "Content" : [
         {
           "Type" : "file",
@@ -171,7 +168,7 @@
     },
     {
       "Type" : "pre",
-      "Class" : "prettyprint linenums lang-cpp",
+      "Class" : "prettyprint lang-cpp",
       "Content" : [
         {
           "Type" : "file",

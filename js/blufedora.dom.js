@@ -8,7 +8,18 @@ window.blufedora.dom = {
   {
     var element = document.createElement("div");
     element.classList = clzName;
-    return element;
-  }
 
+    return element;
+  },
+  createElementWithContent: function (elem_type, content)
+  {
+    var element = document.createElement(elem_type);
+
+    if (content !== undefined)
+    {
+      element.innerHTML = content;
+    }
+
+    return element;
+  },
 };

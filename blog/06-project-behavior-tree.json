@@ -111,14 +111,8 @@
       "Content": "Live Debugging Demo Video"
     },
     {
-      "Type":"p",
-      "Content":
-      [
-        {
-          "Type":"video",
-          "Source": "data/post-data/06/Project_Behavior_Tree_Live_Debugging_Demo.mp4"
-        }
-      ]
+      "Type":"video",
+      "Source": "data/post-data/06/Project_Behavior_Tree_Live_Debugging_Demo.mp4"
     },
     {
       "Type" : "h3",

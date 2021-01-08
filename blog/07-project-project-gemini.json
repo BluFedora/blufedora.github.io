@@ -1,5 +1,5 @@
 {
-  "Title": "Project: 'Project: Gemini'",
+  "Title": "- Project: Gemini - <br> (Game Project)",
   "Header": 
   {
     "Image": "url(data/post-data/07/cover.png)",
@@ -9,14 +9,8 @@
   "Content": 
   [
     {
-      "Type" : "h3",
-      "Content": "Introduction"
-    },
-    {
-      "Type":"hr"
-    },
-    {
       "Type":"p",
+      "Class":"post-full",
       "Content":
       [
         {
@@ -46,6 +40,10 @@
           ]
         }
       ]
+    },
+    {
+      "Type" : "h3",
+      "Content": "Introduction"
     },
     {
       "Type":"p",

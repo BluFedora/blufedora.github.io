@@ -65,24 +65,21 @@
       ]
     },
     {
-      "Type": "div",
-      "Class": "clear"
-    },
-    {
       "Type": "img",
-      "Style": "float: left; margin: 10px 0px; width: 48%;",
+      "Class": "post-half",
+      "Style": "height: 300px",
       "Source": "images/post_2/IMG_4604.jpg"
     },
     {
       "Type": "img",
-      "Style": "float: right; margin: 10px 0px; width: 48%;",
+      "Class": "post-half",
+      "Style": "height: 300px",
       "Source": "images/post_2/IMG_4823.jpg"
     },
     {
-      "Type": "div",
-      "Class": "clear"
+      "Class": "post-full",
+      "Content": "(Images A and B: How much manipulation is valid for important publication?)"
     },
-    "(Images A and B: How much manipulation is valid for important publication?)",
     {
       "Type": "div",
       "Class": "clear"
@@ -131,7 +128,7 @@
     },
     {
       "Type": "div",
-      "Class": "content",
+      "Class": "content post-full",
       "Content": [
         {
           "Type": "h4",

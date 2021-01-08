@@ -81,7 +81,10 @@
         }
       ]
     },
-    " (Table A: list of notable consumer products using image processing technology)",
+    {
+      "Class" : "post-full",
+      "Content": "(Table A: list of notable consumer products using image processing technology)"
+    },
     {
       "Type": "h5",
       "Content": "Video Games:"
@@ -102,7 +105,10 @@
       "Style": "float: left; margin: 10px 0px; width:100%;",
       "Source": "images/post_1/minecraft-bloom.jpg"
     },
-    "(IMAGE A: FROM MINECRAFT SHOWCASING BLOOM LIGHTING SHADERS)",
+    {
+      "Class" : "post-full",
+      "Content": "(IMAGE A: FROM MINECRAFT SHOWCASING BLOOM LIGHTING SHADERS)"
+    },
     {
       "Type": "div",
       "Class": "clear"
@@ -129,7 +135,10 @@
       "Style": "width:100%",
       "Source": "images/post_1/crappy-cgi-scorpion-king.jpg"
     },
-    "(IMAGE B: FROM “THE SCORPION KING” SHOWCASING ‘BAD’ CGI)",
+    {
+      "Class" : "post-full",
+      "Content": "(IMAGE B: FROM “THE SCORPION KING” SHOWCASING ‘BAD’ CGI)"
+    },
     {
       "Type": "div",
       "Class": "clear"
@@ -139,7 +148,10 @@
       "Style": "width:100%",
       "Source": "images/post_1/good-cgi-300.jpg"
     },
-    "(IMAGE C: FROM “300” SHOWCASING WELL IMPLEMENTED CGI)",
+    {
+      "Class" : "post-full",
+      "Content": "(IMAGE C: FROM “300” SHOWCASING WELL IMPLEMENTED CGI)"
+    },
     {
       "Type": "div",
       "Class": "clear"
@@ -194,7 +206,7 @@
     },
     {
       "Type" : "div",
-      "Class" : "content",
+      "Class" : "content post-full",
       "Content" : [
         {
           "Type" : "h4",
