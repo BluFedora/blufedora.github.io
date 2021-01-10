@@ -107,6 +107,7 @@ pre,
 video,
 table,
 img,
+div,
 h1,
 h2,
 h3,
@@ -117,8 +118,30 @@ h6,
   grid-column-end: span 12;
 }
 
+
 .post-half {
   grid-column-end: span 6;
+}
+
+@media only screen and (max-width: 800px) {
+  p,
+  hr,
+  pre,
+  video,
+  table,
+  img,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .post-full,
+  .post-half
+  {
+    grid-column-end: span 12;
+  }
 }
 
 pre {
