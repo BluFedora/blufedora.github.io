@@ -2,12 +2,12 @@
   {
     "title": "Project: 'Project: Gemini' (Custom C++ Engine)",
     "cover": "url(/portfolio/project-gemini/thumbnail.png)",
-    "link": "07-project-project-gemini",
+    "link": "2021/07-project-gemini",
     "brief": "A writeup on what I did for my Sophomore game project."
   },
   {
     "title": "Project: Behavior Tree Editor for Unity",
-    "cover": "url(data/post-data/06/cover.png)",
+    "cover": "url(data/post-data/06/thumbnail.png)",
     "link": "06-project-behavior-tree",
     "brief": "I made a behavior tree system with a visual editor for Unity."
   },

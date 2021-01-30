@@ -106,8 +106,6 @@ window.blufedora.blog =
       {
         if (xobj.readyState == 4)
         {
-          // TODO(Shareef): To make this better I should use the 404 blog-post file.
-          // but there really isn't much of the need to do more IO than necessary.
           var json_data = (xobj.status !== 404) ? JSON.parse(xobj.responseText) : {
             "Title": "Post Could Not Be Found",
             "Header":
@@ -129,9 +127,25 @@ window.blufedora.blog =
               ]
           };
 
+          function addCss(fileName) {
+            var head = document.head;
+            var link = document.createElement("link");
+          
+            link.type = "text/css";
+            link.rel = "stylesheet";
+            link.href = fileName;
+          
+            head.appendChild(link);
+          }
+
           var root_doc = document.getElementById(current_post);
           var post_header = document.getElementById(post_header_img_id);
           var post_content_header = document.getElementById(post_header_content_id);
+
+          if (json_data["Header"]["Theme"] !== undefined)
+          {
+            addCss("css/post-themes/" + json_data["Header"]["Theme"] + ".css");
+          }
 
           // Strip out html formatting
           document.title = json_data["Title"].replace(/<[^>]*>?/gm, '');

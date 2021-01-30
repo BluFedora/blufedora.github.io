@@ -96,8 +96,12 @@ tr:nth-child(even) { background-color: #dddddd; }
   text-align: center;
 }
 
-p {
-  margin: 10px;
+p, img, video {
+  margin: 5px;
+}
+
+ul {
+  width: 100%;
 }
 
 /* By Default All Elements Take Up Full Width */
@@ -161,8 +165,13 @@ video {
 
 /* Customization Points */
 
-.post-background { background-color: #151B40; }
-#post-header     { color: white;              }
-.post-body       { border-color: #832A71; background-color: #090C24;    }
-.post-body-content { border-color: #009E76;     }
-img, video { border-color: #009E76; }
+.post-background               { background-color: #2a282c;                          }
+#post-header                   { 
+  color: white; 
+  text-shadow:
+  -1px -1px 0 #000,  
+   1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;                                       }
+.post-body                     { border-color: #cec5cc; background-color: #232324; }
+.post-body-content, img, video { border-color: #835da7;                              }

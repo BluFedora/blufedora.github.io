@@ -165,6 +165,24 @@ this.blufedora.worker =
       }
       else if (evt.action == blufedora.worker.DONE_LOADING)
       {
+        function addCss(fileName) {
+          var head = document.head;
+          var link = document.createElement("link");
+        
+          link.type = "text/css";
+          link.rel = "stylesheet";
+          link.href = fileName;
+        
+          head.appendChild(link);
+        }
+
+        const json_data = evt.id;
+
+        if (json_data["Header"]["Theme"] !== undefined)
+        {
+          addCss("css/post-themes/" + json_data["Header"]["Theme"] + ".css");
+        }
+
         PR.prettyPrint();
       }
       else
@@ -376,7 +394,7 @@ this.blufedora.worker =
 
           addContent(root_doc, json_data["Content"]);
 
-          postMessage(createAction("DONE_LOADING", 0));
+          postMessage(createAction("DONE_LOADING", json_data));
         }
       };
 
