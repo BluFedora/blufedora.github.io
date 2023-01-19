@@ -2,7 +2,9 @@ window.blufedora = window.blufedora || {};
 
 window.blufedora.urlvars = (window.blufedora.urlvars ||
   {
-    init: function ()
+    vars : undefined,
+
+    _init: function ()
     {
       this.vars = {};
 
@@ -17,11 +19,15 @@ window.blufedora.urlvars = (window.blufedora.urlvars ||
 
     get: function (key, defaultValue)
     {
+      if (this.vars === undefined) { this._init(); }
+      
       return this.has(key) ? this.vars[key] : defaultValue;
     },
-
+    
     has: function (key)
     {
+      if (this.vars === undefined) { this._init(); }
+
       return (key in this.vars);
     }
   });

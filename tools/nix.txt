@@ -1,6 +1,0 @@
-Shorten Terminal Window
-
-PS1='\u:\W\$ '
-alias shorten='PS1="$\e[0;34m$USER:\W$ "'
-
-NOTE: "\e[0;34m" is Blue. 
