@@ -2,8 +2,7 @@
   {
     "folder" : "metamorphos",
     "size"   : 4,
-    "brief": "Sophomore year game project. I worked on AI and other game-play systems.",
-    "post": "06-project-behavior-tree"
+    "brief": "Sophomore year game project. I worked on AI and other game-play systems."
   },
   {
     "folder" : "project-gemini",
@@ -17,12 +16,6 @@
     "brief": "Freshman year game project. I worked on the \"graphics\" and UI."
   },
   {
-    "folder" : "living-tayyib",
-    "size"   : 1,
-    "brief": "Storefront website I made for a local farm.",
-    "url": "http://www.livingtayyib.com/index.html"
-  },
-  {
     "folder" : "unity-bt-editor",
     "size"   : 3,
     "brief": "I made a behavior tree system with a visual editor for Unity.",
@@ -30,7 +23,7 @@
   },
   {
     "folder": "zombie-boy",
-    "size"   : 4,
+    "size"   : 1,
     "thumbnail": "portfolio/game/zombie_boy/thumbnail.png",
     "brief": "I made this level editor using the Qt framework for the creation of content for my Freshman year game project named 'Zombie Boy'.",
     "url": "https://github.com/BluFedora/ZombieBoyLevelEditor"

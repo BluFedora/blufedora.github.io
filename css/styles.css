@@ -227,35 +227,30 @@ video {
   border-radius:    12px;
 }
 
-a:nth-child(1) .social-icon:hover {
+.social-icon-git:hover {
+  border:           3px rgb(0, 0, 0) solid;
+  background-color: rgb(0, 0, 0);
+} 
+
+.social-icon-yt:hover {
+  border:           2px #FF4301 solid;
+  background-color: #FF4301;
+}
+
+.social-icon-twt:hover {
   border:           2px #00aced solid;
   background-color: #00aced;
 }
 
-a:nth-child(2) .social-icon:hover {
-  border:           2px #211F1F solid;
-  background-color: #211F1F;
-}
-
-a:nth-child(3) .social-icon:hover {
+.social-icon-fb:hover {
   border:           2px #3C5A99 solid;
   background-color: #3C5A99;
 }
 
-a:nth-child(4) .social-icon:hover {
+.social-icon-instagram:hover {
   border:           2px #F77737 solid;
   background: linear-gradient(#400080, transparent), 
               linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
-}
-
-a:nth-child(5) .social-icon:hover {
-  border:           2px #ff0000 solid;
-  background-color: #ff0000;
-}
-
-a:nth-child(6) .social-icon:hover {
-  border:           2px #FF4301 solid;
-  background-color: #FF4301;
 }
 
 .social-icon:active {
@@ -263,35 +258,30 @@ a:nth-child(6) .social-icon:hover {
   border-radius:    10px;
 }
 
-a:nth-child(1) .social-icon:active {
-  border:           2px #016e96 solid;
-  background-color: #016e96;
+.social-icon-git:active {
+  border:           3px rgb(72, 72, 72) solid;
+  background-color: rgb(72, 72, 72);
+} 
+
+.social-icon-yt:active {
+  border:           2px #ff7441 solid;
+  background-color: #ff7441;
 }
 
-a:nth-child(2) .social-icon:active {
-  border:           3px rgb(0, 0, 0) solid;
-  background-color: rgb(0, 0, 0);
+.social-icon-twt:active {
+  border:           2px #00aced solid;
+  background-color: #00aced;
 }
 
-a:nth-child(3) .social-icon:active {
-  border:           2px rgb(45, 66, 112) solid;
-  background-color: rgb(45, 66, 112);
+.social-icon-fb:active {
+  border:           2px #3C5A99 solid;
+  background-color: #3C5A99;
 }
 
-a:nth-child(4) .social-icon:active {
-  border:           2px rgb(197, 95, 44) solid;
-  background: linear-gradient(#240147, transparent), 
-              linear-gradient(200deg, #9e399e, #b90202, #adad03);
-}
-
-a:nth-child(5) .social-icon:active {
-  border:           2px #790000 solid;
-  background-color: #790000;
-}
-
-a:nth-child(6) .social-icon:active {
-  border:           2px rgb(110, 31, 2) solid;
-  background-color: rgb(110, 31, 2);
+.social-icon-instagram:active {
+  border:           2px #F77737 solid;
+  background: linear-gradient(#400080, transparent), 
+              linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
 }
 
 .main-article {
@@ -441,7 +431,8 @@ nav ul {
 
 .header-name-contents {
   height: 100vh;
-  padding:          50px;
+  min-width: 400px;
+  padding:          5px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -473,7 +464,7 @@ nav ul {
   justify-content: center;
   align-items: center;
   
-  min-height:    240px;
+  height:    240px;
   padding:       6px;
   border-radius: 10px;
   border:        solid #F28D8D 2px;
@@ -481,18 +472,18 @@ nav ul {
 
   cursor:         pointer;
 
-  transition: min-height 0.3s, box-shadow 0.3s;
+  transition: height 0.3s, box-shadow 0.3s;
 }
 
 [class^="portfolio-block"]:hover {
-  min-height:             260px;
+  height:             260px;
   background-color: rgb(226, 76, 76);
 
   box-shadow:       rgba(0, 0, 0, 0.15) 0px 6px 7px 1px;
 }
 
 [class^="portfolio-block"]:active {
-  min-height:             235px;
+  height:             235px;
   box-shadow:       rgba(0, 0, 0, 0.0) 0px 6px 7px 1px;
 }
 
@@ -553,6 +544,14 @@ nav ul {
 
 @media only screen and (max-width: 600px)
 {
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
   .header-content {
     max-width:  calc(100vw - 20px);
   }
@@ -670,53 +669,14 @@ footer {
 
 /* Responsive */
 
-@media only screen and (max-width: 800px) {
-  .side-panel {
-    top:        0px;
-    left:       0px;
-    width:      100%;
-    height:     auto;
-    max-height: 100vh;
-    overflow-y: auto;
-
-    border-right:  unset;
-    border-bottom: rgb(74, 81, 105) 2px solid;
-  }
-}
-
-@media only screen and (max-width: 1000px) 
-{
-  .main-article {
-    width: 100%;
-    left:  0px;
-  }
-
-  .profile_icon {
-    width:  80px;
-    height: 80px;
-    margin: 5px 10px;
-    float:  right;
-  }
-
-  .menu-item {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 180px) 
-{
-  .profile_icon {
-    opacity: 0.0;
-  }
-}
 
 /* Blog */
 
 #post-listings {
   max-width:         1200px;
   width:             100%;
-  background-color: white;
-  border:             3px solid #201e2b;
+  background-color: #eae8e8;
+  margin: 10px;
 }
 
 .blog-homepage-title {

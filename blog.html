@@ -32,11 +32,11 @@
     </a>
 
     <div class="header-content post-container">
-      <div id="post-listings">
+      <article id="post-listings">
         <div class="blog-homepage-cover">
           <h1 class="blog-homepage-title">BLOG</h1>
         </div>
-        <div id="listing-container">          
+        <div id="listing-container">
         </div>
 
         <footer>
@@ -45,7 +45,7 @@
             <span style="color:#51608b">Shareef Raheem</span>
           </div>
         </footer>
-      </div>
+      </article>
     </div>
 
     <div class="clear"></div>
@@ -71,9 +71,9 @@
 
     loadJSON("blog/blog-post-list.json", function (json_str)
     {
-      var posts     = document.getElementById("listing-container");
+      var posts = document.getElementById("listing-container");
       var json_data = JSON.parse(json_str);
-      var dom       = blufedora.dom;
+      var dom = blufedora.dom;
 
       for (var i = 0; i < json_data.length; i++)
       {
@@ -88,14 +88,14 @@
             </div>
           </div>
         */
-        var post_data             = json_data[i];
-        var listing               = dom.createDivWithClass("post");
-        var listing_img           = dom.createDivWithClass("post-listing-image");
-        var listing_heading       = dom.createDivWithClass("post-listing-heading");
-        var listing_heading_div   = dom.createElementWithContent("div");
+        var post_data = json_data[i];
+        var listing = dom.createDivWithClass("post");
+        var listing_img = dom.createDivWithClass("post-listing-image");
+        var listing_heading = dom.createDivWithClass("post-listing-heading");
+        var listing_heading_div = dom.createElementWithContent("div");
         var listing_heading_title = dom.createElementWithContent("h1", post_data.title);
         var listing_heading_brief = dom.createElementWithContent("h2", post_data.brief);
-        
+
         listing.appendChild(listing_img);
         listing.appendChild(listing_heading);
 

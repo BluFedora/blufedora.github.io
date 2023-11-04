@@ -16,17 +16,5 @@
     "cover": "url(images/post_05/cover.png)",
     "link": "05-game-programming-01",
     "brief": "A little write-up on how I handled transitions for a frame based animations for a student game project."
-  },
-  {
-    "title": "Website Project: My Portfolio Site 2016 - 2018",
-    "cover": "url(portfolio/web/blufedora_2016-2018/thumbnail.png)",
-    "link": "2016_2018_website",
-    "brief": "Just a small little showcase of an older version of my portfolio site my later highschool years to early college."
-  },
-  {
-    "title": "Website Project: My Portfolio Site 2014 - 2016",
-    "cover": "url(portfolio/web/blufedora_2014-2017/thumbnail.png)",
-    "link": "2014_2016_website",
-    "brief": "Just a small little showcase of an older version of my portfolio site from my highschool years."
   }
 ]

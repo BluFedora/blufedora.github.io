@@ -15,21 +15,21 @@
 
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/styles.css">
-  
+
   <script src="js/animation-lib.js" type="text/javascript"></script>
   <script src="js/blufedora.dom.js" type="text/javascript"></script>
   <script src="js/blufedora.urlvars.js" type="text/javascript"></script>
   <script src="js/blufedora.worker.js" type="text/javascript"></script>
   <script src="js/blufedora.blog.js" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=desert"></script>
-  
+
   <link rel="stylesheet" href="css/post-themes/base-theme.css">
 
   <script>
     const blufedora = window.blufedora;
-    var post       = blufedora.urlvars.get("post", "blog-post-404");
+    var post = blufedora.urlvars.get("post", "blog-post-404");
     const hash_idx = post.lastIndexOf("#");
-    
+
     if (hash_idx != -1)
     {
       post = post.substring(0, hash_idx);
@@ -41,15 +41,15 @@
 
       worker.onmessage = blufedora.worker.onMessageMain;
       worker.postMessage({
-        "action" : blufedora.worker.LOAD_POST,
-        "post" : post
+        "action": blufedora.worker.LOAD_POST,
+        "post": post
       });
     }
     else
     {
       blufedora.blog.loadBlogpost(
-        "blog/" + post + ".json", 
-        "current-post", 
+        "blog/" + post + ".json",
+        "current-post",
         "post-header",
         "post-header-content"
       );
@@ -79,7 +79,7 @@
         </div>
       </footer>
     </div>
-    
+
   </section>
 </body>
 
