@@ -1,6 +1,0 @@
-Possible Accent(10%): #DED0F2 (222, 208, 242)
-         Accent(10%): #91AAF2 (145, 170, 242)
-      Secondary(30%): #6B98F2 (107, 152, 242)
-
-           Main(60%): #F2B9AC (242, 185, 172)
-     Possible Accent: #F28D8D (242, 141, 141)
