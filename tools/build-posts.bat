@@ -1,1 +1,0 @@
-sr-markup -i ..\blog\2021\07-project-gemini.srmark -l sr.GenBlog.dll > ..\blog\2021\07-project-gemini.json
