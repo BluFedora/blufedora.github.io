@@ -16,7 +16,7 @@
 }
 
 @div(Class = "center-text") {
-  This game got showcased at <b>PAX West 2019</b> at the DigiPen booth.
+  This game got showcased at @b{PAX West 2019} at the DigiPen booth.
 }
 
 @h3 { Introduction }
@@ -25,13 +25,13 @@
   Project: Gemini is a two player co-op platformer where you Jump, Dash, Shoot and Smash through enemy drones.
   You play as either Guttierez (Gutz) or Cricket in an attempt to stop the evil corporation from taking over the city.
   In this cyberpunk-esque level you will encounter turrets, barbed wire, and other road blocks, but don't worry we have checkpoints!
-  Me and a team of 11 other people made this game in our Sophomore year at <b>DigiPen</b> over the course of a year.
+  Me and a team of 11 other people made this game in our Sophomore year at @b{DigiPen} over the course of a year.
 }
 
 @h3 { What I did for the Game }
 
 @Text(Size = "Full") {
-  I was the Tech Director for the 6 man tech team (w/ 2 designers and 4 artists) mostly designing the <b>Engine Architecture and Level Editor</b>.
+  I was the Tech Director for the 6 man tech team (w/ 2 designers and 4 artists) mostly designing the @b{Engine Architecture and Level Editor}.
 }
 
 @UList(Size = "Half") {
@@ -89,7 +89,7 @@
 
 @Text(Size = "Full") { 
   This job system was used to optimize the asset loading and frame animation update systems
-  within the engine. A cleaned up open source version of the system is available&nbsp;
+  within the engine. A cleaned up open source version of the system is available
   @link(Src="https://github.com/BluFedora/BF-Job-System") { here }.
 
   Each thread has a queue of task which other threads may steal from to allow for a very 
@@ -100,22 +100,23 @@
 
 @Image(Size = "Half", Src = "data/post-data/07/ai-pathing.gif")
 
-@Text(Size = "Half") {
-  The AI framework was based off of the Action List data structure where at startup you push onto lists
-  the various actions you would like the AI to take and then those lists will be evaluated each frame.
+@div(Size = "Half") {
+  @Text {
+    The AI framework was based off of the Action List data structure where at startup you push onto lists
+    the various actions you would like the AI to take and then those lists will be evaluated each frame.
 
-  Each Agent could have multiple lists either executing concurrently or one at a time depending on the 
-  configuration and needs of each particular enemy.
+    Each Agent could have multiple lists either executing concurrently or one at a time depending on the 
+    configuration and needs of each particular enemy.
 
-  Transfering data across the lists used a Blackboard which we called `AIActionMessageBoard`, 
-  which was basically just a mapping from a string to C++17's `std::any`.
-
-  @pre(Class = "prettyprint linenums lang-cpp") {
+    Transfering data across the lists used a Blackboard which we called `AIActionMessageBoard`, 
+    which was basically just a mapping from a string to C++17's `std::any`. 
+  }
+  @pre(Class = "prettyprint lang-cpp") {
  // This is a sample of the API to setup AI.\n
 auto& movement_list \= actions\(\).addList\(\"Movement\"\);\n
 movement_list.pushBack<action::PatrolWayPoints>\(m_WayPointData\);\n
 movement_list.pushBack<action::ActionEvent>\(m_JumpToShootPattern\);\n
-  }
+}
 }
 
 @h3(ID = "demo-ui") { UI and Animation Systems }
