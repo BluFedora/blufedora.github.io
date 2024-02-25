@@ -25,7 +25,7 @@
     "folder": "zombie-boy",
     "size"   : 1,
     "thumbnail": "portfolio/game/zombie_boy/thumbnail.png",
-    "brief": "I made this level editor using the Qt framework for the creation of content for my Freshman year game project named 'Zombie Boy'.",
+    "brief": "I made this level editor using the Qt framework for my Freshman year game project named 'Zombie Boy'.",
     "url": "https://github.com/BluFedora/ZombieBoyLevelEditor"
   }
 ]

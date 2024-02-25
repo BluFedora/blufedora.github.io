@@ -342,7 +342,7 @@ this.blufedora.worker =
         }
         else
         {
-          console.error("addContent ERROR: Un able to parse contents: " + JSON.stringify(contents));
+          console.error("addContent ERROR: Unable to parse contents: " + JSON.stringify(contents));
         }
       }
 
