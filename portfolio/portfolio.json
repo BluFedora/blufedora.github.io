@@ -1,29 +1,50 @@
 [
   {
-    "folder" : "metamorphos",
-    "size"   : 4,
+    "folder": "2021/call_of_duty_vanguard",
+    "size": "third",
+    "height": "box-art",
+    "brief": "Worked on Pipeline Tools (2021)",
+    "url": "https://www.callofduty.com/vanguard"
+  },
+  {
+    "folder": "2022/call_of_duty_mwii",
+    "size": "third",
+    "height": "box-art",
+    "brief": "Worked on Pipeline Tools and Engine Features (2022)",
+    "url": "https://www.callofduty.com/modernwarfare2"
+  },
+  {
+    "folder": "2023/call_of_duty_mwiii",
+    "size": "third",
+    "height": "box-art",
+    "brief": "Worked on Pipeline Tools (2023)",
+    "url": "https://www.callofduty.com/modernwarfare3"
+  },
+  {
+    "folder": "metamorphos",
+    "size": "full",
     "brief": "Junior and Senior year game project. I worked on AI and other game-play systems."
   },
   {
-    "folder" : "project-gemini",
-    "size"   : 2,
-    "brief": "Sophomore year game project. I worked on base systems such as the Physics engine.",
+    "folder": "project-gemini",
+    "size": "half",
+    "brief": "Sophomore year game project. I worked on base systems such as the physics engine.",
     "post": "2021/07-project-gemini"
   },
   {
-    "folder" : "blank-dungeon",
-    "size"   : 2,
+    "folder": "blank-dungeon",
+    "size": "half",
     "brief": "Freshman year game project. I worked on the \"graphics\" and UI."
   },
   {
-    "folder" : "unity-bt-editor",
-    "size"   : 3,
+    "folder": "unity-bt-editor",
+    "size": "sixty",
     "brief": "I made a behavior tree system with a visual editor for Unity.",
     "post": "06-project-behavior-tree"
   },
   {
     "folder": "zombie-boy",
-    "size"   : 1,
+    "size": "forty",
     "thumbnail": "portfolio/game/zombie_boy/thumbnail.png",
     "brief": "I made this level editor using the Qt framework for my Freshman year game project named 'Zombie Boy'.",
     "url": "https://github.com/BluFedora/ZombieBoyLevelEditor"

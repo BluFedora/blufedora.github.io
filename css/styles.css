@@ -78,13 +78,14 @@ body {
 
 img {
   max-width: 100%;
-  height:    auto;
-  
+  height: auto;
+
   /* set the background-img to "url(path/to/low-res-image.png)", recommended to preload that image. */
   background-repeat: no-repeat;
-  background-size:   cover;
+  background-size: cover;
 
-  font-style: italic; /* Makes the alt text italic */
+  font-style: italic;
+  /* Makes the alt text italic */
 
   vertical-align: middle;
 }
@@ -362,27 +363,6 @@ nav {
   text-decoration: none;
 }
 
-/*
-.menu-item a {
-  text-decoration: none;
-}
-
-.menu-item a:link {
-  color: rgb(202, 202, 202);
-}
-
-.menu-item a:visited {
-  color: rgb(202, 202, 202);
-}
-
-.menu-item a:hover {
-  color: white;
-}
-
-.menu-item a:active {
-  color: rgb(201, 201, 201);
-}
-*/
 /* Header */
 
 .header-content {
@@ -390,10 +370,8 @@ nav {
   width: 100%;
   min-height: 100vh;
   justify-content: center;
-  max-width: calc(100vw - 190px);
+  max-width: calc(100vw - 100px);
   margin: 0px auto;
-
-  transition: max-width 0.2s;
 
   z-index: 1;
 }
@@ -453,7 +431,7 @@ nav {
   padding: 20px;
 }
 
-[class^="portfolio-block"] {
+.portfolio-block {
   background-position: center;
   background-size: cover;
 
@@ -461,46 +439,75 @@ nav {
   justify-content: center;
   align-items: center;
 
-  height: 240px;
   border-radius: 10px;
   border: solid #F28D8D 2px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px 1px;
 
   cursor: pointer;
 
-  overflow: hidden;;
+  overflow: hidden;
 
   transition: height 0.3s, box-shadow 0.3s;
 }
 
-[class^="portfolio-block"]:hover {
-  height: 260px;
+.portfolio-block:hover {
   background-color: rgb(226, 76, 76);
-
   box-shadow: rgba(0, 0, 0, 0.15) 0px 6px 7px 1px;
 }
 
-[class^="portfolio-block"]:active {
-  height: 235px;
+.portfolio-block:active {
   box-shadow: rgba(0, 0, 0, 0.0) 0px 6px 7px 1px;
 }
 
-.portfolio-block4 {
-  grid-column-start: 1;
-  grid-column-end: 13;
+/* Width Classes */
+
+.portfolio-block.full {
+  grid-column-end: span 12;
 }
 
-.portfolio-block2 {
+.portfolio-block.half {
   grid-column-end: span 6;
 }
 
-.portfolio-block3 {
+.portfolio-block.third {
+  grid-column-end: span 4;
+}
+
+.portfolio-block.sixty {
   grid-column-end: span 7;
 }
 
-.portfolio-block1 {
+.portfolio-block.forty {
   grid-column-end: span 5;
 }
+
+/* Height Classes */
+
+.portfolio-block {
+  height: 240px;
+}
+
+.portfolio-block:hover {
+  height: 260px;
+}
+
+.portfolio-block:active {
+  height: 235px;
+}
+
+.portfolio-block.box-art {
+  height: 380px;
+}
+
+.portfolio-block.box-art:hover {
+  height: 400px;
+}
+
+.portfolio-block.box-art:active {
+  height: 375px;
+}
+
+/* */
 
 [class^="portfolio-block"] .portfolio-brief {
   position: relative;
@@ -546,6 +553,7 @@ nav {
   background: linear-gradient(145deg, #e0e6e9, #d9dee7);
   padding: 5px 15px;
   color: rgb(47, 46, 49);
+  text-shadow: none;
 
   box-shadow:
     2px 2px 5px rgb(216, 216, 216) inset,
@@ -567,7 +575,7 @@ nav {
 }
 
 
-[class^="portfolio-block"].opened .portfolio-brief {
+.portfolio-block.opened .portfolio-brief {
   opacity: 1.0;
   width: 100%;
 
@@ -721,11 +729,11 @@ footer {
   }
 
   .header-name {
-    margin-right: 10px;
+    margin-right: 5px;
   }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1200px) {
   #shareef {
     animation: unset;
   }
@@ -772,10 +780,15 @@ footer {
     max-width: calc(100vw - 20px);
   }
 
-  .portfolio-block4,
-  .portfolio-block3,
-  .portfolio-block2,
-  .portfolio-block1 {
+  .portfolio-block.box-art {
+    height: 200px;
+  }
+
+  .portfolio-block.full,
+  .portfolio-block.half,
+  .portfolio-block.third,
+  .portfolio-block.sixty,
+  .portfolio-block.forty {
     grid-column-start: 1;
     grid-column-end: 13;
   }
