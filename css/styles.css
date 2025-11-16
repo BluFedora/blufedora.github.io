@@ -406,7 +406,7 @@ nav {
 
 .header-name-contents {
   height: 100vh;
-  min-width: 400px;
+  min-width: 100px;
   padding: 5px;
   display: flex;
   justify-content: center;
@@ -764,6 +764,8 @@ footer {
   .portfolio-container {
     max-width: 100%;
     width: 100%;
+    column-gap: 20px;
+    row-gap: 20px;
   }
 }
 
@@ -791,5 +793,10 @@ footer {
   .portfolio-block.forty {
     grid-column-start: 1;
     grid-column-end: 13;
+  }
+
+  .portfolio-container {
+    column-gap: 2px;
+    row-gap: 2px;
   }
 }
